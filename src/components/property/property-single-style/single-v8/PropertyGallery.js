@@ -29,7 +29,10 @@ const PropertyGallery = ({ id }) => {
               prevEl: ".prev-btn",
               nextEl: ".next-btn",
             }}
-            thumbs={{ swiper: thumbsSwiper }}
+            thumbs={{
+              swiper:
+                thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
+            }}
             modules={[FreeMode, Navigation, Thumbs]}
             className="mySwiper2 position-relative sp-img-content"
           >

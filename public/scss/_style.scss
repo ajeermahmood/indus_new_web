@@ -3333,9 +3333,9 @@ li {
     position: relative;
 }
 .home-banner-style2 .home-style2 {
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: start;
+    -webkit-box-align: flex-start;
+    -ms-flex-align: flex-start;
+    align-items: flex-start;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -8061,9 +8061,9 @@ li.mm-listitem:focus {
 .advance-style4.at-home10 .nav.nav-tabs {
     background-color: #181a20;
     border-bottom: none;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: start;
+    -webkit-box-pack: flex-start;
+    -ms-flex-pack: flex-start;
+    justify-content: flex-start;
     max-width: 260px;
 }
 

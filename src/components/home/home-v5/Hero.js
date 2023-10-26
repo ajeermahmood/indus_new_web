@@ -46,7 +46,10 @@ const Hero = () => {
           speed={1400} // Set the slide transition speed in milliseconds
           autoplay={{ delay: 4000, disableOnInteraction: false }}
           modules={[Thumbs]}
-          thumbs={{ swiper: thumbsSwiper }}
+          thumbs={{
+            swiper:
+              thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
+          }}
           style={{ height: "850px" }}
         >
           {sliderItems.map((item, index) => (

@@ -1012,8 +1012,8 @@
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-pack: start;
-	-ms-flex-pack: start;
+	-webkit-box-pack: flex-start;
+	-ms-flex-pack: flex-start;
 	justify-content: flex-start;
 	padding: 0 20px;
 	overflow-x: auto;

@@ -47,7 +47,7 @@ const MainMenu = () => {
         }
       })
     );
-  }, []);
+  }, [pathname]);
 
   const handleActive = (link) => {
     if (link.split("/")[1] == pathname.split("/")[1]) {

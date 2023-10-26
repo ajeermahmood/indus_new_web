@@ -1,31 +1,34 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-
 const SquareFeet = ({ filterFunctions }) => {
-  const [min, setMin] = useState(0);
-  const [max, setMax] = useState();
-
-  useEffect(() => {
-    filterFunctions?.handlesquirefeet([min, max]);
-  }, [min, max]);
-
   return (
     <div className="space-area">
       <div className="d-flex align-items-center justify-content-between">
         <div className="form-style1">
           <input
             type="number"
-            onChange={(e) => setMin(e.target.value)}
+            onChange={(e) =>
+              filterFunctions?.handlesquirefeet([
+                e.target.value,
+                document.getElementById("maxFeet").value / 1,
+              ])
+            }
             className="form-control filterInput"
             placeholder="Min."
+            id="minFeet"
           />
         </div>
         <span className="dark-color">-</span>
         <div className="form-style1">
           <input
             type="number"
-            onChange={(e) => setMax(e.target.value)}
+            id="maxFeet"
+            onChange={(e) =>
+              filterFunctions?.handlesquirefeet([
+                document.getElementById("minFeet").value / 1,
+                e.target.value,
+              ])
+            }
             className="form-control filterInput"
             placeholder="Max"
           />

@@ -17,6 +17,7 @@ const images = [
 const PropertyGallery = ({ id }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const data = listings.filter((elm) => elm.id == id)[0] || listings[0];
+
   return (
     <>
       <div className="row">
@@ -95,7 +96,12 @@ const PropertyGallery = ({ id }) => {
                             prevEl: ".prev-btn",
                             nextEl: ".next-btn",
                           }}
-                          thumbs={{ swiper: thumbsSwiper }}
+                          thumbs={{
+                            swiper:
+                              thumbsSwiper && !thumbsSwiper.destroyed
+                                ? thumbsSwiper
+                                : null,
+                          }}
                           modules={[FreeMode, Navigation, Thumbs]}
                           className="mySwiper2"
                         >

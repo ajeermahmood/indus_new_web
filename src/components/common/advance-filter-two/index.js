@@ -4,19 +4,10 @@ import PriceRange from "./PriceRange";
 import Bedroom from "./Bedroom";
 import Bathroom from "./Bathroom";
 import Amenities from "./Amenities";
-import { useEffect, useState } from "react";
 
 const AdvanceFilterModal = ({ filterFunctions }) => {
-  const [min, setMin] = useState(0);
-  const [max, setMax] = useState();
-
-  useEffect(() => {
-    filterFunctions?.handlesquirefeet([min, max]);
-  }, [min, max]);
-
   const catOptions = [
     { value: "Houses", label: "Houses" },
-
     { value: "Office", label: "Office" },
     { value: "Apartments", label: "Apartments" },
     { value: "Villa", label: "Villa" },
@@ -171,8 +162,14 @@ const AdvanceFilterModal = ({ filterFunctions }) => {
                       <input
                         type="number"
                         className="form-control filterInput"
-                        onChange={(e) => setMin(e.target.value)}
+                        onChange={(e) =>
+                          filterFunctions?.handlesquirefeet([
+                            e.target.value,
+                            document.getElementById("maxFeet3").value / 1,
+                          ])
+                        }
                         placeholder="Min."
+                        id="minFeet3"
                       />
                     </div>
                     <span className="dark-color">-</span>
@@ -181,7 +178,13 @@ const AdvanceFilterModal = ({ filterFunctions }) => {
                         type="number"
                         className="form-control filterInput"
                         placeholder="Max"
-                        onChange={(e) => setMax(e.target.value)}
+                        id="maxFeet3"
+                        onChange={(e) =>
+                          filterFunctions?.handlesquirefeet([
+                            document.getElementById("minFeet3").value / 1,
+                            e.target.value,
+                          ])
+                        }
                       />
                     </div>
                   </div>
