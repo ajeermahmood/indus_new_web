@@ -11,6 +11,24 @@ export const homeItems = [
   { href: "/home-v10", label: "Home v10" },
 ];
 
+export const residentialPages = [
+  { href: "/", label: "Buy" },
+  { href: "/", label: "Rent" },
+];
+
+export const commercialPages = [
+  { href: "/", label: "Buy" },
+  { href: "/", label: "Rent" },
+];
+
+export const guidesPages = [
+  { href: "/", label: "Community Guides" },
+  { href: "/", label: "Renter's Guides" },
+  { href: "/", label: "Buyer's Guides" },
+  { href: "/", label: "Seller's Guides" },
+  { href: "/", label: "Interactive Tour" },
+];
+
 export const listingItems = [
   {
     title: "Grid View",

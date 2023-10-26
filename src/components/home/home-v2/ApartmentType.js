@@ -37,7 +37,7 @@ const ApartmentType = () => {
                 <span className={`icon ${type.icon}`} />
                 <div className="iconbox-content">
                   <h6 className="title">{type.title}</h6>
-                  <p className="text mb-0">{`${type.count} Properties`}</p>
+                  <p className="text text-light mb-0">{`${type.count} Properties`}</p>
                 </div>
               </div>
             </Link>
