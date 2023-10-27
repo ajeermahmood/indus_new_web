@@ -23,7 +23,7 @@ const images = [
   },
 ];
 
-const PropertyGallery = ({ id }) => {
+const PropertyGallery = ({ id, propImages }) => {
   const data = listings.filter((elm) => elm.id == id)[0] || listings[0];
   return (
     <>
@@ -32,14 +32,14 @@ const PropertyGallery = ({ id }) => {
           <div className="sp-img-content mb15-md">
             <div className="popup-img preview-img-1 sp-img">
               <Item
-                original={"/images/listings/listing-single-1-7.jpg"}
-                thumbnail={"/images/listings/listing-single-1-7.jpg"}
+                original={propImages[0].properties_image_name}
+                thumbnail={propImages[0].properties_image_name}
                 width={610}
                 height={510}
               >
                 {({ ref, open }) => (
                   <Image
-                    src={"/images/listings/listing-single-1-7.jpg"}
+                    src={propImages[0].properties_image_name}
                     width={591}
                     height={558}
                     ref={ref}
@@ -57,15 +57,15 @@ const PropertyGallery = ({ id }) => {
 
         <div className="col-sm-6">
           <div className="row">
-            {images.map((image, index) => (
+            {propImages.map((image, index) => (
               <div className="col-6 ps-sm-0" key={index}>
                 <div className="sp-img-content">
                   <div
                     className={`popup-img preview-img-${index + 2} sp-img mb10`}
                   >
                     <Item
-                      original={image.src}
-                      thumbnail={image.src}
+                      original={image.properties_image_name}
+                      thumbnail={image.properties_image_name}
                       width={270}
                       height={250}
                     >
@@ -77,8 +77,8 @@ const PropertyGallery = ({ id }) => {
                           ref={ref}
                           onClick={open}
                           role="button"
-                          src={image.src}
-                          alt={image.alt}
+                          src={image.properties_image_name}
+                          alt={image.properties_image_name}
                         />
                       )}
                     </Item>

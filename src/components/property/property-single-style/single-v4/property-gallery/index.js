@@ -1,9 +1,8 @@
-import React from "react";
 import GalleryBox from "./GalleryBox";
 import Map from "./Map";
 import RealMapView from "./RealMapView";
 
-const PropertyGallery = ({id}) => {
+const PropertyGallery = ({ propImages }) => {
   return (
     <>
       <div className="container">
@@ -76,7 +75,7 @@ const PropertyGallery = ({id}) => {
               <div className="row" data-aos="fade-up" data-aos-delay="300">
                 <div className="col-lg-12">
                   <div className="ps-v4-hero-slider">
-                    <GalleryBox id={id} />
+                    <GalleryBox propImages={propImages} />
                   </div>
                 </div>
               </div>

@@ -1,33 +1,30 @@
 "use client";
-import listings from "@/data/listings";
 import Link from "next/link";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-import FeaturedListings from "./FeatuerdListings";
 import { getFeaturedListings } from "@/api/listings";
+import FeaturedListings from "./FeatuerdListings";
 
 export default function PropertyListing() {
   const [pageData, setPageData] = useState([]);
-  const [featuredListings, setFeaturedListings] = useState([]);
   const [currentType, setCurrentType] = useState("sale");
 
   useEffect(() => {
     getFeaturedListings(currentType == "rent" ? 1 : 2).then((response) => {
-      setFeaturedListings(response);
-      console.log(response);
+      // console.log(response);
+      if (currentType == "rent") {
+        const filtered = response.filter(
+          (elm) => elm.property_category_id == "1"
+        );
+        setPageData(filtered);
+      } else {
+        const filtered = response.filter(
+          (elm) => elm.property_category_id == "2"
+        );
+        setPageData(filtered);
+      }
     });
-    if (currentType == "rent") {
-      const filtered = featuredListings.filter(
-        (elm) => elm.property_category_id == "1"
-      );
-      setPageData(filtered);
-    } else {
-      const filtered = featuredListings.filter(
-        (elm) => elm.property_category_id == "2"
-      );
-      setPageData(filtered);
-    }
   }, [currentType]);
 
   return (
@@ -54,7 +51,10 @@ export default function PropertyListing() {
                 <li
                   className="nav-item"
                   role="presentation"
-                  onClick={() => setCurrentType("sale")}
+                  onClick={() => {
+                    setCurrentType("sale");
+                    setPageData([]);
+                  }}
                 >
                   <button
                     className={`nav-link  ${
@@ -68,7 +68,10 @@ export default function PropertyListing() {
                 <li
                   className="nav-item"
                   role="presentation"
-                  onClick={() => setCurrentType("rent")}
+                  onClick={() => {
+                    setCurrentType("rent");
+                    setPageData([]);
+                  }}
                 >
                   <button
                     className={`nav-link me-0 ${
@@ -87,7 +90,7 @@ export default function PropertyListing() {
         {/* End .row */}
 
         <div className="row" data-aos="fade-up" data-aos-delay="300">
-          <FeaturedListings data={pageData} />
+          <FeaturedListings data={pageData} type={currentType}/>
         </div>
         {/* End .row */}
 

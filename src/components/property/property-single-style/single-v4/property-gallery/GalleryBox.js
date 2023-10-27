@@ -1,19 +1,10 @@
 "use client";
-import listings from "@/data/listings";
 import Image from "next/image";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 
-const GalleryBox = ({id}) => {
-  const data = listings.filter((elm) => elm.id == id)[0] || listings[0];
-  const imageUrls = [
-    "/images/listings/listing-single-slide1.jpg",
-    "/images/listings/listing-single-slide2.jpg",
-    
-    "/images/listings/listing-single-slide3.jpg",
-  ];
-
+const GalleryBox = ({ propImages }) => {
   return (
     <>
       <Swiper
@@ -28,14 +19,14 @@ const GalleryBox = ({id}) => {
         initialSlide={1}
         loop={true}
       >
-        {imageUrls.map((imageUrl, index) => (
+        {propImages.map((imageUrl, index) => (
           <SwiperSlide key={index}>
             <div className="item">
               <Image
                 width={1170}
                 height={600}
-                className="bdrs12 w-100 h-100 cover"
-                src={imageUrl}
+                className="bdrs12 w-100 cover"
+                src={imageUrl.properties_image_name}
                 alt={`Image ${index + 1}`}
               />
             </div>

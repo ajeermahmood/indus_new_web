@@ -1,49 +1,50 @@
 import React from "react";
 
-const PropertyDetails = () => {
+const PropertyDetails = ({ data }) => {
+  const currencyFormatter = new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "AED",
+    minimumFractionDigits: 0,
+  });
   const columns = [
     [
       {
-        label: "Property ID",
-        value: "RT48",
+        label: "Reference ID",
+        value: data.property_reference,
       },
       {
         label: "Price",
-        value: "$252,000",
+        value: currencyFormatter.format(data.property_price),
       },
       {
         label: "Property Size",
-        value: "1500 Sq Ft",
-      },
-      {
-        label: "Bathrooms",
-        value: "3",
+        value: `${data.property_size} Sq Ft`,
       },
       {
         label: "Bedrooms",
-        value: "2",
+        value: data.property_bedrooms,
+      },
+      {
+        label: "Bathrooms",
+        value: data.property_bathrooms,
       },
     ],
     [
       {
         label: "Garage",
-        value: "2",
-      },
-      {
-        label: "Garage Size",
-        value: "200 SqFt",
+        value: data.property_parking_space,
       },
       {
         label: "Year Built",
-        value: "2022",
+        value: data.property_build_year,
       },
       {
         label: "Property Type",
-        value: "Apartment",
+        value: data.property_type_name,
       },
       {
         label: "Property Status",
-        value: "For Sale",
+        value: data.property_category_name == "Buy" ? "For Sale" : "For Rent",
       },
     ],
   ];
@@ -57,18 +58,22 @@ const PropertyDetails = () => {
             columnIndex === 1 ? " offset-xl-2" : ""
           }`}
         >
-          {column.map((detail, index) => (
-            <div key={index} className="d-flex justify-content-between">
-              <div className="pd-list">
-                <p className="fw600 mb10 ff-heading dark-color">
-                  {detail.label}
-                </p>
+          {column.map((detail, index) =>
+            detail.value != "0" ? (
+              <div key={index} className="d-flex justify-content-between">
+                <div className="pd-list">
+                  <p className="fw600 mb10 ff-heading dark-color">
+                    {detail.label}
+                  </p>
+                </div>
+                <div className="pd-list">
+                  <p className="text mb10">{detail.value}</p>
+                </div>
               </div>
-              <div className="pd-list">
-                <p className="text mb10">{detail.value}</p>
-              </div>
-            </div>
-          ))}
+            ) : (
+              ""
+            )
+          )}
         </div>
       ))}
     </div>
