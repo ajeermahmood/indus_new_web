@@ -2,6 +2,7 @@ import CallToActions from "@/components/common/CallToActions";
 import DefaultHeader from "@/components/common/DefaultHeader";
 import Footer from "@/components/common/default-footer";
 import MobileMenu from "@/components/common/mobile-menu";
+import Contact from "@/components/home/home-v8/Contact";
 import Form from "@/components/pages/contact/Form";
 import Office from "@/components/pages/contact/Office";
 
@@ -9,7 +10,7 @@ export const metadata = {
   title: "Contact  || Homez - Real Estate NextJS Template",
 };
 
-const Contact = () => {
+const ContactUs = () => {
   return (
     <>
       {/* Main Header Nav */}
@@ -21,46 +22,32 @@ const Contact = () => {
       {/* End Mobile Nav  */}
 
       {/* Our Contact With Map */}
-      <section className="p-0">
+      {/* Our Contact With Map */}
+      <section className="pt70 pb40">
         <iframe
-          className="home8-map contact-page"
+          className="home8-map"
           loading="lazy"
           src="https://maps.google.com/maps?q=London%20Eye%2C%20London%2C%20United%20Kingdom&t=m&z=14&output=embed&iwloc=near"
           title="London Eye, London, United Kingdom"
           aria-label="London Eye, London, United Kingdom"
         />
-      </section>
-      {/* End Our Contact With Map */}
+        {/* End map */}
 
-      {/* Start Our Contact Form */}
-      <section>
         <div className="container">
-          <div className="row d-flex align-items-end">
-            <div className="col-lg-5 position-relative">
-              <div className="home8-contact-form default-box-shadow1 bdrs12 bdr1 p30 mb30-md bgc-white">
-                <h4 className="form-title mb25">
-                  Have questions? Get in touch!
-                </h4>
-                <Form />
+          <div className="row">
+            <div className="col-md-6 offset-md-6 position-relative">
+              <div className="home8-contact-form bdrs12 p40 p30-md bgc-white mb30">
+                <h2 className="form-title">Get In Touch</h2>
+                <p className="text mb25">
+                  Aliquam lacinia diam quis lacus euismod
+                </p>
+                <Contact />
               </div>
             </div>
-            {/* End .col */}
-
-            <div className="col-lg-5 offset-lg-2">
-              <h2 className="mb30 text-capitalize">
-                We’d love to hear <br className="d-none d-lg-block" />
-                from you.
-              </h2>
-              <p className="text">
-                We are here to answer any question you may have. As a partner of
-                corporates, realton has more than 9,000 offices of all sizes and
-                all potential of session.
-              </p>
-            </div>
-            {/* End .col */}
           </div>
         </div>
       </section>
+      {/* End Our Contact With Map */}
       {/* End Our Contact Form */}
 
       {/* Visit our Office */}
@@ -104,4 +91,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactUs;

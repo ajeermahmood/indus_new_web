@@ -74,6 +74,12 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
     --container-width: 1290px;
     --divder-space: 200px;
     --headings-color: #181a20;
+    
+    // theme colors.
+    --royal-blue : #091235;
+    --navy-blue : #14202E;
+    --midnight-blue : #2B4257;
+    --blue-gray : #88A9C3;
 }
 
 /* Mixins */
@@ -3342,7 +3348,7 @@ li {
 }
 
 .home-banner-style2 {
-    background-color: #14202E;
+    background-color: var(--navy-blue);
     position: relative;
 }
 .home-banner-style2 .home-style2 {
@@ -5159,7 +5165,7 @@ section {
     transition: all 0.4s ease;
 }
 .iconbox-style4 .icon {
-    background-color: #2B4257;
+    background-color: var(--midnight-blue);
     border-radius: 50%;
     color: white;
     display: block;
@@ -5177,7 +5183,7 @@ section {
     margin-bottom: 5px;
 }
 .iconbox-style4:hover {
-    background-color: #2B4257;
+    background-color: var(--midnight-blue);
 }
 .iconbox-style4:hover .title,
 .iconbox-style4:hover .text,
@@ -5185,7 +5191,7 @@ section {
     color: #ffffff;
 }
 .iconbox-style4:hover .icon {
-    background-color: #88A9C3;
+    background-color: var(--blue-gray);
 }
 
 .iconbox-style5 {
@@ -6701,8 +6707,8 @@ textarea:focus {
 }
 
 .btn-thm {
-    background-color: #88A9C3;
-    border: 1px solid #88A9C3;
+    background-color: var(--blue-gray);
+    border: 1px solid var(--blue-gray);
     color: #ffffff;
 }
 
@@ -6723,8 +6729,8 @@ textarea:focus {
 .btn-light-gray:before,
 .btn-transparent:before,
 .btn-transparent2:before {
-    background-color: #2B4257;
-    border: 1px solid #2B4257;
+    background-color: var(--midnight-blue);
+    border: 1px solid var(--midnight-blue);
     content: "";
     height: 100%;
     left: -100%;
@@ -7269,7 +7275,7 @@ header.nav-homepage-style .ace-responsive-menu .sub-menu li {
     transition: all 0.4s ease;
 }
 header.nav-homepage-style .ace-responsive-menu .sub-menu li:hover {
-    background-color: rgba(235, 103, 83, 0.07);
+    background-color: rgb(136 169 195 / 26%);
 }
 header.nav-homepage-style .ace-responsive-menu .sub-menu a {
     color: var(--headings-color);

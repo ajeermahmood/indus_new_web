@@ -7,6 +7,7 @@ import {
   residentialPages,
   commercialPages,
   guidesPages,
+  morePages,
 } from "@/data/navItems";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -39,13 +40,19 @@ const MainMenu = () => {
 
     guidesPages.forEach((elm) => {
       if (elm.href.split("/")[1] == pathname.split("/")[1]) {
-        setTopMenu("guides");
+        setTopMenu("guide");
       }
     });
 
     blogItems.forEach((elm) => {
       if (elm.href.split("/")[1] == pathname.split("/")[1]) {
         setTopMenu("blog");
+      }
+    });
+
+    morePages.forEach((elm) => {
+      if (elm.href.split("/")[1] == pathname.split("/")[1]) {
+        setTopMenu("more");
       }
     });
     pageItems.forEach((elm) => {
@@ -69,6 +76,16 @@ const MainMenu = () => {
         }
       })
     );
+
+    if ("developers" == pathname.split("/")[1]) {
+      setTopMenu("developers");
+    }
+    if ("why-indus" == pathname.split("/")[1]) {
+      setTopMenu("why-indus");
+    }
+    if ("contact" == pathname.split("/")[1]) {
+      setTopMenu("contact");
+    }
   }, [pathname]);
 
   const handleActive = (link) => {
@@ -99,7 +116,9 @@ const MainMenu = () => {
       {/* End homeItems */}
       <li className="visible_list dropitem">
         <a className="list-item" href="#">
-          <span className={topMenu == "home" ? "title menuActive" : "title"}>
+          <span
+            className={topMenu == "residential" ? "title menuActive" : "title"}
+          >
             Residential
           </span>
           <span className="arrow"></span>
@@ -118,7 +137,9 @@ const MainMenu = () => {
       {/* End Residential Pages */}
       <li className="visible_list dropitem">
         <a className="list-item" href="#">
-          <span className={topMenu == "home" ? "title menuActive" : "title"}>
+          <span
+            className={topMenu == "commercial" ? "title menuActive" : "title"}
+          >
             Commercial
           </span>
           <span className="arrow"></span>
@@ -137,7 +158,7 @@ const MainMenu = () => {
       {/* End Commercial Pages */}
       <li className="visible_list dropitem">
         <a className="list-item" href="#">
-          <span className={topMenu == "home" ? "title menuActive" : "title"}>
+          <span className={topMenu == "guide" ? "title menuActive" : "title"}>
             Guides
           </span>
           <span className="arrow"></span>
@@ -155,32 +176,52 @@ const MainMenu = () => {
       </li>
       {/* End Guides Pages */}
       <li className="visible_list dropitem">
-        <a className="list-item" href="#">
-          <span className={topMenu == "home" ? "title menuActive" : "title"}>
+        <Link className="list-item" href="/developers">
+          <span
+            className={topMenu == "developers" ? "title menuActive" : "title"}
+          >
             Developers
           </span>
-        </a>
-       
+        </Link>
       </li>
       {/* End Developer */}
       <li className="visible_list dropitem">
-        <a className="list-item" href="#">
-          <span className={topMenu == "home" ? "title menuActive" : "title"}>
+        <Link className="list-item" href="/why-indus">
+          <span
+            className={topMenu == "why-indus" ? "title menuActive" : "title"}
+          >
             Why Indus
           </span>
-        </a>
-       
+        </Link>
       </li>
-      {/* End Developer */}
+      {/* End why Indus */}
       <li className="visible_list dropitem">
         <a className="list-item" href="#">
-          <span className={topMenu == "home" ? "title menuActive" : "title"}>
+          <span className={topMenu == "more" ? "title menuActive" : "title"}>
+            More
+          </span>
+          <span className="arrow"></span>
+        </a>
+        {/* Level Two*/}
+        <ul className="sub-menu">
+          {morePages.map((item, index) => (
+            <li key={index}>
+              <Link className={`${handleActive(item.href)}`} href={item.href}>
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </li>
+      {/* End More Pages */}
+      <li className="visible_list dropitem">
+        <Link className="list-item" href="/contact">
+          <span className={topMenu == "contact" ? "title menuActive" : "title"}>
             Contact Us
           </span>
-        </a>
-       
+        </Link>
       </li>
-      {/* End Developer */}
+      {/* End contact */}
 
       {/* <li className="megamenu_style dropitem">
         <a className="list-item" href="#">

@@ -1,14 +1,14 @@
-import Home_V2 from "./(home)/home-v2/page";
+import HomePage from "./home/page";
 import Wrapper from "./layout-wrapper/wrapper";
 
 export const metadata = {
-  title: "Home v1 || Homez - Real Estate NextJS Template",
+  title: "Indus Real Estate LLC | Dubai Luxury Properties",
 };
 
 export default function MainRoot() {
   return (
     <Wrapper>
-      <Home_V2 />
+      <HomePage />
     </Wrapper>
   );
 }

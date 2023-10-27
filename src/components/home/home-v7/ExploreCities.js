@@ -5,8 +5,8 @@ import React from "react";
 const ExploreCities = () => {
   const apartmentData = [
     {
-      city: "Los Angeles",
-      imageSrc: "/images/listings/city-listing-2.jpg",
+      city: "Downtown Dubai",
+      imageSrc: "/images/locations/downtown-3.webp",
       propertyCount: 12,
       className: "col-lg-6",
     },

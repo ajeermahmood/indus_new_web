@@ -3,9 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const FeaturedListings = ({data}) => {
+  // console.log(data);
   return (
     <>
-      {data.slice(0, 6).map((listing) => (
+      {data.map((listing) => (
         <div className="col-sm-6 col-lg-4" key={listing.id}>
           <div className="listing-style8">
             <div className="list-thumb">
@@ -13,16 +14,16 @@ const FeaturedListings = ({data}) => {
                 width={382}
                 height={248}
                 className="w-100 h-100 cover"
-                src={listing.image}
+                src={listing.properties_image_name}
                 alt="listings"
               />
               <div className="sale-sticker-wrap">
-                {listing.featured && (
+                {/* {listing.featured && (
                   <div className="list-tag rounded-0 fz12">
                     <span className="flaticon-electricity" />
                     FEATURED
                   </div>
-                )}
+                )} */}
                 <div className="list-tag2 rounded-0 fz12">FOR SALE</div>
               </div>
               <div className="list-meta">
@@ -39,24 +40,24 @@ const FeaturedListings = ({data}) => {
             </div>
             <div className="list-content">
               <h6 className="list-title">
-                <Link href={`/single-v5/${listing.id}`}>{listing.title}</Link>
+                <Link href={`/single-v5/${listing.property_reference}`}>{listing.property_title}</Link>
               </h6>
-              <p className="list-text">{listing.location}</p>
+              <p className="list-text">{listing.location_name}</p>
 
               <div className="d-flex justify-content-between align-items-center mt-3">
                 <div className="list-meta2 d-flex align-items-center">
                   <a href="#" className="mr10">
-                    <span className="flaticon-bed" /> {listing.bed}
+                    <span className="flaticon-bed" /> {listing.property_bedrooms}
                   </a>
                   <a href="#" className="mr10">
-                    <span className="flaticon-shower" /> {listing.bath}
+                    <span className="flaticon-shower" /> {listing.property_bathrooms}
                   </a>
                   <a href="#">
-                    <span className="flaticon-expand" /> {listing.sqft}
+                    <span className="flaticon-expand" /> {listing.property_size}
                   </a>
                 </div>
                 <div className="list-price">
-                  {listing.price} / <span>mo</span>
+                  {listing.property_price} / <span>mo</span>
                 </div>
               </div>
             </div>

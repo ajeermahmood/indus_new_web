@@ -11,17 +11,16 @@ import Cta from "@/components/home/home-v7/Cta";
 import ExploreCities from "@/components/home/home-v7/ExploreCities";
 import Footer from "@/components/home/home-v7/footer";
 
-
 import Blog from "@/components/common/Blog";
 import InqueryForm from "@/components/home/home-v7/InqueryForm";
 import PropertyListing from "@/components/home/home-v7/PropertyListing";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Home v2 || Homez - Real Estate NextJS Template",
+  title: "Indus Real Estate LLC | Dubai Luxury Properties",
 };
 
-const Home_V2 = () => {
+const HomePage = () => {
   return (
     <>
       {/* Main Header Nav */}
@@ -62,7 +61,7 @@ const Home_V2 = () => {
 
       {/* Featured Listings */}
       {/* Popular Property */}
-      <PropertyListing/>
+      <PropertyListing />
       {/* Popular Property */}
       {/* <section className="pt0 pb60 pb30-md bgc-white">
         <div className="container">
@@ -389,4 +388,4 @@ const Home_V2 = () => {
   );
 };
 
-export default Home_V2;
+export default HomePage;
