@@ -1,5 +1,4 @@
-
-'use client'
+"use client";
 
 import React from "react";
 import ListingStatus from "../../sidebar/ListingStatus";
@@ -7,9 +6,14 @@ import PropertyType from "../../sidebar/PropertyType";
 import PriceRange from "../../sidebar/PriceRange";
 import Bedroom from "../../sidebar/Bedroom";
 import Bathroom from "../../sidebar/Bathroom";
+import $ from "jquery";
 
-const TopFilterBar = ({filterFunctions,setCurrentSortingOption,colstyle,setColstyle}) => {
-  
+const TopFilterBar = ({
+  filterFunctions,
+  setCurrentSortingOption,
+  colstyle,
+  setColstyle,
+}) => {
   return (
     <>
       <div className="col-xl-9 d-none d-lg-block">
@@ -75,13 +79,16 @@ const TopFilterBar = ({filterFunctions,setCurrentSortingOption,colstyle,setColst
               <button
                 type="button"
                 className="open-btn mb15 dropdown-toggle"
-                data-bs-toggle="dropdown"
-                data-bs-auto-close="outside"
+                // data-bs-toggle="dropdown"
+                // data-bs-auto-close="outside"
+                onClick={() => {
+                  $("#price-dropdown").toggle();
+                }}
               >
                 Price <i className="fa fa-angle-down ms-2" />
               </button>
 
-              <div className="dropdown-menu dd3">
+              <div className="dropdown-menu dd3" id="price-dropdown">
                 <div className="widget-wrapper bdrb1 pb25 mb0 pl20 pr20">
                   <h6 className="list-title">Price Range</h6>
                   {/* Range Slider Desktop Version */}
@@ -93,6 +100,13 @@ const TopFilterBar = ({filterFunctions,setCurrentSortingOption,colstyle,setColst
                   <button
                     type="button"
                     className="done-btn ud-btn btn-thm drop_btn3"
+                    onClick={() => {
+                      filterFunctions.setListings([]);
+                      filterFunctions.setPriceRangeSetted(
+                        filterFunctions.priceRangeSetted + 1
+                      );
+                      $("#price-dropdown").toggle();
+                    }}
                   >
                     Done
                   </button>
@@ -114,14 +128,14 @@ const TopFilterBar = ({filterFunctions,setCurrentSortingOption,colstyle,setColst
                 <div className="widget-wrapper pl20 pr20">
                   <h6 className="list-title">Bedrooms</h6>
                   <div className="d-flex">
-                    <Bedroom filterFunctions={filterFunctions}/>
+                    <Bedroom filterFunctions={filterFunctions} />
                   </div>
                 </div>
 
                 <div className="widget-wrapper bdrb1 pb25 mb0 pl20 pr20">
                   <h6 className="list-title">Bathrooms</h6>
                   <div className="d-flex">
-                    <Bathroom filterFunctions={filterFunctions}/>
+                    <Bathroom filterFunctions={filterFunctions} />
                   </div>
                 </div>
                 <div className="text-end mt10 pr10">
@@ -156,7 +170,13 @@ const TopFilterBar = ({filterFunctions,setCurrentSortingOption,colstyle,setColst
         <div className="page_control_shorting d-flex align-items-center justify-content-center justify-content-sm-end">
           <div className="pcs_dropdown pr10 d-flex align-items-center">
             <span style={{ minWidth: "60px" }}>Sort by</span>
-            <select className="form-select" onChange={(e)=>setCurrentSortingOption && setCurrentSortingOption(e.target.value)}>
+            <select
+              className="form-select"
+              onChange={(e) =>
+                setCurrentSortingOption &&
+                setCurrentSortingOption(e.target.value)
+              }
+            >
               <option>Newest</option>
               <option>Best Seller</option>
               <option>Best Match</option>
@@ -164,10 +184,20 @@ const TopFilterBar = ({filterFunctions,setCurrentSortingOption,colstyle,setColst
               <option>Price High</option>
             </select>
           </div>
-          <div className={`pl15 pr15 bdrl1 bdrr1 d-none d-md-block cursor  ${!colstyle? 'menuActive':'#' } `}    onClick={()=>setColstyle(false)}>
+          <div
+            className={`pl15 pr15 bdrl1 bdrr1 d-none d-md-block cursor  ${
+              !colstyle ? "menuActive" : "#"
+            } `}
+            onClick={() => setColstyle(false)}
+          >
             Grid
           </div>
-          <div className={`pl15 d-none d-md-block cursor  ${colstyle? 'menuActive':'#' }`}   onClick={()=>setColstyle(true)}>
+          <div
+            className={`pl15 d-none d-md-block cursor  ${
+              colstyle ? "menuActive" : "#"
+            }`}
+            onClick={() => setColstyle(true)}
+          >
             List
           </div>
         </div>

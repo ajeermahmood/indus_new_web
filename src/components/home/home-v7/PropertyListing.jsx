@@ -90,12 +90,12 @@ export default function PropertyListing() {
         {/* End .row */}
 
         <div className="row" data-aos="fade-up" data-aos-delay="300">
-          <FeaturedListings data={pageData} type={currentType}/>
+          <FeaturedListings data={pageData} type={currentType} />
         </div>
         {/* End .row */}
 
         <div className="d-grid d-md-block text-center mt30 mt0-md">
-          <Link href="/grid-full-2-col" className="ud-btn btn-dark bdrs0">
+          <Link href="/all-properties" className="ud-btn btn-dark bdrs0">
             Learn More<i className="fal fa-arrow-right-long"></i>
           </Link>
         </div>

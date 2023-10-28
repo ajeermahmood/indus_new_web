@@ -105,7 +105,7 @@ const PropertyDetailsPage = () => {
               <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                 <h4 className="title fz17 mb30 mt30">Address</h4>
                 <div className="row">
-                  <PropertyAddress />
+                  <PropertyAddress data={data} />
                 </div>
               </div>
               {/* End .ps-widget */}
@@ -113,20 +113,20 @@ const PropertyDetailsPage = () => {
               <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                 <h4 className="title fz17 mb30">Features &amp; Amenities</h4>
                 <div className="row">
-                  <PropertyFeaturesAminites />
+                  <PropertyFeaturesAminites amenties={data.amenties} />
                 </div>
               </div>
               {/* End .ps-widget */}
 
-              <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
+              {/* <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                 <h4 className="title fz17 mb30">Energy Class</h4>
                 <div className="row">
                   <EnergyClass />
                 </div>
-              </div>
+              </div> */}
               {/* End .ps-widget */}
 
-              <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
+              {/* <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                 <h4 className="title fz17 mb30">Floor Plans</h4>
                 <div className="row">
                   <div className="col-md-12">
@@ -135,34 +135,38 @@ const PropertyDetailsPage = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
               {/* End .ps-widget */}
 
-              <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 ">
-                <h4 className="title fz17 mb30">Video</h4>
-                <div className="row">
-                  <PropertyVideo />
+              {data.property_video != "" ? (
+                <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 ">
+                  <h4 className="title fz17 mb30">Video</h4>
+                  <div className="row">
+                    <PropertyVideo />
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <></>
+              )}
               {/* End .ps-widget */}
 
-              <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
+              {/* <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                 <h4 className="title fz17 mb30">360° Virtual Tour</h4>
                 <div className="row">
                   <VirtualTour360 />
                 </div>
-              </div>
+              </div> */}
               {/* End .ps-widget */}
 
-              <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
+              {/* <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                 <h4 className="title fz17 mb30">What&apos;s Nearby?</h4>
                 <div className="row">
                   <PropertyNearby />
                 </div>
-              </div>
+              </div> */}
               {/* End .ps-widget */}
 
-              <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
+              {/* <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                 <h4 className="title fz17 mb30">Walkscore</h4>
                 <div className="row">
                   <div className="col-md-12">
@@ -172,7 +176,7 @@ const PropertyDetailsPage = () => {
                     <WalkScore />
                   </div>
                 </div>
-              </div>
+              </div> */}
               {/* End .ps-widget */}
 
               <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
@@ -183,19 +187,19 @@ const PropertyDetailsPage = () => {
               </div>
               {/* End .ps-widget */}
 
-              <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
+              {/* <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                 <div className="row">
                   <PropertyViews />
                 </div>
-              </div>
+              </div> */}
               {/* End .ps-widget */}
 
-              <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
+              {/* <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                 <h4 className="title fz17 mb30">Home Value</h4>
                 <div className="row">
                   <HomeValueChart />
                 </div>
-              </div>
+              </div> */}
               {/* End .ps-widget */}
 
               <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
@@ -204,20 +208,19 @@ const PropertyDetailsPage = () => {
               </div>
               {/* End .ps-widget */}
 
-              <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
+              {/* <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                 <div className="row">
-                  {/* <AllComments /> */}
                   <AllReviews />
                 </div>
-              </div>
+              </div> */}
               {/* End .ps-widget */}
 
-              <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
+              {/* <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                 <h4 className="title fz17 mb30">Leave A Review</h4>
                 <div className="row">
                   <ReviewBoxForm />
                 </div>
-              </div>
+              </div> */}
               {/* End .ps-widget */}
             </div>
             {/* End .col-8 */}

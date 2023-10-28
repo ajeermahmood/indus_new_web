@@ -80,12 +80,17 @@ const FeaturedListings = ({ data, type }) => {
         : data.map((listing) => (
             <div className="col-sm-6 col-lg-4" key={listing.id}>
               <div className="listing-style8">
-                <div className="list-thumb">
+                <div
+                  className="list-thumb"
+                  // style={{
+                  //   height: "15rem !Important",
+                  // }}
+                >
                   <Image
                     width={382}
                     height={248}
-                    className="w-100 h-100 cover"
-                    src={listing.properties_image_name}
+                    className="w-100 cover"
+                    src={listing.dp_1}
                     alt="listings"
                   />
                   <div className="sale-sticker-wrap">
@@ -95,9 +100,16 @@ const FeaturedListings = ({ data, type }) => {
                     FEATURED
                   </div>
                 )} */}
-                    <div className="list-tag2 rounded-0 fz12">FOR SALE</div>
+                    <div className="list-tag2 rounded-0 fz12">
+                      {type == "rent" ? "FOR RENT" : "FOR SALE"}
+                    </div>
                   </div>
-                  <div className="list-meta">
+                  <div
+                    className="list-meta"
+                    style={{
+                      height: "11rem !Important",
+                    }}
+                  >
                     <a className="rounded-0 mr5" href="#">
                       <span className="flaticon-like"></span>
                     </a>
@@ -115,7 +127,12 @@ const FeaturedListings = ({ data, type }) => {
                       {listing.property_title}
                     </Link>
                   </h6>
-                  <p className="list-text">{listing.location_name}</p>
+                  <p className="list-text">
+                    {listing.location_sub_name != ""
+                      ? listing.location_sub_name + ", "
+                      : ""}
+                    {listing.location_name}
+                  </p>
 
                   <div className="d-flex justify-content-between align-items-center mt-3">
                     <div className="list-meta2 d-flex align-items-center">
