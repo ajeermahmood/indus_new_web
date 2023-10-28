@@ -110,9 +110,9 @@ const FeaturedListings = ({ data, type }) => {
                       height: "11rem !Important",
                     }}
                   >
-                    <a className="rounded-0 mr5" href="#">
+                    {/* <a className="rounded-0 mr5" href="#">
                       <span className="flaticon-like"></span>
-                    </a>
+                    </a> */}
                     <a className="rounded-0 mr5" href="#">
                       <span className="flaticon-new-tab"></span>
                     </a>
@@ -123,11 +123,27 @@ const FeaturedListings = ({ data, type }) => {
                 </div>
                 <div className="list-content">
                   <h6 className="list-title">
-                    <Link href={`/property-details/?id=${listing.property_id}`}>
+                    <Link
+                      href={`/property-details/?id=${listing.property_id}`}
+                      style={{
+                        overflow: "hidden",
+                        whiteSpace: "nowrap",
+                        textOverflow: "ellipsis",
+                        display: "block",
+                      }}
+                    >
                       {listing.property_title}
                     </Link>
                   </h6>
-                  <p className="list-text">
+                  <p
+                    className="list-text"
+                    style={{
+                      overflow: "hidden",
+                      whiteSpace: "nowrap",
+                      textOverflow: "ellipsis",
+                      display: "block",
+                    }}
+                  >
                     {listing.location_sub_name != ""
                       ? listing.location_sub_name + ", "
                       : ""}

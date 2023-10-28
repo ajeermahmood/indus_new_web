@@ -1,18 +1,18 @@
 "use client";
 
 // import listings from "@/data/listings";
-import React, { useState, useEffect } from "react";
-import ListingSidebar from "../../sidebar";
-import AdvanceFilterModal from "@/components/common/advance-filter-two";
-import TopFilterBar from "./TopFilterBar";
-import FeaturedListings from "./FeatuerdListings";
 import { getAllListingsPagination } from "@/api/listings";
-import Pagination from "@mui/material/Pagination";
+import AdvanceFilterModal from "@/components/common/advance-filter-two";
 import { Stack } from "@mui/material";
+import Pagination from "@mui/material/Pagination";
+import { useEffect, useState } from "react";
+import ListingSidebar from "../../sidebar";
+import FeaturedListings from "./FeatuerdListings";
+import TopFilterBar from "./TopFilterBar";
 
 export default function PropertyFiltering() {
   const [listings, setListings] = useState([]);
-  const [listingsCount, setListingsCount] = useState([]);
+  const [listingsCount, setListingsCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [listingStatus, setListingStatus] = useState("All");
   const [propertyTypes, setPropertyTypes] = useState([]);
@@ -20,6 +20,15 @@ export default function PropertyFiltering() {
   const [priceRangeSetted, setPriceRangeSetted] = useState(1);
   const [bedrooms, setBedrooms] = useState(0);
   const [bathroms, setBathroms] = useState(0);
+
+  const [currentSortingOption, setCurrentSortingOption] = useState("Newest");
+
+  const [colstyle, setColstyle] = useState(false);
+
+  const [location, setLocation] = useState("0");
+  const [squirefeet, setSquirefeet] = useState([]);
+  const [yearBuild, setyearBuild] = useState([]);
+  const [categories, setCategories] = useState([]);
   useEffect(() => {
     getAllListingsPagination(12, currentPage, {
       status: listingStatus,
@@ -30,6 +39,7 @@ export default function PropertyFiltering() {
       location: location,
       sqft_range: squirefeet,
       features: categories,
+      sort: currentSortingOption,
     }).then((res) => {
       setListings(res.listings);
       setListingsCount(res.count);
@@ -43,32 +53,11 @@ export default function PropertyFiltering() {
     priceRangeSetted,
     bedrooms,
     bathroms,
+    location,
+    squirefeet,
+    categories,
+    currentSortingOption,
   ]);
-
-  const [filteredData, setFilteredData] = useState([]);
-
-  const [currentSortingOption, setCurrentSortingOption] = useState("Newest");
-
-  const [sortedFilteredData, setSortedFilteredData] = useState([]);
-
-  const [pageNumber, setPageNumber] = useState(1);
-  const [colstyle, setColstyle] = useState(false);
-  const [pageItems, setPageItems] = useState([]);
-  const [pageContentTrac, setPageContentTrac] = useState([]);
-
-  useEffect(() => {
-    setPageItems(sortedFilteredData);
-    setPageContentTrac([
-      (pageNumber - 1) * 12 + 1,
-      pageNumber * 12,
-      sortedFilteredData.length,
-    ]);
-  }, [pageNumber, sortedFilteredData]);
-
-  const [location, setLocation] = useState("All Cities");
-  const [squirefeet, setSquirefeet] = useState([]);
-  const [yearBuild, setyearBuild] = useState([]);
-  const [categories, setCategories] = useState([]);
 
   const resetFilter = () => {
     setListingStatus("All");
@@ -76,7 +65,7 @@ export default function PropertyFiltering() {
     setPriceRange([0, 40000000]);
     setBedrooms(0);
     setBathroms(0);
-    setLocation("All Cities");
+    setLocation("0");
     setSquirefeet([]);
     setyearBuild([0, 2050]);
     setCategories([]);
@@ -155,111 +144,10 @@ export default function PropertyFiltering() {
     setPropertyTypes,
     setListings,
     setPriceRangeSetted,
+    setCurrentSortingOption,
     priceRangeSetted,
   };
 
-  useEffect(() => {
-    // const refItems = listings.filter((elm) => {
-    //   if (listingStatus == "All") {
-    //     return true;
-    //   } else if (listingStatus == "Buy") {
-    //     return elm.property_category_id == "2";
-    //   } else if (listingStatus == "Rent") {
-    //     return elm.property_category_id == "1";
-    //   }
-    // });
-    // let filteredArrays = [];
-    // // if (propertyTypes.length > 0) {
-    // //   const filtered = refItems.filter((elm) =>
-    // //     propertyTypes.includes(elm.property_type_name)
-    // //   );
-    // //   filteredArrays = [...filteredArrays, filtered];
-    // // }
-    // filteredArrays = [
-    //   ...filteredArrays,
-    //   refItems.filter((el) => Number(el.property_bedrooms) >= bedrooms),
-    // ];
-    // filteredArrays = [
-    //   ...filteredArrays,
-    //   refItems.filter((el) => Number(el.property_bathrooms) >= bathroms),
-    // ];
-    // // filteredArrays = [
-    // //   ...filteredArrays,
-    // //   !categories.length
-    // //     ? [...refItems]
-    // //     : refItems.filter((elm) =>
-    // //         categories.every((elem) => elm.features.includes(elem))
-    // //       ),
-    // // ];
-    // // if (location != "All Cities") {
-    // //   filteredArrays = [
-    // //     ...filteredArrays,
-    // //     refItems.filter((el) => el.city == location),
-    // //   ];
-    // // }
-    // if (priceRange.length > 0) {
-    //   const filtered = refItems.filter(
-    //     (elm) =>
-    //       Number(elm.property_price) >= priceRange[0] &&
-    //       Number(elm.property_price) <= priceRange[1]
-    //   );
-    //   filteredArrays = [...filteredArrays, filtered];
-    // }
-    // if (squirefeet.length > 0 && squirefeet[1]) {
-    //   const filtered = refItems.filter(
-    //     (elm) =>
-    //       Number(elm.property_size) >= squirefeet[0] &&
-    //       Number(elm.property_size) <= squirefeet[1]
-    //   );
-    //   filteredArrays = [...filteredArrays, filtered];
-    // }
-    // if (yearBuild.length > 0) {
-    //   const filtered = refItems.filter(
-    //     (elm) =>
-    //       elm.yearBuilding >= yearBuild[0] && elm.yearBuilding <= yearBuild[1]
-    //   );
-    //   filteredArrays = [...filteredArrays, filtered];
-    // }
-    // const commonItems = refItems.filter((item) =>
-    //   filteredArrays.every((array) => array.includes(item))
-    // );
-    // setFilteredData(commonItems);
-  }, [
-    listingStatus,
-    propertyTypes,
-    priceRange,
-    bedrooms,
-    bathroms,
-    location,
-    squirefeet,
-    yearBuild,
-    categories,
-    listings,
-  ]);
-
-  useEffect(() => {
-    setPageNumber(1);
-    // if (currentSortingOption == "Newest") {
-    //   const sorted = [...filteredData].sort(
-    //     (a, b) =>
-    //       new Date(a.property_last_updated).getTime() -
-    //       Date(b.property_last_updated).getTime()
-    //   );
-    //   setSortedFilteredData(sorted);
-    // } else if (currentSortingOption.trim() == "Price Low") {
-    //   const sorted = [...filteredData].sort(
-    //     (a, b) => Number(a.property_price) - Number(b.property_price)
-    //   );
-    //   setSortedFilteredData(sorted);
-    // } else if (currentSortingOption.trim() == "Price High") {
-    //   const sorted = [...filteredData].sort(
-    //     (a, b) => Number(b.property_price) - Number(a.property_price)
-    //   );
-    //   setSortedFilteredData(sorted);
-    // } else {
-    //   setSortedFilteredData(filteredData);
-    // }
-  }, [filteredData, currentSortingOption]);
   return (
     <section className="pt0 pb90 bgc-f7">
       <div className="container">
@@ -303,11 +191,9 @@ export default function PropertyFiltering() {
 
         <div className="row">
           <TopFilterBar
-            pageContentTrac={pageContentTrac}
             colstyle={colstyle}
             setColstyle={setColstyle}
             filterFunctions={filterFunctions}
-            setCurrentSortingOption={setCurrentSortingOption}
           />
         </div>
         {/* End TopFilterBar */}
@@ -329,8 +215,8 @@ export default function PropertyFiltering() {
               }}
             />
             <span className="mt10">
-              <b>{listings.length}</b> Listings from - <b>{listingsCount}</b> -
-              Total Listings
+              <b>{listings.length}</b> Listings from total -{" "}
+              <b>{listingsCount}</b> -
             </span>
           </Stack>
         </div>

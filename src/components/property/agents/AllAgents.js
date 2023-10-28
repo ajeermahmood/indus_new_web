@@ -1,34 +1,95 @@
-import agents from "@/data/agents";
+"use client";
+import { Skeleton } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { useState } from "react";
 
-const AllAgents = ({data}) => {
+const AllAgents = ({ data }) => {
+  const skeletonLoader = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+  const [erroImgs, setErrorImgs] = useState([]);
+
   return (
     <>
-      {data.map((agent) => (
-        <div className="col" key={agent.id}>
-          <div className="feature-style2 mb30">
-            <div className="feature-img">
-              <Link  href={`/agent-single/${agent.id}`}>
-                <Image
-                  width={210}
-                  height={240}
-                  className="bdrs12 w-100 h-100 cover"
-                  src={agent.image}
-                  alt="agents"
-                />
-              </Link>
+      {data.length == 0
+        ? skeletonLoader.map((sk) => (
+            <div className="col" key={sk}>
+              <div className="feature-style2 mb30">
+                <div
+                  className="feature-img"
+                  style={{
+                    height: "15rem",
+                  }}
+                >
+                  <Skeleton
+                    // className="w-100 h-100"
+                    variant="rectangular"
+                    className="bdrs12 w-100 h-100 cover"
+                    width={210}
+                    height={240}
+                  />
+                </div>
+                <div className="feature-content pt20">
+                  <h6 className="title mb-1">
+                    <Skeleton variant="rectangular" width={200} height={20} />
+                  </h6>
+                  <p className="text fz15 mb5">
+                    <Skeleton variant="rectangular" width={180} height={10} />
+                  </p>
+                  <p className="text mb5">
+                    <Skeleton variant="rectangular" width={180} height={10} />
+                  </p>
+                  <p className="text mb5">
+                    <Skeleton variant="rectangular" width={160} height={10} />
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="feature-content pt20">
-              <h6 className="title mb-1">
-                <Link href={`/agent-single/${agent.id}`}>{agent.name}</Link>
-              </h6>
-              <p className="text fz15">Broker</p>
+          ))
+        : data.map((agent) => (
+            <div className="col" key={agent.client_user_id}>
+              <div className="feature-style2 mb30">
+                <div
+                  className="feature-img"
+                  style={{
+                    height: "15rem",
+                  }}
+                >
+                  <Link href={`/agent-single/${agent.client_user_id}`}>
+                    <Image
+                      width={210}
+                      height={240}
+                      style={{
+                        objectPosition: "top",
+                      }}
+                      className="bdrs12 w-100 h-100 cover"
+                      src={
+                        erroImgs.includes(agent.client_user_id)
+                          ? "/images/agents/demo.png"
+                          : `https://www.indusre.com/agentimg/${agent.client_user_image}`
+                      }
+                      alt="agents"
+                      onError={(e) => {
+                        setErrorImgs([...erroImgs, agent.client_user_id]);
+                      }}
+                    />
+                  </Link>
+                </div>
+                <div className="feature-content pt20">
+                  <h6 className="title mb-1">
+                    <Link href={`/agent-single/${agent.id}`}>
+                      {agent.client_user_name}
+                    </Link>
+                  </h6>
+                  <p className="text fz15 mb0">
+                    {agent.client_user_designation}
+                  </p>
+                  <p className="text mb0">BRN :{agent.client_user_brn}</p>
+                  <p className="text mb0">Mobile :{agent.client_user_phone}</p>
+                  <p className="text mb0">Email :{agent.client_user_email}</p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      ))}
+          ))}
     </>
   );
 };

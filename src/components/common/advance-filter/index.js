@@ -5,28 +5,27 @@ import Bedroom from "./Bedroom";
 import Bathroom from "./Bathroom";
 import Amenities from "./Amenities";
 import { useRouter } from "next/navigation";
+import Locations from "../../../data/locations";
 
 const AdvanceFilterModal = () => {
   const router = useRouter();
   const catOptions = [
-    { value: "Banking", label: "Apartments" },
-    { value: "Bungalow", label: "Bungalow" },
-    { value: "Houses", label: "Houses" },
-    { value: "Loft", label: "Loft" },
-    { value: "Office", label: "Office" },
-    { value: "Townhome", label: "Townhome" },
-    { value: "Villa", label: "Villa" },
+    { label: "Apartment", defaultChecked: true, value: 1 },
+    { label: "Townhouse", value: 3 },
+    { label: "Office Space", value: 26 },
+    { label: "Villa", value: 2 },
+    { label: "Penthouse", value: 4 },
   ];
-  const locationOptions = [
-    { value: "All Cities", label: "All Cities" },
-    { value: "California", label: "California" },
-    { value: "Los Angeles", label: "Los Angeles" },
-    { value: "New Jersey", label: "New Jersey" },
-    { value: "New York", label: "New York" },
-    { value: "San Diego", label: "San Diego" },
-    { value: "San Francisco", label: "San Francisco" },
-    { value: "Texas", label: "Texas" },
-  ];
+  // const locationOptions = [
+  //   { value: "All Cities", label: "All Cities" },
+  //   { value: "California", label: "California" },
+  //   { value: "Los Angeles", label: "Los Angeles" },
+  //   { value: "New Jersey", label: "New Jersey" },
+  //   { value: "New York", label: "New York" },
+  //   { value: "San Diego", label: "San Diego" },
+  //   { value: "San Francisco", label: "San Francisco" },
+  //   { value: "Texas", label: "Texas" },
+  // ];
 
   const customStyles = {
     option: (styles, { isFocused, isSelected, isHovered }) => {
@@ -136,10 +135,10 @@ const AdvanceFilterModal = () => {
                 <h6 className="list-title">Location</h6>
                 <div className="form-style2 input-group">
                   <Select
-                    defaultValue={[locationOptions[0]]}
+                    defaultValue={[Locations[0]]}
                     name="colors"
                     styles={customStyles}
-                    options={locationOptions}
+                    options={Locations}
                     className="select-custom"
                     classNamePrefix="select"
                     required

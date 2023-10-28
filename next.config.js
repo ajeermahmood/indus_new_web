@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["assets.bayut.com"],
+    domains: ["assets.bayut.com", "www.indusre.com"],
     minimumCacheTTL: 1500000,
   },
 };

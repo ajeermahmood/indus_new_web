@@ -4,24 +4,15 @@ import PriceRange from "./PriceRange";
 import Bedroom from "./Bedroom";
 import Bathroom from "./Bathroom";
 import Amenities from "./Amenities";
+import Locations from "../../../data/locations";
 
 const AdvanceFilterModal = ({ filterFunctions }) => {
   const catOptions = [
-    { value: "Houses", label: "Houses" },
-    { value: "Office", label: "Office" },
-    { value: "Apartments", label: "Apartments" },
-    { value: "Villa", label: "Villa" },
-  ];
-
-  const locationOptions = [
-    { value: "All Cities", label: "All Cities" },
-    { value: "California", label: "California" },
-    { value: "Los Angeles", label: "Los Angeles" },
-    { value: "New Jersey", label: "New Jersey" },
-    { value: "New York", label: "New York" },
-    { value: "San Diego", label: "San Diego" },
-    { value: "San Francisco", label: "San Francisco" },
-    { value: "Texas", label: "Texas" },
+    { label: "Apartment", defaultChecked: true, value: 1 },
+    { label: "Townhouse", value: 3 },
+    { label: "Office Space", value: 26 },
+    { label: "Villa", value: 2 },
+    { label: "Penthouse", value: 4 },
   ];
 
   const customStyles = {
@@ -29,11 +20,11 @@ const AdvanceFilterModal = ({ filterFunctions }) => {
       return {
         ...styles,
         backgroundColor: isSelected
-          ? "#eb6753"
+          ? "#2B4257"
           : isHovered
-          ? "#eb675312"
+          ? "#88a9c33b"
           : isFocused
-          ? "#eb675312"
+          ? "#88a9c33b"
           : undefined,
       };
     },
@@ -74,13 +65,14 @@ const AdvanceFilterModal = ({ filterFunctions }) => {
                 <h6 className="list-title">Type</h6>
                 <div className="form-style2 input-group">
                   <Select
-                    defaultValue={[catOptions[1]]}
+                    defaultValue={[catOptions[0]]}
                     name="colors"
                     options={catOptions}
                     styles={customStyles}
-                    onChange={(e) =>
-                      filterFunctions?.setPropertyTypes([e.value])
-                    }
+                    onChange={(e) => {
+                      filterFunctions.setListings([]);
+                      filterFunctions?.setPropertyTypes([e.value]);
+                    }}
                     className="select-custom"
                     classNamePrefix="select"
                     required
@@ -135,17 +127,22 @@ const AdvanceFilterModal = ({ filterFunctions }) => {
                 <h6 className="list-title">Location</h6>
                 <div className="form-style2 input-group">
                   <Select
-                    defaultValue={[locationOptions[0]]}
+                    defaultValue={[Locations[0]]}
                     name="colors"
                     styles={customStyles}
-                    options={locationOptions}
+                    options={Locations}
                     className="select-custom filterSelect"
                     value={{
                       value: filterFunctions?.location,
-                      label: filterFunctions?.location,
+                      label: Locations.find(
+                        (l) => l.value == filterFunctions.location
+                      ).label,
                     }}
                     classNamePrefix="select"
-                    onChange={(e) => filterFunctions?.handlelocation(e.value)}
+                    onChange={(e) => {
+                      filterFunctions?.setListings([]);
+                      filterFunctions?.handlelocation(e.value);
+                    }}
                     required
                   />
                 </div>
@@ -195,12 +192,18 @@ const AdvanceFilterModal = ({ filterFunctions }) => {
           </div>
           {/* End .row */}
 
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="widget-wrapper mb0">
-                <h6 className="list-title mb10">Amenities</h6>
-              </div>
+          <div className="col-lg-12">
+            <div className="widget-wrapper mb0">
+              <h6 className="list-title mb10">Amenities</h6>
             </div>
+          </div>
+          <div
+            className="row"
+            style={{
+              maxHeight: "15rem",
+              overflow: "auto",
+            }}
+          >
             <Amenities filterFunctions={filterFunctions} />
           </div>
         </div>
@@ -209,13 +212,27 @@ const AdvanceFilterModal = ({ filterFunctions }) => {
         <div className="modal-footer justify-content-between">
           <button
             className="reset-button"
-            onClick={() => filterFunctions?.resetFilter()}
+            onClick={() => {
+              filterFunctions.setListings([]);
+              filterFunctions?.resetFilter();
+            }}
           >
             <span className="flaticon-turn-back" />
             <u>Reset all filters</u>
           </button>
           <div className="btn-area">
-            <button type="submit" className="ud-btn btn-thm">
+            <button
+              type="submit"
+              className="ud-btn btn-thm"
+              data-bs-dismiss="modal"
+              aria-label="Search"
+              onClick={() => {
+                filterFunctions.setListings([]);
+                filterFunctions.setPriceRangeSetted(
+                  filterFunctions.priceRangeSetted + 1
+                );
+              }}
+            >
               <span className="flaticon-search align-text-top pr10" />
               Search
             </button>

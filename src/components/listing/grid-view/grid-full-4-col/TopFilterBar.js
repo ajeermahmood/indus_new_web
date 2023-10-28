@@ -8,12 +8,7 @@ import Bedroom from "../../sidebar/Bedroom";
 import Bathroom from "../../sidebar/Bathroom";
 import $ from "jquery";
 
-const TopFilterBar = ({
-  filterFunctions,
-  setCurrentSortingOption,
-  colstyle,
-  setColstyle,
-}) => {
+const TopFilterBar = ({ filterFunctions, colstyle, setColstyle }) => {
   return (
     <>
       <div className="col-xl-9 d-none d-lg-block">
@@ -23,12 +18,16 @@ const TopFilterBar = ({
               <button
                 type="button"
                 className="open-btn mb15 dropdown-toggle"
-                data-bs-toggle="dropdown"
-                data-bs-auto-close="outside"
+                // data-bs-toggle="dropdown"
+                // data-bs-auto-close="outside"
+                onClick={() => {
+                  $("#status-dropdown").toggle();
+                }}
               >
-                For Sale <i className="fa fa-angle-down ms-2" />
+                For {filterFunctions.listingStatus}{" "}
+                <i className="fa fa-angle-down ms-2" />
               </button>
-              <div className="dropdown-menu">
+              <div className="dropdown-menu" id="status-dropdown">
                 <div className="widget-wrapper bdrb1 pb25 mb0 pl20">
                   <h6 className="list-title">Listing Status</h6>
                   <div className="radio-element">
@@ -39,6 +38,9 @@ const TopFilterBar = ({
                   <button
                     type="button"
                     className="done-btn ud-btn btn-thm drop_btn"
+                    onClick={() => {
+                      $("#status-dropdown").toggle();
+                    }}
                   >
                     Done
                   </button>
@@ -51,12 +53,15 @@ const TopFilterBar = ({
               <button
                 type="button"
                 className="open-btn mb15 dropdown-toggle"
-                data-bs-toggle="dropdown"
-                data-bs-auto-close="outside"
+                // data-bs-toggle="dropdown"
+                // data-bs-auto-close="outside"
+                onClick={() => {
+                  $("#propType-dropdown").toggle();
+                }}
               >
                 Property Type <i className="fa fa-angle-down ms-2" />
               </button>
-              <div className="dropdown-menu">
+              <div className="dropdown-menu" id="propType-dropdown">
                 <div className="widget-wrapper bdrb1 pb25 mb0 pl20">
                   <h6 className="list-title">Property Type</h6>
                   <div className="checkbox-style1">
@@ -67,6 +72,9 @@ const TopFilterBar = ({
                   <button
                     type="button"
                     className="done-btn ud-btn btn-thm dropdown-toggle"
+                    onClick={() => {
+                      $("#propType-dropdown").toggle();
+                    }}
                   >
                     Done
                   </button>
@@ -138,14 +146,14 @@ const TopFilterBar = ({
                     <Bathroom filterFunctions={filterFunctions} />
                   </div>
                 </div>
-                <div className="text-end mt10 pr10">
+                {/* <div className="text-end mt10 pr10">
                   <button
                     type="button"
                     className="done-btn ud-btn btn-thm drop_btn4"
                   >
                     Done
                   </button>
-                </div>
+                </div> */}
               </div>
             </li>
             {/* End bed and bathroom check */}
@@ -172,14 +180,12 @@ const TopFilterBar = ({
             <span style={{ minWidth: "60px" }}>Sort by</span>
             <select
               className="form-select"
-              onChange={(e) =>
-                setCurrentSortingOption &&
-                setCurrentSortingOption(e.target.value)
-              }
+              onChange={(e) => {
+                filterFunctions.setListings([]);
+                filterFunctions.setCurrentSortingOption(e.target.value);
+              }}
             >
               <option>Newest</option>
-              <option>Best Seller</option>
-              <option>Best Match</option>
               <option>Price Low</option>
               <option>Price High</option>
             </select>

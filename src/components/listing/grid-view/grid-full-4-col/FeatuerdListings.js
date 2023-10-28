@@ -74,13 +74,6 @@ const FeaturedListings = ({ data, colstyle }) => {
                           height={30}
                         />
                       </a>
-                      <a href="#">
-                        <Skeleton
-                          variant="rectangular"
-                          width={30}
-                          height={30}
-                        />
-                      </a>
                     </div>
                   </div>
                 </div>
@@ -191,9 +184,9 @@ const FeaturedListings = ({ data, colstyle }) => {
                       <a href="#">
                         <span className="flaticon-new-tab" />
                       </a>
-                      <a href="#">
+                      {/* <a href="#">
                         <span className="flaticon-like" />
-                      </a>
+                      </a> */}
                     </div>
                   </div>
                 </div>

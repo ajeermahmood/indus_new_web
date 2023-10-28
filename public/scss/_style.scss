@@ -1916,7 +1916,7 @@ li {
   transition: all 0.4s ease;
 }
 .listing-style8 .list-tag2 {
-  background-color: #181a20;
+  background-color: var(--midnight-blue);
   border-radius: 6px;
   color: #ffffff;
   font-family: var(--title-font-family);
@@ -1946,7 +1946,7 @@ li {
   transition: all 0.4s ease;
 }
 .listing-style8 .list-meta a {
-  background-color: rgba(24, 26, 32, 0.9);
+  background-color: var(--midnight-blue);
   border-radius: 6px;
   color: #ffffff;
   display: inline-block;
@@ -1966,7 +1966,7 @@ li {
   margin-bottom: 0;
 }
 .listing-style8 .list-meta a:hover {
-  background-color: rgba(235, 103, 83, 0.9);
+  background-color: var(--indus-gold);
   color: #ffffff;
 }
 .listing-style8 .list-meta2 a {
@@ -2022,8 +2022,9 @@ li {
   transform: translateY(50px);
 }
 .listing-style8:hover .list-price {
-  background-color: #181a20;
+  background-color: var(--indus-gold);
   color: #ffffff;
+  border: 1px solid var(--indus-gold);
 }
 .listing-style8:hover .list-meta {
   -webkit-transform: translateY(0px);
@@ -8312,7 +8313,8 @@ li.mm-listitem:focus {
   color: var(--headings-color);
 }
 .dark-light-navtab.style2 .nav-link.active {
-  background-color: var(--headings-color);
+  background-color: var(--indus-gold);
+  border-color: var(--indus-gold);
   color: #ffffff;
 }
 .dark-light-navtab.style3 .nav-link {
