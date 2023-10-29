@@ -3,7 +3,7 @@
 import listings from "@/data/listings";
 import React, { useState, useEffect } from "react";
 import ListingSidebar from "../../sidebar";
-import AdvanceFilterModal from "@/components/common/advance-filter-two";
+import AdvanceFilterModal from "@/components/common/advance-filter";
 import TopFilterBar from "./TopFilterBar";
 import FeaturedListings from "./FeatuerdListings";
 import Pagination from "../../Pagination";

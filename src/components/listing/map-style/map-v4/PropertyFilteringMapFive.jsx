@@ -4,7 +4,7 @@
 import listings from "@/data/listings";
 import React, { useState,useEffect } from 'react'
 import TopFilterBar2 from "./TopFilterBar2";
-import AdvanceFilterModal from "@/components/common/advance-filter-two";
+import AdvanceFilterModal from "@/components/common/advance-filter";
 import TopFilterBar from "./TopFilterBar";
 import FeaturedListings from "./FeatuerdListings";
 

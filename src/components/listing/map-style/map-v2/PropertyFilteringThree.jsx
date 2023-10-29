@@ -8,7 +8,7 @@ import Pagination from '../../Pagination'
 import FeaturedListings from './FeatuerdListings'
 import TopFilterBar from './TopFilterBar'
 import TopFilterBar2 from './TopFilterBar2'
-import AdvanceFilterModal from '@/components/common/advance-filter-two'
+import AdvanceFilterModal from '@/components/common/advance-filter'
 import PaginationTwo from "../../PaginationTwo";
 import ListingMap1 from "../ListingMap1";
 

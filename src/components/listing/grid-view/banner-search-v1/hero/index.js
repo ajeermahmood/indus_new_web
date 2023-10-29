@@ -1,7 +1,7 @@
 
 'use client'
 
-import AdvanceFilterModal from "@/components/common/advance-filter-two";
+import AdvanceFilterModal from "@/components/common/advance-filter";
 import HeroContent from "./HeroContent";
 
 const Hero = ({filterFunctions}) => {

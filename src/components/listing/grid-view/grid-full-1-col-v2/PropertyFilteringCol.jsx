@@ -6,7 +6,7 @@ import TopFilterBar from "./TopFilterBar";
 import FeaturedListings from "./FeatuerdListings";
 import ListingSidebar2 from "../../sidebar-2";
 import TopFilterBar2 from "./TopFilterBar2";
-import AdvanceFilterModal from "@/components/common/advance-filter-two";
+import AdvanceFilterModal from "@/components/common/advance-filter";
 import PaginationTwo from "../../PaginationTwo";
 
 export default function PropertyFilteringCol() {
