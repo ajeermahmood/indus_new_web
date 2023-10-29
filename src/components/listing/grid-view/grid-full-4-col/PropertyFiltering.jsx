@@ -29,7 +29,9 @@ export default function PropertyFiltering() {
   const [squirefeet, setSquirefeet] = useState([]);
   const [yearBuild, setyearBuild] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
+    setLoading(true);
     getAllListingsPagination(12, currentPage, {
       status: listingStatus,
       prop_types: propertyTypes,
@@ -40,12 +42,12 @@ export default function PropertyFiltering() {
       sqft_range: squirefeet,
       features: categories,
       sort: currentSortingOption,
-    }).then((res) => {
-      setListings(res.listings);
-      setListingsCount(res.count);
-
-      console.log(res);
-    });
+    })
+      .then((res) => {
+        setListings(res.listings);
+        setListingsCount(res.count);
+      })
+      .finally(() => setLoading(false));
   }, [
     currentPage,
     listingStatus,
@@ -199,7 +201,11 @@ export default function PropertyFiltering() {
         {/* End TopFilterBar */}
 
         <div className="row">
-          <FeaturedListings colstyle={colstyle} data={listings} />
+          <FeaturedListings
+            colstyle={colstyle}
+            data={listings}
+            loading={loading}
+          />
         </div>
         {/* End .row */}
 

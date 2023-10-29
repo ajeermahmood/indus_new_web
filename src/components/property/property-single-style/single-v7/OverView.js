@@ -3,7 +3,7 @@ const OverView = ({ propData }) => {
     {
       icon: "flaticon-bed",
       label: "Bedroom",
-      value: propData.property_bedrooms,
+      value: propData.property_bedrooms != '-1' ? propData.property_bedrooms : 'Studio',
     },
     {
       icon: "flaticon-shower",

@@ -4,7 +4,7 @@ import { Skeleton, Tooltip } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 
-const FeaturedListings = ({ data, colstyle }) => {
+const FeaturedListings = ({ data, colstyle, loading }) => {
   const skeletonLoader = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   const currencyFormatter = new Intl.NumberFormat("en-IN", {
     style: "currency",
@@ -13,7 +13,26 @@ const FeaturedListings = ({ data, colstyle }) => {
   });
   return (
     <>
-      {data.length == 0
+      {!loading && data.length == 0 ? (
+        <div className="col w-100 mt60">
+          <div className="row justify-content-center">
+            <Image
+              src="/images/svg/no-data.svg"
+              width={200}
+              height={200}
+              className="mb3"
+              alt="no-data"
+            />
+          </div>
+
+          <p className="text-center mb60">
+            <b>Sorry, No Listings Available!</b>
+          </p>
+        </div>
+      ) : (
+        <></>
+      )}
+      {loading
         ? skeletonLoader.map((sk) => (
             <div
               className={` ${
@@ -104,11 +123,9 @@ const FeaturedListings = ({ data, colstyle }) => {
                     alt="listings"
                   />
                   <div className="sale-sticker-wrap">
-                    {!listing.forRent && (
-                      <div className="list-tag fz12">
-                        {listing.property_category_id == "1" ? "RENT" : "SALE"}
-                      </div>
-                    )}
+                    <div className="list-tag fz12">
+                      {listing.property_category_id == "1" ? "RENT" : "SALE"}
+                    </div>
                   </div>
 
                   <div className="list-price">
@@ -156,7 +173,9 @@ const FeaturedListings = ({ data, colstyle }) => {
                   <div className="list-meta d-flex align-items-center">
                     <a href="#">
                       <span className="flaticon-bed" />{" "}
-                      {listing.property_bedrooms}
+                      {listing.property_bedrooms != "-1"
+                        ? listing.property_bedrooms
+                        : "Studio"}
                     </a>
                     <a href="#">
                       <span className="flaticon-shower" />{" "}

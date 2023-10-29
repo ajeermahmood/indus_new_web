@@ -1,12 +1,15 @@
 "use client";
-import listings from "@/data/listings";
 import Image from "next/image";
-import Link from "next/link";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 
-const NearbySimilarProperty = () => {
+const NearbySimilarProperty = ({ props }) => {
+  const currencyFormatter = new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "AED",
+    minimumFractionDigits: 0,
+  });
   return (
     <>
       <Swiper
@@ -36,58 +39,92 @@ const NearbySimilarProperty = () => {
           },
         }}
       >
-        {listings.slice(0, 5).map((listing) => (
+        {props.map((listing) => (
           <SwiperSlide key={listing.id}>
             <div className="item">
               <div className="listing-style1">
-                <div className="list-thumb">
+                <div
+                  className="list-thumb"
+                  style={{
+                    height: "15rem",
+                  }}
+                >
                   <Image
                     width={382}
                     height={248}
                     className="w-100 h-100 cover"
-                    src={listing.image}
+                    src={listing.dp_1}
                     alt="listings"
                   />
-                  <div className="sale-sticker-wrap">
-                    {listing.forRent && (
-                      <div className="list-tag rounded-0 fz12">
-                        <span className="flaticon-electricity" />
-                        FEATURED
-                      </div>
-                    )}
-                  </div>
+
                   <div className="list-price">
-                    {listing.price} / <span>mo</span>
+                    {currencyFormatter.format(listing.property_price)}{" "}
+                    {listing.property_category_id == "1" ? (
+                      <span>/ mo</span>
+                    ) : (
+                      <></>
+                    )}
                   </div>
                 </div>
                 <div className="list-content">
                   <h6 className="list-title">
-                    <Link href={`/single-v1/${listing.id}`}>{listing.title}</Link>
+                    <a
+                      href={`/property-details/?id=${listing.property_id}`}
+                      style={{
+                        overflow: "hidden",
+                        whiteSpace: "nowrap",
+                        textOverflow: "ellipsis",
+                        display: "block",
+                        maxWidth: "18rem",
+                      }}
+                    >
+                      {listing.property_title}
+                    </a>
                   </h6>
-                  <p className="list-text">{listing.location}</p>
+                  <p
+                    className="list-text"
+                    style={{
+                      overflow: "hidden",
+                      whiteSpace: "nowrap",
+                      textOverflow: "ellipsis",
+                      display: "block",
+                      maxWidth: "18rem",
+                    }}
+                  >
+                    {listing.location_sub_name != ""
+                      ? listing.location_sub_name + ", "
+                      : ""}
+                    {listing.location_name}
+                  </p>
                   <div className="list-meta d-flex align-items-center">
                     <a href="#">
-                      <span className="flaticon-bed" /> {listing.bed} bed
+                      <span className="flaticon-bed" />{" "}
+                      {listing.property_bedrooms != "-1"
+                        ? listing.property_bedrooms
+                        : "Studio"}
                     </a>
                     <a href="#">
-                      <span className="flaticon-shower" /> {listing.bath} bath
+                      <span className="flaticon-shower" />{" "}
+                      {listing.property_bathrooms}
                     </a>
                     <a href="#">
-                      <span className="flaticon-expand" /> {listing.sqft} sqft
+                      <span className="flaticon-expand" />{" "}
+                      {listing.property_size}
                     </a>
                   </div>
                   <hr className="mt-2 mb-2" />
                   <div className="list-meta2 d-flex justify-content-between align-items-center">
-                    <span className="for-what">For Rent</span>
+                    <span className="for-what">
+                      {listing.property_category_id == "1"
+                        ? "For Rent"
+                        : "For Sale"}
+                    </span>
                     <div className="icons d-flex align-items-center">
                       <a href="#">
                         <span className="flaticon-fullscreen" />
                       </a>
                       <a href="#">
                         <span className="flaticon-new-tab" />
-                      </a>
-                      <a href="#">
-                        <span className="flaticon-like" />
                       </a>
                     </div>
                   </div>

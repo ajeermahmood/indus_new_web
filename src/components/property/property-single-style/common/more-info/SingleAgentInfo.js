@@ -1,12 +1,15 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 
-const SingleAgentInfo = () => {
+const SingleAgentInfo = ({ agent }) => {
+  const [erroImgs, setErrorImgs] = useState([]);
   const agentData = {
     id: 1,
-    name: "Arlene McCoy",
-    phoneNumbers: ["(920) 012-3421", "(920) 012-4390"],
-    socialMedia: ["facebook", "twitter", "instagram", "linkedin"],
+    name: agent.client_user_name,
+    phoneNumber: agent.client_user_phone,
+    email: agent.client_user_email,
+    socialMedia: ["linkedin"],
   };
 
   return (
@@ -16,19 +19,29 @@ const SingleAgentInfo = () => {
           width={90}
           height={90}
           className="w90"
-          src="/images/team/agent-3.png"
+          src={
+            erroImgs.includes(agent.client_user_id)
+              ? "/images/agents/demo.png"
+              : `https://www.indusre.com/agentimg/${agent.client_user_image}`
+          }
           alt="agent"
+          onError={(e) => {
+            setErrorImgs([...erroImgs, agent.client_user_id]);
+          }}
         />
       </div>
       <div className="single-contant ml30 ml0-xs">
         <h6 className="title mb-1">{agentData.name}</h6>
         <div className="agent-meta mb10 d-md-flex align-items-center">
-          {agentData.phoneNumbers.map((phoneNumber, index) => (
-            <a key={index} className="text fz15 pe-2 bdrr1" href="#">
-              <i className="flaticon-call pe-1 ps-1" />
-              {phoneNumber}
-            </a>
-          ))}
+          <a className="text fz15 pe-2 bdrr1" href="#">
+            <i className="flaticon-call pe-1 ps-1" />
+            {agentData.phoneNumber}
+          </a>
+          <a className="text fz15 pe-2 bdrr1" href="#">
+            <i className="flaticon-email pe-1 ps-1" />
+            {agentData.email}
+          </a>
+
           <a className="text fz15 ps-2" href="#">
             <i className="flaticon-whatsapp pe-1" />
             WhatsApp
@@ -36,7 +49,7 @@ const SingleAgentInfo = () => {
         </div>
         <div className="agent-social">
           {agentData.socialMedia.map((social, index) => (
-            <a key={index} className="mr20" href="#">
+            <a key={index} className="mr20" href={agent.client_user_linkedin}>
               <i className={`fab fa-${social}`} />
             </a>
           ))}

@@ -15,6 +15,7 @@ import Blog from "@/components/common/Blog";
 import InqueryForm from "@/components/home/home-v7/InqueryForm";
 import PropertyListing from "@/components/home/home-v7/PropertyListing";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata = {
   title: "Indus Real Estate LLC | Dubai Luxury Properties",
@@ -149,7 +150,9 @@ const HomePage = () => {
               <div className="main-title2 text-center">
                 <h2 className="title">Explore Cities</h2>
                 <p className="paragraph">
-                  Get some Inspirations from 1800+ skills
+                  Take a deep dive and Browse All original neighbourhood photos,
+                  drone footage, resident reviews and local insights to see if
+                  the home for sale is right for you.
                 </p>
               </div>
             </div>
@@ -179,6 +182,11 @@ const HomePage = () => {
 
           <div className="row" data-aos="fade-up" data-aos-delay="300">
             <Blog />
+            <div className="d-grid d-md-block text-center mt30 mt0-md">
+              <Link href="/all-news" className="ud-btn btn-dark bdrs0">
+                View More<i className="fal fa-arrow-right-long"></i>
+              </Link>
+            </div>
           </div>
           {/* End .row */}
         </div>

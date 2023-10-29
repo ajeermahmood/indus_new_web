@@ -1,8 +1,10 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
-const ContactWithAgent = () => {
+const ContactWithAgent = ({ agent }) => {
+  const [erroImgs, setErrorImgs] = useState([]);
   return (
     <>
       <div className="agent-single d-sm-flex align-items-center pb25">
@@ -11,22 +13,26 @@ const ContactWithAgent = () => {
             width={90}
             height={90}
             className="w90"
-            src="/images/team/agent-3.png"
+            src={
+              erroImgs.includes(agent.client_user_id)
+                ? "/images/agents/demo.png"
+                : `https://www.indusre.com/agentimg/${agent.client_user_image}`
+            }
             alt="avatar"
+            onError={(e) => {
+              setErrorImgs([...erroImgs, agent.client_user_id]);
+            }}
           />
         </div>
         <div className="single-contant ml20 ml0-xs">
-          <h6 className="title mb-1">Arlene McCoy</h6>
+          <h6 className="title mb-1">{agent.client_user_name}</h6>
           <div className="agent-meta mb10 d-md-flex align-items-center">
             <a className="text fz15" href="#">
               <i className="flaticon-call pe-1" />
-              (920) 012-3421
+              {agent.client_user_phone}
             </a>
           </div>
-          <Link
-            href="/agent-single/3"
-            className="text-decoration-underline fw600"
-          >
+          <Link href="#" className="text-decoration-underline fw600">
             View Listings
           </Link>
         </div>
@@ -34,7 +40,10 @@ const ContactWithAgent = () => {
       {/* End agent-single */}
 
       <div className="d-grid">
-        <Link href="/agent-single/3" className="ud-btn btn-white2">
+        <Link
+          href={`/about-agent/?id=${agent.client_user_id}`}
+          className="ud-btn btn-white2"
+        >
           Contact Agent
           <i className="fal fa-arrow-right-long" />
         </Link>

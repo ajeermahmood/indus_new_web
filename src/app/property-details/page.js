@@ -3,27 +3,18 @@ import { getPropertyDetails } from "@/api/listings";
 import Footer from "@/components/common/default-footer";
 import MobileMenu from "@/components/common/mobile-menu";
 import Header from "@/components/home/home-v2/Header";
-import EnergyClass from "@/components/property/property-single-style/common/EnergyClass";
-import FloorPlans from "@/components/property/property-single-style/common/FloorPlans";
-import HomeValueChart from "@/components/property/property-single-style/common/HomeValueChart";
 import MortgageCalculator from "@/components/property/property-single-style/common/MortgageCalculator";
 import NearbySimilarProperty from "@/components/property/property-single-style/common/NearbySimilarProperty";
 import PropertyAddress from "@/components/property/property-single-style/common/PropertyAddress";
 import PropertyDetails from "@/components/property/property-single-style/common/PropertyDetails";
 import PropertyFeaturesAminites from "@/components/property/property-single-style/common/PropertyFeaturesAminites";
-import PropertyNearby from "@/components/property/property-single-style/common/PropertyNearby";
 import PropertyVideo from "@/components/property/property-single-style/common/PropertyVideo";
 import ProperytyDescriptions from "@/components/property/property-single-style/common/ProperytyDescriptions";
-import ReviewBoxForm from "@/components/property/property-single-style/common/ReviewBoxForm";
-import VirtualTour360 from "@/components/property/property-single-style/common/VirtualTour360";
-import WalkScore from "@/components/property/property-single-style/common/WalkScore";
 import InfoWithForm from "@/components/property/property-single-style/common/more-info";
-import PropertyViews from "@/components/property/property-single-style/common/property-view";
-import AllReviews from "@/components/property/property-single-style/common/reviews";
 import ContactWithAgent from "@/components/property/property-single-style/sidebar/ContactWithAgent";
 import ScheduleTour from "@/components/property/property-single-style/sidebar/ScheduleTour";
-import OverView from "@/components/property/property-single-style/single-v7/OverView";
 import PropertyGallery from "@/components/property/property-single-style/single-v4/property-gallery";
+import OverView from "@/components/property/property-single-style/single-v7/OverView";
 import PropertyHeader from "@/components/property/property-single-style/single-v7/PropertyHeader";
 import { Box, CircularProgress } from "@mui/material";
 import { useSearchParams } from "next/navigation";
@@ -201,11 +192,15 @@ const PropertyDetailsPage = () => {
                 </div>
               </div> */}
               {/* End .ps-widget */}
+              {data.agent != null ? (
+                <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
+                  <h4 className="title fz17 mb30">Get More Information</h4>
+                  <InfoWithForm agent={data.agent} />
+                </div>
+              ) : (
+                <></>
+              )}
 
-              <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
-                <h4 className="title fz17 mb30">Get More Information</h4>
-                <InfoWithForm />
-              </div>
               {/* End .ps-widget */}
 
               {/* <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
@@ -234,62 +229,72 @@ const PropertyDetailsPage = () => {
                 </div>
                 {/* End .Schedule a tour */}
 
-                <div className="agen-personal-info position-relative bgc-white default-box-shadow1 bdrs12 p30 mt30">
-                  <div className="widget-wrapper mb-0">
-                    <h6 className="title fz17 mb30">Get More Information</h6>
-                    <ContactWithAgent />
+                {data.agent != null ? (
+                  <div className="agen-personal-info position-relative bgc-white default-box-shadow1 bdrs12 p30 mt30">
+                    <div className="widget-wrapper mb-0">
+                      <h6 className="title fz17 mb30">Get More Information</h6>
+                      <ContactWithAgent agent={data.agent} />
+                    </div>
+                  </div>
+                ) : (
+                  <></>
+                )}
+              </div>
+            </div>
+          </div>
+          {/* End .row */}
+          {data.similarProps.length != 0 ? (
+            <>
+              <div className="row mt30 align-items-center justify-content-between">
+                <div className="col-auto">
+                  <div className="main-title">
+                    <h2 className="title">Discover Similar Properties</h2>
+                    <p className="paragraph">
+                      Below shows similar type of properties.
+                    </p>
+                  </div>
+                </div>
+                {/* End header */}
+
+                <div className="col-auto mb30">
+                  <div className="row align-items-center justify-content-center">
+                    <div className="col-auto">
+                      <button className="featured-prev__active swiper_button">
+                        <i className="far fa-arrow-left-long" />
+                      </button>
+                    </div>
+                    {/* End prev */}
+
+                    <div className="col-auto">
+                      <div className="pagination swiper--pagination featured-pagination__active" />
+                    </div>
+                    {/* End pagination */}
+
+                    <div className="col-auto">
+                      <button className="featured-next__active swiper_button">
+                        <i className="far fa-arrow-right-long" />
+                      </button>
+                    </div>
+                    {/* End Next */}
+                  </div>
+                  {/* End .col for navigation and pagination */}
+                </div>
+                {/* End .col for navigation and pagination */}
+              </div>
+              {/* End .row */}
+
+              <div className="row">
+                <div className="col-lg-12">
+                  <div className="property-city-slider">
+                    <NearbySimilarProperty props={data.similarProps} />
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          {/* End .row */}
+            </>
+          ) : (
+            <></>
+          )}
 
-          <div className="row mt30 align-items-center justify-content-between">
-            <div className="col-auto">
-              <div className="main-title">
-                <h2 className="title">Discover Our Featured Listings</h2>
-                <p className="paragraph">
-                  Aliquam lacinia diam quis lacus euismod
-                </p>
-              </div>
-            </div>
-            {/* End header */}
-
-            <div className="col-auto mb30">
-              <div className="row align-items-center justify-content-center">
-                <div className="col-auto">
-                  <button className="featured-prev__active swiper_button">
-                    <i className="far fa-arrow-left-long" />
-                  </button>
-                </div>
-                {/* End prev */}
-
-                <div className="col-auto">
-                  <div className="pagination swiper--pagination featured-pagination__active" />
-                </div>
-                {/* End pagination */}
-
-                <div className="col-auto">
-                  <button className="featured-next__active swiper_button">
-                    <i className="far fa-arrow-right-long" />
-                  </button>
-                </div>
-                {/* End Next */}
-              </div>
-              {/* End .col for navigation and pagination */}
-            </div>
-            {/* End .col for navigation and pagination */}
-          </div>
-          {/* End .row */}
-
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="property-city-slider">
-                <NearbySimilarProperty />
-              </div>
-            </div>
-          </div>
           {/* End .row */}
         </div>
         {/* End .container */}

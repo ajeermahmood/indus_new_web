@@ -5,9 +5,9 @@ import React from "react";
 const PropertyType = ({ filterFunctions }) => {
   const options = [
     { label: "Apartment", defaultChecked: true, value: 1 },
+    { label: "Villa", value: 2 },
     { label: "Townhouse", value: 3 },
     { label: "Office Space", value: 26 },
-    { label: "Villa", value: 2 },
     { label: "Penthouse", value: 4 },
   ];
 

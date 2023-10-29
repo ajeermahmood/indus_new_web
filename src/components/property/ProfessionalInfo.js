@@ -1,15 +1,36 @@
 import React from "react";
 
-const professionalInfoData = [
-  { label: "Broker address", content: "House on the Northridge" },
-  { label: "Office", content: "(484) 524-3699" },
-  { label: "Mobile", content: "(484) 524-7963" },
-  { label: "Fax", content: "(484) 524-1023" },
-  { label: "Websites", content: "www.realton.com" },
-  { label: "Member since", content: "10-01-2022" },
-];
-
-const ProfessionalInfo = () => {
+const ProfessionalInfo = ({ data }) => {
+  const professionalInfoData = [
+    {
+      label: "Designation",
+      content:
+        data.client_user_designation != "" ? data.client_user_designation : "-",
+    },
+    {
+      label: "BRN",
+      content: data.client_user_brn != "" ? data.client_user_brn : "-",
+    },
+    {
+      label: "Mobile",
+      content: data.client_user_phone != "" ? data.client_user_phone : "-",
+    },
+    {
+      label: "Email",
+      content: data.client_user_email != "" ? data.client_user_email : "-",
+    },
+    {
+      label: "Nationality",
+      content:
+        data.client_user_nationality != "" ? data.client_user_nationality : "-",
+    },
+    {
+      label: "Languages",
+      content:
+        data.client_user_languages != "" ? data.client_user_languages : "-",
+    },
+    // { label: "Experience since", content: data.client_user_experience_since },
+  ];
   return (
     <div className="widget-wrapper mb-0">
       <h6 className="title fz17 mb35">Professional Information</h6>

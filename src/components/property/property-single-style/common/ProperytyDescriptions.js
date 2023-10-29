@@ -1,25 +1,29 @@
 import React from "react";
 
 const ProperytyDescriptions = ({ desc }) => {
-  const firstPara = new String(desc)
-    .split(" ")
-    .filter((words, index) => index < 50)
-    .toString()
-    .replace(/,/g, " ")
-    .replace(/<br>/g, "\n")
-    .replace(/\\/g, "");
+  // const firstPara = new String(desc)
+  //   .split(" ")
+  //   .filter((words, index) => index < 50)
+  //   .toString()
+  //   .replace(/,/g, " ")
+  //   .replace(/<br>/g, "\n")
+  //   .replace(/\\/g, "");
 
-  const lastPara = new String(desc)
-    .split(" ")
-    .filter((words, index) => index > 50)
-    .toString()
-    .replace(/,/g, " ")
-    .replace(/<br>/g, "\n")
-    .replace(/\\/g, "");
+  // const lastPara = new String(desc)
+  //   .split(" ")
+  //   .filter((words, index) => index > 50)
+  //   .toString()
+  //   .replace(/,/g, " ")
+  //   .replace(/<br>/g, "\n")
+  //   .replace(/\\/g, "");
   return (
     <>
-      <p className="text mb10">{firstPara}...</p>
-      <div className="agent-single-accordion">
+      {/* <p className="text mb10">{firstPara}...</p> */}
+      <div
+        className="text mb10"
+        dangerouslySetInnerHTML={{ __html: desc }}
+      ></div>
+      {/* <div className="agent-single-accordion">
         <div className="accordion accordion-flush" id="accordionFlushExample">
           <div className="accordion-item">
             <div
@@ -47,7 +51,7 @@ const ProperytyDescriptions = ({ desc }) => {
             </h2>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

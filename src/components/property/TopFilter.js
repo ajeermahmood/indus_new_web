@@ -1,19 +1,6 @@
-'use client'
+"use client";
 
-import React from "react";
-import Location from "./Location";
-
-const propertyTypes = [
-  { label: "Houses" },
-
-  { label: "Apartments",},
-  { label: "Office" },
-  { label: "Villa" },
-];
-
-
-
-const TopFilter = ({filterFunctions}) => {
+const TopFilter = ({ filterFunctions }) => {
   return (
     <>
       <div className="col-md-9">
@@ -23,13 +10,16 @@ const TopFilter = ({filterFunctions}) => {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Enter agent name"
-                onChange={(e)=>filterFunctions.setSearchQuery(e.target.value)}
+                placeholder="Search agent name"
+                onChange={(e) => {
+                  filterFunctions.setAllagents([]);
+                  filterFunctions.setSearchQuery(e.target.value);
+                }}
               />
             </div>
             {/* End searchbox */}
 
-            <div className="position-relative mb10 mr10">
+            {/* <div className="position-relative mb10 mr10">
               <button
                 type="button"
                 className="open-btn box-shadow-0 dropdown-toggle"
@@ -71,10 +61,10 @@ const TopFilter = ({filterFunctions}) => {
                   </button>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* End  All Categories */}
 
-            <div className="position-relative mb10">
+            {/* <div className="position-relative mb10">
               <button
                 type="button"
                 className="open-btn mb15 drop_btn"
@@ -98,14 +88,14 @@ const TopFilter = ({filterFunctions}) => {
                   </button>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/*  All Cities */}
           </div>
         </div>
       </div>
       {/* End .col-9 */}
 
-      <div className="col-md-3">
+      {/* <div className="col-md-3">
         <div className="page_control_shorting text-start text-md-end mb20">
           <div className="pcs_dropdown d-flex align-items-center justify-content-end">
             <span style={{ minWidth: "50px", textAlign: "left" }}>Sort by</span>
@@ -121,7 +111,7 @@ const TopFilter = ({filterFunctions}) => {
             </select>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

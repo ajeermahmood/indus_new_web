@@ -54,7 +54,7 @@ const AllAgents = ({ data }) => {
                     height: "15rem",
                   }}
                 >
-                  <Link href={`/agent-single/${agent.client_user_id}`}>
+                  <Link href={`/about-agent/?id=${agent.client_user_id}`}>
                     <Image
                       width={210}
                       height={240}
@@ -74,16 +74,33 @@ const AllAgents = ({ data }) => {
                     />
                   </Link>
                 </div>
-                <div className="feature-content pt20">
+                <div
+                  className="feature-content pt20 pl15 pb15"
+                  style={{
+                    borderRight: "1px solid rgb(20 32 46 / 17%)",
+                    borderLeft: "1px solid rgb(20 32 46 / 17%)",
+                    borderBottom: "1px solid rgb(20 32 46 / 17%)",
+                    background: "#14202e0d",
+                    height: "11rem",
+                    borderBottomLeftRadius: "5px",
+                    borderBottomRightRadius: "5px",
+                  }}
+                >
                   <h6 className="title mb-1">
-                    <Link href={`/agent-single/${agent.id}`}>
+                    <Link href={`/about-agent/?id=${agent.client_user_id}`}>
                       {agent.client_user_name}
                     </Link>
                   </h6>
                   <p className="text fz15 mb0">
                     {agent.client_user_designation}
                   </p>
-                  <p className="text mb0">BRN :{agent.client_user_brn}</p>
+                  {agent.client_user_brn != "" &&
+                  agent.client_user_brn != null ? (
+                    <p className="text mb0">BRN :{agent.client_user_brn}</p>
+                  ) : (
+                    <></>
+                  )}
+
                   <p className="text mb0">Mobile :{agent.client_user_phone}</p>
                   <p className="text mb0">Email :{agent.client_user_email}</p>
                 </div>

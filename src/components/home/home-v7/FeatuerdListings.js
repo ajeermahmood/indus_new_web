@@ -2,11 +2,30 @@ import { Skeleton } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 
-const FeaturedListings = ({ data, type }) => {
+const FeaturedListings = ({ data, type, loading }) => {
   const skeletonLoader = [1, 2, 3, 4, 5, 6];
   return (
     <>
-      {data.length == 0
+      {!loading && data.length == 0 ? (
+        <div className="col w-100 mt60">
+          <div className="row justify-content-center">
+            <Image
+              src="/images/svg/no-data.svg"
+              width={200}
+              height={200}
+              className="mb3"
+              alt="no-data"
+            />
+          </div>
+
+          <p className="text-center mb60">
+            <b>Sorry, No Listings Available!</b>
+          </p>
+        </div>
+      ) : (
+        <></>
+      )}
+      {loading
         ? skeletonLoader.map((sk) => (
             <div className="col-sm-6 col-lg-4" key={sk.id}>
               <div className="listing-style8">
@@ -154,7 +173,7 @@ const FeaturedListings = ({ data, type }) => {
                     <div className="list-meta2 d-flex align-items-center">
                       <a href="#" className="mr10">
                         <span className="flaticon-bed" />{" "}
-                        {listing.property_bedrooms}
+                        {listing.property_bedrooms != '-1' ? listing.property_bedrooms : 'Studio'}
                       </a>
                       <a href="#" className="mr10">
                         <span className="flaticon-shower" />{" "}

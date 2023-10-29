@@ -1,34 +1,10 @@
 "use client";
-import Select from "react-select";
 import SingleAgentInfo from "./SingleAgentInfo";
 
-const InfoWithForm = () => {
-  const inqueryType = [
-    { value: "Engineer", label: "Engineer" },
-    { value: "Doctor", label: "Doctor" },
-    { value: "Employee", label: "Employee" },
-    { value: "Businessman", label: "Businessman" },
-    { value: "Other", label: "Other" },
-  ];
-
-  const customStyles = {
-    option: (styles, { isFocused, isSelected, isHovered }) => {
-      return {
-        ...styles,
-        backgroundColor: isSelected
-          ? "#eb6753"
-          : isHovered
-          ? "#eb675312"
-          : isFocused
-          ? "#eb675312"
-          : undefined,
-      };
-    },
-  };
-
+const InfoWithForm = ({ agent }) => {
   return (
     <>
-      <SingleAgentInfo />
+      <SingleAgentInfo agent={agent} />
 
       <div className="row">
         <div className="col-md-12">
@@ -75,7 +51,7 @@ const InfoWithForm = () => {
             </div>
             {/* End .col */}
 
-            <div className="col-md-6">
+            {/* <div className="col-md-6">
               <div className="widget-wrapper sideborder-dropdown">
                 <label className="heading-color ff-heading fw600 mb10">
                   I&apos;m a
@@ -93,7 +69,7 @@ const InfoWithForm = () => {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* End .col */}
 
             <div className="col-md-12">

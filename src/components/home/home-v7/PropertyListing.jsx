@@ -9,22 +9,26 @@ import FeaturedListings from "./FeatuerdListings";
 export default function PropertyListing() {
   const [pageData, setPageData] = useState([]);
   const [currentType, setCurrentType] = useState("sale");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getFeaturedListings(currentType == "rent" ? 1 : 2).then((response) => {
-      // console.log(response);
-      if (currentType == "rent") {
-        const filtered = response.filter(
-          (elm) => elm.property_category_id == "1"
-        );
-        setPageData(filtered);
-      } else {
-        const filtered = response.filter(
-          (elm) => elm.property_category_id == "2"
-        );
-        setPageData(filtered);
-      }
-    });
+    setLoading(true);
+    getFeaturedListings(currentType == "rent" ? 1 : 2)
+      .then((response) => {
+        // console.log(response);
+        if (currentType == "rent") {
+          const filtered = response.filter(
+            (elm) => elm.property_category_id == "1"
+          );
+          setPageData(filtered);
+        } else {
+          const filtered = response.filter(
+            (elm) => elm.property_category_id == "2"
+          );
+          setPageData(filtered);
+        }
+      })
+      .finally(() => setLoading(false));
   }, [currentType]);
 
   return (
@@ -90,13 +94,17 @@ export default function PropertyListing() {
         {/* End .row */}
 
         <div className="row" data-aos="fade-up" data-aos-delay="300">
-          <FeaturedListings data={pageData} type={currentType} />
+          <FeaturedListings
+            data={pageData}
+            type={currentType}
+            loading={loading}
+          />
         </div>
         {/* End .row */}
 
         <div className="d-grid d-md-block text-center mt30 mt0-md">
           <Link href="/all-properties" className="ud-btn btn-dark bdrs0">
-            Learn More<i className="fal fa-arrow-right-long"></i>
+            View More<i className="fal fa-arrow-right-long"></i>
           </Link>
         </div>
       </div>

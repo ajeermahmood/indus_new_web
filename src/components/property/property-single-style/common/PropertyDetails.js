@@ -22,7 +22,8 @@ const PropertyDetails = ({ data }) => {
       },
       {
         label: "Bedrooms",
-        value: data.property_bedrooms,
+        value:
+          data.property_bedrooms != "-1" ? data.property_bedrooms : "Studio",
       },
       {
         label: "Bathrooms",

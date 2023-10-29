@@ -13,7 +13,6 @@ const ApartmentType = () => {
   useEffect(() => {
     getAllPropTypesCount().then((res) => {
       setPropTypesCount(res);
-      console.log(res);
     });
   }, []);
   return (
