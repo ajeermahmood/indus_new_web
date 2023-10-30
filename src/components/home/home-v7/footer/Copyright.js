@@ -5,20 +5,25 @@ const getCurrentYear = () => {
   return new Date().getFullYear();
 };
 
-const Footer = () => {
+const Footer = ({ path }) => {
   return (
     <div className="container gray-bdrt1 py-4">
       <div className="row">
         <div className="col-sm-6">
           <div className="text-center text-lg-start">
-            <p className="copyright-text ff-heading mb-0">
-              © Homez {getCurrentYear()}{" "}
+            <p
+              className={`copyright-text ff-heading mb-0 ${
+                path != "/" ? "text-blue-gray" : ""
+              }`}
+            >
+              © {getCurrentYear()}{" "}
               <a
-                href="https://themeforest.net/user/ib-themes"
+                className={` ${path != "/" ? "text-blue-gray" : ""}`}
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                ib-themes
+                Indus Real Estate LLC
               </a>{" "}
               - All rights reserved
             </p>
@@ -28,7 +33,7 @@ const Footer = () => {
 
         <div className="col-sm-6">
           <div className="text-center text-lg-end">
-            <Social />
+            {path == "/" ? <Social /> : <></>}
           </div>
         </div>
         {/* End .col-sm-6 */}

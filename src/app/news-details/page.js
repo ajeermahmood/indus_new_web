@@ -1,21 +1,16 @@
 "use client";
+import { getBlogDetails } from "@/api/listings";
 import Details from "@/components/blog/blog-single/Details";
-import Features from "@/components/blog/blog-single/Features";
 import Pagination from "@/components/blog/blog-single/Pagination";
-import ReviewBoxForm from "@/components/blog/blog-single/ReviewBoxForm";
 import Social from "@/components/blog/blog-single/Social";
 import Tags from "@/components/blog/blog-single/Tags";
-import TopComments from "@/components/blog/blog-single/TopComments";
-import AllReviews from "@/components/blog/blog-single/reviews";
 import Blog from "@/components/common/Blog";
-import Header from "@/components/home/home-v2/Header";
-import Footer from "@/components/common/default-footer";
+import Footer from "@/components/home/home-v7/footer";
 import MobileMenu from "@/components/common/mobile-menu";
-import Image from "next/image";
+import Header from "@/components/home/home-v2/Header";
+import { Box, CircularProgress } from "@mui/material";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { getBlogDetails } from "@/api/listings";
-import { Box, CircularProgress } from "@mui/material";
 
 const NewsDetailsPage = () => {
   const searchParams = useSearchParams();
@@ -26,7 +21,6 @@ const NewsDetailsPage = () => {
   useEffect(() => {
     getBlogDetails(params).then((res) => {
       setData(res);
-      console.log(res);
     });
   }, []);
 
@@ -189,7 +183,7 @@ const NewsDetailsPage = () => {
       {/* end Related Blog Post */}
 
       {/* Start Our Footer */}
-      <section className="footer-style1 pt60 pb-0">
+      <section className="footer-style1 at-home4-2 pt60 pb-0">
         <Footer />
       </section>
       {/* End Our Footer */}

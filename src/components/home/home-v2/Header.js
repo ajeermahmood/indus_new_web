@@ -67,10 +67,23 @@ const Header = () => {
                 <div className="d-flex align-items-center">
                   <a
                     className="login-info d-flex align-items-center me-3"
-                    href="tel:+012305094502"
+                    href="tel:+971080046387"
                   >
                     <i className="far fa-phone fz16 me-2"></i>{" "}
-                    <span className="d-none d-xl-block">2 911 098 7654</span>
+                    <span className="d-none d-xl-block">800 46387</span>
+                  </a>
+                  <a
+                    className="login-info d-flex align-items-center me-3"
+                    href="https://wa.me/971080046387"
+                  >
+                    <Image
+                      src="/images/svg/whatsapp.svg"
+                      alt="whatsapp"
+                      width={20}
+                      height={20}
+                      className="fz16 me-2"
+                    />
+                    <span className="d-none d-xl-block">Whatsapp</span>
                   </a>
                   {/* <a
                     href="#"

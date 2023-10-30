@@ -18,7 +18,6 @@ export default function BlogFilterContainer() {
       .then((res) => {
         setBlogs(res.blogs);
         setBlogsCount(res.count);
-        console.log(res);
       })
       .finally(() => setLoading(false));
   }, [pageNumber, activeCategory]);

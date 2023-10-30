@@ -1,21 +1,26 @@
 import React from "react";
 
-const ContactMeta = () => {
+const ContactMeta = ({ path }) => {
   const contactInfoData = [
     {
-      text: "Address",
-      info: "329 Queensberry Street, North Melbourne VIC 3051, Australia.",
+      text: "Head Office",
+      info: "Office 203, Al Sharafi Building, Bur Dubai, 118163, Dubai, UAE.",
       link: "#", // Empty link value for the first object
     },
     {
-      text: "Total Free Customer Care",
-      info: "+(0) 123 050 945 02",
-      link: "tel:+012305094502",
+      text: "DMCC Branch",
+      info: "4H Almas Tower, Jumeirah Lake Towers (Cluster G), Dubai, UAE",
+      link: "#", // Empty link value for the first object
+    },
+    {
+      text: "Customer Care",
+      info: "800 INDUS (46387)",
+      link: "tel:+971080046387",
     },
     {
       text: "Need Live Support?",
-      info: "hi@homez.com",
-      link: "mailto:hi@homez.com",
+      info: "info@indusre.ae",
+      link: "mailto:info@indusre.ae",
     },
   ];
 
@@ -23,14 +28,26 @@ const ContactMeta = () => {
     <div className="row mb-4 mb-lg-5">
       {contactInfoData.map((contact, index) => (
         <div className="contact-info mb25" key={index}>
-          <p className="text mb5">{contact.text}</p>
+          <p className={`text mb5 ${path != "/" ? "text-blue-gray" : ""}`}>
+            {contact.text}
+          </p>
           {contact.link.startsWith("mailto:") ? (
             <h6 className="info-mail">
-              <a href={contact.link}>{contact.info}</a>
+              <a
+                className={`${path != "/" ? "text-light" : ""}`}
+                href={contact.link}
+              >
+                {contact.info}
+              </a>
             </h6>
           ) : (
             <h6 className="info-phone">
-              <a href={contact.link}>{contact.info}</a>
+              <a
+                className={`${path != "/" ? "text-light" : ""}`}
+                href={contact.link}
+              >
+                {contact.info}
+              </a>
             </h6>
           )}
         </div>

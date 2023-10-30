@@ -5,24 +5,20 @@ const Office = () => {
   const offices = [
     {
       id: 1,
-      city: "Paris",
-      icon: "/images/icon/paris.svg",
-      address: "1301 2nd Ave, Seattle, WA 98101",
-      phoneNumber: "(315) 905-2321",
+      type: "Head Office",
+      city: "Bur Dubai",
+      icon: "/images/office/bur-dubai.webp",
+      address:
+        "Office 203, Al Sharafi Building, Bur Dubai, 118163, Dubai, UAE.",
+      phoneNumber: "800 INDUS (46387)",
     },
     {
       id: 2,
-      city: "London",
-      icon: "/images/icon/london.svg",
-      address: "1301 2nd Ave, Seattle, WA 98101",
-      phoneNumber: "(315) 905-2321",
-    },
-    {
-      id: 3,
-      city: "New York",
-      icon: "/images/icon/new-york.svg",
-      address: "1301 2nd Ave, Seattle, WA 98101",
-      phoneNumber: "(315) 905-2321",
+      type: "DMCC Branch",
+      city: "JLT",
+      icon: "/images/office/almas-tower.webp",
+      address: "4H Almas Tower, Jumeirah Lake Towers (Cluster G), Dubai, UAE",
+      phoneNumber: "800 INDUS (46387)",
     },
     // Add more office objects here...
   ];

@@ -1,6 +1,6 @@
 "use client";
 import { getPropertyDetails } from "@/api/listings";
-import Footer from "@/components/common/default-footer";
+import Footer from "@/components/home/home-v7/footer";
 import MobileMenu from "@/components/common/mobile-menu";
 import Header from "@/components/home/home-v2/Header";
 import MortgageCalculator from "@/components/property/property-single-style/common/MortgageCalculator";
@@ -29,7 +29,6 @@ const PropertyDetailsPage = () => {
   useEffect(() => {
     getPropertyDetails(params).then((res) => {
       setData(res);
-      console.log(res);
     });
   }, []);
 
@@ -302,7 +301,7 @@ const PropertyDetailsPage = () => {
       {/* End Property All Single V7  */}
 
       {/* Start Our Footer */}
-      <section className="footer-style1 pt60 pb-0">
+      <section className="footer-style1 at-home4-2 pt60 pb-0">
         <Footer />
       </section>
       {/* End Our Footer */}

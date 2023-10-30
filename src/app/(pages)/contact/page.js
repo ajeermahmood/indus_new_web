@@ -1,20 +1,19 @@
 import CallToActions from "@/components/common/CallToActions";
-import DefaultHeader from "@/components/common/DefaultHeader";
-import Footer from "@/components/common/default-footer";
 import MobileMenu from "@/components/common/mobile-menu";
+import Header from "@/components/home/home-v2/Header";
+import Footer from "@/components/home/home-v7/footer";
 import Contact from "@/components/home/home-v8/Contact";
-import Form from "@/components/pages/contact/Form";
 import Office from "@/components/pages/contact/Office";
 
 export const metadata = {
-  title: "Contact  || Homez - Real Estate NextJS Template",
+  title: "Contact Us | Indus Real Estate LLC",
 };
 
 const ContactUs = () => {
   return (
     <>
       {/* Main Header Nav */}
-      <DefaultHeader />
+      <Header />
       {/* End Main Header Nav */}
 
       {/* Mobile Nav  */}
@@ -23,7 +22,7 @@ const ContactUs = () => {
 
       {/* Our Contact With Map */}
       {/* Our Contact With Map */}
-      <section className="pt70 pb40">
+      <section className="pt100 pb40 mt80">
         <iframe
           className="home8-map"
           loading="lazy"
@@ -51,7 +50,7 @@ const ContactUs = () => {
       {/* End Our Contact Form */}
 
       {/* Visit our Office */}
-      <section className="pt0 pb90 pb10-md">
+      <section className="pt100 pb90 pb10-md">
         <div className="container">
           <div className="row">
             <div
@@ -83,7 +82,7 @@ const ContactUs = () => {
       {/* Our CTA */}
 
       {/* Start Our Footer */}
-      <section className="footer-style1 pt60 pb-0">
+      <section className="footer-style1 at-home4-2 pt60 pb-0">
         <Footer />
       </section>
       {/* End Our Footer */}

@@ -4,39 +4,39 @@ import React from "react";
 const testimonials = [
   {
     id: "1st",
-    imageSrc: "/images/testimonials/testi-1.png",
-    text: "What a great experience! I have visited one of the workshops and attended a masterclass, and both were super useful for young designers.",
-    name: "Ali Tufan",
-    designation: "Product Manager, Apple Inc",
+    imageSrc: "/images/testimonials/hamir-asher.jpg",
+    text: "Our objective at Indus is to constantly upgrade our comprehensive service standards and to provide real quality service and excellence in client’s satisfaction.",
+    name: "Mr. Hamir Asher",
+    designation: "General Manager, Indus Real Estate LLC",
   },
-  {
-    id: "2nd",
-    imageSrc: "/images/testimonials/testi-2.png",
-    text: "Another fantastic testimonial! This workshop has helped me improve my design skills significantly. I'm really grateful for the opportunity.",
-    name: "Ella Johnson",
-    designation: "UX Designer, Google",
-  },
-  {
-    id: "third",
-    imageSrc: "/images/testimonials/testi-3.png",
-    text: "What a great experience! I have visited one of the workshops and attended a masterclass, and both were super useful for young designers.",
-    name: "Ali Tufan",
-    designation: "Product Manager, Apple Inc",
-  },
-  {
-    id: "4th",
-    imageSrc: "/images/testimonials/testi-4.png",
-    text: "Another fantastic testimonial! This workshop has helped me improve my design skills significantly. I'm really grateful for the opportunity.",
-    name: "Ella Johnson",
-    designation: "UX Designer, Google",
-  },
-  {
-    id: "5th",
-    imageSrc: "/images/testimonials/testi-5.png",
-    text: "Another fantastic testimonial! This workshop has helped me improve my design skills significantly. I'm really grateful for the opportunity.",
-    name: "Ella Johnson",
-    designation: "UX Designer, Google",
-  },
+  // {
+  //   id: "2nd",
+  //   imageSrc: "/images/testimonials/testi-2.png",
+  //   text: "Another fantastic testimonial! This workshop has helped me improve my design skills significantly. I'm really grateful for the opportunity.",
+  //   name: "Ella Johnson",
+  //   designation: "UX Designer, Google",
+  // },
+  // {
+  //   id: "third",
+  //   imageSrc: "/images/testimonials/testi-3.png",
+  //   text: "What a great experience! I have visited one of the workshops and attended a masterclass, and both were super useful for young designers.",
+  //   name: "Ali Tufan",
+  //   designation: "Product Manager, Apple Inc",
+  // },
+  // {
+  //   id: "4th",
+  //   imageSrc: "/images/testimonials/testi-4.png",
+  //   text: "Another fantastic testimonial! This workshop has helped me improve my design skills significantly. I'm really grateful for the opportunity.",
+  //   name: "Ella Johnson",
+  //   designation: "UX Designer, Google",
+  // },
+  // {
+  //   id: "5th",
+  //   imageSrc: "/images/testimonials/testi-5.png",
+  //   text: "Another fantastic testimonial! This workshop has helped me improve my design skills significantly. I'm really grateful for the opportunity.",
+  //   name: "Ella Johnson",
+  //   designation: "UX Designer, Google",
+  // },
   // Add more testimonial objects if needed
 ];
 
@@ -48,7 +48,7 @@ const Testimonial = () => {
           <div
             key={testimonial.id}
             className={`tab-pane fade ${
-              testimonial.id === "2nd" ? "show active" : ""
+              testimonial.id === "1st" ? "show active" : ""
             }`}
             id={`pills-${testimonial.id}`}
             role="tabpanel"
@@ -75,7 +75,7 @@ const Testimonial = () => {
               <button
                 className={`nav-link ${
                   testimonial.id === "1st" ? "ps-0" : ""
-                } ${testimonial.id === "2nd" ? "active" : ""} ${
+                } ${testimonial.id === "1st" ? "active" : ""} ${
                   testimonial.id === "5th" ? "pe-0" : ""
                 }`}
                 id={`pills-${testimonial.id}-tab`}

@@ -14,12 +14,26 @@ export async function getFeaturedBlogs() {
   return response.data;
 }
 
+export async function getExclusiveAgents() {
+  const response = await axios.get(
+    "https://indusspeciality.com/api/listings/get_exclusive_agents.php"
+  );
+  return response.data;
+}
+
 export async function getFeaturedListings(status) {
   const response = await axios.post(
     "https://indusspeciality.com/api/listings/get_featured_listings.php",
     {
       status: status,
     }
+  );
+  return response.data;
+}
+
+export async function getFeaturedOneListing() {
+  const response = await axios.get(
+    "https://indusspeciality.com/api/listings/get_featured_one_listing.php"
   );
   return response.data;
 }
@@ -54,6 +68,16 @@ export async function getBlogDetails(id) {
   return response.data;
 }
 
+export async function getDeveloperDetails(id) {
+  const response = await axios.post(
+    "https://indusspeciality.com/api/listings/get_developer_details.php",
+    {
+      dev_id: id,
+    }
+  );
+  return response.data;
+}
+
 export async function getAgentPropertiesLimit4(id, status) {
   const response = await axios.post(
     "https://indusspeciality.com/api/listings/get_agents_properties_limit_4.php",
@@ -80,6 +104,18 @@ export async function getAllListingsPagination(limit, pageNumber, filter) {
 export async function getAllAgents(limit, pageNumber, search) {
   const response = await axios.post(
     "https://indusspeciality.com/api/listings/get_all_agents.php",
+    {
+      limit: limit,
+      pageNumber: pageNumber,
+      search: search,
+    }
+  );
+  return response.data;
+}
+
+export async function getAllDevelopers(limit, pageNumber, search) {
+  const response = await axios.post(
+    "https://indusspeciality.com/api/listings/get_all_developers.php",
     {
       limit: limit,
       pageNumber: pageNumber,

@@ -15,7 +15,6 @@ export default function PropertyListing() {
     setLoading(true);
     getFeaturedListings(currentType == "rent" ? 1 : 2)
       .then((response) => {
-        // console.log(response);
         if (currentType == "rent") {
           const filtered = response.filter(
             (elm) => elm.property_category_id == "1"

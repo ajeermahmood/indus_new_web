@@ -14,7 +14,6 @@ const Blog = () => {
     getFeaturedBlogs()
       .then((res) => {
         setData(res);
-        // console.log(res);
       })
       .finally(() => setLoading(false));
   }, []);

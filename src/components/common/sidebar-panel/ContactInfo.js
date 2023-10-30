@@ -4,15 +4,15 @@ const ContactInfo = () => {
   const contactInfo = [
     {
       id: 1,
-      title: "Total Free Customer Care",
-      phone: "+(0) 123 050 945 02",
-      phoneHref: "tel:+012305094502",
+      title: "Customer Care",
+      phone: "800 INDUS (46387)",
+      phoneHref: "tel:+971080046387",
     },
     {
       id: 2,
       title: "Need Live Support?",
-      email: "hi@homez.com",
-      emailHref: "mailto:hi@homez.com",
+      email: "info@indusre.ae",
+      emailHref: "mailto:info@indusre.ae",
     },
   ];
 

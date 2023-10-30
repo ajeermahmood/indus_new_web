@@ -1,12 +1,22 @@
 "use client";
-import agents from "@/data/agents";
+import { getExclusiveAgents } from "@/api/listings";
+import { Skeleton } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import SwiperCore, { Navigation, Pagination } from "swiper";
+import { useEffect, useState } from "react";
+import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 
 const Agents = () => {
+  const skeletonLoader = [1, 2, 3, 4, 5];
+  const [erroImgs, setErrorImgs] = useState([]);
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    getExclusiveAgents().then((res) => {
+      setData(res);
+    });
+  }, []);
   return (
     <>
       <Swiper
@@ -38,29 +48,82 @@ const Agents = () => {
         }}
         autoplay={{ delay: 3000 }} // Set the desired delay for autoplay
       >
-        {agents.slice(0, 7).map((agent, index) => (
-          <SwiperSlide key={index}>
-            <div className="item" key={index}>
-              <Link href={`/agent-single/${agent.id}`}>
-                <div className="team-style1 mb30">
-                  <div className="team-img">
-                    <Image
-                      width={217}
-                      height={248}
-                      className="w-100 h-100 cover"
-                      src={agent.image}
-                      alt="agent team"
-                    />
-                  </div>
-                  <div className="team-content pt20">
-                    <h6 className="name mb-1">{agent.name}</h6>
-                    <p className="text fz15 mb-0">Broker</p>
+        {data.length == 0
+          ? skeletonLoader.map((agent, index) => (
+              <SwiperSlide key={index}>
+                <div className="item" key={index}>
+                  <div className="team-style1 mb30">
+                    <div
+                      className="team-img"
+                      style={{
+                        height: "15rem",
+                      }}
+                    >
+                      <Skeleton
+                        variant="rectangular"
+                        width={217}
+                        height={248}
+                        className="w-100 h-100 cover"
+                      />
+                    </div>
+                    <div className="team-content pt20">
+                      <Skeleton
+                        variant="rectangular"
+                        width={200}
+                        height={20}
+                        className="name mb-1"
+                      />
+                      <Skeleton
+                        variant="rectangular"
+                        width={180}
+                        height={20}
+                        className="text fz15 mb-0"
+                      />
+                    </div>
                   </div>
                 </div>
-              </Link>
-            </div>
-          </SwiperSlide>
-        ))}
+              </SwiperSlide>
+            ))
+          : data.map((agent, index) => (
+              <SwiperSlide key={index}>
+                <div className="item" key={index}>
+                  <Link href={`/about-agent/?id=${agent.client_user_id}`}>
+                    <div className="team-style1 mb30">
+                      <div
+                        className="team-img"
+                        style={{
+                          height: "15rem",
+                        }}
+                      >
+                        <Image
+                          width={217}
+                          height={248}
+                          className="w-100 h-100 cover"
+                          style={{
+                            objectPosition: "top",
+                          }}
+                          src={
+                            erroImgs.includes(agent.client_user_id)
+                              ? "/images/agents/demo.png"
+                              : `https://www.indusre.com/agentimg/${agent.client_user_image}`
+                          }
+                          alt="agent team"
+                          onError={(e) => {
+                            setErrorImgs([...erroImgs, agent.client_user_id]);
+                          }}
+                        />
+                      </div>
+                      <div className="team-content pt20">
+                        <h6 className="name mb-1">{agent.client_user_name}</h6>
+                        <p className="text fz15 mb-0">
+                          {agent.client_user_designation}
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              </SwiperSlide>
+            ))}
       </Swiper>
     </>
   );

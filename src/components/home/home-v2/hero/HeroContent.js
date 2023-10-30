@@ -12,9 +12,9 @@ const HeroContent = () => {
   };
 
   const tabs = [
+    { id: "all", label: "All" },
     { id: "buy", label: "Buy" },
     { id: "rent", label: "Rent" },
-    { id: "sold", label: "Sold" },
   ];
 
   return (
@@ -48,7 +48,7 @@ const HeroContent = () => {
                           className="form-control "
                           type="text"
                           name="search"
-                          placeholder={`Enter Keyword for ${tab.label}`}
+                          placeholder={`Search Properties for ${tab.label}`}
                         />
                       </div>
                     </form>
@@ -78,7 +78,7 @@ const HeroContent = () => {
                     <button
                       className="advance-search-icon ud-btn btn-thm ms-4"
                       type="button"
-                      onClick={() => router.push("/grid-default")}
+                      onClick={() => router.push("/search-results")}
                     >
                       <span className="flaticon-search" />
                     </button>

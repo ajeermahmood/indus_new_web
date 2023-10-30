@@ -1,6 +1,6 @@
 import React from "react";
 
-const AppWidget = () => {
+const AppWidget = ({ path }) => {
   const appList = [
     {
       icon: "fab fa-apple fz30 text-white",
@@ -23,12 +23,22 @@ const AppWidget = () => {
         {appList.map((app, index) => (
           <div className="col-auto" key={index}>
             <a href={app.link} target="_blank" rel="noopener noreferrer">
-              <div className="app-info light-style d-flex align-items-center mb10">
+              <div
+                className={`app-info light-style d-flex align-items-center mb10 ${
+                  path != "/" ? "bg-indus" : ""
+                }`}
+              >
                 <div className="flex-shrink-0">
                   <i className={app.icon} />
                 </div>
                 <div className="flex-grow-1 ml20">
-                  <p className="app-text fz13 mb0">{app.text}</p>
+                  <p
+                    className={`app-text fz13 mb0 ${
+                      path != "/" ? "text-light" : ""
+                    }`}
+                  >
+                    {app.text}
+                  </p>
                   <h6 className="app-title text-white fz14">{app.title}</h6>
                 </div>
               </div>

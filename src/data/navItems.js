@@ -1,24 +1,20 @@
 export const homeItems = [
-  { href: "/", label: "Home v1" },
-  { href: "/home-v2", label: "Home v2" },
-  { href: "/home-v3", label: "Home v3" },
-  { href: "/home-v4", label: "Home v4" },
-  { href: "/home-v5", label: "Home v5" },
-  { href: "/home-v6", label: "Home v6" },
-  { href: "/home-v7", label: "Home v7" },
-  { href: "/home-v8", label: "Home v8" },
-  { href: "/home-v9", label: "Home v9" },
-  { href: "/home-v10", label: "Home v10" },
+  { href: "/", label: "Home" },
+  { href: "/#featured-properties", label: "Featured Properties" },
+  { href: "/#explore-cities", label: "Explore Cities" },
+  { href: "/#featured-blogs", label: "Featured Blogs" },
+  { href: "/#guides", label: "Guides" },
+  { href: "/#exclusive-team", label: "Exclusive Team" },
 ];
 
 export const residentialPages = [
-  { href: "/sale-properties?type=residential", label: "Buy" },
-  { href: "/rent-properties?type=residential", label: "Rent" },
+  { href: "/all-properties?status=buy&cat=residential", label: "Buy" },
+  { href: "/all-properties?status=rent&cat=residential", label: "Rent" },
 ];
 
 export const commercialPages = [
-  { href: "/sale-properties?type=commercial", label: "Buy" },
-  { href: "/rent-properties?type=commercial", label: "Rent" },
+  { href: "/all-properties?status=buy&cat=commercial", label: "Buy" },
+  { href: "/all-properties?status=rent&cat=commercial", label: "Rent" },
 ];
 
 export const guidesPages = [

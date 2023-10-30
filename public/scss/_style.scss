@@ -83,6 +83,18 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
   --indus-gold: #d4aa4b;
 }
 
+.text-indus {
+  color: var(--indus-gold) !important;
+}
+
+.text-blue-gray {
+  color: var(--blue-gray) !important;
+}
+
+.bg-indus {
+  background-color: var(--indus-gold) !important;
+}
+
 /* Mixins */
 /* Typography Styles */
 html,
@@ -235,6 +247,10 @@ li {
 .footer-style1.at-home4 {
   background-color: #ffffff;
 }
+
+.footer-style1.at-home4-2 {
+  background-color: var(--navy-blue);
+}
 .footer-style1.at-home6 {
   background-color: transparent;
   background-image: url(../images/home/footer-bg-6.jpg);
@@ -280,7 +296,7 @@ li {
   background-color: #181a20;
 }
 .app-widget .app-info.light-style:hover {
-  background-color: #eb6753;
+  background-color: var(--indus-gold);
 }
 .app-widget .app-info.light-style:hover .app-text {
   color: #ffffff;
@@ -434,7 +450,7 @@ li {
   color: #bebdbd;
   display: block;
   font-family: var(--title-font-family);
-  line-height: 40px;
+  line-height: 25px;
   position: relative;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -448,6 +464,11 @@ li {
   color: var(--headings-color);
   font-family: var(--title-font-family);
   font-weight: 400;
+  font-size: 13px;
+
+  &:hover {
+    color: var(--indus-gold);
+  }
 }
 .link-style1.at-home9 a:hover {
   color: #eb6753;
@@ -4252,7 +4273,7 @@ li {
   max-width: 210px;
   padding: 20px;
   position: absolute;
-  right: 0;
+  right: 15px;
   top: 0;
   width: 100%;
   z-index: 1;
@@ -4695,10 +4716,10 @@ section {
 
 .scrollToHome {
   background-color: transparent;
-  border: 1px solid #eb6753;
+  border: 1px solid var(--midnight-blue);
   border-radius: 50%;
   bottom: 45px;
-  color: #eb6753;
+  color: var(--midnight-blue);
   display: block;
   height: 50px;
   line-height: 50px;
@@ -4720,7 +4741,7 @@ section {
 }
 
 .scrollToHome:hover {
-  background-color: #eb6753;
+  background-color: var(--midnight-blue);
   color: #ffffff;
 }
 
@@ -5158,7 +5179,7 @@ section {
   box-shadow: 0px 10px 40px rgba(24, 26, 32, 0.05);
 }
 .iconbox-style3 img {
-  max-height: 150px;
+  max-height: 250px;
 }
 .iconbox-style3 .icon {
   margin-bottom: 25px;
@@ -6846,8 +6867,8 @@ textarea:focus {
 
 .btn-thm3 {
   background-color: #ffffff;
-  border: 1px solid #eb6753;
-  color: #eb6753;
+  border: 1px solid var(--indus-gold);
+  color: var(--indus-gold);
 }
 
 .btn-thm-border {
@@ -6863,7 +6884,7 @@ textarea:focus {
 }
 .btn-white:hover,
 .btn-white2:hover {
-  border: 1px solid #eb6753;
+  border: 1px solid var(--midnight-blue);
 }
 
 .btn-white2:before {
@@ -6880,7 +6901,7 @@ textarea:focus {
 }
 .btn-light-gray:hover,
 .btn-transparent:hover {
-  border: 1px solid #eb6753;
+  border: 1px solid var(--midnight-blue);
 }
 
 .btn-transparent,
@@ -7844,9 +7865,9 @@ li.mm-listitem:focus {
 .hiddenbar_navbar_menu .navbar-nav .nav-item .nav-link:hover,
 .hiddenbar_navbar_menu .navbar-nav .nav-item .nav-link:active,
 .hiddenbar_navbar_menu .navbar-nav .nav-item .nav-link:focus {
-  background-color: rgba(235, 103, 83, 0.07);
-  border-left: 2px solid #eb6753;
-  color: #eb6753;
+  background-color: #2b425738;
+  border-left: 2px solid var(--midnight-blue);
+  color: var(--midnight-blue);
 }
 .hiddenbar_navbar_menu .navbar-nav .nav-item .nav-link i {
   line-height: 60px;
@@ -10255,7 +10276,7 @@ input:focus-visible {
 }
 
 .bgc-thm-light {
-  background-color: rgba(235, 103, 83, 0.05);
+  background-color: #d4aa4b38;
 }
 
 .bgc-thm3-light {

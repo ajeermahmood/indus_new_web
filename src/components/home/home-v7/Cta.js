@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Cta = () => {
@@ -17,9 +18,9 @@ const Cta = () => {
               <p className="cta-text mb25 text-white">
                 We only work with the best companies around the globe to survey
               </p>
-              <a href="/register" className="ud-btn btn-white bdrs0">
-                Register Now <i className="fal fa-arrow-right-long" />
-              </a>
+              <Link href="/contact" className="ud-btn btn-white bdrs0">
+                Contact Now <i className="fal fa-arrow-right-long" />
+              </Link>
             </div>
           </div>
           {/* End .col-lg-7 */}
@@ -31,7 +32,7 @@ const Cta = () => {
                 height={415}
                 priority
                 className="w-100 h-100 cover"
-                src="/images/about/cta-member-1.png"
+                src="/images/agents/become-agent.webp"
                 alt="cta memeber"
               />
             </div>

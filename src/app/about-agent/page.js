@@ -1,5 +1,5 @@
 "use client";
-import Footer from "@/components/common/default-footer";
+import Footer from "@/components/home/home-v7/footer";
 import MobileMenu from "@/components/common/mobile-menu";
 import Header from "@/components/home/home-v2/Header";
 import FormContact from "@/components/property/FormContact";
@@ -23,7 +23,6 @@ const AboutAgentPage = () => {
   useEffect(() => {
     getAgentDetails(params).then((res) => {
       setData(res);
-      console.log(res);
     });
   }, []);
   return data == "" ? (
@@ -187,7 +186,7 @@ const AboutAgentPage = () => {
       {/* End Agent Single Section Area */}
 
       {/* Start Our Footer */}
-      <section className="footer-style1 pt60 pb-0">
+      <section className="footer-style1 at-home4-2 pt60 pb-0">
         <Footer />
       </section>
       {/* End Our Footer */}

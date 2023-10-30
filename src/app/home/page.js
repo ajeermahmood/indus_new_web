@@ -49,7 +49,7 @@ const HomePage = () => {
       {/* End Home Banner Style V2 */}
 
       {/* Explore Apartment */}
-      <section className="pb90 pb30-md">
+      <section className="pb0 pb30-md">
         <div className="container">
           <div className="row justify-content-center" data-aos="fade">
             <div className="col-lg-12">
@@ -62,7 +62,9 @@ const HomePage = () => {
 
       {/* Featured Listings */}
       {/* Popular Property */}
-      <PropertyListing />
+      <section className="pb0 pb30-md" id="featured-properties">
+        <PropertyListing />
+      </section>
       {/* Popular Property */}
       {/* <section className="pt0 pb60 pb30-md bgc-white">
         <div className="container">
@@ -143,7 +145,7 @@ const HomePage = () => {
           </div>
         </div>
       </section> */}
-      <section className="pb90 pb30-md">
+      <section className="pb10 pb30-md" id="explore-cities">
         <div className="container">
           <div className="row" data-aos="fade-up" data-aos-delay="0">
             <div className="col-lg-6 mx-auto">
@@ -166,7 +168,7 @@ const HomePage = () => {
         </div>
       </section>
       {/* End property cities */}
-      <section className="pb90 pb20-md">
+      <section className="pb90 pb20-md" id="featured-blogs">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 m-auto" data-aos="fade-up">
@@ -193,7 +195,7 @@ const HomePage = () => {
       </section>
 
       {/* Explore Apartment */}
-      <section className="p-0">
+      <section className="p-0" id="guides">
         <div className="how-we-help position-relative mx-auto bgc-thm-light maxw1600 pt120 pt60-md pb90 pb30-md bdrs12 mx20-lg">
           <div className="container">
             <div className="row">
@@ -202,10 +204,8 @@ const HomePage = () => {
                 data-wow-delay="300ms"
               >
                 <div className="main-title text-center">
-                  <h2 className="title">See How Realton Can Help</h2>
-                  <p className="paragraph">
-                    Aliquam lacinia diam quis lacus euismod
-                  </p>
+                  <h2 className="title">See How Indus Can Help</h2>
+                  <p className="paragraph">Indus will help find your home.</p>
                 </div>
               </div>
             </div>
@@ -262,7 +262,7 @@ const HomePage = () => {
       {/* End Our Testimonials */}
 
       {/* Exclusive Agents */}
-      <section className="pb90">
+      <section className="pb90" id="exclusive-team">
         <div className="container">
           <div className="row  justify-content-between align-items-center">
             <div className="col-auto">
@@ -271,7 +271,7 @@ const HomePage = () => {
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
-                <h2 className="title">Our Exclusive Agetns</h2>
+                <h2 className="title">Our Exclusive Team</h2>
                 <p className="paragraph">
                   Aliquam lacinia diam quis lacus euismod
                 </p>
@@ -301,6 +301,7 @@ const HomePage = () => {
                 {/* End Next */}
               </div>
             </div>
+
             {/* End .col for navigation and pagination */}
           </div>
           {/* End .row */}
@@ -311,18 +312,23 @@ const HomePage = () => {
                 <Agents />
               </div>
             </div>
+            <div className="d-grid d-md-block text-center mt30 mt0-md">
+              <Link href="/team" className="ud-btn btn-dark bdrs0">
+                View All Team<i className="fal fa-arrow-right-long"></i>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
       {/* Exclusive Agents */}
 
       {/* Our Partners */}
-      <section className="our-partners pt0">
+      <section className="our-partners pt50">
         <div className="container">
           <div className="row">
             <div className="col-lg-12 wow fadeInUp" data-wow-delay="100">
               <div className="main-title text-center">
-                <h6>Trusted by the world’s best</h6>
+                <h6>Trusted by the Dubai’s best</h6>
               </div>
             </div>
             {/* End .col-12 */}
@@ -371,8 +377,11 @@ const HomePage = () => {
                   <Image
                     width={591}
                     height={778}
+                    style={{
+                      borderRadius: "5px",
+                    }}
                     className="w-100 h-100 cover"
-                    src="/images/about/about-4.png"
+                    src="/images/enquiry/form-img.webp"
                     alt="about"
                   />
                 </div>

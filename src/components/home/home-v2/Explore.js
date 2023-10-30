@@ -4,22 +4,22 @@ const Explore = () => {
   // Array of iconbox data
   const iconboxData = [
     {
-      icon: "/images/icon/property-buy-2.svg",
+      icon: "/images/guides/buy-property.svg",
       title: "Buy a property",
-      text: "Nullam sollicitudin blandit eros eu pretium. Nullam maximus ultricies auctor.",
-      linkText: "Find a home",
+      text: "Buying a home can be both exciting and daunting whether you are a first-time buyer or a seasoned investor. We have culminated a list of factors to consider before you become a homeowner in Dubai.",
+      linkText: "Read Guide",
     },
     {
-      icon: "/images/icon/property-sell-2.svg",
+      icon: "/images/guides/sell-property.svg",
       title: "Sell a property",
-      text: "Nullam sollicitudin blandit eros eu pretium. Nullam maximus ultricies auctor.",
-      linkText: "Place an ad",
+      text: "Selling your property is a crucial period with so many decisions to make that can act as a key determiner which could either lead you to a profit or a loss. It can be a hectic time period but if done right can lead to a smooth sale transaction.",
+      linkText: "Read Guide",
     },
     {
-      icon: "/images/icon/property-rent-2.svg",
+      icon: "/images/guides/rent-property.svg",
       title: "Rent a property",
-      text: "Nullam sollicitudin blandit eros eu pretium. Nullam maximus ultricies auctor.",
-      linkText: "Find a rental",
+      text: "Renting a property has become a popular choice for many. Tourists and corporate officers visiting Dubai prefer to rent. Moreover, expats and nationals working in Dubai can also find long and short-term rentals in Dubai. ",
+      linkText: "Read Guide",
     },
   ];
 
@@ -32,9 +32,14 @@ const Explore = () => {
           data-aos="fade-up"
           data-aos-delay={(index + 1) * 100} // Increase delay for each item
         >
-          <div className="iconbox-style3 text-center">
+          <div
+            className="iconbox-style3 text-center"
+            style={{
+              minHeight: "40rem !important",
+            }}
+          >
             <div className="icon">
-              <Image width={316} height={150} src={item.icon} alt="icon" />
+              <Image width={250} height={250} src={item.icon} alt="icon" />
             </div>
             <div className="iconbox-content">
               <h4 className="title">{item.title}</h4>

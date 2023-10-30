@@ -31,11 +31,11 @@ const InqueryForm = () => {
       return {
         ...styles,
         backgroundColor: isSelected
-          ? "#eb6753"
+          ? "#2B4257"
           : isHovered
-          ? "#eb675312"
+          ? "#88a9c33b"
           : isFocused
-          ? "#eb675312"
+          ? "#88a9c33b"
           : undefined,
       };
     },
@@ -104,7 +104,7 @@ const InqueryForm = () => {
             <input
               type="email"
               className="form-control"
-              placeholder="ibthemes21@gmail.com"
+              placeholder="johndue@gmail.com"
             />
           </div>
         </div>

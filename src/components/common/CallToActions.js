@@ -40,16 +40,16 @@ const CallToActions = () => {
             <div className="col-lg-5 col-xl-6 " data-aos="fade-left">
               <div className="cta-btns-style1 d-block d-sm-flex align-items-center justify-content-lg-end">
                 <Link
-                  href="/contact"
+                  href="/contact/#"
                   className="ud-btn btn-transparent mr30 mr0-xs"
                 >
                   Contact Us
                   <i className="fal fa-arrow-right-long" />
                 </Link>
-                <Link href="/contact" className="ud-btn btn-dark">
+                <a href="tel:+012305094502" className="ud-btn btn-dark">
                   <span className="flaticon-call vam pe-2" />
-                  920 851 9087
-                </Link>
+                  800 INDUS (46387)
+                </a>
               </div>
             </div>
             {/* End col-lg-5 */}

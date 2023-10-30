@@ -27,7 +27,7 @@ const Funfact = () => {
           <p className="text mb-0">{fact.text}</p>
         </div>
       ))}
-      <Link href="#" className="ud-btn btn-thm">
+      <Link href="/all-properties" className="ud-btn btn-thm">
         See More
         <i className="fal fa-arrow-right-long" />
       </Link>

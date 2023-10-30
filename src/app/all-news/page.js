@@ -1,9 +1,7 @@
-import Pagination from "@/components/blog/Pagination";
-import BlogFilter from "@/components/blog/blog-list-v3/BlogFilter";
 import BlogFilterContainer from "@/components/blog/blog-list-v3/BlogFilterContainer";
-import Header from "@/components/home/home-v2/Header";
-import Footer from "@/components/common/default-footer";
+import Footer from "@/components/home/home-v7/footer";
 import MobileMenu from "@/components/common/mobile-menu";
+import Header from "@/components/home/home-v2/Header";
 
 export const metadata = {
   title: "Indus Real Estate LLC | Dubai Luxury Properties",
@@ -39,11 +37,11 @@ const AllNewsPage = () => {
       {/* End Breadcrumb Start */}
 
       {/* Blog Section Area */}
-      <BlogFilterContainer/>
+      <BlogFilterContainer />
       {/* End Blog Section Area */}
 
       {/* Start Our Footer */}
-      <section className="footer-style1 pt60 pb-0">
+      <section className="footer-style1 at-home4-2 pt60 pb-0">
         <Footer />
       </section>
       {/* End Our Footer */}

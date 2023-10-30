@@ -1,22 +1,48 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Funfact from "./Funfact";
 import ProductSingle from "./ProductSingle";
 import Image from "next/image";
 import VideoBox from "./VideoBox";
+import { getFeaturedOneListing } from "@/api/listings";
+import { Skeleton } from "@mui/material";
 
 const About = () => {
+  const [data, setData] = useState("");
+  useEffect(() => {
+    getFeaturedOneListing().then((res) => {
+      setData(res);
+    });
+  }, []);
   return (
     <div className="row mt80 mt0-md">
       <div className="col-md-6 col-xl-6">
         <div className="position-relative">
           <div className="img-box-7">
-            <Image
-              width={591}
-              height={768}
-              className="w-100 h-100 cover img-1"
-              src="/images/about/about-2.png"
-              alt="about"
-            />
+            {data == "" ? (
+              <Skeleton
+                // className="w-100 h-100"
+                variant="rectangular"
+                style={{
+                  minHeight: "45rem",
+                  borderRadius: "5px",
+                }}
+                className="w-100 h-100 cover img-1"
+                width={591}
+                height={768}
+              />
+            ) : (
+              <Image
+                width={591}
+                height={768}
+                style={{
+                  minHeight: "45rem",
+                }}
+                className="w-100 h-100 cover img-1"
+                src={data.dp_2}
+                alt="about"
+              />
+            )}
           </div>
           <div className="img-box-8 position-relative">
             <Image
@@ -27,9 +53,18 @@ const About = () => {
               alt="about"
             />
           </div>
-          <VideoBox />
+          {data != "" ? (
+            data.property_video != "" ? (
+              <VideoBox />
+            ) : (
+              <></>
+            )
+          ) : (
+            <></>
+          )}
+
           <div className="img-box-10 position-relative">
-            <ProductSingle />
+            <ProductSingle property={data} />
           </div>
         </div>
       </div>
@@ -39,8 +74,10 @@ const About = () => {
         <div className="about-box-1">
           <h2 className="title mb30">With Us Help You Find Your Dream Home</h2>
           <p className="text mb20 fz15">
-            As the complexity of buildings to increase, the field of
-            architecture.
+            At Indus, the range of service focuses on all aspects of property
+            selling, buying and leasing – both residential and commercial. Our
+            efficiency is derived from a combination of experience and knowledge
+            of the local property market.
           </p>
           <Funfact />
         </div>
