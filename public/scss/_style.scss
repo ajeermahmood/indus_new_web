@@ -480,16 +480,16 @@ li {
 }
 
 .breadcumb-section2 {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-image: url(../images/background/about-page-bg.jpg);
+  -webkit-box-align: top;
+  -ms-flex-align: top;
+  align-items: top;
+  background-image: url(../images/about/group2.jpg);
   background-size: cover;
   background-position: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 450px;
+  height: 600px;
 }
 
 .breadcumb-section3 {
@@ -1838,7 +1838,7 @@ li {
   margin-bottom: 0;
 }
 .listing-style7 .list-meta a:hover {
-  background-color: rgba(235, 103, 83, 0.9);
+  background-color: var(--indus-gold);
   color: #ffffff;
 }
 .listing-style7 .list-meta2 a {
@@ -1847,7 +1847,7 @@ li {
   font-weight: normal;
 }
 .listing-style7 .list-price {
-  color: #eb6753;
+  color: var(--indus-gold);
   font-family: var(--title-font-family);
   font-weight: 600;
   font-size: 15px;
@@ -4044,7 +4044,7 @@ li {
 }
 
 .property-banner-style1 {
-  background-image: url(../images/listings/listing-banner-1.jpg);
+  background-image: url(../images/search/search-4-cmprsd.webp);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -6657,7 +6657,7 @@ textarea:focus {
   text-align: center;
   width: 40px;
   &:hover {
-    background-color: #f8d3cd;
+    background-color: var(--indus-gold);
   }
 }
 .advance-feature-modal .btn-close:focus,
@@ -6706,7 +6706,7 @@ textarea:focus {
 
 /* blockquote Styles*/
 .blockquote-style1 {
-  background-color: rgba(235, 103, 83, 0.07);
+  background-color: rgba(212, 170, 75, 0.2196078431);
   border-left: 3px solid var(--headings-color);
   padding: 45px 60px 20px;
   position: relative;

@@ -1,7 +1,7 @@
 
 'use client'
 
-import AdvanceFilterModal from "@/components/common/advance-filter";
+import AdvanceFilterModal from "@/components/common/advance-filter-two";
 import HeroContent from "./HeroContent";
 
 const Hero = ({filterFunctions}) => {
@@ -10,7 +10,7 @@ const Hero = ({filterFunctions}) => {
       <div className="inner-banner-style1 text-center">
         <h2 className="hero-title animate-up-3">Find Your Dream Home</h2>
         <p className="hero-text animate-up-3">
-          We’ve more than 745,000 apartments, place &amp; plot.
+          We’ve more than {filterFunctions.listingsCount} properties, place &amp; plot.
         </p>
         <HeroContent filterFunctions={filterFunctions} />
       </div>

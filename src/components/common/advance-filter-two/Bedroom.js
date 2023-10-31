@@ -2,7 +2,7 @@
 
 const Bedroom = ({ filterFunctions }) => {
   const bedOptions = [
-    { id: "xany", label: "any", value: 0 },
+    { id: "xany", label: "any", value: -1 },
     { id: "xoneplus", label: "1+", value: 1 },
     { id: "xtwoplus", label: "2+", value: 2 },
     { id: "xthreeplus", label: "3+", value: 3 },

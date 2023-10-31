@@ -10,11 +10,14 @@ import {
   morePages,
 } from "@/data/navItems";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const MainMenu = () => {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const property_purpose_param = searchParams.get("ps");
+  const property_status_param = searchParams.get("st");
   const [topMenu, setTopMenu] = useState("");
   const [submenu, setSubmenu] = useState("");
   const [activeLink, setActiveLink] = useState("");
@@ -93,6 +96,7 @@ const MainMenu = () => {
       return "menuActive";
     }
   };
+
   return (
     <ul className="ace-responsive-menu">
       <li className="visible_list dropitem">
@@ -117,7 +121,12 @@ const MainMenu = () => {
       <li className="visible_list dropitem">
         <a className="list-item" href="#">
           <span
-            className={topMenu == "residential" ? "title menuActive" : "title"}
+            className={
+              pathname == "/all-properties" &&
+              property_purpose_param == "residential"
+                ? "title menuActive"
+                : "title"
+            }
           >
             Residential
           </span>
@@ -127,9 +136,23 @@ const MainMenu = () => {
         <ul className="sub-menu">
           {residentialPages.map((item, index) => (
             <li key={index}>
-              <Link className={`${handleActive(item.href)}`} href={item.href}>
-                {item.label}
-              </Link>
+              {pathname == "/all-properties" ? (
+                <a
+                  className={`${
+                    property_status_param == item.value &&
+                    property_purpose_param == "residential"
+                      ? "menuActive"
+                      : ""
+                  }`}
+                  href={item.href}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link className={`${handleActive(item.href)}`} href={item.href}>
+                  {item.label}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
@@ -138,7 +161,12 @@ const MainMenu = () => {
       <li className="visible_list dropitem">
         <a className="list-item" href="#">
           <span
-            className={topMenu == "commercial" ? "title menuActive" : "title"}
+            className={
+              pathname == "/all-properties" &&
+              property_purpose_param == "commercial"
+                ? "title menuActive"
+                : "title"
+            }
           >
             Commercial
           </span>
@@ -148,9 +176,23 @@ const MainMenu = () => {
         <ul className="sub-menu">
           {commercialPages.map((item, index) => (
             <li key={index}>
-              <Link className={`${handleActive(item.href)}`} href={item.href}>
-                {item.label}
-              </Link>
+              {pathname == "/all-properties" ? (
+                <a
+                  className={`${
+                    property_status_param == item.value &&
+                    property_purpose_param == "commercial"
+                      ? "menuActive"
+                      : ""
+                  }`}
+                  href={item.href}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link className={`${handleActive(item.href)}`} href={item.href}>
+                  {item.label}
+                </Link>
+              )}
             </li>
           ))}
         </ul>

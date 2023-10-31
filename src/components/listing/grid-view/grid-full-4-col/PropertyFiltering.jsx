@@ -9,23 +9,57 @@ import { useEffect, useState } from "react";
 import ListingSidebar from "../../sidebar";
 import FeaturedListings from "./FeatuerdListings";
 import TopFilterBar from "./TopFilterBar";
+import { useSearchParams } from "next/navigation";
 
 export default function PropertyFiltering() {
+  // params
+  const searchParams = useSearchParams();
+  const property_status_param = searchParams.get("st");
+  const property_purpose_param = searchParams.get("ps");
+  const location_param = searchParams.get("lc");
+  const property_type_param = searchParams.get("t");
+  // params end
+
+  const getPropertyTypesAccordingToPurpose = (purpose) => {
+    switch (purpose) {
+      case "residential":
+        return [1, 2, 3, 4];
+      case "commercial":
+        return [26];
+      default:
+        break;
+    }
+  };
+
   const [listings, setListings] = useState([]);
   const [listingsCount, setListingsCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-  const [listingStatus, setListingStatus] = useState("All");
-  const [propertyTypes, setPropertyTypes] = useState([]);
+  const [listingStatus, setListingStatus] = useState(
+    property_status_param != "" && property_status_param != null
+      ? property_status_param
+      : "All"
+  );
+  const [propertyTypes, setPropertyTypes] = useState(
+    property_purpose_param != "" && property_purpose_param != null
+      ? getPropertyTypesAccordingToPurpose(property_purpose_param)
+      : property_type_param != "" &&
+        property_type_param != "All" &&
+        property_type_param != null
+      ? [Number(property_type_param)]
+      : []
+  );
   const [priceRange, setPriceRange] = useState([0, 40000000]);
   const [priceRangeSetted, setPriceRangeSetted] = useState(1);
-  const [bedrooms, setBedrooms] = useState(0);
+  const [bedrooms, setBedrooms] = useState(-1);
   const [bathroms, setBathroms] = useState(0);
 
   const [currentSortingOption, setCurrentSortingOption] = useState("Newest");
 
   const [colstyle, setColstyle] = useState(false);
 
-  const [location, setLocation] = useState("0");
+  const [location, setLocation] = useState(
+    location_param != "" && location_param != null ? location_param : "0"
+  );
   const [squirefeet, setSquirefeet] = useState([]);
   const [yearBuild, setyearBuild] = useState([]);
   const [categories, setCategories] = useState([]);

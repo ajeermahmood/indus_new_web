@@ -21,6 +21,13 @@ export async function getExclusiveAgents() {
   return response.data;
 }
 
+export async function getPropertiesCountBasedOnLocations() {
+  const response = await axios.get(
+    "https://indusspeciality.com/api/listings/get_prop_counts_based_locations.php"
+  );
+  return response.data;
+}
+
 export async function getFeaturedListings(status) {
   const response = await axios.post(
     "https://indusspeciality.com/api/listings/get_featured_listings.php",
@@ -101,6 +108,24 @@ export async function getAllListingsPagination(limit, pageNumber, filter) {
   return response.data;
 }
 
+export async function getAllPropertiesSearch(
+  limit,
+  pageNumber,
+  filter,
+  search
+) {
+  const response = await axios.post(
+    "https://indusspeciality.com/api/listings/search_properties_with_filter.php",
+    {
+      limit: limit,
+      pageNumber: pageNumber,
+      filter: filter,
+      search: search,
+    }
+  );
+  return response.data;
+}
+
 export async function getAllAgents(limit, pageNumber, search) {
   const response = await axios.post(
     "https://indusspeciality.com/api/listings/get_all_agents.php",
@@ -116,6 +141,18 @@ export async function getAllAgents(limit, pageNumber, search) {
 export async function getAllDevelopers(limit, pageNumber, search) {
   const response = await axios.post(
     "https://indusspeciality.com/api/listings/get_all_developers.php",
+    {
+      limit: limit,
+      pageNumber: pageNumber,
+      search: search,
+    }
+  );
+  return response.data;
+}
+
+export async function getAllVideos(limit, pageNumber, search) {
+  const response = await axios.post(
+    "https://indusspeciality.com/api/listings/get_all_videos.php",
     {
       limit: limit,
       pageNumber: pageNumber,

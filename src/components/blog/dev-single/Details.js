@@ -5,28 +5,22 @@ export default function Details({ devData }) {
     <>
       <div className="container">
         <div className="row" data-aos="fade-up" data-aos-delay="100">
-          <div className="col-lg-12">
+          <div className="col-lg-6">
             <h2 className="blog-title">{devData.name}</h2>
-            <div className="blog-single-meta">
-              <div className="post-author d-sm-flex align-items-center">
-                {/* <Image
-                  width={40}
-                  height={40}
-                  className="mr10"
-                  src="/images/blog/author-1.png"
-                  alt="blog"
-                />
-                <a className="pr15 bdrr1" href="#">
-                  Leslie Alexander
-                </a>
-                <a className="ml15 pr15 bdrr1" href="#">
-                  Home Improvement
-                </a> */}
-                <a className="ml0" href="#">
-                  {/* {data.date.month} {data.date.day}, {data.date.year || 2022} */}
-                </a>
-              </div>
-            </div>
+          </div>
+          <div className="col-lg-6 d-flex justify-content-end">
+            <Image
+              width={105}
+              height={105}
+              style={{
+                border: "1px solid black",
+                borderRadius: "3px",
+                padding: "5px",
+              }}
+              className="mr10 h-100 cover"
+              src={`https://www.indusre.com/images/builders/logo/${devData.logo}`}
+              alt="blog"
+            />
           </div>
         </div>
       </div>

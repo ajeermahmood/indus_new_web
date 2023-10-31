@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import SelectDropdown from "./SelectDropdown";
 import { useRouter } from "next/navigation";
 
-const HeroContent = () => {
+const HeroContent = ({ activeTab, setActiveTab }) => {
   const router = useRouter();
-  const [activeTab, setActiveTab] = useState("buy");
+  const [propertyType, setPropertyType] = useState("All");
+  const [search, setSearch] = useState("");
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -49,6 +50,7 @@ const HeroContent = () => {
                           type="text"
                           name="search"
                           placeholder={`Search Properties for ${tab.label}`}
+                          onChange={(e) => setSearch(e.target.value)}
                         />
                       </div>
                     </form>
@@ -59,7 +61,7 @@ const HeroContent = () => {
                 <div className="col-md-3 col-lg-3 ps-md-0">
                   <div className="bdrr1 bdrrn-sm pe-0 pe-lg-3 bb1-sm">
                     <div className="bootselect-multiselect">
-                      <SelectDropdown />
+                      <SelectDropdown setPropertyType={setPropertyType} />
                     </div>
                   </div>
                 </div>
@@ -78,7 +80,11 @@ const HeroContent = () => {
                     <button
                       className="advance-search-icon ud-btn btn-thm ms-4"
                       type="button"
-                      onClick={() => router.push("/search-results")}
+                      onClick={() =>
+                        router.push(
+                          `/search-results?se=${search}&st=${activeTab}&t=${propertyType}`
+                        )
+                      }
                     >
                       <span className="flaticon-search" />
                     </button>

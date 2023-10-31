@@ -45,6 +45,9 @@ const AllAgents = ({ data }) => {
                     width={324}
                     height={209}
                     className="w-100 contain"
+                    style={{
+                      borderBottom: "1px solid #dddddd",
+                    }}
                     src={`https://www.indusre.com/images/builders/logo/${dev.logo}`}
                     alt="agency"
                   />
@@ -54,7 +57,9 @@ const AllAgents = ({ data }) => {
                     <i className="fas fa-star review-color2 pr10 fz10" />
                     {agent.starRating}
                   </h6> */}
-                  <h6 className="agency-title mb20 text-capitalize fz20">{dev.name}</h6>
+                  <h6 className="agency-title mb20 text-capitalize fz20">
+                    {dev.name}
+                  </h6>
                   {/* <p className="fz15">{agent.address}</p> */}
                   <div className="d-grid">
                     <Link

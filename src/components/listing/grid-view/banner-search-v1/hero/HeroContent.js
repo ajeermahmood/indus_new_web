@@ -1,17 +1,11 @@
 "use client";
 import React, { useState } from "react";
 
-const HeroContent = ({filterFunctions}) => {
-  const [activeTab, setActiveTab] = useState("buy");
-
-  const handleTabClick = (tab) => {
-    setActiveTab(tab);
-  };
-
+const HeroContent = ({ filterFunctions }) => {
   const tabs = [
-    { id: "buy", label: "Buy" },
-    { id: "rent", label: "Rent" },
-    { id: "sold", label: "Sold" },
+    { id: "all", label: "All", value: "All" },
+    { id: "buy", label: "Buy", value: "Sale" },
+    { id: "rent", label: "Rent", value: "Rent" },
   ];
 
   return (
@@ -20,8 +14,10 @@ const HeroContent = ({filterFunctions}) => {
         {tabs.map((tab) => (
           <li className="nav-item" key={tab.id}>
             <button
-              className={`nav-link ${activeTab === tab.id ? "active" : ""}`}
-              onClick={() => handleTabClick(tab.id)}
+              className={`nav-link ${
+                filterFunctions.listingStatus === tab.value ? "active" : ""
+              }`}
+              onClick={() => filterFunctions.handleTabClick(tab.value)}
             >
               {tab.label}
             </button>
@@ -32,7 +28,9 @@ const HeroContent = ({filterFunctions}) => {
       <div className="tab-content">
         {tabs.map((tab) => (
           <div
-            className={`${activeTab === tab.id ? "active" : ""} tab-pane`}
+            className={`${
+              filterFunctions.listingStatus === tab.value ? "active" : ""
+            } tab-pane`}
             key={tab.id}
           >
             <div className="advance-content-style1">
@@ -46,7 +44,11 @@ const HeroContent = ({filterFunctions}) => {
                           className="form-control bgc-f7 bdrs12"
                           type="text"
                           name="search"
-                          onChange={(e)=>filterFunctions && filterFunctions.setSearchQuery(e.target.value)}
+                          onChange={(e) =>
+                            filterFunctions &&
+                            filterFunctions.setSearchQuery(e.target.value)
+                          }
+                          value={filterFunctions.searchQuery}
                           placeholder={`Enter an address, neighborhood, city, or ZIP code for ${tab.label}`}
                         />
                       </div>

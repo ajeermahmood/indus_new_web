@@ -8,13 +8,29 @@ export const homeItems = [
 ];
 
 export const residentialPages = [
-  { href: "/all-properties?status=buy&cat=residential", label: "Buy" },
-  { href: "/all-properties?status=rent&cat=residential", label: "Rent" },
+  {
+    href: "/all-properties?st=Sale&ps=residential",
+    label: "Buy",
+    value: "Sale",
+  },
+  {
+    href: "/all-properties?st=Rent&ps=residential",
+    label: "Rent",
+    value: "Rent",
+  },
 ];
 
 export const commercialPages = [
-  { href: "/all-properties?status=buy&cat=commercial", label: "Buy" },
-  { href: "/all-properties?status=rent&cat=commercial", label: "Rent" },
+  {
+    href: "/all-properties?st=Sale&ps=commercial",
+    label: "Buy",
+    value: "Sale",
+  },
+  {
+    href: "/all-properties?st=Rent&ps=commercial",
+    label: "Rent",
+    value: "Rent",
+  },
 ];
 
 export const guidesPages = [
@@ -26,14 +42,14 @@ export const guidesPages = [
 ];
 
 export const morePages = [
-  { href: "/company-profile", label: "Company Profile" },
+  { href: "/about-company", label: "Company Profile" },
   { href: "/team", label: "Team" },
   { href: "/achievements", label: "Achievements" },
-  { href: "/newsletters", label: "Newsletters" },
-  { href: "/blogs", label: "Blogs" },
-  { href: "/mid-year-awarding-2021", label: "Mid Year Awarding 2021" },
+  // { href: "/newsletters", label: "Newsletters" },
+  { href: "/all-news", label: "Blogs" },
+  // { href: "/mid-year-awarding-2021", label: "Mid Year Awarding 2021" },
   { href: "/videos", label: "Videos" },
-  { href: "/partners", label: "Real Estate Partners" },
+  { href: "/developers", label: "Real Estate Partners" },
   { href: "/career", label: "Career" },
 ];
 

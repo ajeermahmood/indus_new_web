@@ -8,7 +8,8 @@ import Locations from "../../../data/locations";
 
 const AdvanceFilterModal = ({ filterFunctions }) => {
   const catOptions = [
-    { label: "Apartment", defaultChecked: true, value: 1 },
+    { label: "All", defaultChecked: true, value: "All" },
+    { label: "Apartment", value: 1 },
     { label: "Townhouse", value: 3 },
     { label: "Office Space", value: 26 },
     { label: "Villa", value: 2 },
@@ -65,13 +66,25 @@ const AdvanceFilterModal = ({ filterFunctions }) => {
                 <h6 className="list-title">Type</h6>
                 <div className="form-style2 input-group">
                   <Select
-                    defaultValue={[catOptions[0]]}
+                    defaultValue={
+                      filterFunctions.propertyTypes.length == 0
+                        ? [catOptions[0]]
+                        : [
+                            catOptions.find(
+                              (c) => c.value == filterFunctions.propertyTypes
+                            ),
+                          ]
+                    }
                     name="colors"
                     options={catOptions}
                     styles={customStyles}
                     onChange={(e) => {
                       filterFunctions.setListings([]);
-                      filterFunctions?.setPropertyTypes([e.value]);
+                      if (e.value == "All") {
+                        filterFunctions?.setPropertyTypes([]);
+                      } else {
+                        filterFunctions?.setPropertyTypes([e.value]);
+                      }
                     }}
                     className="select-custom"
                     classNamePrefix="select"
@@ -165,6 +178,7 @@ const AdvanceFilterModal = ({ filterFunctions }) => {
                             document.getElementById("maxFeet3").value / 1,
                           ])
                         }
+                        value={filterFunctions.squirefeet[0]}
                         placeholder="Min."
                         id="minFeet3"
                       />
@@ -176,6 +190,7 @@ const AdvanceFilterModal = ({ filterFunctions }) => {
                         className="form-control filterInput"
                         placeholder="Max"
                         id="maxFeet3"
+                        value={filterFunctions.squirefeet[1]}
                         onChange={(e) =>
                           filterFunctions?.handlesquirefeet([
                             document.getElementById("minFeet3").value / 1,

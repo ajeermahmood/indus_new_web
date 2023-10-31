@@ -5,7 +5,9 @@ import Link from "next/link";
 import { useState } from "react";
 
 const AllAgents = ({ data }) => {
-  const skeletonLoader = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+  const skeletonLoader = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+  ];
   const [erroImgs, setErrorImgs] = useState([]);
 
   return (

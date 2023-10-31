@@ -12,7 +12,7 @@ export default function FilteringAgent() {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
   useEffect(() => {
-    getAllAgents(15, currentPage, searchQuery).then((res) => {
+    getAllAgents(16, currentPage, searchQuery).then((res) => {
       setAllagents(res.team);
       setAllagentsCount(res.count);
       // console.log(res);
@@ -44,7 +44,7 @@ export default function FilteringAgent() {
         <div className="row justify-content-center mt20">
           <Stack alignItems="center">
             <Pagination
-              count={Math.ceil(all_agents_count / 15)}
+              count={Math.ceil(all_agents_count / 16)}
               variant="outlined"
               shape="rounded"
               onChange={(event, value) => {

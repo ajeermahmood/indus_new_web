@@ -1,44 +1,60 @@
+"use client";
+import { getPropertiesCountBasedOnLocations } from "@/api/listings";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const ExploreCities = () => {
+  const [data, setData] = useState("");
+
+  useEffect(() => {
+    getPropertiesCountBasedOnLocations().then((res) => {
+      setData(res);
+      console.log(res);
+    });
+  }, []);
   const apartmentData = [
     {
       city: "Downtown Dubai",
       imageSrc: "/images/locations/downtown-3.webp",
-      propertyCount: 12,
+      propertyCount: data.downtown,
       className: "col-lg-6",
+      value: 50,
     },
     {
       city: "Dubai Marina",
       imageSrc: "/images/locations/dubai-marina.webp",
-      propertyCount: 12,
+      propertyCount: data.dubai_marina,
       className: "col-6 col-lg-3",
+      value: 65,
     },
     {
       city: "Arabian Ranches",
       imageSrc: "/images/locations/arabian-ranches.webp",
-      propertyCount: 12,
+      propertyCount: data.arabian_ranches,
       className: "col-6 col-lg-3",
+      value: 36,
     },
     {
       city: "Town Square",
       imageSrc: "/images/locations/town-square.webp",
-      propertyCount: 12,
+      propertyCount: data.town_square,
       className: "col-6 col-lg-3",
+      value: 140,
     },
     {
       city: "Dubai Hills Estate",
       imageSrc: "/images/locations/hills-estate.webp",
-      propertyCount: 12,
+      propertyCount: data.dubai_hills_estate,
       className: "col-6 col-lg-3",
+      value: 60,
     },
     {
       city: "Akoya (DAMAC Hills)",
       imageSrc: "/images/locations/damac-hills.webp",
-      propertyCount: 12,
+      propertyCount: data.damac_hills,
       className: "col-lg-6",
+      value: 3,
     },
   ];
 
@@ -62,8 +78,11 @@ const ExploreCities = () => {
                 <p className="text">{apartment.propertyCount} Properties</p>
               </div>
               <div className="bottom-area">
-                <Link className="ud-btn2" href="/map-v2">
-                  See All Cities
+                <Link
+                  className="ud-btn2"
+                  href={`/all-properties?lc=${apartment.value}`}
+                >
+                  See All Properties
                   <i className="fal fa-arrow-right-long" />
                 </Link>
               </div>

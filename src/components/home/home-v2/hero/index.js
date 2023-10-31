@@ -1,11 +1,14 @@
+"use client";
 import AdvanceFilterModal from "@/components/common/advance-filter";
 import HeroContent from "./HeroContent";
+import { useState } from "react";
 
 const Hero = () => {
+  const [activeTab, setActiveTab] = useState("buy");
   return (
     <>
       <div className="inner-banner-style2 text-center position-relative">
-        <HeroContent />
+        <HeroContent activeTab={activeTab} setActiveTab={setActiveTab} />
         <h2 className="hero-title" data-aos="fade-up" data-aos-delay="150">
           Find Your Dream Home
         </h2>
@@ -24,7 +27,7 @@ const Hero = () => {
           aria-labelledby="advanceSeachModalLabel"
           aria-hidden="true"
         >
-          <AdvanceFilterModal />
+          <AdvanceFilterModal listingStatus={activeTab} />
         </div>
       </div>
       {/* <!-- Advance Feature Modal End --> */}

@@ -1,20 +1,22 @@
 const MenuItems = () => {
   const menuItems = [
-    { id: 1, title: "Apartments" },
-    { id: 2, title: "Villa" },
-    { id: 3, title: "Townhome" },
-    { id: 4, title: "Houses" },
-    { id: 5, title: "Office" },
-    { id: 6, title: "Bungalow" },
-    { id: 7, title: "Loft" },
+    { label: "Apartment", value: 1 },
+    { label: "Townhouse", value: 3 },
+    { label: "Office Space", value: 26 },
+    { label: "Villa", value: 2 },
+    { label: "Penthouse", value: 4 },
   ];
 
   return (
     <ul className="navbar-nav">
       {menuItems.map((item) => (
         <li className="nav-item" key={item.id}>
-          <a className="nav-link" href="#" role="button">
-            {item.title}
+          <a
+            className="nav-link"
+            href={`/all-properties?t=${item.value}`}
+            role="button"
+          >
+            {item.label}
           </a>
         </li>
       ))}

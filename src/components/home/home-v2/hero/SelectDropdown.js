@@ -1,15 +1,14 @@
 "use client";
 import Select from "react-select";
 
-const SelectDropdown = () => {
+const SelectDropdown = ({ setPropertyType }) => {
   const catOptions = [
-    { value: "Apartments", label: "Apartments" },
-    { value: "Bungalow", label: "Bungalow" },
-    { value: "Houses", label: "Houses" },
-    { value: "Loft", label: "Loft" },
-    { value: "Office", label: "Office" },
-    { value: "Townhome", label: "Townhome" },
-    { value: "Villa", label: "Villa" },
+    { label: "All", defaultChecked: true, value: "All" },
+    { label: "Apartment", value: 1 },
+    { label: "Villa", value: 2 },
+    { label: "Townhouse", value: 3 },
+    { label: "Office Space", value: 26 },
+    { label: "Penthouse", value: 4 },
   ];
 
   const customStyles = {
@@ -38,6 +37,13 @@ const SelectDropdown = () => {
         classNamePrefix="select"
         required
         isSearchable={false}
+        onChange={(e) => {
+          if (e.value == "All") {
+            setPropertyType("All");
+          } else {
+            setPropertyType(e.value);
+          }
+        }}
       />
     </>
   );
