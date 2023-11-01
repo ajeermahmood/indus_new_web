@@ -116,9 +116,9 @@ html {
 // mobile menu
 .mobilie_header_nav {
     .hsidebar-header {
-        background: rgba(235, 103, 83, 0.07);
+        background: #d4aa4b38;
         .sidebar-close-icon {
-            background-color: #eb6753;
+            background-color: var(--indus-gold);
             color: #fff;
         }
     }
@@ -139,10 +139,10 @@ html {
             height: 7px;
         }
         &.ps-sidebar-root .ps-menuitem-root.active > .ps-menu-button span {
-            color: #eb6753;
+            color: var(--indus-gold);
         }
         .ps-menu-button.active {
-            color: #eb6753;
+            color: var(--indus-gold);
         }
     }
 }

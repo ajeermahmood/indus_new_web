@@ -1,63 +1,85 @@
+/** @format */
+
 import mobileMenuItems from "@/data/mobileMenuItems";
 import { isParentActive } from "@/utilis/isMenuActive";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
-import { useEffect, useState } from "react";
+import { Menu, MenuItem, Sidebar, SubMenu } from "react-pro-sidebar";
 
 const ProSidebarContent = () => {
   const path = usePathname();
-
-
+  // const [hash, setHash] = useState("");
+  // useEffect(() => {
+  //   setHash(window.location.hash);
+  // });
 
   return (
     <Sidebar width="100%" backgroundColor="#fff" className="my-custom-class">
       <Menu>
         {mobileMenuItems.map((item, index) => (
-          <SubMenu
-            key={index}
-            className={isParentActive(item.subMenu, path) ? "active" : ""}
-            label={item.label}
-          >
-            {item.subMenu.map((subItem, subIndex) =>
-              subItem.subMenu ? (
-                <SubMenu
-                  key={subIndex}
-                  label={subItem.label}
-                  className={
-                    isParentActive(subItem.subMenu, path) ? "active" : ""
-                  }
-                >
-                  {subItem.subMenu.map((nestedItem, nestedIndex) => (
+          <>
+            {item.subMenu != undefined ? (
+              <SubMenu
+                key={index}
+                className={isParentActive(item.subMenu, path) ? "active" : ""}
+                label={item.label}
+              >
+                {item.subMenu.map((subItem, subIndex) =>
+                  subItem.subMenu ? (
+                    <SubMenu
+                      key={subIndex}
+                      label={subItem.label}
+                      className={
+                        isParentActive(subItem.subMenu, path) ? "active" : ""
+                      }
+                    >
+                      {subItem.subMenu.map((nestedItem, nestedIndex) => (
+                        <MenuItem
+                          key={nestedIndex}
+                          component={
+                            <Link
+                              className={
+                                nestedItem.path == path ? "active" : ""
+                              }
+                              href={nestedItem.path}
+                            />
+                          }
+                        >
+                          {nestedItem.label}
+                        </MenuItem>
+                      ))}
+                    </SubMenu>
+                  ) : (
                     <MenuItem
-                      key={nestedIndex}
+                      key={subIndex}
                       component={
                         <Link
-                          className={nestedItem.path == path ? "active" : ""}
-                          href={nestedItem.path}
+                          className={subItem.path == path ? "active" : ""}
+                          href={subItem.path}
                         />
                       }
                     >
-                      {nestedItem.label}
+                      {subItem.label}
                     </MenuItem>
-                  ))}
-                </SubMenu>
-              ) : (
+                  )
+                )}
+              </SubMenu>
+            ) : (
+              <>
                 <MenuItem
-                  key={subIndex}
                   component={
                     <Link
-                      className={subItem.path == path ? "active" : ""}
-                      href={subItem.path}
+                      className={item.path == path ? "active" : ""}
+                      href={item.path}
                     />
                   }
                 >
-                  {subItem.label}
+                  {item.label}
                 </MenuItem>
-              )
+              </>
             )}
-          </SubMenu>
+          </>
         ))}
       </Menu>
     </Sidebar>
