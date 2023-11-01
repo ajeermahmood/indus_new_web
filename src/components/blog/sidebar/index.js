@@ -1,16 +1,14 @@
-import React from "react";
-import SearchBox from "./SearchBox";
-import Categrory from "./Categrory";
 import LatestPost from "./LatestPost";
 import PopularTags from "./PopularTags";
+import SearchBox from "./SearchBox";
 
-const BlogSidebar = () => {
+const BlogSidebar = ({ filterFunctions, latestPosts }) => {
   return (
     <div className="blog-sidebar">
-      <SearchBox />
-      <Categrory />
-      <LatestPost />
-      <PopularTags />
+      <SearchBox filterFunctions={filterFunctions} />
+      {/* <Categrory filterFunctions={filterFunctions}/> */}
+      <LatestPost latestPosts={latestPosts} />
+      <PopularTags filterFunctions={filterFunctions} />
     </div>
   );
 };

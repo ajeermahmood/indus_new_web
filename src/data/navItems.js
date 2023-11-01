@@ -38,7 +38,7 @@ export const guidesPages = [
   { href: "/rent-guide", label: "Renter's Guides" },
   { href: "/buy-guide", label: "Buyer's Guides" },
   { href: "/sell-guide", label: "Seller's Guides" },
-  { href: "/interactive-tour", label: "Interactive Tour" },
+  // { href: "/interactive-tour", label: "Interactive Tour" },
 ];
 
 export const morePages = [
@@ -50,7 +50,7 @@ export const morePages = [
   // { href: "/mid-year-awarding-2021", label: "Mid Year Awarding 2021" },
   { href: "/videos", label: "Videos" },
   { href: "/developers", label: "Real Estate Partners" },
-  { href: "/career", label: "Career" },
+  // { href: "/career", label: "Career" },
 ];
 
 export const listingItems = [

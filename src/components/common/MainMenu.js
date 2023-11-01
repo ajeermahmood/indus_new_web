@@ -227,7 +227,7 @@ const MainMenu = () => {
         </Link>
       </li>
       {/* End Developer */}
-      <li className="visible_list dropitem">
+      {/* <li className="visible_list dropitem">
         <Link className="list-item" href="/why-indus">
           <span
             className={topMenu == "why-indus" ? "title menuActive" : "title"}
@@ -235,7 +235,7 @@ const MainMenu = () => {
             Why Indus
           </span>
         </Link>
-      </li>
+      </li> */}
       {/* End why Indus */}
       <li className="visible_list dropitem">
         <a className="list-item" href="#">

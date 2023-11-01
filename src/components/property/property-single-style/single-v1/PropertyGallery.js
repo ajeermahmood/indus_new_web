@@ -1,45 +1,35 @@
 "use client";
-import { Gallery, Item } from "react-photoswipe-gallery";
-import "photoswipe/dist/photoswipe.css";
 import Image from "next/image";
-import listings from "@/data/listings";
+import "photoswipe/dist/photoswipe.css";
+import { useLayoutEffect, useRef, useState } from "react";
+import { Gallery, Item } from "react-photoswipe-gallery";
 
-const images = [
-  {
-    src: "/images/listings/listing-single-2.jpg",
-    alt: "2.jpg",
-  },
-  {
-    src: "/images/listings/listing-single-3.jpg",
-    alt: "3.jpg",
-  },
-  {
-    src: "/images/listings/listing-single-4.jpg",
-    alt: "4.jpg",
-  },
-  {
-    src: "/images/listings/listing-single-5.jpg",
-    alt: "5.jpg",
-  },
-];
-
-const PropertyGallery = ({id}) => {
-  const data = listings.filter((elm) => elm.id == id)[0] || listings[0];
+const PropertyGallery = ({ galery }) => {
+  const targetRef = useRef();
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  useLayoutEffect(() => {
+    if (targetRef.current) {
+      setDimensions({
+        width: targetRef.current.offsetWidth,
+        height: targetRef.current.offsetHeight,
+      });
+    }
+  }, []);
   return (
     <>
       <Gallery>
         <div className="col-sm-6">
           <div className="sp-img-content mb15-md">
-            <div className="popup-img preview-img-1 sp-img">
+            <div className="popup-img preview-img-1 sp-img" ref={targetRef}>
               <Item
-                original={'/images/listings/listing-single-1.jpg'}
-                thumbnail={'/images/listings/listing-single-1.jpg'}
-                width={610}
-                height={510}
+                original={`https://www.indusre.com/communityimg/${galery[0].ps_gallery_image}`}
+                thumbnail={`https://www.indusre.com/communityimg/${galery[0].ps_gallery_image}`}
+                width={1000}
+                height={710}
               >
                 {({ ref, open }) => (
                   <Image
-                    src={'/images/listings/listing-single-1.jpg'}
+                    src={`https://www.indusre.com/communityimg/${galery[0].ps_gallery_image}`}
                     width={591}
                     height={558}
                     ref={ref}
@@ -57,17 +47,20 @@ const PropertyGallery = ({id}) => {
 
         <div className="col-sm-6">
           <div className="row">
-            {images.map((image, index) => (
+            {galery.slice(1, 5).map((image, index) => (
               <div className="col-6 ps-sm-0" key={index}>
                 <div className="sp-img-content">
                   <div
                     className={`popup-img preview-img-${index + 2} sp-img mb10`}
+                    style={{
+                      height: `${dimensions.height / 2 - 6}px`,
+                    }}
                   >
                     <Item
-                      original={image.src}
-                      thumbnail={image.src}
-                      width={270}
-                      height={250}
+                      original={`https://www.indusre.com/communityimg/${image.ps_gallery_image}`}
+                      thumbnail={`https://www.indusre.com/communityimg/${image.ps_gallery_image}`}
+                      width={1000}
+                      height={710}
                     >
                       {({ ref, open }) => (
                         <Image
@@ -77,8 +70,8 @@ const PropertyGallery = ({id}) => {
                           ref={ref}
                           onClick={open}
                           role="button"
-                          src={image.src}
-                          alt={image.alt}
+                          src={`https://www.indusre.com/communityimg/${image.ps_gallery_image}`}
+                          alt={"imgs"}
                         />
                       )}
                     </Item>

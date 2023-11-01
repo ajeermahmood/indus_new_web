@@ -1,15 +1,16 @@
-import Blog from "@/components/blog/blog-list-v1/Blog";
 import MobileMenu from "@/components/common/mobile-menu";
 import Header from "@/components/home/home-v2/Header";
 import Footer from "@/components/home/home-v7/footer";
 
+import Listing6 from "@/components/listing/list-view/all-list-style/Listing6";
+
 export const metadata = {
-  title: "Indus Real Estate LLC | Dubai Luxury Properties",
+  title: "Community Guides | Indus Real Estate LLC",
 };
 
-const VideosPage = () => {
+const CommunityGuidePage = () => {
   return (
-    <div className="bgc-f7">
+    <>
       {/* Main Header Nav */}
       <Header />
       {/* End Main Header Nav */}
@@ -18,38 +19,43 @@ const VideosPage = () => {
       <MobileMenu />
       {/* End Mobile Nav  */}
 
-      {/* Breadcrumb Start */}
+      {/* Breadcumb Sections */}
       <section className="breadcumb-section pt130">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcumb-style1">
-                <h2 className="title">Videos</h2>
+                <h2 className="title">Community Guides</h2>
                 <div className="breadcumb-list">
                   <a href="#">Home</a>
-                  <a href="#">Videos</a>
+                  <a href="#">Guides</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      {/* End Breadcrumb Start */}
-
-      {/* Blog Section Area */}
-      <section className="our-blog pt-0">
-        <Blog />
-        {/* End .container */}
+      <section className="our-agents pt-0">
+        <div className="container">
+          <div className="row" data-aos="fade-up" data-aos-delay="100">
+            <Listing6 />
+          </div>
+        </div>
       </section>
-      {/* End Blog Section Area */}
+      {/* End Breadcumb Sections */}
+
+      {/* Agent Section Area */}
+      {/* <FilteringAgency /> */}
+
+      {/* End Agent Section Area */}
 
       {/* Start Our Footer */}
       <section className="footer-style1 at-home4-2 pt60 pb-0">
         <Footer />
       </section>
       {/* End Our Footer */}
-    </div>
+    </>
   );
 };
 
-export default VideosPage;
+export default CommunityGuidePage;

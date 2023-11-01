@@ -1,27 +1,10 @@
 "use client";
-import React, { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
-import "swiper/swiper-bundle.css";
 import Link from "next/link";
+import { Navigation } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
 
-const BannerSlider = () => {
-  const sliderItems = [
-    {
-      image: "/images/home/home-10.jpg",
-      title: "Studio on Grand Avenue",
-      price: "986,00",
-      meta: "32 Beds  -  91 Baths  -  1500 sq ft",
-    },
-
-    {
-      image: "/images/home/home-5-2.jpg",
-      title: "Studio on Grand Avenue",
-      price: "986,00",
-      meta: "32 Beds  -  91 Baths  -  1500 sq ft",
-    },
-  ];
-
+const BannerSlider = ({ hightlights, title , url}) => {
   return (
     <>
       <div className="rounded-arrow arrow-with-border d-flex flex-column d-position end-pos">
@@ -52,7 +35,7 @@ const BannerSlider = () => {
           className="hero_9"
           style={{ height: "90vh" }}
         >
-          {sliderItems.map((item, index) => (
+          {hightlights.map((item, index) => (
             <SwiperSlide key={index}>
               <div
                 className="item"
@@ -63,25 +46,49 @@ const BannerSlider = () => {
                 <div
                   className="slider-slide-item no-overlay"
                   style={{
-                    backgroundImage: `url(${item.image})`,
+                    backgroundImage: `url('https://www.indusre.com/communityimg/${item.ps_highlight_image}')`,
                     height: "100%",
                   }}
-                  data-thumb={item.image}
+                  data-thumb={item.ps_highlight_image}
                 >
                   <div className="container position-relative">
+                    <h3
+                      className="banner-title"
+                      style={{
+                        position: "absolute",
+                        top: "-230px",
+                      }}
+                    >
+                      {title}
+                    </h3>
+                    <p
+                      className="text-light fz20"
+                      style={{
+                        position: "absolute",
+                        top: "-150px",
+                      }}
+                    >
+                      Hightlights
+                    </p>
                     <div className="row">
                       <div className="col-xl-7">
-                        <h1 className="sub-title">${item.price}</h1>
-                        <h3 className="banner-title">{item.title}</h3>
+                        <h3 className="banner-title">
+                          {item.ps_highlight_title}
+                        </h3>
+                        <p className="text-light fz30">
+                          {item.ps_highlight_text}
+                        </p>
+
                         <p className="banner-text text-white ff-heading">
                           {item.meta}
                         </p>
-                        <Link
-                          href="/map-v4"
+                        <a
+                          target="_blank"
+                          href={url}
                           className="ud-btn banner-btn fw500 btn-thm mt10 mt0-xs"
                         >
                           View Details <i className="fal fa-arrow-right-long" />
-                        </Link>
+                        </a>
                       </div>
                       {/* End .col-6 */}
 

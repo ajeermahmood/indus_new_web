@@ -1,4 +1,5 @@
 import axios from "axios";
+import * as iso88592 from "iso-8859-2";
 
 export async function getAllPropTypesCount() {
   const response = await axios.get(
@@ -85,6 +86,16 @@ export async function getDeveloperDetails(id) {
   return response.data;
 }
 
+export async function getCommunityGuideDetails(id) {
+  const response = await axios.post(
+    "https://indusspeciality.com/api/listings/get_community_guide_details.php",
+    {
+      guide_id: id,
+    }
+  );
+  return response.data;
+}
+
 export async function getAgentPropertiesLimit4(id, status) {
   const response = await axios.post(
     "https://indusspeciality.com/api/listings/get_agents_properties_limit_4.php",
@@ -150,13 +161,21 @@ export async function getAllDevelopers(limit, pageNumber, search) {
   return response.data;
 }
 
-export async function getAllVideos(limit, pageNumber, search) {
+export async function getAllCommunityGuides() {
+  const response = await axios.get(
+    "https://indusspeciality.com/api/listings/get_all_community_guides.php"
+  );
+  return response.data;
+}
+
+export async function getAllVideos(limit, pageNumber, search, filter) {
   const response = await axios.post(
     "https://indusspeciality.com/api/listings/get_all_videos.php",
     {
       limit: limit,
       pageNumber: pageNumber,
       search: search,
+      filter: filter,
     }
   );
   return response.data;

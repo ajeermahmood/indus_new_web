@@ -1,12 +1,12 @@
 import Image from "next/image";
 
-export default function Details({ blogData }) {
+export default function Details({ data }) {
   return (
     <>
       <div className="container">
         <div className="row" data-aos="fade-up" data-aos-delay="100">
           <div className="col-lg-12">
-            <h2 className="blog-title">{blogData.news_title}</h2>
+            <h2 className="blog-title">{data.location_name}</h2>
             <div className="blog-single-meta">
               <div className="post-author d-sm-flex align-items-center">
                 {/* <Image
@@ -24,10 +24,10 @@ export default function Details({ blogData }) {
                 </a> */}
                 <a className="ml0" href="#">
                   {/* {data.date.month} {data.date.day}, {data.date.year || 2022} */}
-                  {new Date(blogData.news_date).toDateString().split(" ")[0]}{" "}
+                  {/* {new Date(blogData.news_date).toDateString().split(" ")[0]}{" "}
                   {new Date(blogData.news_date).toDateString().split(" ")[1]}{" "}
                   {new Date(blogData.news_date).toDateString().split(" ")[2]},{" "}
-                  {new Date(blogData.news_date).toDateString().split(" ")[3]}
+                  {new Date(blogData.news_date).toDateString().split(" ")[3]} */}
                 </a>
               </div>
             </div>
@@ -50,12 +50,12 @@ export default function Details({ blogData }) {
               }}
             >
               <Image
-                width={1200}
-                height={600}
+                width={900}
+                height={700}
                 priority
                 className="w-100 h-100 cover"
                 // style={{maxHeight:'600px',objectFit:'cover'}}
-                src={`https://www.indusre.com/newsimg/${blogData.news_mainimage}`}
+                src={`https://www.indusre.com/communityimg/${data.location_image}`}
                 alt="blog"
               />
             </div>

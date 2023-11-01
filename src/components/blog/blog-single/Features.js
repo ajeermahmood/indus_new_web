@@ -1,27 +1,25 @@
 import React from "react";
 
-const featuresData = [
-  {
-    points: [
-      "Become a UI/UX designer.",
-      "You will be able to start earning money Figma skills.",
-      "Build a UI project from beginning to end.",
-      "Work with colors & fonts.",
-      "You will create your own UI Kit.",
-    ],
-  },
-  {
-    points: [
-      "Build & test a complete mobile app.",
-      "Learn to design mobile apps & websites.",
-      "Design 3 different logos.",
-      "Create low-fidelity wireframe.",
-      "Downloadable exercise files.",
-    ],
-  },
-];
-
-const Features = () => {
+const Features = ({ features }) => {
+  const featuresData = [
+    {
+      points: [
+        "Passport copy",
+        "Residence visa copy",
+        "Emirates ID copy",
+        "Security deposit cheque",
+        "Agency fee cheque",
+      ],
+    },
+    {
+      points: [
+        "Original signed tenancy contract",
+        "Copy of title deed",
+        "Power of Attorney (POA) if needed",
+        "Passport and Emirates ID copy of landlord",
+      ],
+    },
+  ];
   return (
     <>
       {featuresData.map((featureSection, index) => (

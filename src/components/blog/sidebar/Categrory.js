@@ -1,6 +1,6 @@
 import React from "react";
 
-const Category = () => {
+const Category = ({ filterFunctions }) => {
   const categories = ["Houses", "Apartments", "Office", "Villa", "Townhome"];
 
   return (
