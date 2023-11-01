@@ -1,12 +1,11 @@
-import Features from "@/components/blog/blog-single/Features";
+import CallToActions from "@/components/common/CallToActions";
 import MobileMenu from "@/components/common/mobile-menu";
+import YouRubeVideoComponent from "@/components/common/youtube_video";
 import Header from "@/components/home/home-v2/Header";
 import FindHomeBlock from "@/components/home/home-v6/FindHomeBlock";
 import Footer from "@/components/home/home-v7/footer";
 import Image from "next/image";
 import Link from "next/link";
-import YouRubeVideoComponent from "@/components/common/youtube_video";
-import CallToActions from "@/components/common/CallToActions";
 
 export const metadata = {
   title: "Seller's Guide | Indus Real Estate LLC",
@@ -146,20 +145,20 @@ const SellGuidePage = () => {
                 <li>
                   <b>MOU:</b> When the right buyer comes along, an MOU will be
                   required to be signed. The MOU is simply a non-binding
-                  contract that instates the details of both parties’
+                  contract that instates the details of both parties'
                   responsibilities and requirements.
                 </li>
                 <li>
                   <b>Applying For NOC:</b> All parties including the agent will
-                  meet at the developer’s office to apply for an NOC to sell the
-                  property. Someone from the developer’s office will then visit
+                  meet at the developer's office to apply for an NOC to sell the
+                  property. Someone from the developer's office will then visit
                   the property once an NOC is applied to ensure all outstanding
                   charges are paid for.
                 </li>
                 <li>
                   <b>Utility Deactivation:</b> All parties including the agent
-                  will meet at the developer’s office to apply for an NOC to
-                  sell the property. Someone from the developer’s office will
+                  will meet at the developer's office to apply for an NOC to
+                  sell the property. Someone from the developer's office will
                   then visit the property once an NOC is applied to ensure all
                   outstanding charges are paid for.
                 </li>

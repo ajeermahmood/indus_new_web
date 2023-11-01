@@ -1,12 +1,12 @@
 import Features from "@/components/blog/blog-single/Features";
+import CallToActions from "@/components/common/CallToActions";
 import MobileMenu from "@/components/common/mobile-menu";
+import YouRubeVideoComponent from "@/components/common/youtube_video";
 import Header from "@/components/home/home-v2/Header";
 import FindHomeBlock from "@/components/home/home-v6/FindHomeBlock";
 import Footer from "@/components/home/home-v7/footer";
 import Image from "next/image";
 import Link from "next/link";
-import YouRubeVideoComponent from "@/components/common/youtube_video";
-import CallToActions from "@/components/common/CallToActions";
 
 export const metadata = {
   title: "Renter's Guide | Indus Real Estate LLC",
@@ -137,7 +137,7 @@ const RentGuidePage = () => {
                   </div>
                 </li>
                 <li>
-                  <b>Moving In:</b> Once you’ve decided on your moving date, you
+                  <b>Moving In:</b> Once you've decided on your moving date, you
                   can organize yourself for a seamless move-in experience by
                   ensuring you have already registered for: Ejari, DEWA,
                   internet service, cooling provider, security and moving

@@ -1,12 +1,11 @@
-import Features from "@/components/blog/blog-single/Features";
+import CallToActions from "@/components/common/CallToActions";
 import MobileMenu from "@/components/common/mobile-menu";
+import YouRubeVideoComponent from "@/components/common/youtube_video";
 import Header from "@/components/home/home-v2/Header";
 import FindHomeBlock from "@/components/home/home-v6/FindHomeBlock";
 import Footer from "@/components/home/home-v7/footer";
 import Image from "next/image";
 import Link from "next/link";
-import YouRubeVideoComponent from "@/components/common/youtube_video";
-import CallToActions from "@/components/common/CallToActions";
 
 export const metadata = {
   title: "Renter's Guide | Indus Real Estate LLC",
@@ -103,7 +102,7 @@ const BuyGuidePage = () => {
                 <li>
                   <b>Affordability:</b> It is advised that your monthly housing
                   expenses should not exceed 30% of your salary. When buying a
-                  house it is crucial to budget the upfront fees – this can be
+                  house it is crucial to budget the upfront fees - this can be
                   close to 7-8% of the purchase price. Upfront fees include
                   Dubai Land Department fee, property registration fee, real
                   estate agent fee, property valuation fee amongst others. As an
@@ -124,7 +123,7 @@ const BuyGuidePage = () => {
                 </li>
                 <li>
                   <b>Rental Yeild:</b> If you would want to convert your home
-                  into an investment property in the long term then it’s
+                  into an investment property in the long term then it's
                   important to assess whether the projected rental income will
                   be sufficient to cover your monthly mortgage repayment and
                   maintenance expenses.
@@ -145,7 +144,7 @@ const BuyGuidePage = () => {
                   <b>Location:</b> Things to consider: the size of your family,
                   stage of life and lifestyle. Is the property near schools or
                   childcare facilities? What is the approximate daily commute
-                  from the property to your work or children’s school? Is public
+                  from the property to your work or children's school? Is public
                   transport easily accessible? Are restaurants, cafes, cultural
                   attractions or nightlife destinations important to you? Does
                   your chosen community have adequate options?
