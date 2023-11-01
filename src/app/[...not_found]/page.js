@@ -1,19 +1,19 @@
-import DefaultHeader from "@/components/common/DefaultHeader";
-import Footer from "@/components/common/default-footer";
+import Header from "@/components/home/home-v2/Header";
+import Footer from "@/components/home/home-v7/footer";
 import MobileMenu from "@/components/common/mobile-menu";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 export const metadata = {
-  title: "Not-Found  || Homez - Real Estate NextJS Template",
+  title: "Page Not Found | Indus Real Estate LLC",
 };
 
 const NotFound = () => {
   return (
     <>
       {/* Main Header Nav */}
-      <DefaultHeader />
+      <Header />
       {/* End Main Header Nav */}
 
       {/* Mobile Nav  */}
@@ -68,7 +68,7 @@ const NotFound = () => {
       {/* End Error/404 Section Area */}
 
       {/* Start Our Footer */}
-      <section className="footer-style1 pt60 pb-0">
+      <section className="footer-style1 at-home4-2 pt60 pb-0">
         <Footer />
       </section>
       {/* End Our Footer */}

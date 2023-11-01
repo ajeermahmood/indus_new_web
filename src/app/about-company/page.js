@@ -4,7 +4,6 @@ import MobileMenu from "@/components/common/mobile-menu";
 import Agents from "@/components/home/home-v2/Agents";
 import Header from "@/components/home/home-v2/Header";
 import Footer from "@/components/home/home-v7/footer";
-import Features from "@/components/pages/about/Features";
 import FunFact from "@/components/pages/about/FunFact";
 import Image from "next/image";
 import Link from "next/link";
