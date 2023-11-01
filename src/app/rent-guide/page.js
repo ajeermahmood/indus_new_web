@@ -9,7 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Renter's Guide | Indus Real Estate LLC",
+  title: "Renter&apos;s Guide | Indus Real Estate LLC",
 };
 
 const RentGuidePage = () => {
@@ -68,7 +68,7 @@ const RentGuidePage = () => {
                   <br className="d-none d-xl-block" /> In Dubai
                 </h4>
                 <p className="text fz15">
-                  Here's a quick guide on what you
+                  Here&apos;s a quick guide on what you
                   <br className="d-none d-xl-block" />
                   need to know, what to expect
                   <br className="d-none d-xl-block" />
@@ -137,7 +137,7 @@ const RentGuidePage = () => {
                   </div>
                 </li>
                 <li>
-                  <b>Moving In:</b> Once you've decided on your moving date, you
+                  <b>Moving In:</b> Once you&apos;ve decided on your moving date, you
                   can organize yourself for a seamless move-in experience by
                   ensuring you have already registered for: Ejari, DEWA,
                   internet service, cooling provider, security and moving

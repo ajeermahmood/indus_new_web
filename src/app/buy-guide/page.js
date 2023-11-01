@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Renter's Guide | Indus Real Estate LLC",
+  title: "Buyer&apos;s Guide | Indus Real Estate LLC",
 };
 
 const BuyGuidePage = () => {
@@ -67,7 +67,7 @@ const BuyGuidePage = () => {
                   <br className="d-none d-xl-block" /> In Dubai
                 </h4>
                 <p className="text fz15">
-                  Here's a quick guide on what you
+                  Here&apos;s a quick guide on what you
                   <br className="d-none d-xl-block" />
                   need to know, what to expect
                   <br className="d-none d-xl-block" />
@@ -123,7 +123,7 @@ const BuyGuidePage = () => {
                 </li>
                 <li>
                   <b>Rental Yeild:</b> If you would want to convert your home
-                  into an investment property in the long term then it's
+                  into an investment property in the long term then it&apos;s
                   important to assess whether the projected rental income will
                   be sufficient to cover your monthly mortgage repayment and
                   maintenance expenses.
@@ -144,7 +144,7 @@ const BuyGuidePage = () => {
                   <b>Location:</b> Things to consider: the size of your family,
                   stage of life and lifestyle. Is the property near schools or
                   childcare facilities? What is the approximate daily commute
-                  from the property to your work or children's school? Is public
+                  from the property to your work or children&apos;s school? Is public
                   transport easily accessible? Are restaurants, cafes, cultural
                   attractions or nightlife destinations important to you? Does
                   your chosen community have adequate options?
