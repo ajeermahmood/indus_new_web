@@ -1,3 +1,4 @@
+"use client"
 const SearchBox = ({ filterFunctions }) => {
   return (
     <div className="sidebar-widget mb30">

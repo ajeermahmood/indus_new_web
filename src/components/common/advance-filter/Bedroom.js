@@ -1,3 +1,4 @@
+"use client"
 const Bedroom = ({ filterFunctions }) => {
   const bedOptions = [
     { id: "xany", label: "any", value: -1 },

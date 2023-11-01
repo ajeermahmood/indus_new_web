@@ -1,3 +1,4 @@
+"use client"
 const Bathroom = ({ filterFunctions }) => {
   const bathOptions = [
     { id: "yany", label: "any", value: 0 },

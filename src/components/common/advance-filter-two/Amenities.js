@@ -1,3 +1,4 @@
+"use client"
 import AmentiesData from "../../../data/amenties";
 
 const Amenities = ({ filterFunctions }) => {
