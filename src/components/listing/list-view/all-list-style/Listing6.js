@@ -15,7 +15,6 @@ const Listing6 = () => {
     getAllCommunityGuides()
       .then((res) => {
         setData(res);
-        console.log(res);
       })
       .finally(() => setLoading(false));
   }, []);

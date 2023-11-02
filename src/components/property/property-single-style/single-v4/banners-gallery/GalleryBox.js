@@ -1,12 +1,17 @@
 "use client";
 import { Skeleton } from "@mui/material";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 
 const GalleryBox = ({ banners, loading }) => {
   const skeletonLoader = [1, 2, 3, 4, 5, 6, 7, 8];
+
+  const [imgsLoading, setImgsLoading] = useState([]);
+
+  useEffect(() => {}, [imgsLoading]);
   return (
     <>
       <Swiper
@@ -28,7 +33,6 @@ const GalleryBox = ({ banners, loading }) => {
               <SwiperSlide key={index}>
                 <div className="item">
                   <Skeleton
-                    // className="w-100 h-100"
                     variant="rectangular"
                     className="bdrs12 w-100"
                     width={480}
@@ -51,12 +55,33 @@ const GalleryBox = ({ banners, loading }) => {
                   </a>
 
                   <a href={bnr.link} target="_blank">
-                    <Image
+                    {!imgsLoading.includes(index) ? (
+                      <Skeleton
+                        // className="w-100 h-100"
+                        variant="rectangular"
+                        className="bdrs12 w-100"
+                        width={480}
+                        height={342}
+                      />
+                    ) : (
+                      <></>
+                    )}
+                    <img
                       width={480}
                       height={342}
-                      className="bdrs12 w-100"
+                      className={`${
+                        !imgsLoading.includes(index)
+                          ? "opacity-0 position-absolute bdrs12 w-100"
+                          : "opacity-100 bdrs12 w-100 position-relative"
+                      }}`}
                       src={bnr.image}
                       alt={`Image ${index + 1}`}
+                      onLoad={() => {
+                        if (!imgsLoading.includes(index)) {
+                          imgsLoading.push(index);
+                          setImgsLoading(imgsLoading);
+                        }
+                      }}
                     />
                   </a>
                 </div>

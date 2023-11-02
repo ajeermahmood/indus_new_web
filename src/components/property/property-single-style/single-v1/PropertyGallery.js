@@ -1,12 +1,20 @@
 "use client";
+import { Skeleton } from "@mui/material";
 import Image from "next/image";
 import "photoswipe/dist/photoswipe.css";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Gallery, Item } from "react-photoswipe-gallery";
 
 const PropertyGallery = ({ galery }) => {
   const targetRef = useRef();
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+
+  const [mainImageLoaded, setMainImageLoaded] = useState(false);
+  const [secondImageLoaded, setSecondImageLoaded] = useState(false);
+  const [thirdImageLoaded, setThirdImageLoaded] = useState(false);
+  const [fourthImageLoaded, setFourthImageLoaded] = useState(false);
+  const [fifthImageLoaded, setFifthImageLoaded] = useState(false);
+
   useLayoutEffect(() => {
     if (targetRef.current) {
       setDimensions({
@@ -15,6 +23,40 @@ const PropertyGallery = ({ galery }) => {
       });
     }
   }, []);
+
+  const getImgLoadVar = (index) => {
+    switch (index) {
+      case 0:
+        return secondImageLoaded;
+      case 1:
+        return thirdImageLoaded;
+      case 2:
+        return fourthImageLoaded;
+      case 3:
+        return fifthImageLoaded;
+      default:
+        break;
+    }
+  };
+
+  const getImgLoadFunc = (index) => {
+    switch (index) {
+      case 0:
+        setSecondImageLoaded(true);
+        break;
+      case 1:
+        setThirdImageLoaded(true);
+        break;
+      case 2:
+        setFourthImageLoaded(true);
+        break;
+      case 3:
+        setFifthImageLoaded(true);
+        break;
+      default:
+        break;
+    }
+  };
   return (
     <>
       <Gallery>
@@ -28,16 +70,34 @@ const PropertyGallery = ({ galery }) => {
                 height={710}
               >
                 {({ ref, open }) => (
-                  <Image
-                    src={`https://www.indusre.com/communityimg/${galery[0].ps_gallery_image}`}
-                    width={591}
-                    height={558}
-                    ref={ref}
-                    onClick={open}
-                    alt="image"
-                    role="button"
-                    className="w-100 h-100 cover"
-                  />
+                  <>
+                    <Image
+                      src={`https://www.indusre.com/communityimg/${galery[0].ps_gallery_image}`}
+                      width={591}
+                      height={558}
+                      ref={ref}
+                      onClick={open}
+                      alt="image"
+                      role="button"
+                      className={`${
+                        !mainImageLoaded
+                          ? "opacity-0 position-absolute w-100 h-100 cover"
+                          : "opacity-100 w-100 h-100 cover position-relative"
+                      }}`}
+                      onLoadingComplete={() => setMainImageLoaded(true)}
+                    />
+
+                    {!mainImageLoaded ? (
+                      <Skeleton
+                        variant="rectangular"
+                        className="w-100 h-100 cover"
+                        width={591}
+                        height={558}
+                      />
+                    ) : (
+                      <></>
+                    )}
+                  </>
                 )}
               </Item>
             </div>
@@ -63,16 +123,34 @@ const PropertyGallery = ({ galery }) => {
                       height={710}
                     >
                       {({ ref, open }) => (
-                        <Image
-                          width={270}
-                          height={250}
-                          className="w-100 h-100 cover"
-                          ref={ref}
-                          onClick={open}
-                          role="button"
-                          src={`https://www.indusre.com/communityimg/${image.ps_gallery_image}`}
-                          alt={"imgs"}
-                        />
+                        <>
+                          <Image
+                            src={`https://www.indusre.com/communityimg/${image.ps_gallery_image}`}
+                            width={270}
+                            height={250}
+                            ref={ref}
+                            onClick={open}
+                            alt="image"
+                            role="button"
+                            className={`${
+                              !getImgLoadVar(index)
+                                ? "opacity-0 position-absolute w-100 h-100 cover"
+                                : "opacity-100 w-100 h-100 cover position-relative"
+                            }}`}
+                            onLoadingComplete={() => getImgLoadFunc(index)}
+                          />
+
+                          {!getImgLoadVar(index) ? (
+                            <Skeleton
+                              variant="rectangular"
+                              className="w-100 h-100 cover"
+                              width={270}
+                              height={250}
+                            />
+                          ) : (
+                            <></>
+                          )}
+                        </>
                       )}
                     </Item>
                   </div>

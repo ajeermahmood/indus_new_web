@@ -12,6 +12,10 @@ const Blog = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const [firstImageLoaded, setFirstImageLoaded] = useState(false);
+  const [secondImageLoaded, setSecondImageLoaded] = useState(false);
+  const [thirdImageLoaded, setThirdImageLoaded] = useState(false);
+
   useEffect(() => {
     getFeaturedBlogs()
       .then((res) => {
@@ -19,6 +23,31 @@ const Blog = () => {
       })
       .finally(() => setLoading(false));
   }, []);
+  const getImgLoadVar = (index) => {
+    switch (index) {
+      case 0:
+        return firstImageLoaded;
+      case 1:
+        return secondImageLoaded;
+      case 2:
+        return thirdImageLoaded;
+    }
+  };
+
+  const getImgLoadFunc = (index) => {
+    switch (index) {
+      case 0:
+        setFirstImageLoaded(true);
+        break;
+      case 1:
+        setSecondImageLoaded(true);
+        break;
+      case 2:
+        setThirdImageLoaded(true);
+        break;
+    }
+  };
+
   return (
     <>
       {loading
@@ -45,17 +74,34 @@ const Blog = () => {
               </div>
             </div>
           ))
-        : data.map((blog) => (
-            <div className="col-sm-6 col-lg-4" key={blog.news_id}>
+        : data.map((blog, index) => (
+            <div className="col-sm-6 col-lg-4" key={index}>
               <div className="blog-style1">
                 <div className="blog-img">
                   <Image
                     width={386}
                     height={271}
-                    className="w-100 h-100 cover"
                     src={`https://www.indusre.com/newsimg/${blog.news_thumbnail}`}
-                    alt="blog"
+                    alt="image"
+                    role="button"
+                    className={`${
+                      !getImgLoadVar(index)
+                        ? "opacity-0 position-absolute w-100 h-100 cover"
+                        : "opacity-100 w-100 h-100 cover position-relative"
+                    }}`}
+                    onLoadingComplete={() => getImgLoadFunc(index)}
                   />
+
+                  {!getImgLoadVar(index) ? (
+                    <Skeleton
+                      variant="rectangular"
+                      className="w-100 cover"
+                      width={386}
+                      height={271}
+                    />
+                  ) : (
+                    <></>
+                  )}
                 </div>
                 <div className="blog-content">
                   <div className="date">

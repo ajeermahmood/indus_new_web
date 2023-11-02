@@ -1,5 +1,4 @@
 import axios from "axios";
-import * as iso88592 from "iso-8859-2";
 
 export async function getAllPropTypesCount() {
   const response = await axios.get(
@@ -107,7 +106,12 @@ export async function getAgentPropertiesLimit4(id, status) {
   return response.data;
 }
 
-export async function getAllListingsPagination(limit, pageNumber, filter, agentId) {
+export async function getAllListingsPagination(
+  limit,
+  pageNumber,
+  filter,
+  agentId
+) {
   const response = await axios.post(
     "https://indusspeciality.com/api/listings/get_all_listings_pagination.php",
     {

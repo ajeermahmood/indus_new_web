@@ -37,9 +37,9 @@ const HomePage = () => {
       {/* Home Banner Style V2 */}
       <section className="home-banner-style2 p0">
         <div className="home-style2">
-          <div className="container maxw1600">
+          <div className="container maxw1400">
             <div className="home2-hero-banner bdrs12"></div>
-            <div className="row">
+            <div className="row m-0">
               <div className="col-xl-10 mx-auto">
                 <Hero />
               </div>
@@ -96,86 +96,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      {/* Popular Property */}
-      {/* <section className="pt0 pb60 pb30-md bgc-white">
-        <div className="container">
-          <div className="row align-items-center" data-aos="fade-up">
-            <div className="col-lg-9">
-              <div className="main-title2">
-                <h2 className="title">Discover Our Featured Listings</h2>
-                <p className="paragraph">
-                  Aliquam lacinia diam quis lacus euismod
-                </p>
-              </div>
-            </div>
-            <div className="col-lg-3">
-              <div className="text-start text-lg-end mb-3">
-                <Link className="ud-btn2" href="/grid-full-3-col">
-                  See All Properties
-                  <i className="fal fa-arrow-right-long" />
-                </Link>
-              </div>
-            </div>
-          </div>
 
-          <div className="row">
-            <div className="col-lg-12" data-aos="fade-up" data-aos-delay="200">
-              <div className="feature-listing-slider">
-                <FeaturedListings />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-      {/* Explore Featured Listings */}
-
-      {/* Property Cities */}
-      {/* <section className="pt0 pb90 pb50-md">
-        <div className="container">
-          <div className="row  justify-content-between align-items-center">
-            <div className="col-auto">
-              <div
-                className="main-title"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                <h2 className="title">Explore Cities</h2>
-                <p className="paragraph">
-                  Aliquam lacinia diam quis lacus euismod
-                </p>
-              </div>
-            </div>
-
-            <div className="col-auto mb30">
-              <div className="row align-items-center justify-content-center">
-                <div className="col-auto">
-                  <button className="cities_prev__active swiper_button">
-                    <i className="far fa-arrow-left-long" />
-                  </button>
-                </div>
-
-                <div className="col-auto">
-                  <div className="pagination swiper--pagination cities_pagination__active" />
-                </div>
-
-                <div className="col-auto">
-                  <button className="cities_next__active swiper_button">
-                    <i className="far fa-arrow-right-long" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="col-lg-12" data-aos="fade-up" data-aos-delay="300">
-              <div className="property-city-slider">
-                <ExploreCities />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
       <section className="pb10 pb30-md" id="explore-cities">
         <div className="container">
           <div className="row" data-aos="fade-up" data-aos-delay="0">
