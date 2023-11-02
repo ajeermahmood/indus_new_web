@@ -12,11 +12,12 @@ import ExploreCities from "@/components/home/home-v7/ExploreCities";
 import Footer from "@/components/home/home-v7/footer";
 
 import Blog from "@/components/common/Blog";
+import WhyChoose from "@/components/home/home-v3/why-choose";
 import InqueryForm from "@/components/home/home-v7/InqueryForm";
 import PropertyListing from "@/components/home/home-v7/PropertyListing";
 import Image from "next/image";
 import Link from "next/link";
-import WhyChoose from "@/components/home/home-v3/why-choose";
+import PropertyGallery from "@/components/property/property-single-style/single-v4/banners-gallery";
 
 export const metadata = {
   title: "Indus Real Estate LLC | Dubai Luxury Properties",
@@ -61,7 +62,25 @@ const HomePage = () => {
       </section>
       {/* End Explore Apartment */}
 
-      {/* Featured Listings */}
+      <section className="pb0">
+        <div className="container">
+          <div className="row" data-aos="fade-up" data-aos-delay="0">
+            <div className="col-lg-6 mx-auto">
+              <div className="main-title2 text-center">
+                <h2 className="title">Featured Projects</h2>
+                <p className="paragraph">
+                  Featuring luxury apartments and townhouses. Contact us for
+                  more information.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="row mt5">
+            <PropertyGallery />
+          </div>
+        </div>
+      </section>
+
       {/* Popular Property */}
       <section className="pb0 pb30-md" id="featured-properties">
         <PropertyListing />

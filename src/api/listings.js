@@ -171,6 +171,13 @@ export async function getAllCommunityGuides() {
   return response.data;
 }
 
+export async function getAllIndusBanners() {
+  const response = await axios.get(
+    "https://indusspeciality.com/api/listings/get_all_indus_banners.php"
+  );
+  return response.data;
+}
+
 export async function getAllVideos(limit, pageNumber, search, filter) {
   const response = await axios.post(
     "https://indusspeciality.com/api/listings/get_all_videos.php",
