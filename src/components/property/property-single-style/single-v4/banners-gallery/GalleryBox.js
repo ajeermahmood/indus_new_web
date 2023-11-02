@@ -40,6 +40,10 @@ const GalleryBox = ({ banners, loading }) => {
           : banners.map((bnr, index) => (
               <SwiperSlide key={index}>
                 <div className="item">
+                  <p className="mb0 fz20 text-indus">{bnr.title}</p>
+                  <p className="mb10">
+                    <i>{bnr.subtitle}</i>
+                  </p>
                   <Image
                     width={480}
                     height={342}
