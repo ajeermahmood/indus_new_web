@@ -149,7 +149,7 @@ const CareerForm = () => {
         <div className="col-md-12">
           <div className="mb20">
             <label className="form-label fw600 dark-color">
-              International Real Estate Market Experience
+              International Real Estate Market Experience 
             </label>
             <div className="bootselect-multiselect">
               <Select
