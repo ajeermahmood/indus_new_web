@@ -10,7 +10,10 @@ const Hero = () => {
       <div className="inner-banner-style2 text-center position-relative">
         <HeroContent activeTab={activeTab} setActiveTab={setActiveTab} />
         <h2 className="hero-title" data-aos="fade-up" data-aos-delay="150">
-          Find Your Dream Home
+          <i>
+            {" "}
+            Service you Deserve, <br /> People you Trust
+          </i>
         </h2>
         <p className="hero-text fz15" data-aos="fade-up" data-aos-delay="250">
           Let’s find a home that’s perfect for you

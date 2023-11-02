@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Seller&apos;s Guide | Indus Real Estate LLC",
+  title: "Seller Guide | Indus Real Estate LLC",
 };
 
 const SellGuidePage = () => {
@@ -96,77 +96,105 @@ const SellGuidePage = () => {
           </div>
 
           <div className="ui-content mt40 mb30">
-            <h4 className="mb10">Lets Explain Further</h4>
+            <h4 className="mb10 text-indus">Lets Explain Further</h4>
             <div className="custom_bsp_grid">
               <ul className="list-style-type-bullet p-0 ml20">
                 <li>
-                  <b>Property Presentation:</b> Appearance is key. Presenting
-                  your property at its best whether it is cleaning your home,
-                  handling repairs or maintenance issues, fixing up your garden
-                  or even putting on a new layer of paint can determine the sale
-                  of your property. This will not only help sell property fast
-                  but also increase chances for good offers from potential
-                  buyers.
+                  <p className="fz20">
+                    {" "}
+                    <b>Property Presentation:</b> Appearance is key. Presenting
+                    your property at its best whether it is cleaning your home,
+                    handling repairs or maintenance issues, fixing up your
+                    garden or even putting on a new layer of paint can determine
+                    the sale of your property. This will not only help sell
+                    property fast but also increase chances for good offers from
+                    potential buyers.
+                  </p>
                 </li>
                 <li>
-                  <b>Finding An Agent:</b> Work with a good RERA certified
-                  broker who has the relevant market knowledge of properties in
-                  Dubai. Here, they can share advice and insight on the property
-                  area you are selling at. Working with an agent from a
-                  reputable agency who is able to use marketing strategies to
-                  promote your property online and offline can help generate a
-                  higher response from a wide clientele.
+                  <p className="fz20">
+                    {" "}
+                    <b>Finding An Agent:</b> Work with a good RERA certified
+                    broker who has the relevant market knowledge of properties
+                    in Dubai. Here, they can share advice and insight on the
+                    property area you are selling at. Working with an agent from
+                    a reputable agency who is able to use marketing strategies
+                    to promote your property online and offline can help
+                    generate a higher response from a wide clientele.
+                  </p>
                 </li>
                 <li>
-                  <b>Market Appraisals:</b> After choosing your agent, a
-                  marketing appraisal will be done via visiting your property.
-                  The selling price are determined through facts based on
-                  location, property type and similar properties around the area
-                  in order to help secure the best selling price for your
-                  property.
+                  <p className="fz20">
+                    {" "}
+                    <b>Market Appraisals:</b> After choosing your agent, a
+                    marketing appraisal will be done via visiting your property.
+                    The selling price are determined through facts based on
+                    location, property type and similar properties around the
+                    area in order to help secure the best selling price for your
+                    property.
+                  </p>
                 </li>
                 <li>
-                  <b>Marketing Your Home:</b> Form A will need to be signed
-                  between broker and seller in order sell or market property
-                  online. Marketing is a significant stage. Professional
-                  photographs and descriptions will be taken and posted with
-                  some agencies offering 3D tours set on different marketing
-                  channels online in order to generate leads.
+                  <p className="fz20">
+                    {" "}
+                    <b>Marketing Your Home:</b> Form A will need to be signed
+                    between broker and seller in order sell or market property
+                    online. Marketing is a significant stage. Professional
+                    photographs and descriptions will be taken and posted with
+                    some agencies offering 3D tours set on different marketing
+                    channels online in order to generate leads.
+                  </p>
                 </li>
                 <li>
-                  <b>Viewings:</b>Brokers will invite potential buyers for
-                  property viewings so it is best to keep the property at its
-                  best condition. On behalf of the seller, the broker will
-                  assist in any questions or related queries made to the
-                  property. During this phase, there will be some offers coming
-                  up and brokers will report back and begin the negotiation
-                  stage
+                  <p className="fz20">
+                    {" "}
+                    <b>Viewings:</b>Brokers will invite potential buyers for
+                    property viewings so it is best to keep the property at its
+                    best condition. On behalf of the seller, the broker will
+                    assist in any questions or related queries made to the
+                    property. During this phase, there will be some offers
+                    coming up and brokers will report back and begin the
+                    negotiation stage
+                  </p>
                 </li>
                 <li>
-                  <b>MOU:</b> When the right buyer comes along, an MOU will be
-                  required to be signed. The MOU is simply a non-binding
-                  contract that instates the details of both parties&apos;
-                  responsibilities and requirements.
+                  <p className="fz20">
+                    {" "}
+                    <b>MOU:</b> When the right buyer comes along, an MOU will be
+                    required to be signed. The MOU is simply a non-binding
+                    contract that instates the details of both parties&apos;
+                    responsibilities and requirements.
+                  </p>
                 </li>
                 <li>
-                  <b>Applying For NOC:</b> All parties including the agent will
-                  meet at the developer&apos;s office to apply for an NOC to sell the
-                  property. Someone from the developer&apos;s office will then visit
-                  the property once an NOC is applied to ensure all outstanding
-                  charges are paid for.
+                  <p className="fz20">
+                    {" "}
+                    <b>Applying For NOC:</b> All parties including the agent
+                    will meet at the developer&apos;s office to apply for an NOC
+                    to sell the property. Someone from the developer&apos;s
+                    office will then visit the property once an NOC is applied
+                    to ensure all outstanding charges are paid for.
+                  </p>
                 </li>
                 <li>
-                  <b>Utility Deactivation:</b> All parties including the agent
-                  will meet at the developer&apos;s office to apply for an NOC to
-                  sell the property. Someone from the developer&apos;s office will
-                  then visit the property once an NOC is applied to ensure all
-                  outstanding charges are paid for.
+                  <p className="fz20">
+                    {" "}
+                    <b>Utility Deactivation:</b> All parties including the agent
+                    will meet at the developer&apos;s office to apply for an NOC
+                    to sell the property. Someone from the developer&apos;s
+                    office will then visit the property once an NOC is applied
+                    to ensure all outstanding charges are paid for.
+                  </p>
                 </li>
                 <li>
-                  <b>Transfer Day:</b> After an NOC is issued, the parties
-                  will then visit the DLD office to begin the property transfer
-                  to the new buyer. Once all documents and formalities are
-                  completed, a new title deed will be issued to the new buyer.
+                  <p className="fz20">
+                    {" "}
+                    <b>Transfer Day:</b> After an NOC is issued, the parties
+                    will then visit the DLD office to begin the property
+                    transfer to the new buyer. Once all documents and
+                    formalities are completed, a new title deed will be issued
+                    to the new buyer.
+                  </p>
                 </li>
               </ul>
             </div>

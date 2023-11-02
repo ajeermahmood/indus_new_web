@@ -1,6 +1,6 @@
 import React from "react";
 
-const tags = ["Figma", "Sketch", "HTML5"];
+const tags = ["Real Estate", "Dubai", "Luxury"];
 
 const Tags = () => {
   return (

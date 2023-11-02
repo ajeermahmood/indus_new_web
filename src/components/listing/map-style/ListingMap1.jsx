@@ -191,7 +191,8 @@ const containerStyle = {
   width: "100%",
   height: "100%",
 };
-export default function ListingMap1() {
+export default function ListingMap1({data}) {
+  console.log(data);
   const [getLocation, setLocation] = useState(null);
 
   const { isLoaded } = useLoadScript({

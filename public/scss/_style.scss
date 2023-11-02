@@ -4637,13 +4637,13 @@ section {
 }
 .list-style1 i {
   border-radius: 50%;
-  font-size: 8px;
-  height: 18px;
+  font-size: 10px;
+  height: 25px;
   left: 0;
-  line-height: 18px;
+  line-height: 25px;
   position: absolute;
   text-align: center;
-  width: 18px;
+  width: 25px;
 }
 
 /* Custom Search Sugguestions Code Start */
@@ -5273,7 +5273,7 @@ section {
   -webkit-box-shadow: 0px 10px 40px rgba(24, 26, 32, 0.05);
   -o-box-shadow: 0px 10px 40px rgba(24, 26, 32, 0.05);
   box-shadow: 0px 10px 40px rgba(24, 26, 32, 0.05);
-  max-width: 210px;
+  max-width: 225px;
   padding: 20px;
   position: absolute;
   right: -50px;
@@ -5287,7 +5287,7 @@ section {
   }
 }
 .iconbox-style5 .icon {
-  background-color: #eb6753;
+  background-color: var(--blue-gray);
   border-radius: 50%;
   color: #ffffff;
   display: block;
@@ -5304,7 +5304,7 @@ section {
   margin-bottom: 5px;
 }
 .iconbox-style5:hover {
-  background-color: #eb6753;
+  background-color: var(--midnight-blue);
 }
 .iconbox-style5:hover .title,
 .iconbox-style5:hover .text,
@@ -5636,9 +5636,9 @@ section {
   position: relative;
 }
 .why-chose-list .list-one .list-icon {
-  background-color: rgba(235, 103, 83, 0.07);
+  background-color: rgba(212, 170, 75, 0.2196078431);
   border-radius: 50%;
-  color: #eb6753;
+  color: var(--indus-gold);
   display: block;
   font-size: 30px;
   height: 70px;
@@ -5650,7 +5650,7 @@ section {
   transition: all 0.4s ease;
 }
 .why-chose-list .list-one:hover .list-icon {
-  background-color: #eb6753;
+  background-color: var(--indus-gold);
   color: #ffffff;
 }
 .why-chose-list.style2 .list-one:hover .list-icon {

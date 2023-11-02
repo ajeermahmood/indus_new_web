@@ -18,7 +18,7 @@ const Contact = () => {
             <input
               type="text"
               className="form-control"
-              placeholder="ib"
+              placeholder="Name"
               required
             />
           </div>
@@ -33,7 +33,7 @@ const Contact = () => {
             <input
               type="text"
               className="form-control"
-              placeholder="themes"
+              placeholder="Last Name"
               required
             />
           </div>
@@ -46,7 +46,7 @@ const Contact = () => {
             <input
               type="email"
               className="form-control"
-              placeholder="ibthemes21@gmail.com "
+              placeholder="example@gmail.com"
               required
             />
           </div>
@@ -61,7 +61,7 @@ const Contact = () => {
             <textarea
               cols={30}
               rows={4}
-              placeholder="There are many variations of passages."
+              placeholder="Type the message"
               defaultValue={""}
             />
           </div>

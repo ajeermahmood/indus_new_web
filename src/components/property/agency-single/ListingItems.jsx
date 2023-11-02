@@ -4,7 +4,7 @@ import { getAgentPropertiesLimit4 } from "@/api/listings";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import ListingItems from "../ListingItems";
-export default function ListingItemsContainer({ agentId }) {
+export default function ListingItemsContainer({ agentId, name }) {
   const [currentCategory, setCurrentCategory] = useState("All");
   const [pageData, setPageData] = useState([]);
   const [allPropsCount, setAllPropsCount] = useState(0);
@@ -118,7 +118,10 @@ export default function ListingItemsContainer({ agentId }) {
 
         {allPropsCount != 0 ? (
           <div className="d-grid pb30 bdrb1">
-            <Link href="#" className="ud-btn btn-white2">
+            <Link
+              href={`/agents-properties?id=${agentId}&name=${name}`}
+              className="ud-btn btn-white2"
+            >
               Show all {allPropsCount} property
               <i className="fal fa-arrow-right-long" />
             </Link>

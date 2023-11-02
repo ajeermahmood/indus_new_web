@@ -1,15 +1,16 @@
 import CallToActions from "@/components/common/CallToActions";
 import MobileMenu from "@/components/common/mobile-menu";
 import Header from "@/components/home/home-v2/Header";
+import CareerForm from "@/components/home/home-v7/career-form";
 import Footer from "@/components/home/home-v7/footer";
-import Contact from "@/components/home/home-v8/Contact";
 import Office from "@/components/pages/contact/Office";
+import Image from "next/image";
 
 export const metadata = {
-  title: "Contact Us | Indus Real Estate LLC",
+  title: "Indus Career | Indus Real Estate LLC",
 };
 
-const ContactUs = () => {
+const CareerPage = () => {
   return (
     <>
       {/* Main Header Nav */}
@@ -20,35 +21,55 @@ const ContactUs = () => {
       <MobileMenu />
       {/* End Mobile Nav  */}
 
-      {/* Our Contact With Map */}
-      {/* Our Contact With Map */}
-      <section className="pt100 pb40 mt80">
-        <iframe
-          className="home8-map"
-          loading="lazy"
-          src="https://www.google.com/maps/d/embed?mid=1pqoeQ8kSXhE9Vi9nXzU4RuWPJbWEH9s&ehbc=2E312F"
-        />
-        {/* End map */}
-
+      <section className="breadcumb-section pt160">
         <div className="container">
           <div className="row">
-            <div className="col-md-6 offset-md-6 position-relative">
-              <div className="home8-contact-form bdrs12 p40 p30-md bgc-white mb30">
-                <h2 className="form-title">Get In Touch</h2>
-                <p className="text mb25">
-                  Contact us for find a new property for you.
+            <div
+              className="col-lg-6 col-xl-5"
+              data-aos="fade-left"
+              data-aos-delay="0"
+            >
+              <div className="main-title mb40">
+                <h2 className="title">Apply at Indus Real Estate</h2>
+                <p className="paragraph fz15">
+                  Get in touch with one of the fastest emerging real estate
+                  agencies in Dubai.
                 </p>
-                <Contact />
+              </div>
+              <div className="inquiry-form mb30-md">
+                <CareerForm />
+              </div>
+            </div>
+            {/* End col-6 */}
+
+            <div
+              className="col-lg-6 col-xl-6 offset-xl-1"
+              data-aos="fade-right"
+              data-aos-delay="300"
+            >
+              <div className="inquiry-form">
+                <div className="inquiry-img">
+                  <Image
+                    width={591}
+                    height={778}
+                    style={{
+                      borderRadius: "5px",
+                    }}
+                    className="w-100 h-100 cover"
+                    src="/images/career/career-agent.webp"
+                    alt="about"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      {/* End Our Contact With Map */}
+
       {/* End Our Contact Form */}
 
       {/* Visit our Office */}
-      <section className="pt100 pb90 pb10-md">
+      <section className=" pb90 pb10-md">
         <div className="container">
           <div className="row">
             <div
@@ -90,4 +111,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default CareerPage;

@@ -39,9 +39,9 @@ const AvailableAgent = ({ similarAgents }) => {
             </div>
             <div className="feature-content pt20">
               <h6 className="title mb-1">
-                <Link href={`/about-agent/?id=${agent.client_user_id}`}>
+                <a href={`/about-agent/?id=${agent.client_user_id}`}>
                   {agent.client_user_name}
-                </Link>
+                </a>
               </h6>
               <p className="text fz15">{agent.client_user_designation}</p>
             </div>

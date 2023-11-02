@@ -5,20 +5,20 @@ const Office = () => {
   const offices = [
     {
       id: 1,
-      type: "Head Office",
-      city: "Bur Dubai",
+      city: "Head Office",
       icon: "/images/office/bur-dubai.webp",
       address:
         "Office 203, Al Sharafi Building, Bur Dubai, 118163, Dubai, UAE.",
       phoneNumber: "800 INDUS (46387)",
+      map: "https://maps.app.goo.gl/fNb9PAT1LRZcC8yJ8",
     },
     {
       id: 2,
-      type: "DMCC Branch",
-      city: "JLT",
+      city: "DMCC Branch",
       icon: "/images/office/almas-tower.webp",
       address: "4H Almas Tower, Jumeirah Lake Towers (Cluster G), Dubai, UAE",
       phoneNumber: "800 INDUS (46387)",
+      map: "https://maps.app.goo.gl/62EUgrrPQ7rSP2bZ8",
     },
     // Add more office objects here...
   ];
@@ -35,7 +35,11 @@ const Office = () => {
               <h4 className="title">{office.city}</h4>
               <p className="text mb-1">{office.address}</p>
               <h6 className="mb10">{office.phoneNumber}</h6>
-              <a className="text-decoration-underline" href="#">
+              <a
+                target="_blank"
+                className="text-decoration-underline"
+                href={office.map}
+              >
                 Open Google Map
               </a>
             </div>

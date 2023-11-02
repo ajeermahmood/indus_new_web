@@ -5,12 +5,12 @@ const ContactMeta = ({ path }) => {
     {
       text: "Head Office",
       info: "Office 203, Al Sharafi Building, Bur Dubai, 118163, Dubai, UAE.",
-      link: "#", // Empty link value for the first object
+      link: "https://maps.app.goo.gl/fNb9PAT1LRZcC8yJ8", // Empty link value for the first object
     },
     {
       text: "DMCC Branch",
       info: "4H Almas Tower, Jumeirah Lake Towers (Cluster G), Dubai, UAE",
-      link: "#", // Empty link value for the first object
+      link: "https://maps.app.goo.gl/62EUgrrPQ7rSP2bZ8", // Empty link value for the first object
     },
     {
       text: "Customer Care",
@@ -44,6 +44,11 @@ const ContactMeta = ({ path }) => {
             <h6 className="info-phone">
               <a
                 className={`${path != "/" ? "text-light" : ""}`}
+                target={
+                  contact.text == "Head Office" || contact.text == "DMCC Branch"
+                    ? "_blank"
+                    : "_self"
+                }
                 href={contact.link}
               >
                 {contact.info}

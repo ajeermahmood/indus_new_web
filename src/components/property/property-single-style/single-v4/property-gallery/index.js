@@ -2,7 +2,7 @@ import GalleryBox from "./GalleryBox";
 import Map from "./Map";
 import RealMapView from "./RealMapView";
 
-const PropertyGallery = ({ propImages }) => {
+const PropertyGallery = ({ data }) => {
   return (
     <>
       <div className="container">
@@ -42,7 +42,7 @@ const PropertyGallery = ({ propImages }) => {
                     <span className="flaticon-map text-white fz20" />
                   </button>
                 </li>
-                <li className="nav-item" role="presentation">
+                {/* <li className="nav-item" role="presentation">
                   <button
                     className="nav-link"
                     id="pills-contact-tab"
@@ -55,7 +55,7 @@ const PropertyGallery = ({ propImages }) => {
                   >
                     <span className="flaticon-maps-1 text-white fz20" />
                   </button>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
@@ -75,7 +75,7 @@ const PropertyGallery = ({ propImages }) => {
               <div className="row" data-aos="fade-up" data-aos-delay="300">
                 <div className="col-lg-12">
                   <div className="ps-v4-hero-slider">
-                    <GalleryBox propImages={propImages} />
+                    <GalleryBox propImages={data.images} />
                   </div>
                 </div>
               </div>
@@ -89,21 +89,19 @@ const PropertyGallery = ({ propImages }) => {
             role="tabpanel"
             aria-labelledby="pills-profile-tab"
           >
-            <Map />
+            <iframe
+              className="position-relative bdrs12 h250"
+              loading="lazy"
+              style={{
+                height: "35rem",
+              }}
+              src={`https://maps.google.com/maps?q=${data.location_sub_name}&t=m&z=14&output=embed&iwloc=near`}
+              title={data.location_sub_name}
+              aria-label={data.location_sub_name}
+            />
+            {/* <Map data={data} /> */}
           </div>
-          {/* End tab-pane map */}
-
-          <div
-            className="tab-pane fade"
-            id="pills-contact"
-            role="tabpanel"
-            aria-labelledby="pills-contact-tab"
-          >
-            <RealMapView />
-          </div>
-          {/* End tab-pane real location */}
         </div>
-        {/* End tab-content */}
       </div>
     </>
   );

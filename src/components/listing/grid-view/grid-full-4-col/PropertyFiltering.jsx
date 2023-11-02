@@ -11,7 +11,7 @@ import FeaturedListings from "./FeatuerdListings";
 import TopFilterBar from "./TopFilterBar";
 import { useSearchParams } from "next/navigation";
 
-export default function PropertyFiltering() {
+export default function PropertyFiltering({ agentId }) {
   // params
   const searchParams = useSearchParams();
   const property_status_param = searchParams.get("st");
@@ -66,17 +66,22 @@ export default function PropertyFiltering() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(true);
-    getAllListingsPagination(12, currentPage, {
-      status: listingStatus,
-      prop_types: propertyTypes,
-      price_range: priceRange,
-      beds: bedrooms,
-      baths: bathroms,
-      location: location,
-      sqft_range: squirefeet,
-      features: categories,
-      sort: currentSortingOption,
-    })
+    getAllListingsPagination(
+      12,
+      currentPage,
+      {
+        status: listingStatus,
+        prop_types: propertyTypes,
+        price_range: priceRange,
+        beds: bedrooms,
+        baths: bathroms,
+        location: location,
+        sqft_range: squirefeet,
+        features: categories,
+        sort: currentSortingOption,
+      },
+      agentId != undefined ? agentId : "no"
+    )
       .then((res) => {
         setListings(res.listings);
         setListingsCount(res.count);

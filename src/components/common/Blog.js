@@ -3,9 +3,11 @@ import { getFeaturedBlogs } from "@/api/listings";
 import { Skeleton } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Blog = () => {
+  const path = usePathname();
   const skeletonLoader = [1, 2, 3];
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -68,9 +70,15 @@ const Blog = () => {
                     Indus Real Estate LLC
                   </a>
                   <h6 className="title mt-1">
-                    <Link href={`/news-details/?id=${blog.news_id}`}>
-                      {blog.news_title}
-                    </Link>
+                    {path != "/news-details" ? (
+                      <Link href={`/news-details/?id=${blog.news_id}`}>
+                        {blog.news_title}
+                      </Link>
+                    ) : (
+                      <a href={`/news-details/?id=${blog.news_id}`}>
+                        {blog.news_title}
+                      </a>
+                    )}
                   </h6>
                 </div>
               </div>

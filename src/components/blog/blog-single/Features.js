@@ -29,8 +29,8 @@ const Features = ({ features }) => {
               <ul>
                 {featureSection.points.map((point, pointIndex) => (
                   <li key={pointIndex}>
-                    <i className="far fa-check text-thm3 bgc-thm3-light" />
-                    {point}
+                    <i className="far fa-check text-thm3 bgc-thm3-light fz20" />
+                    <p className="fz20 mb0 ml10">{point}</p>
                   </li>
                 ))}
               </ul>

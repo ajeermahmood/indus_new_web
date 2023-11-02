@@ -63,7 +63,7 @@ const PropertyDetailsPage = () => {
           {/* End .row */}
 
           <div className="row  mt30">
-            <PropertyGallery propImages={data.images} />
+            <PropertyGallery data={data} />
           </div>
           {/* End .row */}
 

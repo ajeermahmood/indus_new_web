@@ -63,7 +63,12 @@ module.exports = [
       // { href: "/mid-year-awarding-2021", label: "Mid Year Awarding 2021" },
       { path: "/videos", label: "Videos" },
       { path: "/developers", label: "Real Estate Partners" },
+      { path: "/career", label: "Career" },
     ],
+  },
+  {
+    label: "Contact Us",
+    path: "/contact",
   },
   // {
   //   label: "Listings",

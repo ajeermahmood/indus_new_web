@@ -17,6 +17,7 @@ export default function PropertyFilteringBanner() {
   const property_type_param = searchParams.get("t");
   const price_range_param = searchParams.get("pr");
   const bedrooms_param = searchParams.get("bd");
+  const bedrooms_only_param = searchParams.get("bdo");
   const bathrooms_param = searchParams.get("bth");
   const location_param = searchParams.get("lc");
   const square_feet_param = searchParams.get("sq");
@@ -28,7 +29,7 @@ export default function PropertyFilteringBanner() {
         return "All";
       case "buy":
         return "Sale";
-      case "buy":
+      case "rent":
         return "Rent";
       default:
         break;
@@ -62,6 +63,15 @@ export default function PropertyFilteringBanner() {
   const [bedrooms, setBedrooms] = useState(
     bedrooms_param != "" && bedrooms_param != null ? Number(bedrooms_param) : -1
   );
+  // bedrooms only
+  const [bedrooms_only, setBedroomsOnly] = useState(
+    bedrooms_only_param != "" && bedrooms_only_param != null
+      ? Number(bedrooms_only_param)
+      : "no"
+  );
+
+  // bedrooms end only
+
   const [bathroms, setBathroms] = useState(
     bathrooms_param != "" && bathrooms_param != null
       ? Number(bathrooms_param)
@@ -112,7 +122,8 @@ export default function PropertyFilteringBanner() {
         features: categories,
         sort: currentSortingOption,
       },
-      searchQuery
+      searchQuery,
+      bedrooms_only
     )
       .then((res) => {
         setListings(res.listings);

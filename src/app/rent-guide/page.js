@@ -9,7 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Renter&apos;s Guide | Indus Real Estate LLC",
+  title: "Renter Guide | Indus Real Estate LLC",
 };
 
 const RentGuidePage = () => {
@@ -97,39 +97,54 @@ const RentGuidePage = () => {
           </div>
 
           <div className="ui-content mt40 mb30">
-            <h4 className="mb10">Lets Explain Further</h4>
+            <h4 className="mb10 text-indus">Lets Explain Further</h4>
             <div className="custom_bsp_grid">
               <ul className="list-style-type-bullet p-0 ml20">
                 <li>
-                  <b>Understanding your budget:</b> Whether you are new to the
-                  city, or simply looking to upgrade, your budget is of utmost
-                  importance in determining where you choose to live.
+                  <p className="fz20">
+                    {" "}
+                    <b>Understanding your budget:</b> Whether you are new to the
+                    city, or simply looking to upgrade, your budget is of utmost
+                    importance in determining where you choose to live.
+                  </p>
                 </li>
                 <li>
-                  <b>Exploring the Communities:</b> Whether you are new to the
-                  city, or simply looking to upgrade, a right community is
-                  equally important.
+                  <p className="fz20">
+                    {" "}
+                    <b>Exploring the Communities:</b> Whether you are new to the
+                    city, or simply looking to upgrade, a right community is
+                    equally important.
+                  </p>
                 </li>
                 <li>
-                  <b>Browsing for Properties:</b> You can narrow your search to
-                  specific property types once you have shortlisted the
-                  communities to live in. Keep in mind the following things
-                  before renting your property: property condition, landlord
-                  issues and other additional costs.
+                  <p className="fz20">
+                    {" "}
+                    <b>Browsing for Properties:</b> You can narrow your search
+                    to specific property types once you have shortlisted the
+                    communities to live in. Keep in mind the following things
+                    before renting your property: property condition, landlord
+                    issues and other additional costs.
+                  </p>
                 </li>
                 <li>
-                  <b>Scheduling a property viewing:</b> Property viewings can be
-                  time consuming, however, essential. You must prepare a
-                  checklist to help you conduct a thorough assessment.
+                  <p className="fz20">
+                    {" "}
+                    <b>Scheduling a property viewing:</b> Property viewings can
+                    be time consuming, however, essential. You must prepare a
+                    checklist to help you conduct a thorough assessment.
+                  </p>
                 </li>
                 <li>
-                  <b>Securing the property & signing the contract:</b> You will
-                  need a variety of documents ready in order to submit your
-                  offer and complete your application. Keep your documents
-                  organized for swift processing of your tenancy contract to
-                  registering with Ejari, connecting your DEWA and other
-                  services.
-                  <p className="fz15 text-blue-gray">
+                  <p className="fz20">
+                    {" "}
+                    <b>Securing the property & signing the contract:</b> You
+                    will need a variety of documents ready in order to submit
+                    your offer and complete your application. Keep your
+                    documents organized for swift processing of your tenancy
+                    contract to registering with Ejari, connecting your DEWA and
+                    other services.
+                  </p>
+                  <p className="fz20 mt20 text-blue-gray">
                     <b>Documents to prepare</b>
                   </p>
                   <div className="row">
@@ -137,11 +152,14 @@ const RentGuidePage = () => {
                   </div>
                 </li>
                 <li>
-                  <b>Moving In:</b> Once you&apos;ve decided on your moving date, you
-                  can organize yourself for a seamless move-in experience by
-                  ensuring you have already registered for: Ejari, DEWA,
-                  internet service, cooling provider, security and moving
-                  permit.
+                  <p className="fz20">
+                    {" "}
+                    <b>Moving In:</b> Once you&apos;ve decided on your moving
+                    date, you can organize yourself for a seamless move-in
+                    experience by ensuring you have already registered for:
+                    Ejari, DEWA, internet service, cooling provider, security
+                    and moving permit.
+                  </p>
                 </li>
               </ul>
             </div>

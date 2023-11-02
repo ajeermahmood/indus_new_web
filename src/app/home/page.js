@@ -16,6 +16,7 @@ import InqueryForm from "@/components/home/home-v7/InqueryForm";
 import PropertyListing from "@/components/home/home-v7/PropertyListing";
 import Image from "next/image";
 import Link from "next/link";
+import WhyChoose from "@/components/home/home-v3/why-choose";
 
 export const metadata = {
   title: "Indus Real Estate LLC | Dubai Luxury Properties",
@@ -64,6 +65,17 @@ const HomePage = () => {
       {/* Popular Property */}
       <section className="pb0 pb30-md" id="featured-properties">
         <PropertyListing />
+      </section>
+      <section>
+        <div className="container">
+          <div
+            className="row align-items-md-center"
+            data-aos="fade-left"
+            data-aos-delay="100"
+          >
+            <WhyChoose />
+          </div>
+        </div>
       </section>
       {/* Popular Property */}
       {/* <section className="pt0 pb60 pb30-md bgc-white">
@@ -175,7 +187,7 @@ const HomePage = () => {
               <div className="main-title text-start text-md-center">
                 <h2 className="title">From Our Blog</h2>
                 <p className="paragraph">
-                  Aliquam lacinia diam quis lacus euismod
+                  Read latest news about Real Estate in Dubai
                 </p>
               </div>
             </div>
@@ -240,7 +252,7 @@ const HomePage = () => {
                 <div className="main-title text-center">
                   <h2>Testimonials</h2>
                   <p className="paragraph">
-                    10,000+ unique online course list designs
+                    Trusted by thousands of clients from around the globe.
                   </p>
                 </div>
               </div>
@@ -273,7 +285,7 @@ const HomePage = () => {
               >
                 <h2 className="title">Our Exclusive Team</h2>
                 <p className="paragraph">
-                  Aliquam lacinia diam quis lacus euismod
+                  Keep in touch with our exclusive team.
                 </p>
               </div>
             </div>

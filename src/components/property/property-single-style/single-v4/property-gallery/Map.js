@@ -1,10 +1,11 @@
 import ListingMap1 from "@/components/listing/map-style/ListingMap1";
 import React from "react";
 
-const Map = () => {
+const Map = ({ data }) => {
   return (
-    <div style={{height:'600px'}}>
-    <ListingMap1/></div>
+    <div style={{ height: "600px" }}>
+      <ListingMap1 data={data} />
+    </div>
   );
 };
 

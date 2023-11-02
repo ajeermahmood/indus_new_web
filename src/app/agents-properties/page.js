@@ -1,3 +1,4 @@
+"use client";
 import Header from "@/components/home/home-v2/Header";
 
 import Footer from "@/components/home/home-v7/footer";
@@ -6,12 +7,12 @@ import MobileMenu from "@/components/common/mobile-menu";
 import ProperteyFiltering from "@/components/listing/grid-view/grid-full-4-col/PropertyFiltering";
 
 import React from "react";
-
-export const metadata = {
-  title: "Indus Real Estate LLC | Dubai Luxury Properties",
-};
+import { useSearchParams } from "next/navigation";
 
 const AllPropertiesPage = () => {
+  const searchParams = useSearchParams();
+  const id = searchParams.get("id");
+  const name = searchParams.get("name");
   return (
     <>
       {/* Main Header Nav */}
@@ -28,13 +29,16 @@ const AllPropertiesPage = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcumb-style1">
-                <h2 className="title">Browse Through Our Collection</h2>
+                <h2 className="title">
+                  Browse Through{" "}
+                  <span className="text-indus">{name}&apos;s</span> Collection
+                </h2>
                 <div className="breadcumb-list">
                   <a href="#">Home</a>
-                  <a href="#">All Properties</a>
+                  <a href="#">Agent&apos;s properties</a>
                 </div>
                 <a
-                  className="filter-btn-left mobile-filter-btn d-block d-lg-none text-dark"
+                  className="filter-btn-left mobile-filter-btn d-block d-lg-none"
                   data-bs-toggle="offcanvas"
                   href="#listingSidebarFilter"
                   role="button"
@@ -50,7 +54,7 @@ const AllPropertiesPage = () => {
       {/* End Breadcumb Sections */}
 
       {/* Property Filtering */}
-      <ProperteyFiltering />
+      <ProperteyFiltering agentId={id} />
 
       {/* Property Filtering */}
 

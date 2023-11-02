@@ -107,13 +107,14 @@ export async function getAgentPropertiesLimit4(id, status) {
   return response.data;
 }
 
-export async function getAllListingsPagination(limit, pageNumber, filter) {
+export async function getAllListingsPagination(limit, pageNumber, filter, agentId) {
   const response = await axios.post(
     "https://indusspeciality.com/api/listings/get_all_listings_pagination.php",
     {
       limit: limit,
       pageNumber: pageNumber,
       filter: filter,
+      agentId: agentId,
     }
   );
   return response.data;
@@ -123,7 +124,8 @@ export async function getAllPropertiesSearch(
   limit,
   pageNumber,
   filter,
-  search
+  search,
+  bdOnly
 ) {
   const response = await axios.post(
     "https://indusspeciality.com/api/listings/search_properties_with_filter.php",
@@ -132,6 +134,7 @@ export async function getAllPropertiesSearch(
       pageNumber: pageNumber,
       filter: filter,
       search: search,
+      bdOnly: bdOnly,
     }
   );
   return response.data;

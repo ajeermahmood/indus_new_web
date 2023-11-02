@@ -146,7 +146,7 @@ const AboutAgentPage = () => {
 
               {/* End .row */}
 
-              <ListingItemsContainer agentId={data.agentData.client_user_id} />
+              <ListingItemsContainer agentId={data.agentData.client_user_id} name={data.agentData.client_user_name}/>
               {/* End .row */}
 
               <div className="row pt30 bdrb1">

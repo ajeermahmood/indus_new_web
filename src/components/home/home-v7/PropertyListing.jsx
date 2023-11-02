@@ -38,7 +38,7 @@ export default function PropertyListing() {
             <div className="main-title2">
               <h2 className="title">Discover Popular Properties</h2>
               <p className="paragraph">
-                Aliquam lacinia diam quis lacus euismod
+                Take a deep dive and Browse All original property collection.
               </p>
             </div>
           </div>
