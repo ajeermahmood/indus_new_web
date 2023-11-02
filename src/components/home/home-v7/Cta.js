@@ -16,9 +16,10 @@ const Cta = () => {
                 Become a Real Estate Agent
               </h2>
               <p className="cta-text mb25 text-white">
-                We only work with the best companies around the globe to survey
+                Get in touch with one of the fastest emerging real estate
+                agencies in Dubai.
               </p>
-              <Link href="/contact" className="ud-btn btn-white bdrs0">
+              <Link href="/career" className="ud-btn btn-white bdrs0">
                 Contact Now <i className="fal fa-arrow-right-long" />
               </Link>
             </div>

@@ -72,13 +72,13 @@ const AboutCompanyPage = () => {
               </p>
             </div>
             <div className="col-lg-6">
-              <p className="text mb25">
+              <p className="text mb25 fz20">
                 <b>Indus Real Estate</b> is a multi-awarded Real Estate
                 Regulatory Agency (RERA) registered company. We are established
                 since 2004 and in business for more than 17 years with a solid
                 UAE and international client base
               </p>
-              <p className="text mb55">
+              <p className="text mb55 fz20">
                 At Indus, the range of service focuses on all aspects of
                 property selling,buying and leasing - both residential and
                 commercial . Our efficiency is derived from a combination of
@@ -127,30 +127,40 @@ const AboutCompanyPage = () => {
       {/* End Funfact */}
       <div className="col-xl-8 offset-xl-2 px30">
         <div className="ui-content mt40 mb30">
-          <h4 className="mb10">MISSION</h4>
+          <h4 className="mb10 text-indus fz30">MISSION</h4>
           <div className="custom_bsp_grid">
             <ul className="list-style-type-bullet p-0 ml20">
               <li>
-                We are committed to create mutual trust and long-term
-                relationship by delivering what we can do best and beyond.
+                <p className="fz20">
+                  We are committed to create mutual trust and long-term
+                  relationship by delivering what we can do best and beyond.
+                </p>
               </li>
               <li>
-                We strive to be always motivated and focused in providing
-                excellent real estate services using the most comprehensive and
-                innovative approach.
+                <p className="fz20">
+                  We strive to be always motivated and focused in providing
+                  excellent real estate services using the most comprehensive
+                  and innovative approach.
+                </p>
               </li>
               <li>
-                We aim to actively increase our client base and maintain good
-                relationships with our existing clientele by preserving their
-                trust and loyalty.
+                <p className="fz20">
+                  We aim to actively increase our client base and maintain good
+                  relationships with our existing clientele by preserving their
+                  trust and loyalty.
+                </p>
               </li>
               <li>
-                We make every effort to optimize exceptional Resources, People,
-                System and Values strategically.
+                <p className="fz20">
+                  We make every effort to optimize exceptional Resources,
+                  People, System and Values strategically.
+                </p>
               </li>
               <li>
-                We aim to create a one stop shop for all real estate services
-                for all our clients locally and internationally.
+                <p className="fz20">
+                  We aim to create a one stop shop for all real estate services
+                  for all our clients locally and internationally.
+                </p>
               </li>
             </ul>
           </div>
@@ -169,31 +179,37 @@ const AboutCompanyPage = () => {
         </div>
 
         <div className="ui-content mt40 mb30">
-          <h4 className="mb10">VISION</h4>
+          <h4 className="mb10 fz30 text-indus">VISION</h4>
           <div className="custom_bsp_grid">
             <ul className="list-style-type-bullet p-0 ml20">
               <li>
-                To revolutionize real estate industry and to become the real
-                estate of choice in UAE and across the world.
+                <p className="fz20">
+                  To revolutionize real estate industry and to become the real
+                  estate of choice in UAE and across the world.
+                </p>
               </li>
               <li>
-                To be a place where everyone creates their winning ideas,
-                innovation and inspire other people’s dream of optimism and
-                reality.
+                <p className="fz20">
+                  To be a place where everyone creates their winning ideas,
+                  innovation and inspire other people’s dream of optimism and
+                  reality.
+                </p>
               </li>
               <li>
-                We intend to be a remarkable and legendary real estate
-                management firm who always provide clients the best investment
-                experience in UAE from beginning to end with an advance, smart
-                and secure methods in real estate service in accordance with the
-                highest professional standards.
+                <p className="fz20">
+                  We intend to be a remarkable and legendary real estate
+                  management firm who always provide clients the best investment
+                  experience in UAE from beginning to end with an advance, smart
+                  and secure methods in real estate service in accordance with
+                  the highest professional standards.
+                </p>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="col-12 ui-content mt50">
-          <h4 className="title">VALUES</h4>
+          <h4 className="title fz30 text-indus">VALUES</h4>
         </div>
         <div className="row">
           {featuresData.map((featureSection, index) => (
@@ -203,8 +219,8 @@ const AboutCompanyPage = () => {
                   <ul>
                     {featureSection.points.map((point, pointIndex) => (
                       <li key={pointIndex}>
-                        <i className="far fa-check text-thm3 bgc-thm3-light" />
-                        {point}
+                        <i className="far fa-check text-thm3 bgc-thm3-light fz20" />
+                        <p className="fz20 mb0 ml10">{point}</p>
                       </li>
                     ))}
                   </ul>
@@ -225,9 +241,9 @@ const AboutCompanyPage = () => {
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
-                <h2 className="title">Our Exclusive Agetns</h2>
+                <h2 className="title">Our Exclusive Team</h2>
                 <p className="paragraph">
-                  Aliquam lacinia diam quis lacus euismod
+                  Keep in touch with our exclusive team.
                 </p>
               </div>
             </div>

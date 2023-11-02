@@ -33,23 +33,38 @@ const SingleAgentInfo = ({ agent }) => {
       <div className="single-contant ml30 ml0-xs">
         <h6 className="title mb-1">{agentData.name}</h6>
         <div className="agent-meta mb10 d-md-flex align-items-center">
-          <a className="text fz15 pe-2 bdrr1" href="#">
+          <a
+            className="text fz15 pe-2 bdrr1"
+            href={`tel:${agentData.phoneNumber}`}
+          >
             <i className="flaticon-call pe-1 ps-1" />
             {agentData.phoneNumber}
           </a>
-          <a className="text fz15 pe-2 bdrr1" href="#">
+          <a
+            className="text fz15 pe-2 bdrr1"
+            href={`mailto:${agentData.email}`}
+          >
             <i className="flaticon-email pe-1 ps-1" />
             {agentData.email}
           </a>
 
-          <a className="text fz15 ps-2" href="#">
+          <a
+            className="text fz15 ps-2"
+            target="_blank"
+            href={`https://wa.me/${agentData.phoneNumber}`}
+          >
             <i className="flaticon-whatsapp pe-1" />
             WhatsApp
           </a>
         </div>
         <div className="agent-social">
           {agentData.socialMedia.map((social, index) => (
-            <a key={index} className="mr20" href={agent.client_user_linkedin}>
+            <a
+              target="_blank"
+              key={index}
+              className="mr20"
+              href={agent.client_user_linkedin}
+            >
               <i className={`fab fa-${social}`} />
             </a>
           ))}

@@ -16,7 +16,7 @@ export default function YouRubeVideoComponent({ videoId }) {
   };
   return (
     <>
-      <YouTube videoId={videoId} opts={ytOpts} onReady={onReady} />
+      <YouTube className="mt50" videoId={videoId} opts={ytOpts} onReady={onReady} />
     </>
   );
 }

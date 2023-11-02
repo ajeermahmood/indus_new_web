@@ -27,12 +27,15 @@ const ContactWithAgent = ({ agent }) => {
         <div className="single-contant ml20 ml0-xs">
           <h6 className="title mb-1">{agent.client_user_name}</h6>
           <div className="agent-meta mb10 d-md-flex align-items-center">
-            <a className="text fz15" href="#">
+            <a className="text fz15" href={`tel:${agent.client_user_phone}`}>
               <i className="flaticon-call pe-1" />
               {agent.client_user_phone}
             </a>
           </div>
-          <Link href="#" className="text-decoration-underline fw600">
+          <Link
+            href={`/agents-properties?id=${agent.client_user_id}&name=${agent.client_user_name}`}
+            className="text-decoration-underline fw600"
+          >
             View Listings
           </Link>
         </div>

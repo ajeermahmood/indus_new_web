@@ -64,9 +64,9 @@ const CommunityGuideDetails = () => {
           <div className="roww" data-aos="fade-up" data-aos-delay="500">
             <div className="col-xl-8 offset-xl-2">
               <div className="ui-content mt40 mb60">
-                <p className="mb25 ff-heading">{data.location_blurb}</p>
+                <p className="mb25 ff-heading fz20">{data.location_blurb}</p>
                 <p
-                  className="ff-heading"
+                  className="ff-heading fz20"
                   dangerouslySetInnerHTML={{
                     __html: data.location_description,
                   }}
