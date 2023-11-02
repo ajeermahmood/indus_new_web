@@ -41,7 +41,7 @@ const WhyChoose = () => {
           <p className="paragraph fz15">
             You can now visit the property at your convenience,{" "}
             <br className="d-none d-lg-block" />
-            and don't need the agent to accompany you.
+            and don&apos;t need the agent to accompany you.
           </p>
         </div>
         {/* End main-title2 */}

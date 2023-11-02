@@ -170,7 +170,7 @@ const CareerForm = () => {
         <div className="col-md-12">
           <div className="mb20">
             <label className="form-label fw600 dark-color">
-              Do you have driver's license?
+              Do you have driver&apos;s license?
             </label>
             <div className="bootselect-multiselect">
               <Select
