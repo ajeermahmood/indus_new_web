@@ -40,17 +40,25 @@ const GalleryBox = ({ banners, loading }) => {
           : banners.map((bnr, index) => (
               <SwiperSlide key={index}>
                 <div className="item">
-                  <p className="mb0 fz20 text-indus">{bnr.title}</p>
-                  <p className="mb10">
-                    <i>{bnr.subtitle}</i>
-                  </p>
-                  <Image
-                    width={480}
-                    height={342}
-                    className="bdrs12 w-100"
-                    src={bnr.image}
-                    alt={`Image ${index + 1}`}
-                  />
+                  <a href={bnr.link} target="_blank">
+                    <p className="mb0 fz20 text-indus">{bnr.title}</p>
+                  </a>
+
+                  <a href={bnr.link} target="_blank">
+                    <p className="mb10">
+                      <i>{bnr.subtitle}</i>
+                    </p>
+                  </a>
+
+                  <a href={bnr.link} target="_blank">
+                    <Image
+                      width={480}
+                      height={342}
+                      className="bdrs12 w-100"
+                      src={bnr.image}
+                      alt={`Image ${index + 1}`}
+                    />
+                  </a>
                 </div>
               </SwiperSlide>
             ))}
