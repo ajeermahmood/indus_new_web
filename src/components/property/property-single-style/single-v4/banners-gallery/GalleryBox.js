@@ -178,7 +178,7 @@ const GalleryBox = ({ banners, loading }) => {
                       }}`}
                       src={bnr.image}
                       alt={`Image ${index + 1}`}
-                      onLoad={() => getImgLoadFunc(index)}
+                      onLoadingComplete={() => getImgLoadFunc(index)}
                     />
                   </a>
                 </div>
