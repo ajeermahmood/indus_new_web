@@ -37,7 +37,7 @@ const HomePage = () => {
       {/* Home Banner Style V2 */}
       <section className="home-banner-style2 p0">
         <div className="home-style2">
-          <div className="container maxw1400">
+          <div className="container maxw1600">
             <div className="home2-hero-banner bdrs12"></div>
             <div className="row m-0">
               <div className="col-xl-10 mx-auto">
