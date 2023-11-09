@@ -3,13 +3,11 @@ import { Skeleton } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 
-const BlogFilter = ({ blogs, loading, setActiveCategory, activeCategory }) => {
+const BlogFilter2 = ({ blogs, loading, setActiveCategory, activeCategory }) => {
   const skeletonLoader = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const categories = [
     { label: "All", value: "All" },
-    { label: "Dubai Real Estate Market", value: "real estate" },
-    { label: "Life & Style", value: "life" },
-    { label: "Investments", value: "investments" },
+    { label: "Invest", value: "invest" },
     { label: "Selling a Home", value: "sell" },
     { label: "Renting a Home", value: "rent" },
     { label: "Buying a Home", value: "buy" },
@@ -45,7 +43,7 @@ const BlogFilter = ({ blogs, loading, setActiveCategory, activeCategory }) => {
           </div>
 
           <p className="text-center mb60">
-            <b>Sorry, No Related News Available!</b>
+            <b>Sorry, No Related Blogs Available!</b>
           </p>
         </div>
       ) : (
@@ -78,7 +76,7 @@ const BlogFilter = ({ blogs, loading, setActiveCategory, activeCategory }) => {
               </div>
             ))
           : blogs.map((blog) => (
-              <div className="col-sm-6 col-lg-4" key={blog.news_id}>
+              <div className="col-sm-6 col-lg-4" key={blog.blogs_id}>
                 <div className="blog-style1">
                   <div
                     className="blog-img"
@@ -90,25 +88,25 @@ const BlogFilter = ({ blogs, loading, setActiveCategory, activeCategory }) => {
                       width={386}
                       height={271}
                       className="w-100 h-100 cover"
-                      src={`https://www.indusre.com/newsimg/${blog.news_thumbnail}`}
+                      src={`https://www.indusre.com/blogsimg/${blog.blogs_thumbnail}`}
                       alt="blog"
                     />
                   </div>
                   <div className="blog-content">
                     <div className="date">
                       <span className="month">
-                        {new Date(blog.news_date).toDateString().split(" ")[1]}
+                        {new Date(blog.blogs_date).toDateString().split(" ")[1]}
                       </span>
                       <span className="day">
-                        {new Date(blog.news_date).getDay()}
+                        {new Date(blog.blogs_date).getDay()}
                       </span>
                     </div>
                     <a className="tag" href="#">
                       Indus Real Estate LLC
                     </a>
                     <h6 className="title mt-1">
-                      <Link href={`/news-details/?id=${blog.news_id}`}>
-                        {blog.news_title}
+                      <Link href={`/blog-details/?id=${blog.blogs_id}`}>
+                        {blog.blogs_title}
                       </Link>
                     </h6>
                   </div>
@@ -120,4 +118,4 @@ const BlogFilter = ({ blogs, loading, setActiveCategory, activeCategory }) => {
   );
 };
 
-export default BlogFilter;
+export default BlogFilter2;

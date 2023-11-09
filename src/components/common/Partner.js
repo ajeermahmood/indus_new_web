@@ -24,7 +24,7 @@ const Partner = () => {
     <>
       {showSlider && (
         <Swiper
-          spaceBetween={10} // Adjust the spacing between items as per your preference
+          spaceBetween={150} // Adjust the spacing between items as per your preference
           slidesPerView={6} // Default number of slides per view
           breakpoints={{
             0: {
@@ -52,8 +52,8 @@ const Partner = () => {
               <div className="item">
                 <div className="partner_item">
                   <Image
-                    width={300}
-                    height={100}
+                    width={500}
+                    height={130}
                     style={{ objectFit: "contain" }}
                     className="wa m-auto"
                     src={`https://www.indusre.com/images/builders/logo/${imageName}`}

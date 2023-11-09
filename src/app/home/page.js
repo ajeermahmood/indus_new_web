@@ -62,7 +62,7 @@ const HomePage = () => {
       </section>
       {/* End Explore Apartment */}
 
-      <section className="pb0">
+      <section className="pb50 pt40">
         <div className="container">
           <div className="row" data-aos="fade-up" data-aos-delay="0">
             <div className="col-lg-6 mx-auto">
@@ -82,10 +82,13 @@ const HomePage = () => {
       </section>
 
       {/* Popular Property */}
-      <section className="pb0 pb30-md" id="featured-properties">
+      <section
+        className="bgc-f7 pt50 pb30-md pb60 pt60"
+        id="featured-properties"
+      >
         <PropertyListing />
       </section>
-      <section>
+      {/* <section>
         <div className="container">
           <div
             className="row align-items-md-center"
@@ -95,9 +98,9 @@ const HomePage = () => {
             <WhyChoose />
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="pb10 pb30-md" id="explore-cities">
+      <section className="pb10 pb30-md pt60" id="explore-cities">
         <div className="container">
           <div className="row" data-aos="fade-up" data-aos-delay="0">
             <div className="col-lg-6 mx-auto">
@@ -120,12 +123,12 @@ const HomePage = () => {
         </div>
       </section>
       {/* End property cities */}
-      <section className="pb90 pb20-md" id="featured-blogs">
+      <section className="pb90 pb20-md pt50" id="featured-blogs">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 m-auto" data-aos="fade-up">
               <div className="main-title text-start text-md-center">
-                <h2 className="title">From Our Blog</h2>
+                <h2 className="title">Latest News</h2>
                 <p className="paragraph">
                   Read latest news about Real Estate in Dubai
                 </p>
@@ -147,7 +150,7 @@ const HomePage = () => {
       </section>
 
       {/* Explore Apartment */}
-      <section className="p-0" id="guides">
+      {/* <section className="p-0" id="guides">
         <div className="how-we-help position-relative mx-auto bgc-thm-light maxw1600 pt120 pt60-md pb90 pb30-md bdrs12 mx20-lg">
           <div className="container">
             <div className="row">
@@ -161,25 +164,47 @@ const HomePage = () => {
                 </div>
               </div>
             </div>
-            {/* End .row */}
 
             <div className="row">
               <Explore />
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* End Explore Apartment */}
 
       {/* About Us */}
-      <section className="about-us">
+      {/* <section className="about-us">
         <div className="container">
           <About />
         </div>
-      </section>
+      </section> */}
       {/* End About Us */}
 
       {/* Our Testimonials */}
+      <section className="our-partners pt50">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12 wow fadeInUp" data-wow-delay="100">
+              <div className="main-title text-center">
+                <h6>Trusted by the Dubai&apos;s best</h6>
+              </div>
+            </div>
+            {/* End .col-12 */}
+
+            <div
+              className="col-lg-12 text-center"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <Partner />
+            </div>
+            {/* End .col-12 */}
+          </div>
+          {/* End .row */}
+        </div>
+      </section>
+
       <section className="our-testimonial p-0">
         <div className="cta-banner2 bgc-f7 maxw1600 mx-auto pt110 pt60-md pb110 pb60-md bdrs12 position-relative">
           <div className="container">
@@ -214,7 +239,7 @@ const HomePage = () => {
       {/* End Our Testimonials */}
 
       {/* Exclusive Agents */}
-      <section className="pb90" id="exclusive-team">
+      {/* <section className="pb90" id="exclusive-team">
         <div className="container">
           <div className="row  justify-content-between align-items-center">
             <div className="col-auto">
@@ -229,7 +254,6 @@ const HomePage = () => {
                 </p>
               </div>
             </div>
-            {/* End header */}
 
             <div className="col-auto mb30">
               <div className="row align-items-center justify-content-center">
@@ -238,25 +262,20 @@ const HomePage = () => {
                     <i className="far fa-arrow-left-long" />
                   </button>
                 </div>
-                {/* End prev */}
 
                 <div className="col-auto">
                   <div className="pagination swiper--pagination agent_pagination__active" />
                 </div>
-                {/* End pagination */}
 
                 <div className="col-auto">
                   <button className="agent_next__active swiper_button">
                     <i className="far fa-arrow-right-long" />
                   </button>
                 </div>
-                {/* End Next */}
               </div>
             </div>
 
-            {/* End .col for navigation and pagination */}
           </div>
-          {/* End .row */}
 
           <div className="row">
             <div className="col-lg-12" data-aos="fade-up" data-aos-delay="300">
@@ -271,32 +290,11 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* Exclusive Agents */}
 
       {/* Our Partners */}
-      <section className="our-partners pt50">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12 wow fadeInUp" data-wow-delay="100">
-              <div className="main-title text-center">
-                <h6>Trusted by the Dubai’s best</h6>
-              </div>
-            </div>
-            {/* End .col-12 */}
 
-            <div
-              className="col-lg-12 text-center"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <Partner />
-            </div>
-            {/* End .col-12 */}
-          </div>
-          {/* End .row */}
-        </div>
-      </section>
       {/* End Our Partners */}
       {/* Real Estate Inquiry Form */}
       <section>
@@ -345,11 +343,11 @@ const HomePage = () => {
       {/* Real Estate Inquiry Form */}
 
       {/* Our CTA */}
-      <Cta />
+      {/* <Cta /> */}
       {/* Our End CTA */}
 
       {/* Start Our Footer */}
-      <section className="footer-style1 at-home4 pt60 pb-0">
+      <section className="footer-style1 at-home4 pt60 pb-0 bdr-top bgc-f7">
         <Footer />
       </section>
       {/* End Our Footer */}

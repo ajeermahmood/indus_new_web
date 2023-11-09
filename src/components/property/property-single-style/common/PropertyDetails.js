@@ -1,7 +1,7 @@
 import React from "react";
 
 const PropertyDetails = ({ data }) => {
-  const currencyFormatter = new Intl.NumberFormat("en-IN", {
+  const currencyFormatter = new Intl.NumberFormat("en-AE", {
     style: "currency",
     currency: "AED",
     minimumFractionDigits: 0,

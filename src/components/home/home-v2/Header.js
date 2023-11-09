@@ -28,7 +28,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`header-nav nav-homepage-style at-home2 bgc-dark main-menu ${
+        className={`bg-white header-nav nav-homepage-style at-home2 main-menu ${
           navbar ? "sticky slideInDown animated" : ""
         }`}
       >
@@ -103,27 +103,13 @@ const Header = () => {
                     <i className="fal fa-arrow-right-long" />
                   </Link> */}
                   <a
-                    className="sidemenu-btn filter-btn-right"
+                    className="sidemenu-btn filter-btn-right px10"
                     href="#"
                     data-bs-toggle="offcanvas"
                     data-bs-target="#SidebarPanel"
                     aria-controls="SidebarPanelLabel"
                   >
-                    <Image
-                      width={25}
-                      height={9}
-                      className="img-1"
-                      src="/images/icon/nav-icon-white.svg"
-                      alt="humberger menu"
-                    />
-
-                    <Image
-                      width={25}
-                      height={9}
-                      className="img-2"
-                      src="/images/icon/nav-icon-dark.svg"
-                      alt="humberger menu"
-                    />
+                    <i className="fa fa-bars"></i>
                   </a>
                 </div>
               </div>

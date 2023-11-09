@@ -12,7 +12,7 @@ const Hero = () => {
         <h2 className="hero-title" data-aos="fade-up" data-aos-delay="150">
           <i>
             {" "}
-            Service you Deserve, <br /> People you Trust
+            Service you Deserve, <br /> People you Trust!
           </i>
         </h2>
         <p className="hero-text fz15" data-aos="fade-up" data-aos-delay="250">

@@ -57,7 +57,7 @@ export default function PropertyFilteringBanner() {
           Number(price_range_param.split(",")[0]),
           Number(price_range_param.split(",")[1]),
         ]
-      : [0, 40000000]
+      : [2000, 40000000]
   );
   const [priceRangeSetted, setPriceRangeSetted] = useState(1);
   const [bedrooms, setBedrooms] = useState(
@@ -148,7 +148,7 @@ export default function PropertyFilteringBanner() {
   const resetFilter = () => {
     setListingStatus("All");
     setPropertyTypes([]);
-    setPriceRange([0, 40000000]);
+    setPriceRange([2000, 40000000]);
     setBedrooms(0);
     setBathroms(0);
     setLocation("0");

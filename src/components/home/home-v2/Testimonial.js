@@ -4,40 +4,25 @@ import React from "react";
 const testimonials = [
   {
     id: "1st",
-    imageSrc: "/images/testimonials/hamir-asher.jpg",
-    text: "Our objective at Indus is to constantly upgrade our comprehensive service standards and to provide real quality service and excellence in client’s satisfaction.",
-    name: "Mr. Hamir Asher",
-    designation: "General Manager, Indus Real Estate LLC",
+    imageSrc: "/images/testimonials/mihar-ved.png",
+    text: "Great experience, good follow up service, friendly agents, great property management. Would recommend them to anyone!",
+    name: "Mihar Ved",
+    designation: "Customer",
   },
-  // {
-  //   id: "2nd",
-  //   imageSrc: "/images/testimonials/testi-2.png",
-  //   text: "Another fantastic testimonial! This workshop has helped me improve my design skills significantly. I'm really grateful for the opportunity.",
-  //   name: "Ella Johnson",
-  //   designation: "UX Designer, Google",
-  // },
-  // {
-  //   id: "third",
-  //   imageSrc: "/images/testimonials/testi-3.png",
-  //   text: "What a great experience! I have visited one of the workshops and attended a masterclass, and both were super useful for young designers.",
-  //   name: "Ali Tufan",
-  //   designation: "Product Manager, Apple Inc",
-  // },
-  // {
-  //   id: "4th",
-  //   imageSrc: "/images/testimonials/testi-4.png",
-  //   text: "Another fantastic testimonial! This workshop has helped me improve my design skills significantly. I'm really grateful for the opportunity.",
-  //   name: "Ella Johnson",
-  //   designation: "UX Designer, Google",
-  // },
-  // {
-  //   id: "5th",
-  //   imageSrc: "/images/testimonials/testi-5.png",
-  //   text: "Another fantastic testimonial! This workshop has helped me improve my design skills significantly. I'm really grateful for the opportunity.",
-  //   name: "Ella Johnson",
-  //   designation: "UX Designer, Google",
-  // },
-  // Add more testimonial objects if needed
+  {
+    id: "2nd",
+    imageSrc: "/images/testimonials/karan-variava.png",
+    text: "Agent are friendly and they have good knowledge of Dubai and International market",
+    name: "Karan Variava",
+    designation: "Customer",
+  },
+  {
+    id: "3rd",
+    imageSrc: "/images/testimonials/muhannad-khawam.png",
+    text: "The pinnacle of arrangement, refinement and cooperation It's like a beehive",
+    name: "Muhannad Khawam",
+    designation: "Customer",
+  },
 ];
 
 const Testimonial = () => {

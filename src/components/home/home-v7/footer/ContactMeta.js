@@ -28,13 +28,13 @@ const ContactMeta = ({ path }) => {
     <div className="row mb-4 mb-lg-5">
       {contactInfoData.map((contact, index) => (
         <div className="contact-info mb25" key={index}>
-          <p className={`text mb5 ${path != "/" ? "text-blue-gray" : ""}`}>
+          <p className={`fw600 text mb5 ${path != "/" ? "text-blue-gray" : ""}`}>
             {contact.text}
           </p>
           {contact.link.startsWith("mailto:") ? (
             <h6 className="info-mail">
               <a
-                className={`${path != "/" ? "text-light" : ""}`}
+                className={`fw400 ${path != "/" ? "text-light" : ""}`}
                 href={contact.link}
               >
                 {contact.info}
@@ -43,7 +43,7 @@ const ContactMeta = ({ path }) => {
           ) : (
             <h6 className="info-phone">
               <a
-                className={`${path != "/" ? "text-light" : ""}`}
+                className={`fw400 ${path != "/" ? "text-light" : ""}`}
                 target={
                   contact.text == "Head Office" || contact.text == "DMCC Branch"
                     ? "_blank"

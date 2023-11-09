@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const FeaturedListings = ({ data, colstyle, loading }) => {
   const skeletonLoader = [1, 2, 3, 4, 5, 6, 7, 8];
-  const currencyFormatter = new Intl.NumberFormat("en-IN", {
+  const currencyFormatter = new Intl.NumberFormat("en-AE", {
     style: "currency",
     currency: "AED",
     minimumFractionDigits: 0,

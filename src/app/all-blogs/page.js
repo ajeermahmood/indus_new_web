@@ -1,7 +1,7 @@
-import BlogFilterContainer from "@/components/blog/blog-list-v3/BlogFilterContainer";
-import Footer from "@/components/home/home-v7/footer";
+import BlogFilters from "@/components/blog/blog-list/BlogFilterContainer";
 import MobileMenu from "@/components/common/mobile-menu";
 import Header from "@/components/home/home-v2/Header";
+import Footer from "@/components/home/home-v7/footer";
 
 export const metadata = {
   title: "Indus Real Estate LLC | Dubai Luxury Properties",
@@ -24,10 +24,10 @@ const AllNewsPage = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcumb-style1">
-                <h2 className="title">All News</h2>
+                <h2 className="title">All Blogs</h2>
                 <div className="breadcumb-list">
                   <a href="#">Home</a>
-                  <a href="#">News</a>
+                  <a href="#">Blogs</a>
                 </div>
               </div>
             </div>
@@ -37,7 +37,7 @@ const AllNewsPage = () => {
       {/* End Breadcrumb Start */}
 
       {/* Blog Section Area */}
-      <BlogFilterContainer />
+      <BlogFilters />
       {/* End Blog Section Area */}
 
       {/* Start Our Footer */}

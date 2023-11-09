@@ -5,7 +5,7 @@ import React from "react";
 
 const ListingItems = ({ data, loading }) => {
   const skeletonLoader = [1, 2, 3, 4];
-  const currencyFormatter = new Intl.NumberFormat("en-IN", {
+  const currencyFormatter = new Intl.NumberFormat("en-AE", {
     style: "currency",
     currency: "AED",
     minimumFractionDigits: 0,

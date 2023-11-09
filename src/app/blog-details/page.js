@@ -1,10 +1,10 @@
 "use client";
-import { getNewsDetails } from "@/api/listings";
-import Details from "@/components/blog/blog-single/Details";
+import { getBlogDetails } from "@/api/listings";
+import BlogHeader from "@/components/blog/blog-list/BlogHeader";
+import BlogsPagination from "@/components/blog/blog-list/blogs_pagination";
 import Pagination from "@/components/blog/blog-single/Pagination";
 import Social from "@/components/blog/blog-single/Social";
 import Tags from "@/components/blog/blog-single/Tags";
-import Blog from "@/components/common/Blog";
 import MobileMenu from "@/components/common/mobile-menu";
 import Header from "@/components/home/home-v2/Header";
 import Footer from "@/components/home/home-v7/footer";
@@ -21,7 +21,7 @@ const NewsDetailsPage = () => {
   const [next, setNextData] = useState("");
 
   useEffect(() => {
-    getNewsDetails(params).then((res) => {
+    getBlogDetails(params).then((res) => {
       setData(res.data);
       setNextData(res.next);
       setPrevData(res.prev);
@@ -52,14 +52,14 @@ const NewsDetailsPage = () => {
 
       {/* Blog Section Area */}
       <section className="our-blog pt130">
-        <Details blogData={data} />
+        <BlogHeader blogData={data} />
 
         <div className="container">
           <div className="roww" data-aos="fade-up" data-aos-delay="500">
             <div className="col-xl-8 offset-xl-2">
               <div
                 className="mt50 mb50 fz20"
-                dangerouslySetInnerHTML={{ __html: data.news_description }}
+                dangerouslySetInnerHTML={{ __html: data.blogs_description }}
               ></div>
 
               <div className="bdrt1 bdrb1 d-block d-sm-flex justify-content-between pt50 pt30-sm pb50 pb30-sm">
@@ -72,7 +72,7 @@ const NewsDetailsPage = () => {
                 </div>
               </div>
 
-              <Pagination next={next} prev={prev} />
+              <BlogsPagination next={next} prev={prev} />
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@ const NewsDetailsPage = () => {
       {/* End Blog Details */}
 
       {/* Related Blog Post */}
-      <section className="pb90 pb20-md pt-0">
+      {/* <section className="pb90 pb20-md pt-0">
         <div className="container">
           <div className="row">
             <div
@@ -96,13 +96,12 @@ const NewsDetailsPage = () => {
               </div>
             </div>
           </div>
-          {/* End .row */}
 
           <div className="row" data-aos="fade-up" data-aos-delay="300">
             <Blog />
           </div>
         </div>
-      </section>
+      </section> */}
       {/* end Related Blog Post */}
 
       {/* Start Our Footer */}

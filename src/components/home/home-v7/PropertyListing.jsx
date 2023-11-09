@@ -31,7 +31,7 @@ export default function PropertyListing() {
   }, [currentType]);
 
   return (
-    <section className="bgc-f7">
+    
       <div className="container">
         <div className="row" data-aos="fade-up" data-aos-delay="0">
           <div className="col-lg-9">
@@ -107,6 +107,6 @@ export default function PropertyListing() {
           </Link>
         </div>
       </div>
-    </section>
+    
   );
 }

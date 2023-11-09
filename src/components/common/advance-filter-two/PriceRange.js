@@ -11,6 +11,12 @@ const PriceRange = ({ filterFunctions }) => {
     },
   });
 
+  const currencyFormatter = new Intl.NumberFormat("en-AE", {
+    style: "currency",
+    currency: "AED",
+    minimumFractionDigits: 0,
+  });
+
   // price range handler
   const handleOnChange = (value) => {
     setPrice({ value });
@@ -23,7 +29,7 @@ const PriceRange = ({ filterFunctions }) => {
         <InputRange
           formatLabel={() => ``}
           maxValue={40000000}
-          minValue={0}
+          minValue={2000}
           value={{
             min: filterFunctions?.priceRange[0],
             max: filterFunctions?.priceRange[1],
@@ -32,9 +38,9 @@ const PriceRange = ({ filterFunctions }) => {
           id="slider"
         />
         <div className="d-flex align-items-center">
-          <span id="slider-range-value1">${price.value.min}</span>
+          <span id="slider-range-value1">{currencyFormatter.format(price.value.min)}</span>
           <i className="fa-sharp fa-solid fa-minus mx-2 dark-color icon" />
-          <span id="slider-range-value2">${price.value.max}</span>
+          <span id="slider-range-value2">{currencyFormatter.format(price.value.max)}</span>
         </div>
       </div>
     </>

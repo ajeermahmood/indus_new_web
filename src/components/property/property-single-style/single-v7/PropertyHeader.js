@@ -1,7 +1,7 @@
 "use client";
 
 const PropertyHeader = ({ propData }) => {
-  const currencyFormatter = new Intl.NumberFormat("en-IN", {
+  const currencyFormatter = new Intl.NumberFormat("en-AE", {
     style: "currency",
     currency: "AED",
     minimumFractionDigits: 0,

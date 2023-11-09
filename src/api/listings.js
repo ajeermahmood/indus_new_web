@@ -65,6 +65,16 @@ export async function getAgentDetails(id) {
   return response.data;
 }
 
+export async function getNewsDetails(id) {
+  const response = await axios.post(
+    "https://indusspeciality.com/api/listings/get_news_details.php",
+    {
+      blog_id: id,
+    }
+  );
+  return response.data;
+}
+
 export async function getBlogDetails(id) {
   const response = await axios.post(
     "https://indusspeciality.com/api/listings/get_blog_details.php",
@@ -196,6 +206,18 @@ export async function getAllVideos(limit, pageNumber, search, filter) {
 }
 
 export async function getAllNews(limit, pageNumber, filter) {
+  const response = await axios.post(
+    "https://indusspeciality.com/api/listings/get_all_news.php",
+    {
+      limit: limit,
+      pageNumber: pageNumber,
+      filter: filter,
+    }
+  );
+  return response.data;
+}
+
+export async function getAllBlogs(limit, pageNumber, filter) {
   const response = await axios.post(
     "https://indusspeciality.com/api/listings/get_all_blogs.php",
     {

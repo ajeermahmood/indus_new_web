@@ -4,6 +4,11 @@ import Link from "next/link";
 
 const FeaturedListings = ({ data, type, loading }) => {
   const skeletonLoader = [1, 2, 3, 4, 5, 6];
+  const currencyFormatter = new Intl.NumberFormat("en-AE", {
+    style: "currency",
+    currency: "AED",
+    minimumFractionDigits: 0,
+  });
   return (
     <>
       {!loading && data.length == 0 ? (
@@ -173,7 +178,9 @@ const FeaturedListings = ({ data, type, loading }) => {
                     <div className="list-meta2 d-flex align-items-center">
                       <a href="#" className="mr10">
                         <span className="flaticon-bed" />{" "}
-                        {listing.property_bedrooms != '-1' ? listing.property_bedrooms : 'Studio'}
+                        {listing.property_bedrooms != "-1"
+                          ? listing.property_bedrooms
+                          : "Studio"}
                       </a>
                       <a href="#" className="mr10">
                         <span className="flaticon-shower" />{" "}
@@ -185,7 +192,7 @@ const FeaturedListings = ({ data, type, loading }) => {
                       </a>
                     </div>
                     <div className="list-price">
-                      {listing.property_price}{" "}
+                      {currencyFormatter.format(listing.property_price)}{" "}
                       {type == "rent" ? <span>/ mo</span> : <></>}
                     </div>
                   </div>

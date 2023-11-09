@@ -48,7 +48,7 @@ export default function PropertyFiltering({ agentId }) {
       ? [Number(property_type_param)]
       : []
   );
-  const [priceRange, setPriceRange] = useState([0, 40000000]);
+  const [priceRange, setPriceRange] = useState([2000, 40000000]);
   const [priceRangeSetted, setPriceRangeSetted] = useState(1);
   const [bedrooms, setBedrooms] = useState(-1);
   const [bathroms, setBathroms] = useState(0);
@@ -103,7 +103,7 @@ export default function PropertyFiltering({ agentId }) {
   const resetFilter = () => {
     setListingStatus("All");
     setPropertyTypes([]);
-    setPriceRange([0, 40000000]);
+    setPriceRange([2000, 40000000]);
     setBedrooms(0);
     setBathroms(0);
     setLocation("0");

@@ -83,6 +83,22 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
   --indus-gold: #d4aa4b;
 }
 
+.bg-blue {
+  background-color: var(--navy-blue) !important;
+} 
+
+.bg-white {
+  background-color: white !important;
+} 
+
+.w95 {
+  width: 95% !important;
+}
+
+.bdr-top {
+  border-top: 1px solid rgb(226, 226, 226) !important;
+}
+
 .text-indus {
   color: var(--indus-gold) !important;
 }
@@ -3425,7 +3441,7 @@ li {
 }
 
 .home-banner-style2 {
-  background-color: var(--navy-blue);
+  background-color: white;
   position: relative;
 }
 .home-banner-style2 .home-style2 {
@@ -7537,7 +7553,7 @@ header.nav-homepage-style .ace-responsive-menu .visible_list a.list-item:hover {
   }
 }
 header.nav-homepage-style .ace-responsive-menu a {
-  color: #ffffff;
+  color: var(--navy-blue);
   font-family: var(--title-font-family);
   font-weight: 600;
 }
@@ -7546,7 +7562,7 @@ header.nav-homepage-style .header-logo.logo2 {
 }
 header.nav-homepage-style .sidemenu-btn,
 header.nav-homepage-style .login-info {
-  color: #ffffff;
+  color: var(--navy-blue);
 }
 header.nav-homepage-style .sidemenu-btn .img-2 {
   display: none;
@@ -8145,6 +8161,8 @@ li.mm-listitem:focus {
   border-radius: 95px;
   padding: 10px;
   position: relative;
+  border: 1px solid #88a9c35e;
+  box-shadow: 0 0 20px rgb(0 0 0/5%) !important;
 }
 @media (max-width: 767.98px) {
   .advance-style2 .tab-content {
@@ -8569,7 +8587,7 @@ li.mm-listitem:focus {
 
 .range-slider-style1,
 .range-slider-style2 {
-  max-width: 300px;
+  max-width: 340px;
   position: relative;
   width: 100%;
 }
@@ -8663,7 +8681,7 @@ input:focus-visible {
   font-weight: 400;
   letter-spacing: 0em;
   padding: 10px 15px;
-  width: 130px;
+  width: 145px;
 }
 
 .modal-version #slider-range-value1,
@@ -9969,7 +9987,7 @@ input:focus-visible {
 }
 .dropdown-lists .dropdown-menu.dd3,
 .dropdown-lists .dropdown-menu.dd4 {
-  width: 330px;
+  width: 360px;
 }
 .dropdown-lists .done-btn {
   height: 36px;
@@ -10331,7 +10349,7 @@ input:focus-visible {
 }
 
 .bgc-f7 {
-  background-color: #f7f7f7;
+  background-color: #f7f7f7 !important;
 }
 
 .bgc-71 {
@@ -10535,7 +10553,7 @@ input:focus-visible {
 }
 
 .fw400 {
-  font-weight: 400;
+  font-weight: 400 !important;
 }
 
 .fw500 {
@@ -10543,7 +10561,7 @@ input:focus-visible {
 }
 
 .fw600 {
-  font-weight: 600;
+  font-weight: 600 !important;
 }
 
 .fw700 {
