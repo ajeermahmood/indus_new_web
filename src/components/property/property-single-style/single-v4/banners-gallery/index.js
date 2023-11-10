@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import GalleryBox from "./GalleryBox";
 import { getAllIndusBanners } from "@/api/listings";
+import { Dialog } from "@mui/material";
+import Image from "next/image";
 
 const PropertyGallery = () => {
   const [data, setData] = useState([]);
@@ -10,9 +12,29 @@ const PropertyGallery = () => {
     getAllIndusBanners()
       .then((res) => {
         setData(res);
+        // console.log(res);
+        setAlertDialogImg(res[0]);
       })
-      .finally(() => setLoading(false));
+      .finally(() => {
+        setLoading(false);
+
+        setTimeout(() => {
+          handleOpen();
+        }, 4000);
+      });
   }, []);
+
+  const [openAlertDialog, setOpenAlertDialog] = useState(false);
+  const [alertDialogImg, setAlertDialogImg] = useState("");
+
+  const handleClose = () => {
+    setOpenAlertDialog(false);
+  };
+
+  const handleOpen = () => {
+    setOpenAlertDialog(true);
+  };
+
   return (
     <>
       {/* End container */}
@@ -37,6 +59,31 @@ const PropertyGallery = () => {
           </div>
         </div>
       </div>
+
+      {/* ---------------------------------------------------Alert Dialog--------------------------------- */}
+      {/* ---------------------------------------------------Alert Dialog--------------------------------- */}
+      {/* ---------------------------------------------------Alert Dialog--------------------------------- */}
+      <Dialog onClose={handleClose} open={openAlertDialog} maxWidth="md">
+        <button
+          type="button"
+          className="btn-close close-btn-alert-banner"
+          onClick={handleClose}
+        />
+        <Image
+          width={900}
+          height={641}
+          className={`w-100`}
+          src={alertDialogImg.image}
+          alt={`img`}
+        />
+        <a
+          target="_blank"
+          className="custom-btn-alert-banner"
+          href="https://wa.me/971080046387"
+        >
+          Contact Now
+        </a>
+      </Dialog>
     </>
   );
 };

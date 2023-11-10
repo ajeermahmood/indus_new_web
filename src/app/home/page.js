@@ -1,23 +1,18 @@
 import Partner from "@/components/common/Partner";
 import MobileMenu from "@/components/common/mobile-menu";
-import Agents from "@/components/home/home-v2/Agents";
 import ApartmentType from "@/components/home/home-v2/ApartmentType";
-import Explore from "@/components/home/home-v2/Explore";
 import Header from "@/components/home/home-v2/Header";
 import Testimonial from "@/components/home/home-v2/Testimonial";
-import About from "@/components/home/home-v2/about";
 import Hero from "@/components/home/home-v2/hero";
-import Cta from "@/components/home/home-v7/Cta";
 import ExploreCities from "@/components/home/home-v7/ExploreCities";
 import Footer from "@/components/home/home-v7/footer";
 
 import Blog from "@/components/common/Blog";
-import WhyChoose from "@/components/home/home-v3/why-choose";
 import InqueryForm from "@/components/home/home-v7/InqueryForm";
 import PropertyListing from "@/components/home/home-v7/PropertyListing";
+import PropertyGallery from "@/components/property/property-single-style/single-v4/banners-gallery";
 import Image from "next/image";
 import Link from "next/link";
-import PropertyGallery from "@/components/property/property-single-style/single-v4/banners-gallery";
 
 export const metadata = {
   title: "Indus Real Estate LLC | Dubai Luxury Properties",
@@ -351,6 +346,7 @@ const HomePage = () => {
         <Footer />
       </section>
       {/* End Our Footer */}
+
     </>
   );
 };
