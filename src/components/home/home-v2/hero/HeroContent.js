@@ -24,7 +24,7 @@ const HeroContent = ({ activeTab, setActiveTab }) => {
         {tabs.map((tab) => (
           <li className="nav-item" key={tab.id}>
             <button
-              className={`nav-link ${activeTab === tab.id ? "active" : ""}`}
+              className={`nav-link text-dark ${activeTab === tab.id ? "active" : ""}`}
               onClick={() => handleTabClick(tab.id)}
             >
               {tab.label}

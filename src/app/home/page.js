@@ -13,6 +13,7 @@ import PropertyListing from "@/components/home/home-v7/PropertyListing";
 import PropertyGallery from "@/components/property/property-single-style/single-v4/banners-gallery";
 import Image from "next/image";
 import Link from "next/link";
+import EnquiryForm from "./enquiry_form";
 
 export const metadata = {
   title: "Indus Real Estate LLC | Dubai Luxury Properties",
@@ -46,7 +47,7 @@ const HomePage = () => {
       {/* End Home Banner Style V2 */}
 
       {/* Explore Apartment */}
-      <section className="pb0 pb30-md">
+      <section className="pb0 pb30-md pt0">
         <div className="container">
           <div className="row justify-content-center" data-aos="fade">
             <div className="col-lg-12">
@@ -346,6 +347,8 @@ const HomePage = () => {
         <Footer />
       </section>
       {/* End Our Footer */}
+
+      <EnquiryForm/>
 
     </>
   );
