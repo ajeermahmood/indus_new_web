@@ -67,7 +67,7 @@ const Contact = () => {
         <ReCaptcha />
         {/* End .col */}
 
-        <div className="col-md-12">
+        <div className="col-md-12 mt20">
           <div className="d-grid">
             <button type="submit" className="ud-btn btn-dark">
               Submit

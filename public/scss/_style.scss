@@ -103,6 +103,54 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
   background: #555;
 }
 
+.fz40 {
+  font-size: 40px !important;
+}
+.fz25 {
+  font-size: 25px !important;
+}
+
+.scroll-down-custom {
+  position: fixed;
+  bottom: 6rem;
+  right: 2rem;
+  .arrow-custom {
+    width: 30px;
+    height: 80px;
+    border: 2px solid #9d9d9d;
+    border-radius: 60px;
+    position: relative;
+    &::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--indus-gold);
+      border-radius: 50%;
+      opacity: 1;
+      animation: wheel 2s infinite;
+      -webkit-animation: wheel 2s infinite;
+    }
+  }
+}
+
+@keyframes wheel {
+	to {
+		opacity: 0;
+		top: 60px;
+	}
+}
+
+@-webkit-keyframes wheel {
+	to {
+		opacity: 0;
+		top: 60px;
+	}
+}
+
 .h50 {
   height: 50px !important;
 }
@@ -202,7 +250,7 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
   background-color: #ededed;
   box-shadow: 0 2px 6px 0 rgb(0 0 0 / 5%);
   border-radius: 4px;
-  transition: height .3s linear;
+  transition: height 0.3s linear;
   will-change: height;
   max-height: 100%;
   position: relative;
@@ -266,7 +314,7 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
   display: flex;
   transform: scaleY(-1);
   justify-content: end;
-  
+
   svg {
     width: 50px;
   }
@@ -5074,13 +5122,13 @@ section {
   background-color: transparent;
   border: 1px solid var(--midnight-blue);
   border-radius: 50%;
-  bottom: 45px;
+  bottom: 70px;
   color: var(--midnight-blue);
   display: block;
   height: 50px;
   line-height: 50px;
   position: fixed;
-  left: 45px;
+  right: 20px;
   text-align: center;
   text-decoration: none;
   width: 50px;
@@ -5377,11 +5425,11 @@ section {
   font-family: var(--title-font-family);
   font-weight: 600;
   line-height: 289px;
-  font-size: 200px;
+  font-size: 140px;
 }
 @media (max-width: 575.98px) {
   .error_page_content .erro_code {
-    font-size: 150px;
+    font-size: 100px;
   }
 }
 

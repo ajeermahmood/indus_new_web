@@ -53,10 +53,10 @@ const BannerSlider = ({ hightlights, title , url}) => {
                 >
                   <div className="container position-relative">
                     <h3
-                      className="banner-title"
+                      className="banner-title fz40"
                       style={{
                         position: "absolute",
-                        top: "-230px",
+                        top: "-180px",
                       }}
                     >
                       {title}
@@ -65,17 +65,17 @@ const BannerSlider = ({ hightlights, title , url}) => {
                       className="text-light fz20"
                       style={{
                         position: "absolute",
-                        top: "-150px",
+                        top: "-120px",
                       }}
                     >
                       Hightlights
                     </p>
                     <div className="row">
                       <div className="col-xl-7">
-                        <h3 className="banner-title">
+                        <h3 className="banner-title fz40">
                           {item.ps_highlight_title}
                         </h3>
-                        <p className="text-light fz30">
+                        <p className="text-light fz25">
                           {item.ps_highlight_text}
                         </p>
 

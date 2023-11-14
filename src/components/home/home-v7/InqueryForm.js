@@ -1,4 +1,5 @@
 "use client";
+import ReCaptcha from "@/app/contact/recaptcha";
 import Select from "react-select";
 
 const InqueryForm = () => {
@@ -149,9 +150,11 @@ const InqueryForm = () => {
             <input type="text" className="form-control" placeholder={20} />
           </div>
         </div>
+
+        <ReCaptcha />
         {/* End .col */}
 
-        <div className="d-grid">
+        <div className="d-grid mt20">
           <button className="ud-btn btn-thm" type="submit">
             Submit <i className="fal fa-arrow-right-long" />
           </button>

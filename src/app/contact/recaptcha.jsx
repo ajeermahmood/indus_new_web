@@ -20,9 +20,9 @@ const ReCaptcha = () => {
         ref={recaptchaRef}
         onChange={handleCaptchaSubmission}
       />
-      <Button type="submit" disabled={!isVerified}>
+      {/* <Button type="submit" disabled={!isVerified}>
         Submit feedback
-      </Button>
+      </Button> */}
     </>
   );
 };

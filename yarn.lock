@@ -112,7 +112,7 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.23.0.tgz#da950e622420bf96ca0d0f2909cdddac3acd8719"
   integrity sha512-vvPKKdMemU85V9WE/l5wZEmImpCtLqbnTvqDS2U1fJ96KrxoW7KrXhNsNCblQlg8Ck4b85yxdTyelsMUgFUXiw==
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.12.0", "@babel/runtime@^7.12.5", "@babel/runtime@^7.18.3", "@babel/runtime@^7.20.7", "@babel/runtime@^7.23.2", "@babel/runtime@^7.3.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.3", "@babel/runtime@^7.8.7":
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.12.0", "@babel/runtime@^7.12.5", "@babel/runtime@^7.17.9", "@babel/runtime@^7.18.3", "@babel/runtime@^7.20.7", "@babel/runtime@^7.23.2", "@babel/runtime@^7.3.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.3", "@babel/runtime@^7.8.7":
   version "7.23.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.23.2.tgz#062b0ac103261d68a966c4c7baf2ae3e62ec3885"
   integrity sha512-mM8eg4yl5D6i3lu2QKPuPH4FArvJ8KhTofbE7jwMUv9KX5mBvwPAqnV3MlyBNqdp9RyRKP6Yck8TrfYrPvX3bg==
@@ -333,6 +333,19 @@
   dependencies:
     fast-deep-equal "^3.1.3"
     supercluster "^8.0.1"
+
+"@hcaptcha/loader@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@hcaptcha/loader/-/loader-1.0.8.tgz#6dfc1e1da7ae65d37fa5456b15d060697afc1bb5"
+  integrity sha512-c22xMGeFZd3QBd7AVqISevjaXnXyyysQ1TCDvWgsdcsm4ImtxogU7Dc2txdqZ4f1ENNE272lL73XxgAH+V1GNQ==
+
+"@hcaptcha/react-hcaptcha@^1.9.0":
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/@hcaptcha/react-hcaptcha/-/react-hcaptcha-1.9.0.tgz#1831f55e443a2a898dab7771783d698933a57c20"
+  integrity sha512-SdgzcN+RpD/VrnoAsgKc5JPqt7xLi6PT3Iu3r/eFchBD+uQOishCUePQqkqSaoZ/tWdf9loteHL8apO4Ld3YEA==
+  dependencies:
+    "@babel/runtime" "^7.17.9"
+    "@hcaptcha/loader" "^1.0.8"
 
 "@humanwhocodes/config-array@^0.11.10":
   version "0.11.13"

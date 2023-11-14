@@ -332,8 +332,11 @@ export default function PropertyFilteringBanner() {
                     }}
                   />
                   <span className="mt10">
-                    <b>{listings.length}</b> Listings from total -{" "}
-                    <b>{listingsCount}</b> -
+                    <b>
+                      {8 * currentPage - 8 + 1} -{" "}
+                      {8 * currentPage - 8 + listings.length}
+                    </b>{" "}
+                    of <b>{listingsCount}</b> properties
                   </span>
                 </Stack>
               </div>

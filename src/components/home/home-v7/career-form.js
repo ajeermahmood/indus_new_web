@@ -1,4 +1,5 @@
 "use client";
+import ReCaptcha from "@/app/contact/recaptcha";
 import Select from "react-select";
 
 const CareerForm = () => {
@@ -149,7 +150,7 @@ const CareerForm = () => {
         <div className="col-md-12">
           <div className="mb20">
             <label className="form-label fw600 dark-color">
-              International Real Estate Market Experience 
+              International Real Estate Market Experience
             </label>
             <div className="bootselect-multiselect">
               <Select
@@ -221,8 +222,9 @@ const CareerForm = () => {
             <div className="bootselect-multiselect">No File Have Choosen</div>
           </div>
         </div>
+        <ReCaptcha />
 
-        <div className="d-grid">
+        <div className="d-grid mt20">
           <button className="ud-btn btn-thm" type="submit">
             Submit <i className="fal fa-arrow-right-long" />
           </button>

@@ -8,6 +8,7 @@ import Image from "next/image";
 const PropertyGallery = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  // const [adOpened, setAdOpened] = useState(sessionStorage.getItem("ad"));
   useEffect(() => {
     getAllIndusBanners()
       .then((res) => {
@@ -19,8 +20,11 @@ const PropertyGallery = () => {
         setLoading(false);
 
         setTimeout(() => {
-          handleOpen();
-        }, 4000);
+          if (sessionStorage.getItem("ad") != "true") {
+            handleOpen();
+            sessionStorage.setItem("ad", "true");
+          }
+        }, 3000);
       });
   }, []);
 

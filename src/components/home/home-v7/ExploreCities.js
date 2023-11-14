@@ -2,10 +2,13 @@
 import { getPropertiesCountBasedOnLocations } from "@/api/listings";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const ExploreCities = () => {
   const [data, setData] = useState("");
+
+  const router = useRouter();
 
   useEffect(() => {
     getPropertiesCountBasedOnLocations().then((res) => {
@@ -62,7 +65,10 @@ const ExploreCities = () => {
     <>
       {apartmentData.map((apartment, index) => (
         <div key={index} className={apartment.className}>
-          <div className="feature-style1 mb30">
+          <div
+            className="feature-style1 mb30"
+            onClick={() => router.push(`/all-properties?lc=${apartment.value}`)}
+          >
             <div className="feature-img">
               <Image
                 width={591}

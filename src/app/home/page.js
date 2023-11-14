@@ -14,6 +14,7 @@ import PropertyGallery from "@/components/property/property-single-style/single-
 import Image from "next/image";
 import Link from "next/link";
 import EnquiryForm from "./enquiry-stepper";
+import ScrollDownCustom from "./scroll-down-custom";
 
 export const metadata = {
   title: "Indus Real Estate LLC | Dubai Luxury Properties",
@@ -348,6 +349,7 @@ const HomePage = () => {
       </section>
       {/* End Our Footer */}
 
+      <ScrollDownCustom/>
       <EnquiryForm />
     </>
   );

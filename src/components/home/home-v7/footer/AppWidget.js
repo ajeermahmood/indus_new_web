@@ -6,13 +6,13 @@ const AppWidget = ({ path }) => {
       icon: "fab fa-apple fz30 text-white",
       text: "Download on the",
       title: "Apple Store",
-      link: "#",
+      link: "https://apps.apple.com/ae/app/indus-real-estate/id1574288570",
     },
     {
       icon: "fab fa-google-play fz30 text-white",
       text: "Get it on",
       title: "Google Play",
-      link: "#",
+      link: "https://play.google.com/store/apps/details?id=io.indus.realestate",
     },
   ];
 

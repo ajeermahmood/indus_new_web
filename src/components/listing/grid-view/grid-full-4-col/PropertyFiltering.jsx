@@ -260,8 +260,11 @@ export default function PropertyFiltering({ agentId }) {
               }}
             />
             <span className="mt10">
-              <b>{listings.length}</b> Listings from total -{" "}
-              <b>{listingsCount}</b> -
+              <b>
+                {12 * currentPage - 12 + 1} -{" "}
+                {12 * currentPage - 12 + listings.length}
+              </b>{" "}
+              of <b>{listingsCount}</b> properties
             </span>
           </Stack>
         </div>

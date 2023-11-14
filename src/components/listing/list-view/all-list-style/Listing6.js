@@ -34,7 +34,7 @@ const Listing6 = () => {
                     variant="rectangular"
                     className="w-100  cover"
                     width={382}
-                    height={465}
+                    height={400}
                   />
                 </div>
               </div>
@@ -51,7 +51,7 @@ const Listing6 = () => {
                 >
                   <Image
                     width={382}
-                    height={465}
+                    height={400}
                     className="w-100 h-100 cover"
                     src={`https://www.indusre.com/communityimg/${guide.location_image}`}
                     alt="listings"
