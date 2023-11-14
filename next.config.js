@@ -4,6 +4,9 @@ const nextConfig = {
     domains: ["assets.bayut.com", "www.indusre.com"],
     minimumCacheTTL: 1500000,
   },
+  experimental: {
+    serverActions: true,
+  },
 };
 
 module.exports = nextConfig;
