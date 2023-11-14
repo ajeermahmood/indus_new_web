@@ -189,6 +189,13 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
   border: 2px solid white;
 }
 
+.close-stepper-dialog {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+}
+
 .agent-message-chat {
   padding: 15px 18px 5px 10px;
   word-break: break-word;

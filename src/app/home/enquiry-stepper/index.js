@@ -161,6 +161,16 @@ const EnquiryForm = () => {
       setselectedThree();
       setselectedFour();
       setselectedFive();
+
+      setFormErrorName(undefined);
+      setFormErrorEmail(undefined);
+      setFormErrorNumber(undefined);
+    } else if (formErrorName == undefined) {
+      setFormErrorName("Please Enter Name");
+    } else if (formErrorEmail == undefined) {
+      setFormErrorEmail("Please Enter Email");
+    } else if (formErrorNumber == undefined) {
+      setFormErrorNumber("Please Enter Number");
     }
   };
 
@@ -168,9 +178,9 @@ const EnquiryForm = () => {
   const emailRegex = /^((\w+\.)*\w+)@(\w+\.)+(\w)/;
   // const phoneRegex = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g;
 
-  const [formErrorName, setFormErrorName] = useState(false);
-  const [formErrorEmail, setFormErrorEmail] = useState(false);
-  const [formErrorNumber, setFormErrorNumber] = useState(false);
+  const [formErrorName, setFormErrorName] = useState(undefined);
+  const [formErrorEmail, setFormErrorEmail] = useState(undefined);
+  const [formErrorNumber, setFormErrorNumber] = useState(undefined);
 
   const onTextChange = (event, type) => {
     if (type == "name") {
@@ -211,6 +221,10 @@ const EnquiryForm = () => {
         fullWidth={true}
         maxWidth={"lg"}
       >
+        <span
+          className="close-stepper-dialog btn-close"
+          onClick={handleClose}
+        ></span>
         <div className="col-12 row m-0 enq-form">
           <div className={`${activeStep === 5 ? "col-6" : "col-8"} p-0 pt-1`}>
             <div className="app-bar d-flex">
@@ -317,7 +331,7 @@ const EnquiryForm = () => {
             ) : (
               <div className="p60 h-100">
                 <TextField
-                  error={formErrorName != false}
+                  error={formErrorName != false && formErrorName != undefined}
                   className="w-100 mb15"
                   id="outlined-basic"
                   label="Name"
@@ -327,7 +341,7 @@ const EnquiryForm = () => {
                   onChange={(e) => onTextChange(e, "name")}
                 />
                 <TextField
-                  error={formErrorEmail != false}
+                  error={formErrorEmail != false && formErrorEmail != undefined}
                   className="w-100 mb15"
                   id="outlined-basic"
                   label="Email"
@@ -337,7 +351,9 @@ const EnquiryForm = () => {
                   onChange={(e) => onTextChange(e, "email")}
                 />
                 <TextField
-                  error={formErrorNumber != false}
+                  error={
+                    formErrorNumber != false && formErrorNumber != undefined
+                  }
                   className="w-100 mb15"
                   id="outlined-basic"
                   label="Mobile Number"
