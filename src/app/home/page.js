@@ -13,7 +13,7 @@ import PropertyListing from "@/components/home/home-v7/PropertyListing";
 import PropertyGallery from "@/components/property/property-single-style/single-v4/banners-gallery";
 import Image from "next/image";
 import Link from "next/link";
-import EnquiryForm from "./enquiry_form";
+import EnquiryForm from "./enquiry-stepper";
 
 export const metadata = {
   title: "Indus Real Estate LLC | Dubai Luxury Properties",
@@ -348,8 +348,7 @@ const HomePage = () => {
       </section>
       {/* End Our Footer */}
 
-      <EnquiryForm/>
-
+      <EnquiryForm />
     </>
   );
 };

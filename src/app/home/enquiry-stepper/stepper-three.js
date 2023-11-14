@@ -23,12 +23,11 @@ const useStyles = makeStyles({
   },
 });
 
-const StepperThree = ({ activeStep }) => {
+const StepperThree = ({ activeStep, functions }) => {
   const classes = useStyles();
-  const [value, setValue] = useState("1");
 
   const handleChange = (event) => {
-    setValue(event.target.value);
+    functions.setselectedThree(event.target.value);
   };
   return (
     <div className="h20rem">
@@ -41,7 +40,8 @@ const StepperThree = ({ activeStep }) => {
           Choose a number of bedrooms you are looking for?
         </span>
         <span>
-          <b className="clr-green mr5">{Math.ceil((activeStep / 6) * 100)}%</b> Completed
+          <b className="clr-green mr5">{Math.ceil((activeStep / 6) * 100)}%</b>{" "}
+          Completed
         </span>
       </div>
       <div
@@ -52,7 +52,7 @@ const StepperThree = ({ activeStep }) => {
         <FormControl>
           <RadioGroup
             aria-labelledby="demo-radio-buttons-group-label"
-            value={value}
+            value={functions.selectedThree}
             onChange={handleChange}
             name="radio-buttons-group"
             className={classes.root}

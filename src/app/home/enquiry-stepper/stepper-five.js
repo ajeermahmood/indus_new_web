@@ -18,7 +18,25 @@ const HtmlTooltip = styled(({ className, ...props }) => (
   },
 }));
 
-const StepperFive = ({ activeStep }) => {
+const StepperFive = ({ activeStep, functions }) => {
+  const card = [
+    {
+      img: "/images/locations/arabian-ranches.webp",
+      text: "Urban & Downtown Living",
+    },
+    {
+      img: "/images/locations/arabian-ranches.webp",
+      text: "Green Community Living",
+    },
+    {
+      img: "/images/locations/arabian-ranches.webp",
+      text: "Beachfront & Waterfront Living",
+    },
+  ];
+
+  const selectCard = (index) => {
+    functions.setselectedFive(index);
+  };
   return (
     <>
       <div
@@ -30,7 +48,8 @@ const StepperFive = ({ activeStep }) => {
           Choose a lifestyle that best suits you
         </span>
         <span>
-          <b className="clr-green mr5">{Math.ceil((activeStep / 6) * 100)}%</b> Completed
+          <b className="clr-green mr5">{Math.ceil((activeStep / 6) * 100)}%</b>{" "}
+          Completed
         </span>
       </div>
       <div
@@ -38,120 +57,91 @@ const StepperFive = ({ activeStep }) => {
         data-aos="fade-up"
         data-aos-delay="0"
       >
-        <div className="col-4 bdr-grey mxw240">
-          <Image
-            src="/images/locations/arabian-ranches.webp"
-            alt="img"
-            className="w-100 cover"
-            width={240}
-            height={250}
-          />
-          <div className="px10 py15">
-            <p className="lh-sm m-0 fw600 fz13 clr-grey">
-              Urban & Downtown Living
-            </p>
-          </div>
-          <HtmlTooltip
-            title={
-              <Fragment>
-                <Typography color="inherit">Modern City Living</Typography>
-                <em>
-                  The most obvious of these are roads, but network systems also
-                  include sewers, aqueducts, electric lines, and public transit.
-                  Human networks are also important, establishing the city&apos;s
-                  community and facilitating the dissemination of information.
-                  In order for a city to succeed, its networks must be
-                  efficient.
-                </em>{" "}
-                <br />
-                <br />
-                Read more about
-                <a href="#">
-                  <b>{" modern city living"}</b>
-                </a>
-                .
-              </Fragment>
-            }
-          >
-            <i className="fa fa-info stepper-lifestyle-info"></i>
-          </HtmlTooltip>
-        </div>
-        <div className="col-4 bdr-grey mxw240">
-          <Image
-            src="/images/locations/arabian-ranches.webp"
-            alt="img"
-            className="w-100 cover"
-            width={240}
-            height={250}
-          />
-          <div className="px10 py15">
-            <p className="lh-sm m-0 fw600 fz13 clr-grey">
-              Green Community Living
-            </p>
-          </div>
-          <HtmlTooltip
-            title={
-              <Fragment>
-                <Typography color="inherit">Modern City Living</Typography>
-                <em>
-                  The most obvious of these are roads, but network systems also
-                  include sewers, aqueducts, electric lines, and public transit.
-                  Human networks are also important, establishing the city&apos;s
-                  community and facilitating the dissemination of information.
-                  In order for a city to succeed, its networks must be
-                  efficient.
-                </em>{" "}
-                <br />
-                <br />
-                Read more about
-                <a href="#">
-                  <b>{" modern city living"}</b>
-                </a>
-                .
-              </Fragment>
-            }
-          >
-            <i className="fa fa-info stepper-lifestyle-info"></i>
-          </HtmlTooltip>
-        </div>
-        <div className="col-4 bdr-grey mxw240">
-          <Image
-            src="/images/locations/arabian-ranches.webp"
-            alt="img"
-            className="w-100 cover"
-            width={240}
-            height={250}
-          />
-          <div className="px10 py15">
-            <p className="lh-sm m-0 fw600 fz13 clr-grey">
-              Beachfront & Waterfront Living
-            </p>
-          </div>
-          <HtmlTooltip
-            title={
-              <Fragment>
-                <Typography color="inherit">Modern City Living</Typography>
-                <em>
-                  The most obvious of these are roads, but network systems also
-                  include sewers, aqueducts, electric lines, and public transit.
-                  Human networks are also important, establishing the city&apos;s
-                  community and facilitating the dissemination of information.
-                  In order for a city to succeed, its networks must be
-                  efficient.
-                </em>{" "}
-                <br />
-                <br />
-                Read more about
-                <a href="#">
-                  <b>{" modern city living"}</b>
-                </a>
-                .
-              </Fragment>
-            }
-          >
-            <i className="fa fa-info stepper-lifestyle-info"></i>
-          </HtmlTooltip>
-        </div>
+        {card.map((c, index) =>
+          functions.selectedFive == index ? (
+            <div
+              className="col-4 stepper-card-active"
+              key={index}
+              onClick={() => selectCard(index)}
+            >
+              <Image
+                src="/images/locations/arabian-ranches.webp"
+                alt="img"
+                className="w-100 cover p5"
+                width={240}
+                height={250}
+              />
+              <div className="px10 py15">
+                <p className="lh-sm m-0 fw600 fz13 text-indus">{c.text}</p>
+              </div>
+              <HtmlTooltip
+                title={
+                  <Fragment>
+                    <Typography color="inherit">Modern City Living</Typography>
+                    <em>
+                      The most obvious of these are roads, but network systems
+                      also include sewers, aqueducts, electric lines, and public
+                      transit. Human networks are also important, establishing
+                      the city&apos;s community and facilitating the
+                      dissemination of information. In order for a city to
+                      succeed, its networks must be efficient.
+                    </em>{" "}
+                    <br />
+                    <br />
+                    Read more about
+                    <a href="#">
+                      <b>{" modern city living"}</b>
+                    </a>
+                    .
+                  </Fragment>
+                }
+              >
+                <i className="fa fa-info stepper-lifestyle-info"></i>
+              </HtmlTooltip>
+            </div>
+          ) : (
+            <div
+              className="col-4 stepper-card"
+              key={index}
+              onClick={() => selectCard(index)}
+            >
+              <Image
+                src="/images/locations/arabian-ranches.webp"
+                alt="img"
+                className="w-100 cover"
+                width={240}
+                height={250}
+              />
+              <div className="px10 py15">
+                <p className="lh-sm m-0 fw600 fz13 clr-grey">{c.text}</p>
+              </div>
+              <HtmlTooltip
+                title={
+                  <Fragment>
+                    <Typography color="inherit">Modern City Living</Typography>
+                    <em>
+                      The most obvious of these are roads, but network systems
+                      also include sewers, aqueducts, electric lines, and public
+                      transit. Human networks are also important, establishing
+                      the city&apos;s community and facilitating the
+                      dissemination of information. In order for a city to
+                      succeed, its networks must be efficient.
+                    </em>{" "}
+                    <br />
+                    <br />
+                    Read more about
+                    <a href="#">
+                      <b>{" modern city living"}</b>
+                    </a>
+                    .
+                  </Fragment>
+                }
+              >
+                <i className="fa fa-info stepper-lifestyle-info"></i>
+              </HtmlTooltip>
+            </div>
+          )
+        )}
       </div>
     </>
   );

@@ -124,6 +124,11 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
   padding-bottom: 15px !important;
 }
 
+.px60 {
+  padding-right: 60px !important;
+  padding-left: 60px !important;
+}
+
 .bdr-grey {
   border: 1px solid #e6e6e6 !important;
 }
@@ -131,6 +136,83 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
 .stepper-progress {
   border-top: 1px solid #e6e6e6 !important;
   padding: 15px 10px;
+}
+
+.stepper-avatar {
+  border-radius: 50%;
+  max-width: 100px;
+}
+
+.pr0 {
+  padding-right: 0 !important;
+}
+
+.stepper-card {
+  border: 1px solid #e6e6e6;
+  max-width: 240px;
+  cursor: pointer;
+}
+
+.stepper-card-active {
+  border: 1px solid var(--indus-gold);
+  max-width: 240px;
+}
+
+.stepper-card-amt {
+  border: 1px solid #e6e6e6;
+  max-width: 240px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  align-items: center;
+}
+
+.stepper-card-amt-active {
+  border: 1px solid var(--indus-gold);
+  max-width: 240px;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  align-items: center;
+}
+
+.online-green-dot {
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: green;
+  border-radius: 50%;
+  position: absolute;
+  top: 6.5rem;
+  right: 18rem;
+  border: 2px solid white;
+}
+
+.agent-message-chat {
+  padding: 15px 18px 5px 10px;
+  word-break: break-word;
+  background-color: #ededed;
+  box-shadow: 0 2px 6px 0 rgb(0 0 0 / 5%);
+  border-radius: 4px;
+  transition: height .3s linear;
+  will-change: height;
+  max-height: 100%;
+  position: relative;
+  margin-top: 10px;
+
+  &:before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: -20px;
+    left: 35px;
+    margin-left: -5px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #ededed transparent;
+    z-index: 9;
+  }
 }
 
 .stepper-lifestyle-info {
