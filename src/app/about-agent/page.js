@@ -94,49 +94,6 @@ const AboutAgentPage = () => {
                         About {data.agentData.client_user_name}
                       </h6>
                       <p className="text">{data.agentData.client_user_bio}</p>
-                      {/* <div className="agent-single-accordion">
-                      <div
-                        className="accordion accordion-flush"
-                        id="accordionFlushExample"
-                      >
-                        <div className="accordion-item">
-                          <div
-                            id="flush-collapseOne"
-                            className="accordion-collapse collapse"
-                            aria-labelledby="flush-headingOne"
-                            data-bs-parent="#accordionFlushExample"
-                            style={{}}
-                          >
-                            <div className="accordion-body p-0">
-                              <p className="text">
-                                Placeholder content for this accordion, which is
-                                intended to demonstrate the class. This is the
-                                first item&apos;s accordion body you get
-                                groundbreaking performance and amazing battery
-                                life. Add to that a stunning Liquid Retina XDR
-                                display, the best camera and audio ever in a Mac
-                                notebook, and all the ports you need.
-                              </p>
-                            </div>
-                          </div>
-                          <h2
-                            className="accordion-header"
-                            id="flush-headingOne"
-                          >
-                            <button
-                              className="accordion-button p-0 collapsed"
-                              type="button"
-                              data-bs-toggle="collapse"
-                              data-bs-target="#flush-collapseOne"
-                              aria-expanded="false"
-                              aria-controls="flush-collapseOne"
-                            >
-                              Show more
-                            </button>
-                          </h2>
-                        </div>
-                      </div>
-                    </div> */}
                     </div>
                   </div>
                 </div>
@@ -146,7 +103,10 @@ const AboutAgentPage = () => {
 
               {/* End .row */}
 
-              <ListingItemsContainer agentId={data.agentData.client_user_id} name={data.agentData.client_user_name}/>
+              <ListingItemsContainer
+                agentId={data.agentData.client_user_id}
+                name={data.agentData.client_user_name}
+              />
               {/* End .row */}
 
               <div className="row pt30 bdrb1">
@@ -155,18 +115,6 @@ const AboutAgentPage = () => {
                 </div>
                 <AvailableAgent similarAgents={data.similarAgents} />
               </div>
-              {/* End .row */}
-
-              {/* <div className="row">
-                <div className="col-lg-12">
-                  <AllReviews />
-
-                  <div className="bsp_reveiw_wrt">
-                    <h6 className="fz17">Leave A Review</h6>
-                    <ReviewBoxForm />
-                  </div>
-                </div>
-              </div> */}
             </div>
             {/* End .col-lg-8 */}
 

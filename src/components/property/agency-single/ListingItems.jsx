@@ -9,6 +9,16 @@ export default function ListingItemsContainer({ agentId, name }) {
   const [pageData, setPageData] = useState([]);
   const [allPropsCount, setAllPropsCount] = useState(0);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getAgentPropertiesLimit4(agentId, currentCategory)
+      .then((res) => {
+        setPageData(res.props);
+        setAllPropsCount(res.count);
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
   useEffect(() => {
     switch (currentCategory) {
       case "All":

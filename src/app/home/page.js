@@ -50,7 +50,7 @@ const HomePage = () => {
       {/* Explore Apartment */}
       <section className="pb0 pb30-md pt0">
         <div className="container">
-          <div className="row justify-content-center" data-aos="fade">
+          <div className="row justify-content-center" data-aos="fade" data-aos-delay="0">
             <div className="col-lg-12">
               <ApartmentType />
             </div>
@@ -61,7 +61,7 @@ const HomePage = () => {
 
       <section className="pb50 pt40">
         <div className="container">
-          <div className="row" data-aos="fade-up" data-aos-delay="0">
+          <div className="row">
             <div className="col-lg-6 mx-auto">
               <div className="main-title2 text-center">
                 <h2 className="title">Featured Projects</h2>
@@ -113,7 +113,7 @@ const HomePage = () => {
           </div>
           {/* End .row */}
 
-          <div className="row" data-aos="fade-up" data-aos-delay="300">
+          <div className="row" data-aos="fade-up" data-aos-delay="0">
             <ExploreCities />
           </div>
           {/* End .row */}
@@ -134,7 +134,7 @@ const HomePage = () => {
           </div>
           {/* End .row */}
 
-          <div className="row" data-aos="fade-up" data-aos-delay="300">
+          <div className="row" data-aos="fade-up" data-aos-delay="0">
             <Blog />
             <div className="d-grid d-md-block text-center mt30 mt0-md">
               <Link href="/all-news" className="ud-btn btn-dark bdrs0">
@@ -182,7 +182,7 @@ const HomePage = () => {
       <section className="our-partners pt50">
         <div className="container">
           <div className="row">
-            <div className="col-lg-12 wow fadeInUp" data-wow-delay="100">
+            <div className="col-lg-12 wow fadeInUp" data-wow-delay="0">
               <div className="main-title text-center">
                 <h6>Trusted by the Dubai&apos;s best</h6>
               </div>

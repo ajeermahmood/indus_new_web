@@ -52,7 +52,7 @@ const PropertyGallery = () => {
             aria-labelledby="pills-home-tab"
           >
             <div className="container">
-              <div className="row" data-aos="fade-up" data-aos-delay="300">
+              <div className="row" data-aos="fade-up" data-aos-delay="0">
                 <div className="col-lg-12">
                   <div className="ps-v4-hero-slider">
                     <GalleryBox banners={data} loading={loading} />
