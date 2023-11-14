@@ -5,7 +5,6 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import { makeStyles } from "@mui/styles";
-import { useState } from "react";
 
 const useStyles = makeStyles({
   root: {
@@ -23,7 +22,7 @@ const useStyles = makeStyles({
   },
 });
 
-const StepperThree = ({ activeStep, functions }) => {
+const StepperThree = ({ activeStep, functions, size }) => {
   const classes = useStyles();
 
   const handleChange = (event) => {
@@ -32,17 +31,32 @@ const StepperThree = ({ activeStep, functions }) => {
   return (
     <div className="h20rem">
       <div
-        className="d-flex justify-content-between"
+        className={`${size.width > 500 ? 'd-flex' : 'd-block'} justify-content-between`}
         data-aos="fade-up"
         data-aos-delay="0"
       >
         <span className="fz19 fw500">
           Choose a number of bedrooms you are looking for?
         </span>
-        <span>
-          <b className="clr-green mr5">{Math.ceil((activeStep / 6) * 100)}%</b>{" "}
-          Completed
-        </span>
+        {size.width > 500 ? (
+          <>
+            <span>
+              <b className="clr-green mr5">
+                {Math.ceil((activeStep / 6) * 100)}%
+              </b>{" "}
+              Completed
+            </span>
+          </>
+        ) : (
+          <>
+            <p className="mt10 text-end">
+              <b className="clr-green mr5">
+                {Math.ceil((activeStep / 6) * 100)}%
+              </b>{" "}
+              Completed
+            </p>
+          </>
+        )}
       </div>
       <div
         className="col-12 d-flex w-100 mt20 justify-content-between"

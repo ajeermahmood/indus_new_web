@@ -5,7 +5,7 @@ import MobileStepper from "@mui/material/MobileStepper";
 import { useTheme } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import StepperFive from "./stepper-five";
 import StepperFour from "./stepper-four";
 import StepperOne from "./stepper-one";
@@ -13,6 +13,37 @@ import StepperSix from "./stepper-six";
 import StepperThree from "./stepper-three";
 import StepperTwo from "./stepper-two";
 import { Checkbox, TextField } from "@mui/material";
+
+function useWindowSize() {
+  // Initialize state with undefined width/height so server and client renders match
+  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+
+  useEffect(() => {
+    // only execute all the code below in client side
+    // Handler to call on window resize
+    function handleResize() {
+      // Set window width/height to state
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []); // Empty array ensures that effect is only run on mount
+  return windowSize;
+}
 
 const useStyles = makeStyles({
   root: {
@@ -29,6 +60,7 @@ const useStyles = makeStyles({
 });
 
 const EnquiryForm = () => {
+  const size = useWindowSize();
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
@@ -74,19 +106,35 @@ const EnquiryForm = () => {
     switch (step) {
       case 0:
         return (
-          <StepperOne activeStep={activeStep} functions={stepperFunctions} />
+          <StepperOne
+            activeStep={activeStep}
+            functions={stepperFunctions}
+            size={size}
+          />
         );
       case 1:
         return (
-          <StepperTwo activeStep={activeStep} functions={stepperFunctions} />
+          <StepperTwo
+            activeStep={activeStep}
+            functions={stepperFunctions}
+            size={size}
+          />
         );
       case 2:
         return (
-          <StepperThree activeStep={activeStep} functions={stepperFunctions} />
+          <StepperThree
+            activeStep={activeStep}
+            functions={stepperFunctions}
+            size={size}
+          />
         );
       case 3:
         return (
-          <StepperFour activeStep={activeStep} functions={stepperFunctions} />
+          <StepperFour
+            activeStep={activeStep}
+            functions={stepperFunctions}
+            size={size}
+          />
         );
       case 4:
         return (
@@ -219,14 +267,29 @@ const EnquiryForm = () => {
         open={open}
         onClose={handleClose}
         fullWidth={true}
+        fullScreen={size.width < 500}
         maxWidth={"lg"}
       >
         <span
           className="close-stepper-dialog btn-close"
           onClick={handleClose}
         ></span>
-        <div className="col-12 row m-0 enq-form">
-          <div className={`${activeStep === 5 ? "col-6" : "col-8"} p-0 pt-1`}>
+        <div
+          className={`${
+            (size.width < 500 && activeStep == 2) || activeStep == 3
+              ? "h-100"
+              : ""
+          } col-12 row m-0 enq-form`}
+        >
+          <div
+            className={`${
+              size.width > 500
+                ? activeStep === 5
+                  ? "col-6"
+                  : "col-8"
+                : "col-12"
+            } p-0 pt-1`}
+          >
             <div className="app-bar d-flex">
               <svg viewBox="0 0 24 24" className="app-bar-icon">
                 <title>mdi-file-document-box-check-outline</title>
@@ -241,7 +304,15 @@ const EnquiryForm = () => {
                 Let&apos;s find your ideal property in Dubai
               </span>
             </div>
-            <div className="stepper">{getStepper(activeStep)}</div>
+            <div
+              className={`${
+                (size.width < 500 && activeStep == 2) || activeStep == 3
+                  ? "h-80"
+                  : ""
+              } stepper`}
+            >
+              {getStepper(activeStep)}
+            </div>
             <div className="stepper-progress">
               {activeStep === 5 ? (
                 <Button
@@ -306,99 +377,105 @@ const EnquiryForm = () => {
               )}
             </div>
           </div>
-          <div className={`${activeStep === 5 ? "col-6" : "col-4"} pt-2`}>
-            {activeStep != 5 ? (
-              <div className="row m-0 p10">
-                <div className="col-4 pl0">
-                  <Image
-                    src="https://www.indusre.com/agentimg/m-b4adb1d6fe7980e40c19e246cf7e9b96.jpg"
-                    width={100}
-                    height={100}
-                    alt="img"
-                    className="stepper-avatar cover"
-                  />
-                  <span className="online-green-dot"></span>
-                </div>
-                <div className="col-8 d-flex align-items-center pr0">
-                  <div>
-                    <p className="mb0 fz14 fw600 lh-sm">
-                      Aneet Kumar Bhambhani
-                    </p>
-                    <p className="mb0">Sales Manager</p>
+          {size.width > 500 ? (
+            <div className={`${activeStep === 5 ? "col-6" : "col-4"} pt-2`}>
+              {activeStep != 5 ? (
+                <div className="row m-0 p10">
+                  <div className="col-4 pl0">
+                    <Image
+                      src="https://www.indusre.com/agentimg/m-b4adb1d6fe7980e40c19e246cf7e9b96.jpg"
+                      width={100}
+                      height={100}
+                      alt="img"
+                      className="stepper-avatar cover"
+                    />
+                    <span className="online-green-dot"></span>
+                  </div>
+                  <div className="col-8 d-flex align-items-center pr0">
+                    <div>
+                      <p className="mb0 fz14 fw600 lh-sm">
+                        Aneet Kumar Bhambhani
+                      </p>
+                      <p className="mb0">Sales Manager</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ) : (
-              <div className="p60 h-100">
-                <TextField
-                  error={formErrorName != false && formErrorName != undefined}
-                  className="w-100 mb15"
-                  id="outlined-basic"
-                  label="Name"
-                  variant="outlined"
-                  type="text"
-                  helperText={formErrorName}
-                  onChange={(e) => onTextChange(e, "name")}
-                />
-                <TextField
-                  error={formErrorEmail != false && formErrorEmail != undefined}
-                  className="w-100 mb15"
-                  id="outlined-basic"
-                  label="Email"
-                  variant="outlined"
-                  type="email"
-                  helperText={formErrorEmail}
-                  onChange={(e) => onTextChange(e, "email")}
-                />
-                <TextField
-                  error={
-                    formErrorNumber != false && formErrorNumber != undefined
-                  }
-                  className="w-100 mb15"
-                  id="outlined-basic"
-                  label="Mobile Number"
-                  variant="outlined"
-                  type="number"
-                  helperText={formErrorNumber}
-                  onChange={(e) => onTextChange(e, "number")}
-                />
-
-                <Button
-                  className="w-100 py10"
-                  variant="contained"
-                  disabled={!tickedPolicy}
-                  onClick={onSubmit}
-                >
-                  Get My Offer
-                </Button>
-
-                <div className="mt10">
-                  <Checkbox
-                    checked={tickedPolicy}
-                    onChange={(e) => setTickedPolicy(e.target.checked)}
+              ) : (
+                <div className="p60 h-100">
+                  <TextField
+                    error={formErrorName != false && formErrorName != undefined}
+                    className="w-100 mb15"
+                    id="outlined-basic"
+                    label="Name"
+                    variant="outlined"
+                    type="text"
+                    helperText={formErrorName}
+                    onChange={(e) => onTextChange(e, "name")}
                   />
-                  <span>I agree with the Privacy policy</span>
+                  <TextField
+                    error={
+                      formErrorEmail != false && formErrorEmail != undefined
+                    }
+                    className="w-100 mb15"
+                    id="outlined-basic"
+                    label="Email"
+                    variant="outlined"
+                    type="email"
+                    helperText={formErrorEmail}
+                    onChange={(e) => onTextChange(e, "email")}
+                  />
+                  <TextField
+                    error={
+                      formErrorNumber != false && formErrorNumber != undefined
+                    }
+                    className="w-100 mb15"
+                    id="outlined-basic"
+                    label="Mobile Number"
+                    variant="outlined"
+                    type="number"
+                    helperText={formErrorNumber}
+                    onChange={(e) => onTextChange(e, "number")}
+                  />
+
+                  <Button
+                    className="w-100 py10"
+                    variant="contained"
+                    disabled={!tickedPolicy}
+                    onClick={onSubmit}
+                  >
+                    Get My Offer
+                  </Button>
+
+                  <div className="mt10">
+                    <Checkbox
+                      checked={tickedPolicy}
+                      onChange={(e) => setTickedPolicy(e.target.checked)}
+                    />
+                    <span>I agree with the Privacy policy</span>
+                  </div>
                 </div>
-              </div>
-            )}
-            {activeStep == 1 ||
-            activeStep == 2 ||
-            activeStep == 3 ||
-            activeStep == 4 ? (
-              <div className="px20" data-aos="fade-up" data-aos-delay="0">
-                <div className="agent-message-chat">
-                  <p>{getAgentComment_one(activeStep)}</p>
-                  <p>
-                    <i>
-                      <strong>{getAgentComment_two(activeStep)}</strong>
-                    </i>
-                  </p>
+              )}
+              {activeStep == 1 ||
+              activeStep == 2 ||
+              activeStep == 3 ||
+              activeStep == 4 ? (
+                <div className="px20" data-aos="fade-up" data-aos-delay="0">
+                  <div className="agent-message-chat">
+                    <p>{getAgentComment_one(activeStep)}</p>
+                    <p>
+                      <i>
+                        <strong>{getAgentComment_two(activeStep)}</strong>
+                      </i>
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ) : (
-              <></>
-            )}
-          </div>
+              ) : (
+                <></>
+              )}
+            </div>
+          ) : (
+            <></>
+          )}
         </div>
       </Dialog>
     </>

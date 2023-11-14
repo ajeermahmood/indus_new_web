@@ -35,7 +35,7 @@ const HomePage = () => {
       <section className="home-banner-style2 p0">
         <div className="home-style2">
           <div className="container maxw1600">
-            <div className="home2-hero-banner bdrs12"></div>
+            <div className="home2-hero-banner bdrs12 h480-mbl"></div>
             <div className="row m-0">
               <div className="col-xl-10 mx-auto">
                 <Hero />
@@ -59,7 +59,7 @@ const HomePage = () => {
       </section>
       {/* End Explore Apartment */}
 
-      <section className="pb50 pt40">
+      <section className="pb50 pt40 pt0-mbl">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 mx-auto">
@@ -120,7 +120,7 @@ const HomePage = () => {
         </div>
       </section>
       {/* End property cities */}
-      <section className="pb90 pb20-md pt50" id="featured-blogs">
+      <section className="pb90 pb20-md pt50 pt0-mbl" id="featured-blogs">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 m-auto" data-aos="fade-up">

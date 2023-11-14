@@ -1,12 +1,44 @@
 "use client";
 import { Skeleton } from "@mui/material";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 
+function useWindowSize() {
+  // Initialize state with undefined width/height so server and client renders match
+  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+
+  useEffect(() => {
+    // only execute all the code below in client side
+    // Handler to call on window resize
+    function handleResize() {
+      // Set window width/height to state
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []); // Empty array ensures that effect is only run on mount
+  return windowSize;
+}
+
 const GalleryBox = ({ banners, loading }) => {
+  const size = useWindowSize();
   const skeletonLoader = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
   const [firstImageLoaded, setFirstImageLoaded] = useState(false);
@@ -118,7 +150,7 @@ const GalleryBox = ({ banners, loading }) => {
     <>
       <Swiper
         className="overflow-visible"
-        spaceBetween={30}
+        spaceBetween={size.width > 500 ? 30 : 10}
         modules={[Navigation, Pagination]}
         navigation={{
           nextEl: ".single-pro-slide-next__active",
@@ -128,7 +160,7 @@ const GalleryBox = ({ banners, loading }) => {
         initialSlide={1}
         loop={true}
         autoplay={{ delay: 3000 }}
-        width={480}
+        width={size.width > 500 ? 480 : 360}
       >
         {loading
           ? skeletonLoader.map((bnr, index) => (
@@ -137,8 +169,8 @@ const GalleryBox = ({ banners, loading }) => {
                   <Skeleton
                     variant="rectangular"
                     className="bdrs12 w-100"
-                    width={480}
-                    height={342}
+                    width={size.width > 500 ? 480 : 360}
+                    height={size.width > 500 ? 342 : 256}
                   />
                 </div>
               </SwiperSlide>
@@ -162,15 +194,15 @@ const GalleryBox = ({ banners, loading }) => {
                         // className="w-100 h-100"
                         variant="rectangular"
                         className="bdrs12 w-100"
-                        width={480}
-                        height={342}
+                        width={size.width > 500 ? 480 : 360}
+                        height={size.width > 500 ? 342 : 256}
                       />
                     ) : (
                       <></>
                     )}
                     <Image
-                      width={480}
-                      height={342}
+                      width={size.width > 500 ? 480 : 360}
+                      height={size.width > 500 ? 342 : 256}
                       className={`${
                         !getImgLoadVar(index)
                           ? "opacity-0 position-absolute bdrs12 w-100"

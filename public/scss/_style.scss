@@ -110,6 +110,68 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
   font-size: 25px !important;
 }
 
+////////////////////----------------------------- mobile css --------------------------------------------///////////////////////
+////////////////////----------------------------- mobile css --------------------------------------------///////////////////////
+////////////////////----------------------------- mobile css --------------------------------------------///////////////////////
+
+@media (max-width: 500px) {
+  .pt0-mbl {
+    padding-top: 0 !important;
+  }
+
+  .fz25-mbl {
+    font-size: 25px !important;
+  }
+
+  .h480-mbl {
+    height: 480px !important;
+  }
+
+  .p20-mbl {
+    padding: 20px !important;
+  }
+
+  .iconbox-style4 .icon {
+    font-size: 25px !important;
+    height: 55px !important;
+    line-height: 60px !important;
+    margin-bottom: 10px !important;
+    width: 55px !important;
+  }
+
+  .home2-hero-banner {
+    &:before {
+      background-image: linear-gradient(
+        to top,
+        #01060c,
+        rgba(255, 255, 255, 0)
+      ) !important;
+      opacity: 0.7 !important;
+      border-radius: 10px;
+    }
+  }
+
+  .stepper-card {
+    max-width: 100% !important;
+  }
+  .stepper-card-active {
+    max-width: 100% !important;
+  }
+
+  .enq-stepper-scroll {
+    height: 100% !important;
+    overflow: unset !important;
+  }
+}
+
+////////////////////----------------------------- mobile css --------------------------------------------///////////////////////
+////////////////////----------------------------- mobile css --------------------------------------------///////////////////////
+////////////////////----------------------------- mobile css --------------------------------------------///////////////////////
+
+.h-80 {
+  height: 80% !important;
+}
+
 .scroll-down-custom {
   position: fixed;
   bottom: 6rem;
@@ -138,17 +200,17 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
 }
 
 @keyframes wheel {
-	to {
-		opacity: 0;
-		top: 60px;
-	}
+  to {
+    opacity: 0;
+    top: 60px;
+  }
 }
 
 @-webkit-keyframes wheel {
-	to {
-		opacity: 0;
-		top: 60px;
-	}
+  to {
+    opacity: 0;
+    top: 60px;
+  }
 }
 
 .h50 {

@@ -2,11 +2,14 @@
 import { useEffect, useState } from "react";
 
 export default function ScrollDownCustom() {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    if (window.innerWidth > 500) {
+      setIsVisible(true);
+    }
     const toggleVisibility = () => {
-      if (window.pageYOffset < 100) {
+      if (window.pageYOffset < 100 && window.innerWidth > 500) {
         setIsVisible(true);
       } else {
         setIsVisible(false);

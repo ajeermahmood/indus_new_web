@@ -40,7 +40,7 @@ const ApartmentType = () => {
         <SwiperSlide key={type.id}>
           <div className="item">
             <Link href={`/all-properties/?t=${type.id}`}>
-              <div className="iconbox-style4">
+              <div className="iconbox-style4 p20-mbl">
                 <span className={`icon ${type.icon}`} />
                 <div className="iconbox-content">
                   <h6 className="title">{type.title}</h6>

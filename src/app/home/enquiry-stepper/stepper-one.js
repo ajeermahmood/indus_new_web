@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-const StepperOne = ({ activeStep, functions }) => {
+const StepperOne = ({ activeStep, functions, size }) => {
   const selectCard = (index) => {
     functions.setselectedOne(index);
   };
@@ -24,27 +24,48 @@ const StepperOne = ({ activeStep, functions }) => {
   return (
     <>
       <div
-        className="d-flex justify-content-between"
+        className={`${
+          size.width > 500 ? "d-flex" : "d-block"
+        } justify-content-between`}
         data-aos="fade-up"
         data-aos-delay="0"
       >
         <span className="fz19 fw500">
           What is your primary goal for this property?
         </span>
-        <span>
-          <b className="clr-green mr5">{Math.ceil((activeStep / 6) * 100)}%</b>{" "}
-          Completed
-        </span>
+        {size.width > 500 ? (
+          <>
+            <span>
+              <b className="clr-green mr5">
+                {Math.ceil((activeStep / 6) * 100)}%
+              </b>{" "}
+              Completed
+            </span>
+          </>
+        ) : (
+          <>
+            <p className="mt10 text-end">
+              <b className="clr-green mr5">
+                {Math.ceil((activeStep / 6) * 100)}%
+              </b>{" "}
+              Completed
+            </p>
+          </>
+        )}
       </div>
       <div
-        className="col-12 d-flex w-100 mt20 justify-content-between"
+        className={`${
+          size.width > 500 ? "d-flex" : "d-block"
+        } col-12 w-100 mt20 justify-content-between`}
         data-aos="fade-up"
         data-aos-delay="0"
       >
         {card.map((c, index) =>
           functions.selectedOne == index ? (
             <div
-              className="col-4 stepper-card-active"
+              className={`${
+                size.width > 500 ? "col-4" : "col-12 mb10"
+              } stepper-card-active`}
               key={index}
               onClick={() => selectCard(index)}
             >
@@ -61,7 +82,9 @@ const StepperOne = ({ activeStep, functions }) => {
             </div>
           ) : (
             <div
-              className="col-4 stepper-card"
+              className={`${
+                size.width > 500 ? "col-4" : "col-12 mb10"
+              } stepper-card`}
               key={index}
               onClick={() => selectCard(index)}
             >
