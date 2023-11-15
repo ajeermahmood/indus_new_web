@@ -41,11 +41,12 @@ export default function RootLayout({ children }) {
         cz-shortcut-listen="false"
       >
         <Script
+          id="google-analytics-script-01"
           strategy="lazyOnload"
           src={`https://www.googletagmanager.com/gtag/js?id=G-JCNP22Y3HM`}
         />
 
-        <Script strategy="lazyOnload">
+        <Script id="google-analytics-script-02" strategy="lazyOnload">
           {`window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
