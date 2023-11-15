@@ -36,7 +36,10 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <Head>
+      <body
+        className={`body ${montserrat.className}`}
+        cz-shortcut-listen="false"
+      >
         <Script
           strategy="lazyOnload"
           src={`https://www.googletagmanager.com/gtag/js?id=G-JCNP22Y3HM`}
@@ -51,11 +54,6 @@ export default function RootLayout({ children }) {
             });
           `}
         </Script>
-      </Head>
-      <body
-        className={`body ${montserrat.className}`}
-        cz-shortcut-listen="false"
-      >
         <div className="wrapper ovh">{children}</div>
 
         <ScrollToTop />
