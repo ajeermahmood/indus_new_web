@@ -108,8 +108,8 @@ const PropertyGallery = () => {
         <Image
           // width={900}
           // height={641}
-          width={size.width > 500 ? 900 : 360}
-          height={size.width > 500 ? 641 : 256}
+          width={size.width > 500 ? 900 : 420}
+          height={size.width > 500 ? 641 : 299}
           className={`w-100`}
           src={alertDialogImg.image}
           alt={`img`}

@@ -137,10 +137,14 @@ const FeaturedListings = ({ data, type, loading }) => {
                     {/* <a className="rounded-0 mr5" href="#">
                       <span className="flaticon-like"></span>
                     </a> */}
-                    <a className="rounded-0 mr5" href="#">
+                    <a
+                      className="rounded-0 mr5"
+                      target="_blank"
+                      href={`/property-details/?id=${listing.property_id}`}
+                    >
                       <span className="flaticon-new-tab"></span>
                     </a>
-                    <a className="rounded-0" href="#">
+                    <a className="rounded-0" href="#" onClick={()=> window.open(`/property-details/?id=${listing.property_id}`, '_blank', 'location=yes,height=900,width=1440,scrollbars=yes,status=yes')}>
                       <span className="flaticon-fullscreen"></span>
                     </a>
                   </div>

@@ -16,7 +16,7 @@ const Hero = () => {
           </i>
         </h2>
         <p className="hero-text fz15" data-aos="fade-up" data-aos-delay="0">
-          Let’s find a home that’s perfect for you
+          Let&apos;s find a home that&apos;s perfect for you.
         </p>
       </div>
       {/* End Hero content */}

@@ -136,7 +136,7 @@ const StepperFive = ({ activeStep, functions, size }) => {
                 height={250}
               />
               <div className="px10 py15">
-                <p className="lh-sm m-0 fw600 fz13 clr-grey">{c.text}</p>
+                <p className="lh-sm m-0 fw600 fz13 clr-blue">{c.text}</p>
               </div>
               <HtmlTooltip
                 title={

@@ -15,6 +15,7 @@ import Image from "next/image";
 import Link from "next/link";
 import EnquiryForm from "./enquiry-stepper";
 import ScrollDownCustom from "./scroll-down-custom";
+import { Rating } from "@mui/material";
 
 export const metadata = {
   title: "Indus Real Estate LLC | Dubai Luxury Properties",
@@ -50,7 +51,11 @@ const HomePage = () => {
       {/* Explore Apartment */}
       <section className="pb0 pb30-md pt0">
         <div className="container">
-          <div className="row justify-content-center" data-aos="fade" data-aos-delay="0">
+          <div
+            className="row justify-content-center"
+            data-aos="fade"
+            data-aos-delay="0"
+          >
             <div className="col-lg-12">
               <ApartmentType />
             </div>
@@ -184,7 +189,7 @@ const HomePage = () => {
           <div className="row">
             <div className="col-lg-12 wow fadeInUp" data-wow-delay="0">
               <div className="main-title text-center">
-                <h6>Trusted by the Dubai&apos;s best</h6>
+                <h6>Trusted Partners</h6>
               </div>
             </div>
             {/* End .col-12 */}
@@ -209,13 +214,18 @@ const HomePage = () => {
               <div
                 className="col-lg-6 mx-auto"
                 data-aos="fade-up"
-                data-aos-delay="100"
+                data-aos-delay="0"
               >
                 <div className="main-title text-center">
-                  <h2>Testimonials</h2>
-                  <p className="paragraph">
-                    Trusted by thousands of clients from around the globe.
-                  </p>
+                  {/* <h2>Testimonials</h2> */}
+                  <img
+                    src="/images/testimonials/google_logo.svg"
+                    width={200}
+                    height={80}
+                    alt="google"
+                  />
+                  <p className="paragraph ltsp-2 fw500">REVIEWS</p>
+                  <Rating name="read-only" value={5} readOnly />
                 </div>
               </div>
             </div>
@@ -304,9 +314,6 @@ const HomePage = () => {
             >
               <div className="main-title mb40">
                 <h2 className="title">Real Estate Inquiry Form</h2>
-                <p className="paragraph fz15">
-                  As the complexity of buildings to increase
-                </p>
               </div>
               <div className="inquiry-form mb30-md">
                 <InqueryForm />
@@ -328,7 +335,7 @@ const HomePage = () => {
                       borderRadius: "5px",
                     }}
                     className="w-100 h-100 cover"
-                    src="/images/enquiry/form-img.webp"
+                    src="/images/enquiry/burj-khalifa.jpg"
                     alt="about"
                   />
                 </div>
@@ -349,7 +356,7 @@ const HomePage = () => {
       </section>
       {/* End Our Footer */}
 
-      <ScrollDownCustom/>
+      <ScrollDownCustom />
       <EnquiryForm />
     </>
   );

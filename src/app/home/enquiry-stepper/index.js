@@ -12,7 +12,7 @@ import StepperOne from "./stepper-one";
 import StepperSix from "./stepper-six";
 import StepperThree from "./stepper-three";
 import StepperTwo from "./stepper-two";
-import { Checkbox, TextField } from "@mui/material";
+import { Checkbox, Fab, TextField } from "@mui/material";
 import OfferForm from "./offer-form";
 
 function useWindowSize() {
@@ -199,11 +199,46 @@ const EnquiryForm = () => {
     }
   };
 
+  const fabStyle = {
+    position: "fixed",
+    bottom: "1rem",
+    right: "1rem",
+    transition: "200ms all ease-in-out",
+  };
+
+  const [openFab, setOpenFab] = useState(false);
+
+  const toggleFab = () => {
+    openFab ? setOpenFab(false) : setOpenFab(true);
+  };
+
   return (
     <>
-      <div className="enq-btn" onClick={handleClickOpen}>
-        Get a free consultation
-      </div>
+      <Fab
+        sx={fabStyle}
+        aria-label={"plus"}
+        color={"primary"}
+        onClick={toggleFab}
+        className={`${openFab ? "rt-45" : ""}`}
+      >
+        <span className="fa fa-plus fz20"></span>
+      </Fab>
+      {openFab ? (
+        <>
+          <a
+            className="enq-whtsp-btn"
+            href="https://wa.me/971080046387"
+            target="_blank"
+          >
+            <span className="fab fa-whatsapp fz17 mr5"></span> Whatsapp
+          </a>
+          <div className="enq-btn" onClick={handleClickOpen}>
+            Free consultation
+          </div>
+        </>
+      ) : (
+        <></>
+      )}
       <Dialog
         open={open}
         onClose={handleClose}
@@ -328,7 +363,7 @@ const EnquiryForm = () => {
                 <div className="row m-0 p10">
                   <div className="col-4 pl0">
                     <Image
-                      src="https://www.indusre.com/agentimg/m-b4adb1d6fe7980e40c19e246cf7e9b96.jpg"
+                      src="https://www.indusre.com/agentimg/m-031d589f607631ab513e028cf8f4734b.jpg"
                       width={100}
                       height={100}
                       alt="img"
@@ -338,9 +373,7 @@ const EnquiryForm = () => {
                   </div>
                   <div className="col-8 d-flex align-items-center pr0">
                     <div>
-                      <p className="mb0 fz14 fw600 lh-sm">
-                        Aneet Kumar Bhambhani
-                      </p>
+                      <p className="mb0 fz14 fw600 lh-sm">Narayan Nihalani</p>
                       <p className="mb0">Sales Manager</p>
                     </div>
                   </div>

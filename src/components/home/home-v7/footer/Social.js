@@ -2,10 +2,22 @@ import React from "react";
 
 const Social = () => {
   const socialIcons = [
-    "fab fa-facebook-f",
-    "fab fa-twitter",
-    "fab fa-instagram",
-    "fab fa-linkedin-in",
+    {
+      icon: "fab fa-facebook-f",
+      link: "https://www.facebook.com/IndusRealEstate",
+    },
+    {
+      icon: "fab fa-twitter",
+      link: "https://twitter.com/indusREdubai",
+    },
+    {
+      icon: "fab fa-instagram",
+      link: "https://www.instagram.com/indusredubai/",
+    },
+    {
+      icon: "fab fa-linkedin-in",
+      link: "https://linkedin.com/company/indusre",
+    },
   ];
 
   return (
@@ -14,8 +26,8 @@ const Social = () => {
         Follow us
       </a>
       {socialIcons.map((iconClass, index) => (
-        <a key={index} href="#">
-          <i className={iconClass + " list-inline-item"} />
+        <a key={index} href={iconClass.link} target="_blank">
+          <i className={iconClass.icon + " list-inline-item"} />
         </a>
       ))}
     </div>
