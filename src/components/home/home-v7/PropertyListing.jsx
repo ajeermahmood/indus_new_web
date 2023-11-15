@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { useEffect, useState } from "react";
 
-import { getFeaturedListings } from "@/api/listings";
+import { getFeaturedListings } from "@/app/api/listings";
 import FeaturedListings from "./FeatuerdListings";
 
 export default function PropertyListing() {

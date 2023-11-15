@@ -4,7 +4,7 @@ import MobileMenu from "@/components/common/mobile-menu";
 import Header from "@/components/home/home-v2/Header";
 import FormContact from "@/components/property/FormContact";
 
-import { getAgentDetails } from "@/api/listings";
+import { getAgentDetails } from "@/app/api/listings";
 import ProfessionalInfo from "@/components/property/ProfessionalInfo";
 import AvailableAgent from "@/components/property/agency-single/AvailableAgent";
 import ListingItemsContainer from "@/components/property/agency-single/ListingItems";

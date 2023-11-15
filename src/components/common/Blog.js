@@ -1,5 +1,5 @@
 "use client";
-import { getFeaturedBlogs } from "@/api/listings";
+import { getFeaturedBlogs } from "@/app/api/listings";
 import { Skeleton } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";

@@ -1,5 +1,5 @@
 "use client";
-import { getDeveloperDetails } from "@/api/listings";
+import { getDeveloperDetails } from "@/app/api/listings";
 import Pagination from "@/components/blog/blog-single/Pagination";
 import Details from "@/components/blog/dev-single/Details";
 import MobileMenu from "@/components/common/mobile-menu";

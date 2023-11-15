@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import BlogFilter from "./BlogFilter";
-import { getAllNews } from "@/api/listings";
+import { getAllNews } from "@/app/api/listings";
 import { Pagination, Stack } from "@mui/material";
 
 export default function BlogFilterContainer() {

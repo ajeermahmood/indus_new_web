@@ -1,6 +1,6 @@
 "use client";
 
-import { getAllPropertiesSearch } from "@/api/listings";
+import { getAllPropertiesSearch } from "@/app/api/listings";
 import { Pagination, Stack } from "@mui/material";
 import { useEffect, useState } from "react";
 import FeaturedListings from "./FeatuerdListings";

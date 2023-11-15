@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import { getAllDevelopers } from "@/api/listings";
+import { getAllDevelopers } from "@/app/api/listings";
 import TopFilter2 from "./TopFilter2";
 import AllAgents from "./agency/AllAgency";
 import { Pagination, Stack } from "@mui/material";

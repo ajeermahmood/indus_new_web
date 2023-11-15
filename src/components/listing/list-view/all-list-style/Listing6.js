@@ -1,5 +1,5 @@
 "use client";
-import { getAllCommunityGuides } from "@/api/listings";
+import { getAllCommunityGuides } from "@/app/api/listings";
 import { Skeleton } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";

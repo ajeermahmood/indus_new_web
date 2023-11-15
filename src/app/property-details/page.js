@@ -1,5 +1,5 @@
 "use client";
-import { getPropertyDetails } from "@/api/listings";
+import { getPropertyDetails } from "@/app/api/listings";
 import Footer from "@/components/home/home-v7/footer";
 import MobileMenu from "@/components/common/mobile-menu";
 import Header from "@/components/home/home-v2/Header";

@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
 import "swiper/swiper-bundle.min.css";
 import Link from "next/link";
-import { getAllPropTypesCount } from "@/api/listings";
+import { getAllPropTypesCount } from "@/app/api/listings";
 SwiperCore.use([Autoplay]);
 
 const ApartmentType = () => {

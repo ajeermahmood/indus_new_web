@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import GalleryBox from "./GalleryBox";
-import { getAllIndusBanners } from "@/api/listings";
+import { getAllIndusBanners } from "@/app/api/listings";
 import { Dialog } from "@mui/material";
 import Image from "next/image";
 
@@ -84,7 +84,7 @@ const PropertyGallery = () => {
             aria-labelledby="pills-home-tab"
           >
             <div className="container">
-              <div className="row" data-aos="fade-up" data-aos-delay="0">
+              <div className="row" data-aos="fade">
                 <div className="col-lg-12">
                   <div className="ps-v4-hero-slider">
                     <GalleryBox banners={data} loading={loading} size={size} />

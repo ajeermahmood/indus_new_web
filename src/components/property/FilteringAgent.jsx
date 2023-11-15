@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import TopFilter from "./TopFilter";
 
-import { getAllAgents } from "@/api/listings";
+import { getAllAgents } from "@/app/api/listings";
 import { Pagination, Stack } from "@mui/material";
 import AllAgents from "./agents/AllAgents";
 export default function FilteringAgent() {
