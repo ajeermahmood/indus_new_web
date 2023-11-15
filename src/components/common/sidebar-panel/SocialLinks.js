@@ -3,29 +3,29 @@ const SocialLinks = () => {
     {
       id: 1,
       iconClass: "fab fa-facebook-f",
-      href: "#",
+      href: "https://www.facebook.com/IndusRealEstate",
     },
     {
       id: 2,
       iconClass: "fab fa-twitter",
-      href: "#",
+      href: "https://twitter.com/indusREdubai",
     },
     {
       id: 3,
       iconClass: "fab fa-instagram",
-      href: "#",
+      href: "https://www.instagram.com/indusredubai/",
     },
     {
       id: 4,
       iconClass: "fab fa-linkedin-in",
-      href: "#",
+      href: "https://linkedin.com/company/indusre",
     },
   ];
 
   return (
     <>
       {socialLinks.map((link) => (
-        <a className="me-3" href={link.href} key={link.id}>
+        <a className="me-3" href={link.href} key={link.id} target="_blank">
           <i className={link.iconClass}></i>
         </a>
       ))}

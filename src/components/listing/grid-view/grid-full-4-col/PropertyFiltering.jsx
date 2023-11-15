@@ -230,7 +230,7 @@ export default function PropertyFiltering({ agentId }) {
         </div>
         {/* <!-- Advance Feature Modal End --> */}
 
-        <div className="row">
+        <div className="row mb20-mbl">
           <TopFilterBar
             colstyle={colstyle}
             setColstyle={setColstyle}

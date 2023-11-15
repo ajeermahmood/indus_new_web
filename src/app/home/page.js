@@ -330,12 +330,12 @@ const HomePage = () => {
                 <div className="inquiry-img">
                   <Image
                     width={591}
-                    height={778}
+                    height={800}
                     style={{
                       borderRadius: "5px",
                     }}
                     className="w-100 h-100 cover"
-                    src="/images/enquiry/burj-khalifa.jpg"
+                    src="/images/enquiry/burj-khalifa.webp"
                     alt="about"
                   />
                 </div>

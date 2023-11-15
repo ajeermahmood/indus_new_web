@@ -11,12 +11,18 @@ export default function FilteringAgent() {
   const [all_agents_count, setAllagentsCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
+
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    getAllAgents(16, currentPage, searchQuery).then((res) => {
-      setAllagents(res.team);
-      setAllagentsCount(res.count);
-      // console.log(res);
-    });
+    setLoading(true);
+    getAllAgents(16, currentPage, searchQuery)
+      .then((res) => {
+        setAllagents(res.team);
+        setAllagentsCount(res.count);
+        // console.log(res);
+      })
+      .finally(() => setLoading(false));
   }, [currentPage, searchQuery]);
 
   const filterFunctions = {
@@ -37,7 +43,7 @@ export default function FilteringAgent() {
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          <AllAgents data={all_agents} />
+          <AllAgents data={all_agents} loading={loading} />
         </div>
         {/* End .row */}
 

@@ -20,7 +20,7 @@ const Blog = () => {
       .then((res) => {
         setVideos(res.video);
         setVideosCount(res.count);
-        console.log(res);
+        // console.log(res);
       })
       .finally(() => setLoading(false));
   }, [currentPage, searchQuery, filter]);
@@ -36,6 +36,25 @@ const Blog = () => {
       <div className="container">
         <div className="row" data-aos="fade-up" data-aos-delay="300">
           <div className="col-lg-8">
+            {!loading && videos.length == 0 ? (
+              <div className="col w-100 mt60">
+                <div className="row justify-content-center">
+                  <Image
+                    src="/images/svg/no-data.svg"
+                    width={200}
+                    height={200}
+                    className="mb3"
+                    alt="no-data"
+                  />
+                </div>
+
+                <p className="text-center mb60">
+                  <b>Sorry, No Results Found!</b>
+                </p>
+              </div>
+            ) : (
+              <></>
+            )}
             {loading
               ? skeletonLoader.map((item, index) => (
                   <div className="blog-style1 large-size bgc-white" key={index}>

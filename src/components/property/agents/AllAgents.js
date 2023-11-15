@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-const AllAgents = ({ data }) => {
+const AllAgents = ({ data, loading }) => {
   const skeletonLoader = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
   ];
@@ -12,7 +12,26 @@ const AllAgents = ({ data }) => {
 
   return (
     <>
-      {data.length == 0
+      {!loading && data.length == 0 ? (
+        <div className="col w-100 mt60">
+          <div className="row justify-content-center">
+            <Image
+              src="/images/svg/no-data.svg"
+              width={200}
+              height={200}
+              className="mb3"
+              alt="no-data"
+            />
+          </div>
+
+          <p className="text-center mb60">
+            <b>Sorry, No Results Found!</b>
+          </p>
+        </div>
+      ) : (
+        <></>
+      )}
+      {loading
         ? skeletonLoader.map((sk) => (
             <div className="col" key={sk}>
               <div className="feature-style2 mb30">

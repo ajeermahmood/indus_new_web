@@ -15,10 +15,10 @@ import OtherFeatures from "./OtherFeatures";
 const ListingSidebar = ({filterFunctions}) => {
   return (
     <div className="list-sidebar-style1">
-      <div className="widget-wrapper">
+      {/* <div className="widget-wrapper">
         <h6 className="list-title">Find your home</h6>
         <SearchBox filterFunctions={filterFunctions} />
-      </div>
+      </div> */}
       {/* End .widget-wrapper */}
 
       <div className="widget-wrapper">
@@ -77,13 +77,13 @@ const ListingSidebar = ({filterFunctions}) => {
       </div>
       {/* End .widget-wrapper */}
 
-      <div className="widget-wrapper">
+      {/* <div className="widget-wrapper">
         <h6 className="list-title">Year Built</h6>
         <YearBuilt filterFunctions={filterFunctions}/>
-      </div>
+      </div> */}
       {/* End .widget-wrapper */}
 
-      <div className="widget-wrapper">
+      {/* <div className="widget-wrapper">
         <div className="feature-accordion">
           <div className="accordion" id="accordionExample">
             <div className="accordion-item border-none">
@@ -112,7 +112,7 @@ const ListingSidebar = ({filterFunctions}) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* End .widget-wrapper */}
 
       <div className="widget-wrapper mb20">

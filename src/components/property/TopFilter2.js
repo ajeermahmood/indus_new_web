@@ -7,9 +7,10 @@ const TopFilter2 = ({ filterFunctions }) => {
         <div className="agent-page-meta dropdown-lists">
           <div className="d-sm-flex">
             <div className="position-relative mb10 mr10">
+              <span className="fa fa-search search-icon-pages"></span>
               <input
                 type="text"
-                className="form-control"
+                className="form-control pl35"
                 placeholder="Search developer name"
                 onChange={(e) => {
                   filterFunctions.setAllDevs([]);

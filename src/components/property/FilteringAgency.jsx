@@ -12,12 +12,17 @@ export default function FilteringAgency() {
   const [all_devs_count, setAllDevsCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
+
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    getAllDevelopers(15, currentPage, searchQuery).then((res) => {
-      setAllDevs(res.dev);
-      setAllDevsCount(res.count);
-      console.log(res);
-    });
+    setLoading(true);
+    getAllDevelopers(15, currentPage, searchQuery)
+      .then((res) => {
+        setAllDevs(res.dev);
+        setAllDevsCount(res.count);
+        console.log(res);
+      })
+      .finally(() => setLoading(false));
   }, [currentPage, searchQuery]);
 
   const filterFunctions = {
@@ -34,7 +39,7 @@ export default function FilteringAgency() {
         {/* End .row */}
 
         <div className="row" data-aos="fade-up" data-aos-delay="100">
-          <AllAgents data={all_devs} />
+          <AllAgents data={all_devs} loading={loading} />
         </div>
         {/* End .row */}
 

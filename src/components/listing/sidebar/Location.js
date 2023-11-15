@@ -1,7 +1,8 @@
 "use client";
 import Select from "react-select";
+import Locations from "@/data/locations";
 
-const Location = ({filterFunctions}) => {
+const Location = ({ filterFunctions }) => {
   const locationOptions = [
     { value: "All Cities", label: "All Cities" },
     { value: "California", label: "California" },
@@ -18,11 +19,11 @@ const Location = ({filterFunctions}) => {
       return {
         ...styles,
         backgroundColor: isSelected
-          ? "#eb6753"
+          ? "#2B4257"
           : isHovered
-          ? "#eb675312"
+          ? "#88a9c33b"
           : isFocused
-          ? "#eb675312"
+          ? "#88a9c33b"
           : undefined,
       };
     },
@@ -30,20 +31,20 @@ const Location = ({filterFunctions}) => {
 
   return (
     <Select
-      defaultValue={[locationOptions[0]]}
+      defaultValue={[Locations[0]]}
       name="colors"
       styles={customStyles}
-      options={locationOptions}
-      value={{value:filterFunctions.location,label:filterFunctions.location}}
-      
-     
-      
-      
-      
-      
+      options={Locations}
+      value={{
+        value: filterFunctions?.location,
+        label: Locations.find((l) => l.value == filterFunctions.location).label,
+      }}
       className="select-custom filterSelect"
       classNamePrefix="select"
-      onChange={(e)=>filterFunctions?.handlelocation(e.value)}
+      onChange={(e) => {
+        filterFunctions?.setListings([]);
+        filterFunctions?.handlelocation(e.value);
+      }}
       required
     />
   );

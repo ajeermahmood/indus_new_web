@@ -23,7 +23,7 @@ const AllPropertiesPage = () => {
       {/* End Mobile Nav  */}
 
       {/* Breadcumb Sections */}
-      <section className="breadcumb-section pt130 bgc-f7">
+      <section className="breadcumb-section pt130 bgc-f7 pt20-mbl pb20-mbl">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -34,7 +34,7 @@ const AllPropertiesPage = () => {
                   <a href="#">All Properties</a>
                 </div>
                 <a
-                  className="filter-btn-left mobile-filter-btn d-block d-lg-none text-dark"
+                  className="filter-btn-left mobile-filter-btn d-block d-lg-none text-dark mt5"
                   data-bs-toggle="offcanvas"
                   href="#listingSidebarFilter"
                   role="button"

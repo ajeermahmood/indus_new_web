@@ -4,7 +4,7 @@ import PriceRange from "./PriceRange";
 import Bedroom from "./Bedroom";
 import Bathroom from "./Bathroom";
 import Amenities from "./Amenities";
-import Locations from "../../../data/locations";
+import Locations from "@/data/locations";
 
 const AdvanceFilterModal = ({ filterFunctions }) => {
   const catOptions = [

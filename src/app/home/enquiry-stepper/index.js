@@ -225,6 +225,18 @@ const EnquiryForm = () => {
       </Fab>
       {openFab ? (
         <>
+          {size.width > 500 ? (
+            <div
+              className="enq-more-btn"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#SidebarPanel"
+              aria-controls="SidebarPanelLabel"
+            >
+              More
+            </div>
+          ) : (
+            <></>
+          )}
           <a
             className="enq-whtsp-btn"
             href="https://wa.me/971080046387"
