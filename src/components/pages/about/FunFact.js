@@ -8,9 +8,9 @@ import Link from "next/link";
 const FunFact = () => {
   const funFacts = [
     {
-      number: "4",
-      unit: "M",
-      text: "Awward Winning",
+      number: "160",
+      unit: "",
+      text: "Awards",
     },
     {
       number: "12",

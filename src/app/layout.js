@@ -5,6 +5,8 @@ import "aos/dist/aos.css";
 import { Montserrat } from "next/font/google";
 import { useEffect } from "react";
 import "../../public/scss/main.scss";
+import Script from "next/script";
+import Head from "next/head";
 
 if (typeof window !== "undefined") {
   import("bootstrap");
@@ -34,6 +36,22 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <Head>
+        <Script
+          strategy="lazyOnload"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-JCNP22Y3HM`}
+        />
+
+        <Script strategy="lazyOnload">
+          {`window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-JCNP22Y3HM', {
+            page_path: window.location.pathname,
+            });
+          `}
+        </Script>
+      </Head>
       <body
         className={`body ${montserrat.className}`}
         cz-shortcut-listen="false"

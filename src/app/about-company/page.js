@@ -64,6 +64,13 @@ const AboutCompanyPage = () => {
         <div className="container">
           <div className="row" data-aos="fade-up" data-aos-delay="300">
             <div className="col-lg-6">
+              <Image
+                src={"/images/logo/indus-icon.png"}
+                width={400}
+                height={400}
+                alt="logo"
+                className="indus-logo-about-page"
+              />
               <h2>
                 <b>Indus Real Estate</b>
               </h2>
