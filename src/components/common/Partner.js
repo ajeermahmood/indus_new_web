@@ -51,7 +51,7 @@ const Partner = () => {
             <SwiperSlide key={index}>
               <div className="item">
                 <div className="partner_item">
-                  <Image
+                  <img
                     width={500}
                     height={130}
                     style={{ objectFit: "contain" }}

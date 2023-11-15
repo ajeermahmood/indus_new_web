@@ -66,7 +66,7 @@ const StepperFour = ({ activeStep, functions, size }) => {
             <div
               key={index}
               onClick={() => selectCard(index)}
-              className="col-4 stepper-card-amt-active"
+              className="col-4 stepper-card-amt-active mb10"
             >
               <span className="fz17 fw500 text-indus">{c.text}</span>
             </div>
@@ -74,7 +74,7 @@ const StepperFour = ({ activeStep, functions, size }) => {
             <div
               key={index}
               onClick={() => selectCard(index)}
-              className="col-4 stepper-card-amt"
+              className="col-4 stepper-card-amt mb10"
             >
               <span className="fz17 fw500 clr-grey">{c.text}</span>
             </div>
@@ -83,7 +83,7 @@ const StepperFour = ({ activeStep, functions, size }) => {
       </div>
       {size.width > 500 ? (
         <div
-          className="col-12 d-flex w-100 mt20 justify-content-between"
+          className="col-12 d-flex w-100 justify-content-between"
           data-aos="fade-up"
           data-aos-delay="0"
         >
