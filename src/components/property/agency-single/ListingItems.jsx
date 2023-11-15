@@ -1,6 +1,6 @@
 "use client";
 
-import { getAgentPropertiesLimit4 } from "@/app/api/listings";
+import { getAgentPropertiesLimit4 } from "@/api/listings";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import ListingItems from "../ListingItems";

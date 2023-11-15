@@ -1,5 +1,5 @@
 "use client";
-import { getAllVideos } from "@/app/api/listings";
+import { getAllVideos } from "@/api/listings";
 import { Pagination, Skeleton, Stack } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from "react";

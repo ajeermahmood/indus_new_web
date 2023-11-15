@@ -1,5 +1,5 @@
 "use client";
-import { getNewsDetails } from "@/app/api/listings";
+import { getNewsDetails } from "@/api/listings";
 import Details from "@/components/blog/blog-single/Details";
 import Pagination from "@/components/blog/blog-single/Pagination";
 import Social from "@/components/blog/blog-single/Social";

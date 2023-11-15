@@ -1,7 +1,7 @@
 "use client";
 
 // import listings from "@/data/listings";
-import { getAllListingsPagination } from "@/app/api/listings";
+import { getAllListingsPagination } from "@/api/listings";
 import AdvanceFilterModal from "@/components/common/advance-filter-two";
 import { Stack } from "@mui/material";
 import Pagination from "@mui/material/Pagination";

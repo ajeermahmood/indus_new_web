@@ -1,5 +1,5 @@
 "use client";
-import { getPropertiesCountBasedOnLocations } from "@/app/api/listings";
+import { getPropertiesCountBasedOnLocations } from "@/api/listings";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";

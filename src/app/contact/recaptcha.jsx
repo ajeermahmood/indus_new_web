@@ -1,6 +1,6 @@
 import ReCAPTCHA from "react-google-recaptcha";
 import { useRef, useState } from "react";
-import { verifyCaptcha } from "@/app/api/serverActions";
+import { verifyCaptcha } from "@/api/serverActions";
 import { Button } from "@mui/material";
 
 const ReCaptcha = () => {

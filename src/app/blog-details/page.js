@@ -1,5 +1,5 @@
 "use client";
-import { getBlogDetails } from "@/app/api/listings";
+import { getBlogDetails } from "@/api/listings";
 import BlogHeader from "@/components/blog/blog-list/BlogHeader";
 import BlogsPagination from "@/components/blog/blog-list/blogs_pagination";
 import Pagination from "@/components/blog/blog-single/Pagination";

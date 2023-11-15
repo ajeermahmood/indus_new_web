@@ -1,5 +1,5 @@
 "use client";
-import { getExclusiveAgents } from "@/app/api/listings";
+import { getExclusiveAgents } from "@/api/listings";
 import { Skeleton } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";

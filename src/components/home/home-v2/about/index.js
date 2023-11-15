@@ -4,7 +4,7 @@ import Funfact from "./Funfact";
 import ProductSingle from "./ProductSingle";
 import Image from "next/image";
 import VideoBox from "./VideoBox";
-import { getFeaturedOneListing } from "@/app/api/listings";
+import { getFeaturedOneListing } from "@/api/listings";
 import { Skeleton } from "@mui/material";
 
 const About = () => {

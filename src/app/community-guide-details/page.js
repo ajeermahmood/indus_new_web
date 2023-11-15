@@ -1,5 +1,5 @@
 "use client";
-import { getCommunityGuideDetails } from "@/app/api/listings";
+import { getCommunityGuideDetails } from "@/api/listings";
 import MobileMenu from "@/components/common/mobile-menu";
 import BannerSlider from "@/components/home/home-v10/BannerSlider";
 import Header from "@/components/home/home-v2/Header";

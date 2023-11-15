@@ -1,6 +1,6 @@
 "use client";
 
-import { getAllBlogs } from "@/app/api/listings";
+import { getAllBlogs } from "@/api/listings";
 import { Pagination, Stack } from "@mui/material";
 import { useEffect, useState } from "react";
 import BlogFilter2 from "./BlogFilter";

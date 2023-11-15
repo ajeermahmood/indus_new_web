@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import GalleryBox from "./GalleryBox";
-import { getAllIndusBanners } from "@/app/api/listings";
+import { getAllIndusBanners } from "@/api/listings";
 import { Dialog } from "@mui/material";
 import Image from "next/image";
 
