@@ -6,20 +6,20 @@ import NearbySimilarProperty from "@/components/property/property-single-style/c
 import PropertyGallery from "@/components/property/property-single-style/single-v1/PropertyGallery";
 import Link from "next/link";
 
-// export async function generateStaticParams() {
-//   // Call an external API endpoint to get posts
-//   const res = await fetch(
-//     `https://indusspeciality.com/api/listings/get_all_community_guides_ids_for_SSG.php`,
-//     {
-//       method: "GET",
-//     }
-//   );
-//   const props = await res.json();
+export async function generateStaticParams() {
+  // Call an external API endpoint to get posts
+  const res = await fetch(
+    `https://indusspeciality.com/api/listings/get_all_community_guides_ids_for_SSG.php`,
+    {
+      method: "GET",
+    }
+  );
+  const props = await res.json();
 
-//   return props.map((p) => ({
-//     id: p.ps_guide_id,
-//   }));
-// }
+  return props.map((p) => ({
+    id: p.ps_guide_id,
+  }));
+}
 
 export async function getCommunityGuide(id) {
   const res = await fetch(

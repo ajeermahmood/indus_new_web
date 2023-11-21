@@ -2,11 +2,9 @@
 const nextConfig = {
   images: {
     domains: ["assets.bayut.com", "www.indusre.com"],
-    minimumCacheTTL: 1500000,
+    unoptimized: true,
   },
-  experimental: {
-    serverActions: true,
-  },
+  output: "export",
 };
 
 module.exports = nextConfig;

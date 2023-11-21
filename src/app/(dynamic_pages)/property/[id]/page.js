@@ -15,20 +15,20 @@ import PropertyGallery from "@/components/property/property-single-style/single-
 import OverView from "@/components/property/property-single-style/single-v7/OverView";
 import PropertyHeader from "@/components/property/property-single-style/single-v7/PropertyHeader";
 
-// export async function generateStaticParams() {
-//   // Call an external API endpoint to get posts
-//   const res = await fetch(
-//     `https://indusspeciality.com/api/listings/get_all_properties_ids_for_SSG.php`,
-//     {
-//       method: "GET",
-//     }
-//   );
-//   const props = await res.json();
+export async function generateStaticParams() {
+  // Call an external API endpoint to get posts
+  const res = await fetch(
+    `https://indusspeciality.com/api/listings/get_all_properties_ids_for_SSG.php`,
+    {
+      method: "GET",
+    }
+  );
+  const props = await res.json();
 
-//   return props.map((p) => ({
-//     id: p.property_id,
-//   }));
-// }
+  return props.map((p) => ({
+    id: p.property_id,
+  }));
+}
 
 export async function getProperty(id) {
   const res = await fetch(
