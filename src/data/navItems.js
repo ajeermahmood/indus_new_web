@@ -34,7 +34,7 @@ export const commercialPages = [
 ];
 
 export const guidesPages = [
-  { href: "/community-guide", label: "Community Guides" },
+  { href: "/all-community-guides", label: "Community Guides" },
   { href: "/rent-guide", label: "Renter's Guides" },
   { href: "/buy-guide", label: "Buyer's Guides" },
   { href: "/sell-guide", label: "Seller's Guides" },

@@ -1,40 +1,62 @@
-"use client";
-import { getDeveloperDetails } from "@/api/listings";
-import Pagination from "@/components/blog/blog-single/Pagination";
 import Details from "@/components/blog/dev-single/Details";
 import MobileMenu from "@/components/common/mobile-menu";
 import Header from "@/components/home/home-v2/Header";
 import Footer from "@/components/home/home-v7/footer";
-import { Box, CircularProgress } from "@mui/material";
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
 
-const DevelopersDetailsPage = () => {
-  const searchParams = useSearchParams();
-  const params = searchParams.get("id");
+// export async function generateStaticParams() {
+//   // Call an external API endpoint to get posts
+//   const res = await fetch(
+//     `https://indusspeciality.com/api/listings/get_all_developers_ids_for_SSG.php`,
+//     {
+//       method: "GET",
+//     }
+//   );
+//   const props = await res.json();
 
-  const [data, setData] = useState("");
+//   return props.map((p) => ({
+//     id: p.id,
+//   }));
+// }
 
-  useEffect(() => {
-    getDeveloperDetails(params).then((res) => {
-      setData(res);
-    });
-  }, []);
+export async function getDeveloper(id) {
+  const res = await fetch(
+    `https://indusspeciality.com/api/listings/get_developer_details.php`,
+    {
+      cache: "force-cache",
+      method: "POST",
+      body: JSON.stringify({
+        dev_id: id,
+      }),
+    }
+  );
+  const data = await res.json();
 
-  return data == "" ? (
-    <Box
-      sx={{
-        display: "flex",
-        height: "60rem",
-        width: "100%",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <CircularProgress size={60} />
-    </Box>
-  ) : (
+  return data;
+}
+
+export async function generateMetadata({ params }) {
+  const staticData = await fetch(
+    `https://indusspeciality.com/api/listings/get_developer_details.php`,
+    {
+      cache: "force-cache",
+      method: "POST",
+      body: JSON.stringify({
+        dev_id: params.id,
+      }),
+    }
+  );
+
+  const data = await staticData.json();
+  return {
+    title: `${data.name} || Indus Real Estate LLC Dubai`,
+  };
+}
+
+async function DevelopersPage({ params }) {
+  const data = await getDeveloper(params.id);
+
+  return (
     <>
       {/* Main Header Nav */}
       <Header />
@@ -82,6 +104,6 @@ const DevelopersDetailsPage = () => {
       {/* End Our Footer */}
     </>
   );
-};
+}
 
-export default DevelopersDetailsPage;
+export default DevelopersPage;

@@ -140,11 +140,11 @@ const FeaturedListings = ({ data, type, loading }) => {
                     <a
                       className="rounded-0 mr5"
                       target="_blank"
-                      href={`/property-details/?id=${listing.property_id}`}
+                      href={`/property/${listing.property_id}`}
                     >
                       <span className="flaticon-new-tab"></span>
                     </a>
-                    <a className="rounded-0" href="#" onClick={()=> window.open(`/property-details/?id=${listing.property_id}`, '_blank', 'location=yes,height=900,width=1440,scrollbars=yes,status=yes')}>
+                    <a className="rounded-0" href="#" onClick={()=> window.open(`/property/${listing.property_id}`, '_blank', 'location=yes,height=900,width=1440,scrollbars=yes,status=yes')}>
                       <span className="flaticon-fullscreen"></span>
                     </a>
                   </div>
@@ -152,7 +152,7 @@ const FeaturedListings = ({ data, type, loading }) => {
                 <div className="list-content">
                   <h6 className="list-title">
                     <Link
-                      href={`/property-details/?id=${listing.property_id}`}
+                      href={`/property/${listing.property_id}`}
                       style={{
                         overflow: "hidden",
                         whiteSpace: "nowrap",

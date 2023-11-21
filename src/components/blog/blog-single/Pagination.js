@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Pagination = ({ next, prev }) => {
@@ -7,12 +8,12 @@ const Pagination = ({ next, prev }) => {
         {prev != "" ? (
           <div className="col-md-6">
             <div className="pag_prev">
-              <a href={`/news-details?id=${prev.news_id}`}>
+              <Link href={`/news/${prev.news_id}`}>
                 <h6>
                   <span className="fas fa-chevron-left pe-2" /> Previous Post
                 </h6>
                 <p className="fz13 text mb-0">{prev.news_title}</p>
-              </a>
+              </Link>
             </div>
           </div>
         ) : (
@@ -22,13 +23,13 @@ const Pagination = ({ next, prev }) => {
         {next != "" ? (
           <div className="col-md-6">
             <div className="pag_next">
-              <a href={`/news-details?id=${next.news_id}`} className="text-end">
+              <Link href={`/news/${next.news_id}`} className="text-end">
                 <h6>
                   Next Post
                   <span className="fas fa-chevron-right ps-2" />
                 </h6>
                 <p className="fz13 text mb-0">{next.news_title}</p>
-              </a>
+              </Link>
             </div>
           </div>
         ) : (

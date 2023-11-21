@@ -1,20 +1,12 @@
 "use client";
 import apartmentType from "@/data/apartmentType";
-import React, { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay } from "swiper";
-import "swiper/swiper-bundle.min.css";
 import Link from "next/link";
-import { getAllPropTypesCount } from "@/api/listings";
+import SwiperCore, { Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.min.css";
 SwiperCore.use([Autoplay]);
 
 const ApartmentType = () => {
-  const [propTypesCount, setPropTypesCount] = useState([]);
-  useEffect(() => {
-    getAllPropTypesCount().then((res) => {
-      setPropTypesCount(res);
-    });
-  }, []);
   return (
     <Swiper
       spaceBetween={30}
@@ -44,12 +36,7 @@ const ApartmentType = () => {
                 <span className={`icon ${type.icon}`} />
                 <div className="iconbox-content">
                   <h6 className="title">{type.title}</h6>
-                  <p className="text text-light mb-0">{`${
-                    propTypesCount.length != 0 &&
-                    propTypesCount.filter((p) => p.id == type.id).length != 0
-                      ? propTypesCount.find((p) => p.id == type.id).count
-                      : 0
-                  } Properties`}</p>
+                  <p className="text text-light mb-0">{`${type.count} Properties`}</p>
                 </div>
               </div>
             </Link>

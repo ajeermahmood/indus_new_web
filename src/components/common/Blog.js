@@ -116,15 +116,9 @@ const Blog = () => {
                     Indus Real Estate LLC
                   </a>
                   <h6 className="title mt-1">
-                    {path != "/news-details" ? (
-                      <Link href={`/news-details/?id=${blog.news_id}`}>
-                        {blog.news_title}
-                      </Link>
-                    ) : (
-                      <a href={`/news-details/?id=${blog.news_id}`}>
-                        {blog.news_title}
-                      </a>
-                    )}
+                    <Link href={`/news/${blog.news_id}`}>
+                      {blog.news_title}
+                    </Link>
                   </h6>
                 </div>
               </div>

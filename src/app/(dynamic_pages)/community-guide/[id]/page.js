@@ -1,41 +1,64 @@
-"use client";
-import { getCommunityGuideDetails } from "@/api/listings";
 import MobileMenu from "@/components/common/mobile-menu";
 import BannerSlider from "@/components/home/home-v10/BannerSlider";
 import Header from "@/components/home/home-v2/Header";
 import Footer from "@/components/home/home-v7/footer";
 import NearbySimilarProperty from "@/components/property/property-single-style/common/NearbySimilarProperty";
 import PropertyGallery from "@/components/property/property-single-style/single-v1/PropertyGallery";
-import { Box, CircularProgress } from "@mui/material";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
 
-const CommunityGuideDetails = () => {
-  const searchParams = useSearchParams();
-  const params = searchParams.get("id");
+// export async function generateStaticParams() {
+//   // Call an external API endpoint to get posts
+//   const res = await fetch(
+//     `https://indusspeciality.com/api/listings/get_all_community_guides_ids_for_SSG.php`,
+//     {
+//       method: "GET",
+//     }
+//   );
+//   const props = await res.json();
 
-  const [data, setData] = useState("");
+//   return props.map((p) => ({
+//     id: p.ps_guide_id,
+//   }));
+// }
 
-  useEffect(() => {
-    getCommunityGuideDetails(params).then((res) => {
-      setData(res);
-      console.log(res);
-    });
-  }, []);
-  return data == "" ? (
-    <Box
-      sx={{
-        display: "flex",
-        height: "60rem",
-        width: "100%",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <CircularProgress size={60} />
-    </Box>
-  ) : (
+export async function getCommunityGuide(id) {
+  const res = await fetch(
+    `https://indusspeciality.com/api/listings/get_community_guide_details.php`,
+    {
+      cache: "force-cache",
+      method: "POST",
+      body: JSON.stringify({
+        guide_id: id,
+      }),
+    }
+  );
+  const data = await res.json();
+
+  return data;
+}
+
+export async function generateMetadata({ params }) {
+  const staticData = await fetch(
+    `https://indusspeciality.com/api/listings/get_community_guide_details.php`,
+    {
+      cache: "force-cache",
+      method: "POST",
+      body: JSON.stringify({
+        guide_id: params.id,
+      }),
+    }
+  );
+
+  const data = await staticData.json();
+  return {
+    title: `Community guide for ${data.location_name}`,
+  };
+}
+
+async function CommunityGuidePage({ params }) {
+  const data = await getCommunityGuide(params.id);
+
+  return (
     <>
       {/* Main Header Nav */}
       <Header />
@@ -65,12 +88,12 @@ const CommunityGuideDetails = () => {
             <div className="col-xl-8 offset-xl-2">
               <div className="ui-content mt40 mb60">
                 <p className="mb25 ff-heading fz20">{data.location_blurb}</p>
-                <p
+                <div
                   className="ff-heading fz20"
                   dangerouslySetInnerHTML={{
                     __html: data.location_description,
                   }}
-                ></p>
+                ></div>
               </div>
 
               {/* End  blockquote*/}
@@ -154,6 +177,6 @@ const CommunityGuideDetails = () => {
       {/* End Our Footer */}
     </>
   );
-};
+}
 
-export default CommunityGuideDetails;
+export default CommunityGuidePage;

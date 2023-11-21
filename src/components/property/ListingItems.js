@@ -112,7 +112,7 @@ const ListingItems = ({ data, loading }) => {
                 <div className="list-content">
                   <h6 className="list-title">
                     <Link
-                      href={`/property-details/?id=${listing.property_id}`}
+                      href={`/property/${listing.property_id}`}
                       style={{
                         overflow: "hidden",
                         whiteSpace: "nowrap",

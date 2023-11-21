@@ -44,7 +44,7 @@ const ContactWithAgent = ({ agent }) => {
 
       <div className="d-grid">
         <Link
-          href={`/about-agent/?id=${agent.client_user_id}`}
+          href={`/agent/${agent.client_user_id}`}
           className="ud-btn btn-white2"
         >
           Contact Agent

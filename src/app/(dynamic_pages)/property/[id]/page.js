@@ -1,8 +1,6 @@
-"use client";
-import { getPropertyDetails } from "@/api/listings";
-import Footer from "@/components/home/home-v7/footer";
 import MobileMenu from "@/components/common/mobile-menu";
 import Header from "@/components/home/home-v2/Header";
+import Footer from "@/components/home/home-v7/footer";
 import MortgageCalculator from "@/components/property/property-single-style/common/MortgageCalculator";
 import NearbySimilarProperty from "@/components/property/property-single-style/common/NearbySimilarProperty";
 import PropertyAddress from "@/components/property/property-single-style/common/PropertyAddress";
@@ -16,35 +14,60 @@ import ScheduleTour from "@/components/property/property-single-style/sidebar/Sc
 import PropertyGallery from "@/components/property/property-single-style/single-v4/property-gallery";
 import OverView from "@/components/property/property-single-style/single-v7/OverView";
 import PropertyHeader from "@/components/property/property-single-style/single-v7/PropertyHeader";
-import { Box, CircularProgress } from "@mui/material";
-import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
 
-const PropertyDetailsPage = () => {
-  const searchParams = useSearchParams();
-  const params = searchParams.get("id");
+// export async function generateStaticParams() {
+//   // Call an external API endpoint to get posts
+//   const res = await fetch(
+//     `https://indusspeciality.com/api/listings/get_all_properties_ids_for_SSG.php`,
+//     {
+//       method: "GET",
+//     }
+//   );
+//   const props = await res.json();
 
-  const [data, setData] = useState("");
+//   return props.map((p) => ({
+//     id: p.property_id,
+//   }));
+// }
 
-  useEffect(() => {
-    getPropertyDetails(params).then((res) => {
-      setData(res);
-    });
-  }, []);
+export async function getProperty(id) {
+  const res = await fetch(
+    `https://indusspeciality.com/api/listings/get_property_details.php`,
+    {
+      cache: "force-cache",
+      method: "POST",
+      body: JSON.stringify({
+        prop_id: id,
+      }),
+    }
+  );
+  const data = await res.json();
 
-  return data == "" ? (
-    <Box
-      sx={{
-        display: "flex",
-        height: "60rem",
-        width: "100%",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <CircularProgress size={60} />
-    </Box>
-  ) : (
+  return data;
+}
+
+export async function generateMetadata({ params }) {
+  const staticData = await fetch(
+    `https://indusspeciality.com/api/listings/get_property_details.php`,
+    {
+      cache: "force-cache",
+      method: "POST",
+      body: JSON.stringify({
+        prop_id: params.id,
+      }),
+    }
+  );
+
+  const data = await staticData.json();
+  return {
+    title: `${data.property_title}, ${data.location_name}`,
+  };
+}
+
+async function PropertyPage({ params }) {
+  const data = await getProperty(params.id);
+
+  return (
     <>
       {/* Main Header Nav */}
       <Header />
@@ -100,12 +123,17 @@ const PropertyDetailsPage = () => {
               </div>
               {/* End .ps-widget */}
 
-              <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
-                <h4 className="title fz17 mb30">Features &amp; Amenities</h4>
-                <div className="row">
-                  <PropertyFeaturesAminites amenties={data.amenties} />
+              {data.amenties != "none" ? (
+                <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
+                  <h4 className="title fz17 mb30">Features &amp; Amenities</h4>
+                  <div className="row">
+                    <PropertyFeaturesAminites amenties={data.amenties} />
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <></>
+              )}
+
               {/* End .ps-widget */}
 
               {/* <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
@@ -307,6 +335,6 @@ const PropertyDetailsPage = () => {
       {/* End Our Footer */}
     </>
   );
-};
+}
 
-export default PropertyDetailsPage;
+export default PropertyPage;

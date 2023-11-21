@@ -82,7 +82,7 @@ const AllAgents = ({ data, loading }) => {
                   {/* <p className="fz15">{agent.address}</p> */}
                   <div className="d-grid">
                     <Link
-                      href={`/developer-details/?id=${dev.id}`}
+                      href={`/developer/${dev.id}`}
                       className="ud-btn btn-white2"
                     >
                       View Details

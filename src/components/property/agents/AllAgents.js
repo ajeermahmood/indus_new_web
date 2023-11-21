@@ -75,7 +75,7 @@ const AllAgents = ({ data, loading }) => {
                     height: "15rem",
                   }}
                 >
-                  <Link href={`/about-agent/?id=${agent.client_user_id}`}>
+                  <Link href={`/agent/${agent.client_user_id}`}>
                     <Image
                       width={210}
                       height={240}
@@ -108,7 +108,7 @@ const AllAgents = ({ data, loading }) => {
                   }}
                 >
                   <h6 className="title mb-1">
-                    <Link href={`/about-agent/?id=${agent.client_user_id}`}>
+                    <Link href={`/agent/${agent.client_user_id}`}>
                       {agent.client_user_name}
                     </Link>
                   </h6>

@@ -51,7 +51,7 @@ const MenuWidget = ({ path }) => {
         { label: "Our Team", href: "/team" },
         { label: "Blogs", href: "/all-news" },
         { label: "Partners", href: "/developers" },
-        { label: "Community Guides", href: "/community-guide" },
+        { label: "Community Guides", href: "/all-community-guides" },
         // { label: "Careers", href: "#" },
         // { label: "FAQs", href: "#" },
       ],

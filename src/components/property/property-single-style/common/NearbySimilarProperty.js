@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
@@ -68,8 +69,8 @@ const NearbySimilarProperty = ({ props }) => {
                 </div>
                 <div className="list-content">
                   <h6 className="list-title">
-                    <a
-                      href={`/property-details/?id=${listing.property_id}`}
+                    <Link
+                      href={`/property/${listing.property_id}`}
                       style={{
                         overflow: "hidden",
                         whiteSpace: "nowrap",
@@ -79,7 +80,7 @@ const NearbySimilarProperty = ({ props }) => {
                       }}
                     >
                       {listing.property_title}
-                    </a>
+                    </Link>
                   </h6>
                   <p
                     className="list-text"

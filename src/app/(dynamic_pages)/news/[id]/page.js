@@ -1,46 +1,68 @@
-"use client";
-import { getBlogDetails } from "@/api/listings";
-import BlogHeader from "@/components/blog/blog-list/BlogHeader";
-import BlogsPagination from "@/components/blog/blog-list/blogs_pagination";
+import Details from "@/components/blog/blog-single/Details";
 import Pagination from "@/components/blog/blog-single/Pagination";
 import Social from "@/components/blog/blog-single/Social";
 import Tags from "@/components/blog/blog-single/Tags";
+import Blog from "@/components/common/Blog";
 import MobileMenu from "@/components/common/mobile-menu";
 import Header from "@/components/home/home-v2/Header";
 import Footer from "@/components/home/home-v7/footer";
-import { Box, CircularProgress } from "@mui/material";
-import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
 
-const NewsDetailsPage = () => {
-  const searchParams = useSearchParams();
-  const params = searchParams.get("id");
+// export async function generateStaticParams() {
+//   // Call an external API endpoint to get posts
+//   const res = await fetch(
+//     `https://indusspeciality.com/api/listings/get_all_news_ids_for_SSG.php`,
+//     {
+//       method: "GET",
+//     }
+//   );
+//   const props = await res.json();
 
-  const [data, setData] = useState("");
-  const [prev, setPrevData] = useState("");
-  const [next, setNextData] = useState("");
+//   return props.map((p) => ({
+//     id: p.news_id,
+//   }));
+// }
 
-  useEffect(() => {
-    getBlogDetails(params).then((res) => {
-      setData(res.data);
-      setNextData(res.next);
-      setPrevData(res.prev);
-    });
-  }, []);
+export async function getNews(id) {
+  const res = await fetch(
+    `https://indusspeciality.com/api/listings/get_news_details.php`,
+    {
+      cache: "force-cache",
+      method: "POST",
+      body: JSON.stringify({
+        blog_id: id,
+      }),
+    }
+  );
+  const data = await res.json();
 
-  return data == "" ? (
-    <Box
-      sx={{
-        display: "flex",
-        height: "60rem",
-        width: "100%",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <CircularProgress size={60} />
-    </Box>
-  ) : (
+  return data;
+}
+
+export async function generateMetadata({ params }) {
+  const staticData = await fetch(
+    `https://indusspeciality.com/api/listings/get_news_details.php`,
+    {
+      cache: "force-cache",
+      method: "POST",
+      body: JSON.stringify({
+        blog_id: params.id,
+      }),
+    }
+  );
+
+  const data = await staticData.json();
+  return {
+    title: `${data.data.news_title}`,
+  };
+}
+
+async function NewsPage({ params }) {
+  const raw_data = await getNews(params.id);
+  const data = raw_data.data;
+  const prev = raw_data.prev;
+  const next = raw_data.next;
+
+  return (
     <>
       {/* Main Header Nav */}
       <Header />
@@ -52,14 +74,14 @@ const NewsDetailsPage = () => {
 
       {/* Blog Section Area */}
       <section className="our-blog pt130">
-        <BlogHeader blogData={data} />
+        <Details blogData={data} />
 
         <div className="container">
           <div className="roww" data-aos="fade-up" data-aos-delay="500">
             <div className="col-xl-8 offset-xl-2">
               <div
                 className="mt50 mb50 fz20"
-                dangerouslySetInnerHTML={{ __html: data.blogs_description }}
+                dangerouslySetInnerHTML={{ __html: data.news_description }}
               ></div>
 
               <div className="bdrt1 bdrb1 d-block d-sm-flex justify-content-between pt50 pt30-sm pb50 pb30-sm">
@@ -72,7 +94,7 @@ const NewsDetailsPage = () => {
                 </div>
               </div>
 
-              <BlogsPagination next={next} prev={prev} />
+              <Pagination next={next} prev={prev} />
             </div>
           </div>
         </div>
@@ -80,7 +102,7 @@ const NewsDetailsPage = () => {
       {/* End Blog Details */}
 
       {/* Related Blog Post */}
-      {/* <section className="pb90 pb20-md pt-0">
+      <section className="pb90 pb20-md pt-0">
         <div className="container">
           <div className="row">
             <div
@@ -96,12 +118,13 @@ const NewsDetailsPage = () => {
               </div>
             </div>
           </div>
+          {/* End .row */}
 
           <div className="row" data-aos="fade-up" data-aos-delay="300">
             <Blog />
           </div>
         </div>
-      </section> */}
+      </section>
       {/* end Related Blog Post */}
 
       {/* Start Our Footer */}
@@ -111,6 +134,6 @@ const NewsDetailsPage = () => {
       {/* End Our Footer */}
     </>
   );
-};
+}
 
-export default NewsDetailsPage;
+export default NewsPage;

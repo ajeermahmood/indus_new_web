@@ -17,7 +17,7 @@ const AvailableAgent = ({ similarAgents }) => {
                 height: "15rem",
               }}
             >
-              <Link href={`/about-agent/?id=${agent.client_user_id}`}>
+              <Link href={`/agent/${agent.client_user_id}`}>
                 <Image
                   width={210}
                   height={240}
@@ -39,9 +39,9 @@ const AvailableAgent = ({ similarAgents }) => {
             </div>
             <div className="feature-content pt20">
               <h6 className="title mb-1">
-                <a href={`/about-agent/?id=${agent.client_user_id}`}>
+                <Link href={`/agent/${agent.client_user_id}`}>
                   {agent.client_user_name}
-                </a>
+                </Link>
               </h6>
               <p className="text fz15">{agent.client_user_designation}</p>
             </div>

@@ -42,7 +42,7 @@ module.exports = [
   {
     label: "Guides",
     subMenu: [
-      { path: "/community-guide", label: "Community Guides" },
+      { path: "/all-community-guides", label: "Community Guides" },
       { path: "/rent-guide", label: "Renter's Guides" },
       { path: "/buy-guide", label: "Buyer's Guides" },
       { path: "/sell-guide", label: "Seller's Guides" },

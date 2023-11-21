@@ -34,7 +34,7 @@ const ProductSingle = ({ property }) => {
           <div className="list-content">
             <h6 className="list-title">
               <Link
-                href={`/property-details/?id=${property.property_id}`}
+                href={`/property/${property.property_id}`}
                 style={{
                   overflow: "hidden",
                   whiteSpace: "nowrap",
@@ -77,7 +77,7 @@ const ProductSingle = ({ property }) => {
               </a>
             </div>
             <Link
-              href={`/property-details/?id=${property.property_id}`}
+              href={`/property/${property.property_id}`}
               className="btn mt15 fz15"
             >
               View House

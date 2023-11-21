@@ -1,43 +1,67 @@
-"use client";
-import Footer from "@/components/home/home-v7/footer";
 import MobileMenu from "@/components/common/mobile-menu";
 import Header from "@/components/home/home-v2/Header";
+import Footer from "@/components/home/home-v7/footer";
 import FormContact from "@/components/property/FormContact";
 
-import { getAgentDetails } from "@/api/listings";
 import ProfessionalInfo from "@/components/property/ProfessionalInfo";
 import AvailableAgent from "@/components/property/agency-single/AvailableAgent";
 import ListingItemsContainer from "@/components/property/agency-single/ListingItems";
 import SingleAgencyCta from "@/components/property/agency-single/SingleAgencyCta";
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import { Box, CircularProgress } from "@mui/material";
 
-const AboutAgentPage = () => {
-  const searchParams = useSearchParams();
-  const params = searchParams.get("id");
+// export async function generateStaticParams() {
+//   // Call an external API endpoint to get posts
+//   const res = await fetch(
+//     `https://indusspeciality.com/api/listings/get_all_agents_ids_for_SSG.php`,
+//     {
+//       method: "GET",
+//     }
+//   );
+//   const props = await res.json();
 
-  const [data, setData] = useState("");
+//   return props.map((p) => ({
+//     id: p.client_user_id,
+//   }));
+// }
 
-  useEffect(() => {
-    getAgentDetails(params).then((res) => {
-      setData(res);
-    });
-  }, []);
-  return data == "" ? (
-    <Box
-      sx={{
-        display: "flex",
-        height: "60rem",
-        width: "100%",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <CircularProgress size={60} />
-    </Box>
-  ) : (
+export async function getAgent(id) {
+  const res = await fetch(
+    `https://indusspeciality.com/api/listings/get_agents_details.php`,
+    {
+      cache: "force-cache",
+      method: "POST",
+      body: JSON.stringify({
+        agent_id: id,
+      }),
+    }
+  );
+  const data = await res.json();
+
+  return data;
+}
+
+export async function generateMetadata({ params }) {
+  const staticData = await fetch(
+    `https://indusspeciality.com/api/listings/get_agents_details.php`,
+    {
+      cache: "force-cache",
+      method: "POST",
+      body: JSON.stringify({
+        agent_id: params.id,
+      }),
+    }
+  );
+
+  const data = await staticData.json();
+  return {
+    title: `${data.agentData.client_user_name} || Indus Real Estate LLC Dubai`,
+  };
+}
+
+async function AboutAgentPage({ params }) {
+  const data = await getAgent(params.id);
+
+  return (
     <>
       {/* Main Header Nav */}
       <Header />
@@ -140,6 +164,6 @@ const AboutAgentPage = () => {
       {/* End Our Footer */}
     </>
   );
-};
+}
 
 export default AboutAgentPage;

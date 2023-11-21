@@ -19,7 +19,7 @@ const HeroContent = ({ activeTab, setActiveTab }) => {
   ];
 
   return (
-    <div className="advance-style2 mt80 mt0-md mb60 mx-auto" data-aos="fade-up">
+    <div className="advance-style2 mt80 mt0-md mb60 mx-auto">
       <ul className="nav nav-tabs p-0">
         {tabs.map((tab) => (
           <li className="nav-item" key={tab.id}>

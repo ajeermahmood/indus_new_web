@@ -141,7 +141,7 @@ const FeaturedListings = ({ data, colstyle, loading }) => {
                   <h6 className="list-title">
                     <Tooltip title={listing.property_title}>
                       <Link
-                        href={`/property-details/?id=${listing.property_id}`}
+                        href={`/property/${listing.property_id}`}
                         style={{
                           overflow: "hidden",
                           whiteSpace: "nowrap",

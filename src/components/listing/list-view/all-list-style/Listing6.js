@@ -62,7 +62,7 @@ const Listing6 = () => {
                   <h6 className="list-title my-1">
                     <Link
                       className="guide-title"
-                      href={`/community-guide-details?id=${guide.ps_guide_id}`}
+                      href={`/community-guide/${guide.ps_guide_id}`}
                     >
                       {guide.location_name}
                     </Link>
