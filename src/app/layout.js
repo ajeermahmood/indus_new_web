@@ -6,7 +6,6 @@ import { Montserrat } from "next/font/google";
 import { useEffect } from "react";
 import "../../public/scss/main.scss";
 import Script from "next/script";
-import Head from "next/head";
 
 if (typeof window !== "undefined") {
   import("bootstrap");
