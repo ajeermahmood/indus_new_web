@@ -1,3 +1,4 @@
+import CloudinaryImage from "@/components/custom-image/CloudinaryImage";
 import { Skeleton } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
@@ -110,7 +111,7 @@ const FeaturedListings = ({ data, type, loading }) => {
                   //   height: "15rem !Important",
                   // }}
                 >
-                  <Image
+                  <CloudinaryImage
                     width={382}
                     height={248}
                     className="w-100 cover"
@@ -144,7 +145,17 @@ const FeaturedListings = ({ data, type, loading }) => {
                     >
                       <span className="flaticon-new-tab"></span>
                     </a>
-                    <a className="rounded-0" href="#" onClick={()=> window.open(`/property/${listing.property_id}`, '_blank', 'location=yes,height=900,width=1440,scrollbars=yes,status=yes')}>
+                    <a
+                      className="rounded-0"
+                      href="#"
+                      onClick={() =>
+                        window.open(
+                          `/property/${listing.property_id}`,
+                          "_blank",
+                          "location=yes,height=900,width=1440,scrollbars=yes,status=yes"
+                        )
+                      }
+                    >
                       <span className="flaticon-fullscreen"></span>
                     </a>
                   </div>

@@ -34,7 +34,7 @@ export async function getProperty(id) {
   const res = await fetch(
     `https://indusspeciality.com/api/listings/get_property_details.php`,
     {
-      cache: "force-cache",
+      // cache: "force-cache",
       method: "POST",
       body: JSON.stringify({
         prop_id: id,
@@ -50,7 +50,7 @@ export async function generateMetadata({ params }) {
   const staticData = await fetch(
     `https://indusspeciality.com/api/listings/get_property_details.php`,
     {
-      cache: "force-cache",
+      // cache: "force-cache",
       method: "POST",
       body: JSON.stringify({
         prop_id: params.id,

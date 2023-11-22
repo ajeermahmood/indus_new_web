@@ -26,7 +26,7 @@ export async function getNews(id) {
   const res = await fetch(
     `https://indusspeciality.com/api/listings/get_news_details.php`,
     {
-      cache: "force-cache",
+      // cache: "force-cache",
       method: "POST",
       body: JSON.stringify({
         blog_id: id,
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }) {
   const staticData = await fetch(
     `https://indusspeciality.com/api/listings/get_news_details.php`,
     {
-      cache: "force-cache",
+      // cache: "force-cache",
       method: "POST",
       body: JSON.stringify({
         blog_id: params.id,

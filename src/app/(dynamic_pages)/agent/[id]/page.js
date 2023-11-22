@@ -28,7 +28,7 @@ export async function getAgent(id) {
   const res = await fetch(
     `https://indusspeciality.com/api/listings/get_agents_details.php`,
     {
-      cache: "force-cache",
+      // cache: "force-cache",
       method: "POST",
       body: JSON.stringify({
         agent_id: id,
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }) {
   const staticData = await fetch(
     `https://indusspeciality.com/api/listings/get_agents_details.php`,
     {
-      cache: "force-cache",
+      // cache: "force-cache",
       method: "POST",
       body: JSON.stringify({
         agent_id: params.id,
