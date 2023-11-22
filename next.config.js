@@ -8,6 +8,7 @@ const nextConfig = {
   experimental: {
     serverActions: true,
   },
+  // swcMinify: true
 };
 
 module.exports = nextConfig;
