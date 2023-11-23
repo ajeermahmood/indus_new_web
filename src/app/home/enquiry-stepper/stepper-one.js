@@ -9,15 +9,15 @@ const StepperOne = ({ activeStep, functions, size }) => {
 
   const card = [
     {
-      img: "/images/locations/arabian-ranches.webp",
+      img: "/images/locations/downtown.webp",
       text: "Seeking long-term rental income",
     },
     {
-      img: "/images/locations/arabian-ranches.webp",
+      img: "/images/locations/dubai-img-01.jpg",
       text: "Capital appreciation and resale potential",
     },
     {
-      img: "/images/locations/arabian-ranches.webp",
+      img: "/images/locations/vacation.jpg",
       text: "Personal use as a vacation home or residence",
     },
   ];

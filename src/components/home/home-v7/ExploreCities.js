@@ -32,11 +32,11 @@ const ExploreCities = () => {
       value: 65,
     },
     {
-      city: "Arabian Ranches",
-      imageSrc: "/images/locations/arabian-ranches.webp",
-      propertyCount: data.arabian_ranches,
+      city: "Dubai South",
+      imageSrc: "/images/locations/dubai-south.webp",
+      propertyCount: data.dubai_south,
       className: "col-6 col-lg-3",
-      value: 36,
+      value: 464,
     },
     {
       city: "Town Square",
@@ -53,11 +53,11 @@ const ExploreCities = () => {
       value: 60,
     },
     {
-      city: "Akoya (DAMAC Hills)",
-      imageSrc: "/images/locations/damac-hills.webp",
-      propertyCount: data.damac_hills,
+      city: "Dubai Creek Harbour",
+      imageSrc: "/images/locations/dubai-creek-harbour.webp",
+      propertyCount: data.dubai_creek,
       className: "col-lg-6",
-      value: 3,
+      value: 55,
     },
   ];
 

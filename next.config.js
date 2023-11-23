@@ -2,13 +2,10 @@
 const nextConfig = {
   images: {
     domains: ["assets.bayut.com", "www.indusre.com", "res.cloudinary.com"],
-    // unoptimized: true,
-    loader: 'custom',
-    path: "https://res.cloudinary.com/ugwutotheeshoes/image/upload/",
+    unoptimized: true,
   },
   output: "export",
-  trailingSlash: true,
-  swcMinify: true,
+  trailingSlash: true
 };
 
 module.exports = nextConfig;

@@ -1,49 +1,114 @@
 "use client";
 import ReCaptcha from "@/app/contact/recaptcha";
-import React from "react";
+import CommonThanksDialog from "@/components/common/common-thanks-dialog";
+import { TextField } from "@mui/material";
+import React, { useRef, useState } from "react";
 
 const Contact = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Handle form submission
+  const ref = useRef();
+  const captcha = useRef();
+  const textRegex = /^[a-zA-Z ]*$/;
+  const emailRegex = /^((\w+\.)*\w+)@(\w+\.)+(\w)/;
+  // const phoneRegex = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g;
+
+  const [formErrorName, setFormErrorName] = useState(undefined);
+  const [formErrorEmail, setFormErrorEmail] = useState(undefined);
+  const [formErrorNumber, setFormErrorNumber] = useState(undefined);
+
+  const onTextChange = (event, type) => {
+    if (type == "name") {
+      if (!event.target.value.match(textRegex)) {
+        setFormErrorName("Enter Valid Name");
+      } else if (event.target.value == "") {
+        setFormErrorName("Please Enter Name");
+      } else {
+        setFormErrorName(false);
+      }
+    } else if (type == "email") {
+      if (!event.target.value.match(emailRegex)) {
+        setFormErrorEmail("Enter Valid Email");
+      } else if (event.target.value == "") {
+        setFormErrorEmail("Please Enter Email");
+      } else {
+        setFormErrorEmail(false);
+      }
+    } else if (type == "number") {
+      if (event.target.value.length < 10) {
+        setFormErrorNumber("Enter Valid Number");
+      } else if (event.target.value == "") {
+        setFormErrorNumber("Please Enter Number");
+      } else {
+        setFormErrorNumber(false);
+      }
+    }
+  };
+
+  const onSubmit = () => {
+    if (
+      formErrorName == false &&
+      formErrorEmail == false &&
+      formErrorNumber == false &&
+      captcha.current.verified == true
+    ) {
+      setFormErrorName(undefined);
+      setFormErrorEmail(undefined);
+      setFormErrorNumber(undefined);
+
+      ref.current.handleOpen();
+    } else if (formErrorName == undefined) {
+      setFormErrorName("Please Enter Name");
+    } else if (formErrorEmail == undefined) {
+      setFormErrorEmail("Please Enter Email");
+    } else if (formErrorNumber == undefined) {
+      setFormErrorNumber("Please Enter Number");
+    }
   };
 
   return (
-    <form className="form-style1" onSubmit={handleSubmit}>
+    <div className="form-style1">
+      <CommonThanksDialog ref={ref} />
       <div className="row">
         <div className="col-lg-12">
           <div className="mb20">
-            <label className="heading-color ff-heading fw600 mb10">Name</label>
-            <input
+            {/* <label className="heading-color ff-heading fw600 mb10">Name</label> */}
+            <TextField
+              error={formErrorName != false && formErrorName != undefined}
+              className="w-100 "
+              id="outlined-basic"
+              label="Name"
+              variant="outlined"
               type="text"
-              className="form-control"
-              placeholder="Your Name"
-              required
+              helperText={formErrorName}
+              onChange={(e) => onTextChange(e, "name")}
             />
           </div>
         </div>
         {/* End .col */}
         <div className="col-md-12">
           <div className="mb20">
-            <label className="heading-color ff-heading fw600 mb10">Email</label>
-            <input
+            <TextField
+              error={formErrorEmail != false && formErrorEmail != undefined}
+              className="w-100 "
+              id="outlined-basic"
+              label="Email"
+              variant="outlined"
               type="email"
-              className="form-control"
-              placeholder="example@gmail.com"
-              required
+              helperText={formErrorEmail}
+              onChange={(e) => onTextChange(e, "email")}
             />
           </div>
         </div>
         <div className="col-lg-12">
           <div className="mb20">
-            <label className="heading-color ff-heading fw600 mb10">
-              Contact Number
-            </label>
-            <input
+            <TextField
+              error={formErrorNumber != false && formErrorNumber != undefined}
+              className="w-100 "
+              id="outlined-basic"
+              label="Contact Number"
+              variant="outlined"
               type="number"
-              className="form-control"
-              placeholder="Enter Your Number"
-              required
+              helperText={formErrorNumber}
+              onChange={(e) => onTextChange(e, "number")}
             />
           </div>
         </div>
@@ -53,23 +118,26 @@ const Contact = () => {
 
         <div className="col-md-12">
           <div className="mb20">
-            <label className="heading-color ff-heading fw600 mb10">
-              Message
-            </label>
-            <textarea
-              cols={30}
+            <TextField
+              // className="mt20"
+              autoFocus
+              margin="dense"
+              id="name"
+              label="Tell Us.."
+              type="text"
+              fullWidth
+              multiline
               rows={4}
-              placeholder="Type the message"
-              defaultValue={""}
+              // variant="standard"
             />
           </div>
         </div>
-        <ReCaptcha />
+        <ReCaptcha ref={captcha} />
         {/* End .col */}
 
         <div className="col-md-12 mt20">
           <div className="d-grid">
-            <button type="submit" className="ud-btn btn-dark">
+            <button className="ud-btn btn-dark" onClick={onSubmit}>
               Submit
               <i className="fal fa-arrow-right-long" />
             </button>
@@ -77,7 +145,7 @@ const Contact = () => {
         </div>
         {/* End .col */}
       </div>
-    </form>
+    </div>
   );
 };
 

@@ -7,7 +7,7 @@ export const metadata = {
   title: "Indus Real Estate LLC | Dubai Luxury Properties",
 };
 
-const AllNewsPage = () => {
+const AllBlogsPage = () => {
   return (
     <>
       {/* Main Header Nav */}
@@ -49,4 +49,4 @@ const AllNewsPage = () => {
   );
 };
 
-export default AllNewsPage;
+export default AllBlogsPage;

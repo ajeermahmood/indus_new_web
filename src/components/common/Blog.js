@@ -3,11 +3,11 @@ import { getFeaturedBlogs } from "@/api/listings";
 import { Skeleton } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Blog = () => {
-  const path = usePathname();
+  const router = useRouter();
   const skeletonLoader = [1, 2, 3];
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -59,7 +59,7 @@ const Blog = () => {
                     // className="w-100 h-100"
                     variant="rectangular"
                     width={386}
-                    height={250}
+                    height={200}
                   />
                 </div>
                 <div className="blog-content">
@@ -76,7 +76,10 @@ const Blog = () => {
           ))
         : data.map((blog, index) => (
             <div className="col-sm-6 col-lg-4" key={index}>
-              <div className="blog-style1">
+              <div
+                className="blog-style1"
+                onClick={() => router.push(`/news/${blog.news_id}`)}
+              >
                 <div className="blog-img">
                   <Image
                     width={386}

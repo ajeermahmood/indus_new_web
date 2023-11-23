@@ -1,12 +1,14 @@
 "use client";
 import ReCaptcha from "@/app/contact/recaptcha";
+import CommonThanksDialog from "@/components/common/common-thanks-dialog";
+import { TextField, styled } from "@mui/material";
+import { useRef } from "react";
+import { useState } from "react";
 import Select from "react-select";
 
 const InqueryForm = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Handle form submission
-  };
+  const captcha = useRef();
+  const ref = useRef();
 
   const inqueryType = [
     { value: "Apartments", label: "Apartments" },
@@ -42,8 +44,71 @@ const InqueryForm = () => {
     },
   };
 
+  const textRegex = /^[a-zA-Z ]*$/;
+  const emailRegex = /^((\w+\.)*\w+)@(\w+\.)+(\w)/;
+  // const phoneRegex = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g;
+
+  const [formErrorName, setFormErrorName] = useState(undefined);
+  const [formErrorEmail, setFormErrorEmail] = useState(undefined);
+
+  const onTextChange = (event, type) => {
+    if (type == "name") {
+      if (!event.target.value.match(textRegex)) {
+        setFormErrorName("Enter Valid Name");
+      } else if (event.target.value == "") {
+        setFormErrorName("Please Enter Name");
+      } else {
+        setFormErrorName(false);
+      }
+    } else if (type == "email") {
+      if (!event.target.value.match(emailRegex)) {
+        setFormErrorEmail("Enter Valid Email");
+      } else if (event.target.value == "") {
+        setFormErrorEmail("Please Enter Email");
+      } else {
+        setFormErrorEmail(false);
+      }
+    }
+  };
+
+  const StyledBorderTextField = styled(TextField)`
+    & .MuiInputBase-input {
+      padding: 17px;
+      font-size: 15px;
+    }
+    & .MuiOutlinedInput-root {
+      border-radius: 8px;
+    }
+    & .MuiFormLabel-root {
+      font-size: 15px;
+    }
+    & .MuiOutlinedInput-notchedOutline {
+      border-color: #ddd;
+    }
+    & .MuiOutlinedInput-notchedOutline:hover {
+      border-color: #ddd;
+    }
+  `;
+
+  const submit = () => {
+    if (
+      formErrorName == false &&
+      formErrorEmail == false &&
+      captcha.current.verified == true
+    ) {
+      ref.current.handleOpen();
+      setFormErrorName(undefined);
+      setFormErrorEmail(undefined);
+    } else if (formErrorName == undefined) {
+      setFormErrorName("Please Enter Name");
+    } else if (formErrorEmail == undefined) {
+      setFormErrorEmail("Please Enter Email");
+    }
+  };
+
   return (
-    <form className="form-style1 inquery_form" onSubmit={handleSubmit}>
+    <div className="form-style1 inquery_form">
+      <CommonThanksDialog ref={ref} />
       <div className="row">
         <div className="col-md-12">
           <div className="mb20">
@@ -90,10 +155,17 @@ const InqueryForm = () => {
         <div className="col-md-7">
           <div className="mb20">
             <label className="form-label fw600 dark-color">Personel Name</label>
-            <input
+            <StyledBorderTextField
+              error={formErrorName != false && formErrorName != undefined}
+              margin="dense"
+              id="name"
+              placeholder="Name"
               type="text"
-              className="form-control"
-              placeholder="Your Name"
+              fullWidth
+              helperText={formErrorName}
+              onChange={(e) => onTextChange(e, "name")}
+              className="mt0"
+              // variant="standard"
             />
           </div>
         </div>
@@ -102,10 +174,17 @@ const InqueryForm = () => {
         <div className="col-md-12">
           <div className="mb20">
             <label className="form-label fw600 dark-color">Email</label>
-            <input
+            <StyledBorderTextField
+              error={formErrorEmail != false && formErrorEmail != undefined}
+              margin="dense"
+              id="name"
+              placeholder="youremail@example.ae"
               type="email"
-              className="form-control"
-              placeholder="johndue@gmail.com"
+              fullWidth
+              helperText={formErrorEmail}
+              onChange={(e) => onTextChange(e, "email")}
+              className="mt0"
+              // variant="standard"
             />
           </div>
         </div>
@@ -137,7 +216,7 @@ const InqueryForm = () => {
         <div className="col-md-6">
           <div className="mb20">
             <label className="form-label fw600 dark-color">Max Price</label>
-            <input type="text" className="form-control" placeholder="$90" />
+            <input type="number" className="form-control" placeholder="2000" />
           </div>
         </div>
         {/* End .col */}
@@ -147,21 +226,21 @@ const InqueryForm = () => {
             <label className="form-label fw600 dark-color">
               Min Size (Sq ft)
             </label>
-            <input type="text" className="form-control" placeholder={20} />
+            <input type="number" className="form-control" placeholder={20} />
           </div>
         </div>
 
-        <ReCaptcha />
+        <ReCaptcha ref={captcha} />
         {/* End .col */}
 
         <div className="d-grid mt20">
-          <button className="ud-btn btn-thm" type="submit">
+          <button className="ud-btn btn-thm" onClick={submit}>
             Submit <i className="fal fa-arrow-right-long" />
           </button>
         </div>
         {/* End .col */}
       </div>
-    </form>
+    </div>
   );
 };
 

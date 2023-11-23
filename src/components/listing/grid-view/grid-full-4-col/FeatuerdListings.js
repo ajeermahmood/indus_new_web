@@ -3,8 +3,10 @@
 import { Skeleton, Tooltip } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const FeaturedListings = ({ data, colstyle, loading }) => {
+  const router = useRouter();
   const skeletonLoader = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   const currencyFormatter = new Intl.NumberFormat("en-AE", {
     style: "currency",
@@ -112,6 +114,7 @@ const FeaturedListings = ({ data, colstyle, loading }) => {
                     ? "listing-style1 listCustom listing-type"
                     : "listing-style1"
                 }
+                onClick={() => router.push(`/property/${listing.property_id}`)}
               >
                 <div className="list-thumb">
                   <Image

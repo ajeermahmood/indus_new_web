@@ -14,6 +14,8 @@ import StepperThree from "./stepper-three";
 import StepperTwo from "./stepper-two";
 import { Checkbox, Fab, TextField } from "@mui/material";
 import OfferForm from "./offer-form";
+import StepperSeven from "./stepper-seven";
+import { useRouter } from "next/navigation";
 
 function useWindowSize() {
   // Initialize state with undefined width/height so server and client renders match
@@ -63,6 +65,7 @@ const useStyles = makeStyles({
 const EnquiryForm = () => {
   const size = useWindowSize();
   const classes = useStyles();
+  const router = useRouter();
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -90,6 +93,20 @@ const EnquiryForm = () => {
   const [selectedFour, setselectedFour] = useState();
   const [selectedFive, setselectedFive] = useState();
 
+  const resetForm = () => {
+    setActiveStep(0);
+    setselectedOne();
+    setselectedTwo();
+    setselectedThree();
+    setselectedFour();
+    setselectedFive();
+  };
+
+  const handleFunctions = {
+    handleNext,
+    resetForm,
+  };
+
   const stepperFunctions = {
     setselectedOne,
     setselectedTwo,
@@ -101,6 +118,12 @@ const EnquiryForm = () => {
     selectedThree,
     selectedFour,
     selectedFive,
+  };
+
+  const closeForm = () => {
+    setOpen(false);
+    resetForm();
+    router.push("/all-properties");
   };
 
   const getStepper = (step) => {
@@ -146,7 +169,21 @@ const EnquiryForm = () => {
           />
         );
       case 5:
-        return <StepperSix activeStep={activeStep} size={size} />;
+        return (
+          <StepperSix
+            activeStep={activeStep}
+            size={size}
+            handleFunctions={handleFunctions}
+          />
+        );
+      case 6:
+        return (
+          <StepperSeven
+            activeStep={activeStep}
+            size={size}
+            handleFunctions={handleFunctions}
+          />
+        );
       default:
         break;
     }
@@ -179,6 +216,8 @@ const EnquiryForm = () => {
         return "We will recommend best options according to your budget.";
       case 4:
         return "Dubai is the city where lifestyles collide.";
+      case 6:
+        return "We will contact you soon.";
       default:
         break;
     }
@@ -194,6 +233,8 @@ const EnquiryForm = () => {
         return "Set the price range that matches your preferred budget.";
       case 4:
         return "Select the lifestyle you'd like to live in Dubai.";
+      case 6:
+        return "Feel free to browse our properties";
       default:
         break;
     }
@@ -211,6 +252,12 @@ const EnquiryForm = () => {
   const toggleFab = () => {
     openFab ? setOpenFab(false) : setOpenFab(true);
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      toggleFab();
+    }, 3000);
+  }, []);
 
   return (
     <>
@@ -305,69 +352,73 @@ const EnquiryForm = () => {
             >
               {getStepper(activeStep)}
             </div>
-            <div className="stepper-progress">
-              {activeStep === 5 ? (
-                <Button
-                  size="small"
-                  onClick={handleBack}
-                  disabled={activeStep === 0}
-                  className={activeStep !== 0 ? "text-indus" : ""}
-                >
-                  {theme.direction === "rtl" ? (
-                    <i className="mr5 far fa-chevron-right"></i>
-                  ) : (
-                    <i className="mr5 far fa-chevron-left"></i>
-                  )}
-                  Back
-                </Button>
-              ) : (
-                <MobileStepper
-                  variant="progress"
-                  steps={7}
-                  position="static"
-                  activeStep={activeStep}
-                  className={classes.root}
-                  nextButton={
-                    <Button
-                      size="small"
-                      onClick={handleNext}
-                      disabled={
-                        activeStep === 6 ||
-                        getCurrentSelection(activeStep) === undefined
-                      }
-                      className={
-                        activeStep !== 6 &&
-                        getCurrentSelection(activeStep) !== undefined
-                          ? "text-indus"
-                          : ""
-                      }
-                    >
-                      Next
-                      {theme.direction === "rtl" ? (
-                        <i className="ml5 far fa-chevron-left"></i>
-                      ) : (
-                        <i className="ml5 far fa-chevron-right"></i>
-                      )}
-                    </Button>
-                  }
-                  backButton={
-                    <Button
-                      size="small"
-                      onClick={handleBack}
-                      disabled={activeStep === 0}
-                      className={activeStep !== 0 ? "text-indus" : ""}
-                    >
-                      {theme.direction === "rtl" ? (
-                        <i className="mr5 far fa-chevron-right"></i>
-                      ) : (
-                        <i className="mr5 far fa-chevron-left"></i>
-                      )}
-                      Back
-                    </Button>
-                  }
-                />
-              )}
-            </div>
+            {activeStep !== 6 ? (
+              <div className="stepper-progress">
+                {activeStep === 5 ? (
+                  <Button
+                    size="small"
+                    onClick={handleBack}
+                    disabled={activeStep === 0}
+                    className={activeStep !== 0 ? "text-indus" : ""}
+                  >
+                    {theme.direction === "rtl" ? (
+                      <i className="mr5 far fa-chevron-right"></i>
+                    ) : (
+                      <i className="mr5 far fa-chevron-left"></i>
+                    )}
+                    Back
+                  </Button>
+                ) : (
+                  <MobileStepper
+                    variant="progress"
+                    steps={7}
+                    position="static"
+                    activeStep={activeStep}
+                    className={classes.root}
+                    nextButton={
+                      <Button
+                        size="small"
+                        onClick={handleNext}
+                        disabled={
+                          activeStep === 6 ||
+                          getCurrentSelection(activeStep) === undefined
+                        }
+                        className={
+                          activeStep !== 6 &&
+                          getCurrentSelection(activeStep) !== undefined
+                            ? "text-indus"
+                            : ""
+                        }
+                      >
+                        Next
+                        {theme.direction === "rtl" ? (
+                          <i className="ml5 far fa-chevron-left"></i>
+                        ) : (
+                          <i className="ml5 far fa-chevron-right"></i>
+                        )}
+                      </Button>
+                    }
+                    backButton={
+                      <Button
+                        size="small"
+                        onClick={handleBack}
+                        disabled={activeStep === 0}
+                        className={activeStep !== 0 ? "text-indus" : ""}
+                      >
+                        {theme.direction === "rtl" ? (
+                          <i className="mr5 far fa-chevron-right"></i>
+                        ) : (
+                          <i className="mr5 far fa-chevron-left"></i>
+                        )}
+                        Back
+                      </Button>
+                    }
+                  />
+                )}
+              </div>
+            ) : (
+              <></>
+            )}
           </div>
           {size.width > 500 ? (
             <div className={`${activeStep === 5 ? "col-6" : "col-4"} pt-2`}>
@@ -392,13 +443,14 @@ const EnquiryForm = () => {
                 </div>
               ) : (
                 <div className="p60 h-100">
-                  <OfferForm />
+                  <OfferForm handleFunctions={handleFunctions} />
                 </div>
               )}
               {activeStep == 1 ||
               activeStep == 2 ||
               activeStep == 3 ||
-              activeStep == 4 ? (
+              activeStep == 4 ||
+              activeStep == 6 ? (
                 <div className="px20" data-aos="fade-up" data-aos-delay="0">
                   <div className="agent-message-chat">
                     <p>{getAgentComment_one(activeStep)}</p>
@@ -407,6 +459,16 @@ const EnquiryForm = () => {
                         <strong>{getAgentComment_two(activeStep)}</strong>
                       </i>
                     </p>
+                    {activeStep == 6 ? (
+                      <button
+                        className="mb10 stepper-progres-finished-browse-btn"
+                        onClick={closeForm}
+                      >
+                        View Properties
+                      </button>
+                    ) : (
+                      <></>
+                    )}
                   </div>
                 </div>
               ) : (

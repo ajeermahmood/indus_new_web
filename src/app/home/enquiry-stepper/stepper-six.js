@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import OfferForm from "./offer-form";
 
-const StepperSix = ({ activeStep, size }) => {
+const StepperSix = ({ activeStep, size, handleFunctions }) => {
   return (
     <>
       {/* <div
@@ -56,7 +55,11 @@ const StepperSix = ({ activeStep, size }) => {
           )}
         </div>
       </div>
-      {size.width < 500 ? <OfferForm /> : <></>}
+      {size.width < 500 ? (
+        <OfferForm handleFunctions={handleFunctions}/>
+      ) : (
+        <></>
+      )}
     </>
   );
 };

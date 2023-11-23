@@ -1,7 +1,7 @@
-import CloudinaryImage from "@/components/custom-image/CloudinaryImage";
 import { Skeleton } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const FeaturedListings = ({ data, type, loading }) => {
   const skeletonLoader = [1, 2, 3, 4, 5, 6];
@@ -10,6 +10,8 @@ const FeaturedListings = ({ data, type, loading }) => {
     currency: "AED",
     minimumFractionDigits: 0,
   });
+
+  const router = useRouter();
   return (
     <>
       {!loading && data.length == 0 ? (
@@ -104,14 +106,17 @@ const FeaturedListings = ({ data, type, loading }) => {
           ))
         : data.map((listing) => (
             <div className="col-sm-6 col-lg-4" key={listing.id}>
-              <div className="listing-style8">
+              <div
+                className="listing-style8"
+                onClick={() => router.push(`/property/${listing.property_id}`)}
+              >
                 <div
                   className="list-thumb"
                   // style={{
                   //   height: "15rem !Important",
                   // }}
                 >
-                  <CloudinaryImage
+                  <Image
                     width={382}
                     height={248}
                     className="w-100 cover"

@@ -1,9 +1,11 @@
-import ReCAPTCHA from "react-google-recaptcha";
-import { useRef, useState } from "react";
+"use client";
 import { verifyCaptcha } from "@/api/serverActions";
-import { Button } from "@mui/material";
+import { useImperativeHandle } from "react";
+import { forwardRef } from "react";
+import { useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
-const ReCaptcha = () => {
+const ReCaptcha = forwardRef((props, ref) => {
   const recaptchaRef = useRef();
   const [isVerified, setIsverified] = useState(false);
 
@@ -13,6 +15,11 @@ const ReCaptcha = () => {
       .then(() => setIsverified(true))
       .catch(() => setIsverified(false));
   }
+
+  useImperativeHandle(ref, () => ({
+    verified: isVerified,
+  }));
+
   return (
     <>
       <ReCAPTCHA
@@ -25,5 +32,5 @@ const ReCaptcha = () => {
       </Button> */}
     </>
   );
-};
+});
 export default ReCaptcha;

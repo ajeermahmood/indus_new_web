@@ -21,15 +21,15 @@ const HtmlTooltip = styled(({ className, ...props }) => (
 const StepperFive = ({ activeStep, functions, size }) => {
   const card = [
     {
-      img: "/images/locations/arabian-ranches.webp",
+      img: "/images/enquiry/urban-living.jpg",
       text: "Urban & Downtown Living",
     },
     {
-      img: "/images/locations/arabian-ranches.webp",
+      img: "/images/enquiry/green-community.jpeg",
       text: "Green Community Living",
     },
     {
-      img: "/images/locations/arabian-ranches.webp",
+      img: "/images/enquiry/beach-living.jpg",
       text: "Beachfront & Waterfront Living",
     },
   ];
@@ -86,7 +86,7 @@ const StepperFive = ({ activeStep, functions, size }) => {
               onClick={() => selectCard(index)}
             >
               <Image
-                src="/images/locations/arabian-ranches.webp"
+                src={c.img}
                 alt="img"
                 className="w-100 cover p5"
                 width={240}
@@ -129,7 +129,7 @@ const StepperFive = ({ activeStep, functions, size }) => {
               onClick={() => selectCard(index)}
             >
               <Image
-                src="/images/locations/arabian-ranches.webp"
+                src={c.img}
                 alt="img"
                 className="w-100 cover"
                 width={240}

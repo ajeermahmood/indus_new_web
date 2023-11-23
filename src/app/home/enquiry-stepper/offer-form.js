@@ -3,7 +3,7 @@
 import { Button, Checkbox, TextField } from "@mui/material";
 import { useState } from "react";
 
-const OfferForm = () => {
+const OfferForm = ({ handleFunctions }) => {
   const textRegex = /^[a-zA-Z ]*$/;
   const emailRegex = /^((\w+\.)*\w+)@(\w+\.)+(\w)/;
   // const phoneRegex = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g;
@@ -48,13 +48,7 @@ const OfferForm = () => {
       formErrorEmail == false &&
       formErrorNumber == false
     ) {
-      setOpen(false);
-      setActiveStep(0);
-      setselectedOne();
-      setselectedTwo();
-      setselectedThree();
-      setselectedFour();
-      setselectedFive();
+      handleFunctions.handleNext();
 
       setFormErrorName(undefined);
       setFormErrorEmail(undefined);

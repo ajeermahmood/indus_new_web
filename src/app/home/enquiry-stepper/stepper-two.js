@@ -9,22 +9,22 @@ const StepperTwo = ({ activeStep, functions, size }) => {
 
   const card = [
     {
-      img: "/images/locations/arabian-ranches.webp",
+      img: "/images/enquiry/apartment.webp",
       text: "Apartment",
     },
     {
-      img: "/images/locations/arabian-ranches.webp",
+      img: "/images/enquiry/townhouse.jpeg",
       text: "Townhouse",
     },
     {
-      img: "/images/locations/arabian-ranches.webp",
+      img: "/images/enquiry/villa.jpg",
       text: "Villa",
     },
   ];
 
   if (size.width < 500) {
     card.push({
-      img: "/images/locations/arabian-ranches.webp",
+      img: "/images/enquiry/mansion.jpg",
       text: "Mansion",
     });
   }
@@ -120,7 +120,7 @@ const StepperTwo = ({ activeStep, functions, size }) => {
                 onClick={() => selectCard(3)}
               >
                 <Image
-                  src="/images/locations/arabian-ranches.webp"
+                  src="/images/enquiry/mansion.jpg"
                   alt="img"
                   className="w-100 cover p5"
                   width={240}
@@ -133,7 +133,7 @@ const StepperTwo = ({ activeStep, functions, size }) => {
             ) : (
               <div className="col-4 stepper-card" onClick={() => selectCard(3)}>
                 <Image
-                  src="/images/locations/arabian-ranches.webp"
+                  src="/images/enquiry/mansion.jpg"
                   alt="img"
                   className="w-100 cover"
                   width={240}
