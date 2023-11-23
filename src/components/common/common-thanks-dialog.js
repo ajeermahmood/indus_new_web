@@ -48,4 +48,6 @@ const CommonThanksDialog = forwardRef((props, ref) => {
   );
 });
 
+CommonThanksDialog.displayName = "CommonThanksDialog";
+
 export default CommonThanksDialog;

@@ -34,7 +34,6 @@ const Subscribe = () => {
           value={textFieldValue}
           error={formErrorEmail != false && formErrorEmail != undefined}
           type="email"
-          className="form-control text-dark"
           placeholder="Your Email"
           helperText={formErrorEmail}
           onChange={(e) => onTextChange(e)}

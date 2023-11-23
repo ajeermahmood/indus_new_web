@@ -1,9 +1,8 @@
 "use client";
 import ReCaptcha from "@/app/contact/recaptcha";
 import CommonThanksDialog from "@/components/common/common-thanks-dialog";
-import { TextField, styled } from "@mui/material";
-import { useRef } from "react";
-import { useState } from "react";
+import { TextField } from "@mui/material";
+import { useRef, useState } from "react";
 import Select from "react-select";
 
 const InqueryForm = () => {
@@ -51,8 +50,12 @@ const InqueryForm = () => {
   const [formErrorName, setFormErrorName] = useState(undefined);
   const [formErrorEmail, setFormErrorEmail] = useState(undefined);
 
+  const [formName, setFormName] = useState("");
+  const [formEmail, setFormEmail] = useState("");
+
   const onTextChange = (event, type) => {
     if (type == "name") {
+      setFormName(event.target.value);
       if (!event.target.value.match(textRegex)) {
         setFormErrorName("Enter Valid Name");
       } else if (event.target.value == "") {
@@ -61,6 +64,7 @@ const InqueryForm = () => {
         setFormErrorName(false);
       }
     } else if (type == "email") {
+      setFormEmail(event.target.value);
       if (!event.target.value.match(emailRegex)) {
         setFormErrorEmail("Enter Valid Email");
       } else if (event.target.value == "") {
@@ -70,25 +74,6 @@ const InqueryForm = () => {
       }
     }
   };
-
-  const StyledBorderTextField = styled(TextField)`
-    & .MuiInputBase-input {
-      padding: 17px;
-      font-size: 15px;
-    }
-    & .MuiOutlinedInput-root {
-      border-radius: 8px;
-    }
-    & .MuiFormLabel-root {
-      font-size: 15px;
-    }
-    & .MuiOutlinedInput-notchedOutline {
-      border-color: #ddd;
-    }
-    & .MuiOutlinedInput-notchedOutline:hover {
-      border-color: #ddd;
-    }
-  `;
 
   const submit = () => {
     if (
@@ -155,7 +140,8 @@ const InqueryForm = () => {
         <div className="col-md-7">
           <div className="mb20">
             <label className="form-label fw600 dark-color">Personel Name</label>
-            <StyledBorderTextField
+            <TextField
+              value={formName}
               error={formErrorName != false && formErrorName != undefined}
               margin="dense"
               id="name"
@@ -165,6 +151,7 @@ const InqueryForm = () => {
               helperText={formErrorName}
               onChange={(e) => onTextChange(e, "name")}
               className="mt0"
+              // autoFocus
               // variant="standard"
             />
           </div>
@@ -174,7 +161,8 @@ const InqueryForm = () => {
         <div className="col-md-12">
           <div className="mb20">
             <label className="form-label fw600 dark-color">Email</label>
-            <StyledBorderTextField
+            <TextField
+              value={formEmail}
               error={formErrorEmail != false && formErrorEmail != undefined}
               margin="dense"
               id="name"

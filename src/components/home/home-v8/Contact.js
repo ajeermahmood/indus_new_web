@@ -120,7 +120,6 @@ const Contact = () => {
           <div className="mb20">
             <TextField
               // className="mt20"
-              autoFocus
               margin="dense"
               id="name"
               label="Tell Us.."
