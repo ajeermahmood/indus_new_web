@@ -1,15 +1,13 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import ContactMeta from "./ContactMeta";
 import AppWidget from "./AppWidget";
-import Subscribe from "./Subscribe";
-import MenuWidget from "./MenuWidget";
+import ContactMeta from "./ContactMeta";
 import Copyright from "./Copyright";
-import { usePathname } from "next/navigation";
+import MenuWidget from "./MenuWidget";
+import Subscribe from "./Subscribe";
 
 const Footer = () => {
-  const path = usePathname();
   return (
     <>
       <div className="container">
@@ -26,26 +24,22 @@ const Footer = () => {
                 />
               </Link>
 
-              <ContactMeta path={path} />
+              <ContactMeta />
             </div>
           </div>
 
-          <MenuWidget path={path} />
+          <MenuWidget />
 
           <div className="col-sm-6 col-lg-3">
             <div className="footer-widget mb-4 mb-lg-5 ps-lg-3">
               <div className="mailchimp-widget mb30">
-                <h6
-                  className={`title mb30 ${
-                    path != "/" ? "text-blue-gray" : ""
-                  }`}
-                >
+                <h6 className={`title mb30 text-blue-gray`}>
                   Keep Yourself Up to Date
                 </h6>
                 <Subscribe />
               </div>
 
-              <AppWidget path={path} />
+              <AppWidget />
             </div>
           </div>
           {/* End .col */}
@@ -54,7 +48,7 @@ const Footer = () => {
       </div>
       {/* End .container */}
 
-      <Copyright path={path} />
+      <Copyright />
       {/* End copyright */}
     </>
   );

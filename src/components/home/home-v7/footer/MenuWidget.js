@@ -1,6 +1,6 @@
 import React from "react";
 
-const MenuWidget = ({ path }) => {
+const MenuWidget = () => {
   const menuSections = [
     {
       title: "Popular Search",
@@ -64,14 +64,14 @@ const MenuWidget = ({ path }) => {
         {menuSections.map((section, index) => (
           <div className="footer-widget mb-4 mb-lg-5 ps-0 ps-lg-3" key={index}>
             <div className="link-style1 light-style mb30 ">
-              <h6 className={`mb7 ${path != "/" ? "text-blue-gray" : ""}`}>
+              <h6 className={`mb7 text-blue-gray`}>
                 {section.title}
               </h6>
               <ul className="link-list ps-0">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     <a
-                      className={`${path != "/" ? "text-light" : ""}`}
+                      className={`text-light`}
                       href={link.href}
                     >
                       {link.label}
@@ -87,14 +87,14 @@ const MenuWidget = ({ path }) => {
         {menuSections2.map((section, index) => (
           <div className="footer-widget mb-4 mb-lg-5 ps-0 ps-lg-3" key={index}>
             <div className="link-style1 light-style mb30 ">
-              <h6 className={`mb7 ${path != "/" ? "text-blue-gray" : ""}`}>
+              <h6 className={`mb7 text-blue-gray`}>
                 {section.title}
               </h6>
               <ul className="link-list ps-0">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     <a
-                      className={`${path != "/" ? "text-light" : ""}`}
+                      className={`text-light`}
                       href={link.href}
                     >
                       {link.label}

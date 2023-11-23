@@ -44,6 +44,7 @@ const Contact = () => {
   };
 
   const onSubmit = () => {
+    console.log(captcha.current.verified, "captcha success");
     if (
       formErrorName == false &&
       formErrorEmail == false &&

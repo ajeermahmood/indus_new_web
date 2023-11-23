@@ -1,5 +1,4 @@
 "use client";
-import agents from "@/data/agents";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";

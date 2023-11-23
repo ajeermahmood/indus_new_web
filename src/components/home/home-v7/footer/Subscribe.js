@@ -2,8 +2,7 @@
 
 import CommonThanksDialog from "@/components/common/common-thanks-dialog";
 import { Button, TextField } from "@mui/material";
-import { useRef } from "react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const Subscribe = () => {
   const ref = useRef();
@@ -26,11 +25,13 @@ const Subscribe = () => {
     setTextFieldValue("");
     setFormErrorEmail(undefined);
   };
+
   return (
     <>
       <CommonThanksDialog ref={ref} />
       <div className="d-flex">
         <TextField
+          className="bg-light bdrs-3"
           value={textFieldValue}
           error={formErrorEmail != false && formErrorEmail != undefined}
           type="email"

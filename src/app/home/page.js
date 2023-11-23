@@ -351,7 +351,7 @@ const HomePage = () => {
       {/* Our End CTA */}
 
       {/* Start Our Footer */}
-      <section className="footer-style1 at-home4 pt60 pb-0 bdr-top bgc-f7">
+      <section className="footer-style1 at-home4-2 pt60 pb-0 bdr-top ">
         <Footer />
       </section>
       {/* End Our Footer */}

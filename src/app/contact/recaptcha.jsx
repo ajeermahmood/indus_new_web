@@ -1,8 +1,6 @@
 "use client";
-import { verifyCaptcha } from "@/api/serverActions";
-import { useImperativeHandle } from "react";
-import { forwardRef } from "react";
-import { useRef, useState } from "react";
+import axios from "axios";
+import { forwardRef, useImperativeHandle, useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const ReCaptcha = forwardRef((props, ref) => {
@@ -10,10 +8,13 @@ const ReCaptcha = forwardRef((props, ref) => {
   const [isVerified, setIsverified] = useState(false);
 
   async function handleCaptchaSubmission(token) {
-    // Server function to verify captcha
-    await verifyCaptcha(token)
+    await axios
+      .post("/server/captcha", {
+        token: token,
+      })
       .then(() => setIsverified(true))
       .catch(() => setIsverified(false));
+    // Server function to verify captcha
   }
 
   useImperativeHandle(ref, () => ({
