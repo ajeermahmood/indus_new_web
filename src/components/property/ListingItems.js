@@ -16,7 +16,7 @@ const ListingItems = ({ data, loading }) => {
         <div className="col w-100 mt60">
           <div className="row justify-content-center">
             <Image
-              src="/images/svg/no-data.svg"
+              src="https://indusspeciality.com/api/assets/images/svg/no-data.svg"
               width={200}
               height={200}
               className="mb3"

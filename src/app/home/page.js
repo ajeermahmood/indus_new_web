@@ -219,7 +219,7 @@ const HomePage = () => {
                 <div className="main-title text-center">
                   {/* <h2>Testimonials</h2> */}
                   <img
-                    src="/images/testimonials/google_logo.svg"
+                    src="https://indusspeciality.com/api/assets/images/testimonials/google_logo.svg"
                     width={200}
                     height={80}
                     alt="google"
@@ -335,7 +335,7 @@ const HomePage = () => {
                       borderRadius: "5px",
                     }}
                     className="w-100 h-100 cover"
-                    src="/images/enquiry/burj-khalifa.webp"
+                    src="https://indusspeciality.com/api/assets/images/enquiry/burj-khalifa.webp"
                     alt="about"
                   />
                 </div>

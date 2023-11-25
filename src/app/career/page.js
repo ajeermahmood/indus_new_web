@@ -56,7 +56,7 @@ const CareerPage = () => {
                       borderRadius: "5px",
                     }}
                     className="w-100 h-100 cover"
-                    src="/images/career/career-agent.webp"
+                    src="https://indusspeciality.com/api/assets/images/career/career-agent.webp"
                     alt="about"
                   />
                 </div>

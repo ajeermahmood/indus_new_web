@@ -21,15 +21,15 @@ const HtmlTooltip = styled(({ className, ...props }) => (
 const StepperFive = ({ activeStep, functions, size }) => {
   const card = [
     {
-      img: "/images/enquiry/urban-living.jpg",
+      img: "https://indusspeciality.com/api/assets/images/enquiry/urban-living.jpg",
       text: "Urban & Downtown Living",
     },
     {
-      img: "/images/enquiry/green-community.jpeg",
+      img: "https://indusspeciality.com/api/assets/images/enquiry/green-community.jpeg",
       text: "Green Community Living",
     },
     {
-      img: "/images/enquiry/beach-living.jpg",
+      img: "https://indusspeciality.com/api/assets/images/enquiry/beach-living.jpg",
       text: "Beachfront & Waterfront Living",
     },
   ];
@@ -85,7 +85,7 @@ const StepperFive = ({ activeStep, functions, size }) => {
               key={index}
               onClick={() => selectCard(index)}
             >
-              <Image
+              <img
                 src={c.img}
                 alt="img"
                 className="w-100 cover p5"
@@ -128,7 +128,7 @@ const StepperFive = ({ activeStep, functions, size }) => {
               key={index}
               onClick={() => selectCard(index)}
             >
-              <Image
+              <img
                 src={c.img}
                 alt="img"
                 className="w-100 cover"

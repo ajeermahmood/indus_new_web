@@ -6,7 +6,7 @@ const Office = () => {
     {
       id: 1,
       city: "Head Office",
-      icon: "/images/office/bur-dubai.webp",
+      icon: "https://indusspeciality.com/api/assets/images/office/bur-dubai.webp",
       address:
         "Office 203, Al Sharafi Building, Bur Dubai, 118163, Dubai, UAE.",
       phoneNumber: "800 INDUS (46387)",
@@ -17,7 +17,7 @@ const Office = () => {
     {
       id: 2,
       city: "DMCC Branch",
-      icon: "/images/office/almas-tower.webp",
+      icon: "https://indusspeciality.com/api/assets/images/office/almas-tower.webp",
       address: "4H Almas Tower, Jumeirah Lake Towers (Cluster G), Dubai, UAE",
       phoneNumber: "800 INDUS (46387)",
       map: "https://maps.app.goo.gl/62EUgrrPQ7rSP2bZ8",

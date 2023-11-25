@@ -6,21 +6,21 @@ const Explore = () => {
   const iconboxData = [
     {
       id: 1,
-      icon: "/images/icon/property-buy.svg",
+      icon: "https://indusspeciality.com/api/assets/images/icon/property-buy.svg",
       title: "Understanding your budget",
       text: "Whether you are new to the city, or simply looking to upgrade, your budget is of utmost importance in determining where you choose to live.",
       linkText: "Find a home",
     },
     {
       id: 2,
-      icon: "/images/icon/property-sell.svg",
+      icon: "https://indusspeciality.com/api/assets/images/icon/property-sell.svg",
       title: "Exploring the Communities",
       text: "Whether you are new to the city, or simply looking to upgrade, a right community is equally important.",
       linkText: "Place an ad",
     },
     {
       id: 3,
-      icon: "/images/icon/property-rent.svg",
+      icon: "https://indusspeciality.com/api/assets/images/icon/property-rent.svg",
       title: "Browsing for Properties",
       text: "You can narrow your search to specific property types once you have shortlisted the communities to live in. Keep in mind the following things before renting your property: property condition, landlord issues and other additional costs.",
       linkText: "Find a rental",

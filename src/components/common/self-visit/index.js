@@ -15,7 +15,7 @@ const WhyChoose = () => {
             }}
             priority
             className="w-100 h-100 cover"
-            src="/images/about/output-onlinepngtools (4).png"
+            src="https://indusspeciality.com/api/assets/images/about/output-onlinepngtools (4).png"
             alt="why chosse"
           />
           <Link href="/all-properties">

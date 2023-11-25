@@ -4,27 +4,9 @@ import "photoswipe/dist/photoswipe.css";
 import Image from "next/image";
 import listings from "@/data/listings";
 
-const images = [
-  {
-    src: "/images/listings/listing-single-2.jpg",
-    alt: "2.jpg",
-  },
-  {
-    src: "/images/listings/listing-single-3.jpg",
-    alt: "3.jpg",
-  },
-  {
-    src: "/images/listings/listing-single-4.jpg",
-    alt: "4.jpg",
-  },
-  {
-    src: "/images/listings/listing-single-5.jpg",
-    alt: "5.jpg",
-  },
-];
+
 
 const PropertyGallery = ({ id, propImages }) => {
-  const data = listings.filter((elm) => elm.id == id)[0] || listings[0];
   return (
     <>
       <Gallery>

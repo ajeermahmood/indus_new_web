@@ -65,7 +65,7 @@ const AboutCompanyPage = () => {
           <div className="row" data-aos="fade-up" data-aos-delay="300">
             <div className="col-lg-6">
               <Image
-                src={"/images/logo/indus-icon.png"}
+                src={"https://indusspeciality.com/api/assets/images/logo/indus-icon.png"}
                 width={400}
                 height={400}
                 alt="logo"
@@ -109,7 +109,7 @@ const AboutCompanyPage = () => {
                   height={515}
                   priority
                   className="w-100 h-100 cover"
-                  src="/images/about/midterm-award.jpg"
+                  src="https://indusspeciality.com/api/assets/images/about/midterm-award.jpg"
                   alt="about banner"
                 />
               </div>

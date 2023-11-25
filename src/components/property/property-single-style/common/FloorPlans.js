@@ -9,7 +9,7 @@ const floorPlanData = [
     bedrooms: "2",
     bathrooms: "2",
     price: "$920,99",
-    imageSrc: "/images/listings/listing-single-1.png",
+    imageSrc: "https://indusspeciality.com/api/assets/images/listings/listing-single-1.png",
   },
   {
     id: "second-floor",
@@ -18,7 +18,7 @@ const floorPlanData = [
     bedrooms: "2",
     bathrooms: "2",
     price: "$920,99",
-    imageSrc: "/images/listings/listing-single-1.png",
+    imageSrc: "https://indusspeciality.com/api/assets/images/listings/listing-single-1.png",
   },
   {
     id: "third-floor",
@@ -27,7 +27,7 @@ const floorPlanData = [
     bedrooms: "2",
     bathrooms: "2",
     price: "$920,99",
-    imageSrc: "/images/listings/listing-single-1.png",
+    imageSrc: "https://indusspeciality.com/api/assets/images/listings/listing-single-1.png",
   },
 ];
 

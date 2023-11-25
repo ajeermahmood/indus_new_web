@@ -19,7 +19,7 @@ const Footer = () => {
                   width={100}
                   height={40}
                   className="mb40"
-                  src="/images/logo/indus-logo-2.png"
+                  src="https://indusspeciality.com/api/assets/images/logo/indus-logo-2.png"
                   alt=""
                 />
               </Link>

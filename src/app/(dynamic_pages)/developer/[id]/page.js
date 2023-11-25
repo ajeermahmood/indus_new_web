@@ -4,20 +4,20 @@ import Header from "@/components/home/home-v2/Header";
 import Footer from "@/components/home/home-v7/footer";
 import Image from "next/image";
 
-export async function generateStaticParams() {
-  // Call an external API endpoint to get posts
-  const res = await fetch(
-    `https://indusspeciality.com/api/listings/get_all_developers_ids_for_SSG.php`,
-    {
-      method: "GET",
-    }
-  );
-  const props = await res.json();
+// export async function generateStaticParams() {
+//   // Call an external API endpoint to get posts
+//   const res = await fetch(
+//     `https://indusspeciality.com/api/listings/get_all_developers_ids_for_SSG.php`,
+//     {
+//       method: "GET",
+//     }
+//   );
+//   const props = await res.json();
 
-  return props.map((p) => ({
-    id: p.id,
-  }));
-}
+//   return props.map((p) => ({
+//     id: p.id,
+//   }));
+// }
 
 export async function getDeveloper(id) {
   const res = await fetch(

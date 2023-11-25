@@ -31,7 +31,7 @@ const NotFound = () => {
                     width={400}
                     height={400}
                     className="w-100 h-100 cover"
-                    src="/images/icon/error-page-img.svg"
+                    src="https://indusspeciality.com/api/assets/images/icon/error-page-img.svg"
                     alt="error-page-img"
                   />
                 </div>

@@ -16,7 +16,7 @@ const AllAgents = ({ data, loading }) => {
         <div className="col w-100 mt60">
           <div className="row justify-content-center">
             <Image
-              src="/images/svg/no-data.svg"
+              src="https://indusspeciality.com/api/assets/images/svg/no-data.svg"
               width={200}
               height={200}
               className="mb3"
@@ -85,7 +85,7 @@ const AllAgents = ({ data, loading }) => {
                       className="bdrs12 w-100 h-100 cover"
                       src={
                         erroImgs.includes(agent.client_user_id)
-                          ? "/images/agents/demo.png"
+                          ? "https://indusspeciality.com/api/assets/images/agents/demo.png"
                           : `https://www.indusre.com/agentimg/${agent.client_user_image}`
                       }
                       alt="agents"

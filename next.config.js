@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["assets.bayut.com", "www.indusre.com"],
-    unoptimized: true,
+    domains: ["assets.bayut.com", "www.indusre.com", "indusspeciality.com"],
+    minimumCacheTTL: 1500000,
   },
-  output: "export",
-  trailingSlash: true,
+  distDir : 'build'
+  // swcMinify: true
 };
 
 module.exports = nextConfig;

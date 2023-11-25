@@ -9,20 +9,20 @@ import ListingItemsContainer from "@/components/property/agency-single/ListingIt
 import SingleAgencyCta from "@/components/property/agency-single/SingleAgencyCta";
 import Image from "next/image";
 
-export async function generateStaticParams() {
-  // Call an external API endpoint to get posts
-  const res = await fetch(
-    `https://indusspeciality.com/api/listings/get_all_agents_ids_for_SSG.php`,
-    {
-      method: "GET",
-    }
-  );
-  const props = await res.json();
+// export async function generateStaticParams() {
+//   // Call an external API endpoint to get posts
+//   const res = await fetch(
+//     `https://indusspeciality.com/api/listings/get_all_agents_ids_for_SSG.php`,
+//     {
+//       method: "GET",
+//     }
+//   );
+//   const props = await res.json();
 
-  return props.map((p) => ({
-    id: p.client_user_id,
-  }));
-}
+//   return props.map((p) => ({
+//     id: p.client_user_id,
+//   }));
+// }
 
 export async function getAgent(id) {
   const res = await fetch(
@@ -83,21 +83,21 @@ async function AboutAgentPage({ params }) {
                     width={120}
                     height={120}
                     className="img-1 spin-right"
-                    src="/images/about/element-12.png"
+                    src="https://indusspeciality.com/api/assets/images/about/element-12.png"
                     alt="agents"
                   />
                   <Image
                     width={41}
                     height={11}
                     className="img-2 bounce-x"
-                    src="/images/about/element-13.png"
+                    src="https://indusspeciality.com/api/assets/images/about/element-13.png"
                     alt="agents"
                   />
                   <Image
                     width={57}
                     height={49}
                     className="img-3 bounce-y"
-                    src="/images/about/element-11.png"
+                    src="https://indusspeciality.com/api/assets/images/about/element-11.png"
                     alt="agents"
                   />
                 </div>

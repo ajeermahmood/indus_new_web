@@ -9,15 +9,15 @@ const StepperOne = ({ activeStep, functions, size }) => {
 
   const card = [
     {
-      img: "/images/locations/downtown.webp",
+      img: "https://indusspeciality.com/api/assets/images/locations/downtown.webp",
       text: "Seeking long-term rental income",
     },
     {
-      img: "/images/locations/dubai-img-01.jpg",
+      img: "https://indusspeciality.com/api/assets/images/locations/dubai-img-01.jpg",
       text: "Capital appreciation and resale potential",
     },
     {
-      img: "/images/locations/vacation.jpg",
+      img: "https://indusspeciality.com/api/assets/images/locations/vacation.jpg",
       text: "Personal use as a vacation home or residence",
     },
   ];
@@ -69,7 +69,7 @@ const StepperOne = ({ activeStep, functions, size }) => {
               key={index}
               onClick={() => selectCard(index)}
             >
-              <Image
+              <img
                 src={c.img}
                 alt="img"
                 className="w-100 cover p5"
@@ -88,7 +88,7 @@ const StepperOne = ({ activeStep, functions, size }) => {
               key={index}
               onClick={() => selectCard(index)}
             >
-              <Image
+              <img
                 src={c.img}
                 alt="img"
                 className="w-100 cover"

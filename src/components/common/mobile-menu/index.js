@@ -22,7 +22,7 @@ const MobileMenu = () => {
                 <Image
                   width={25}
                   height={9}
-                  src="/images/mobile-dark-nav-icon.svg"
+                  src="https://indusspeciality.com/api/assets/images/mobile-dark-nav-icon.svg"
                   alt="mobile icon"
                 />
               </a>
@@ -30,7 +30,7 @@ const MobileMenu = () => {
                 <Image
                   width={80}
                   height={30}
-                  src="/images/logo/indus-logo-2.png"
+                  src="https://indusspeciality.com/api/assets/images/logo/indus-logo-2.png"
                   alt="logo"
                 />
               </Link>

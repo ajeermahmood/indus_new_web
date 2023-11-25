@@ -49,7 +49,7 @@ const About = () => {
               width={193}
               height={193}
               className="img-1 spin-right"
-              src="/images/about/element-1.png"
+              src="https://indusspeciality.com/api/assets/images/about/element-1.png"
               alt="about"
             />
           </div>
