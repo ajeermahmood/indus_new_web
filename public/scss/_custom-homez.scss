@@ -185,7 +185,7 @@ html {
 .range-wrapper {
     .input-range__slider {
         background-color: #ffffff;
-        background-image: url(../images/icon/range-slider-range-bg-line.svg);
+        background-image: url(https://indusspeciality.com/api/assets/images/icon/range-slider-range-bg-line.svg);
         background-repeat: no-repeat;
         background-position: center;
         border: 2px solid var(--headings-color);
@@ -255,9 +255,9 @@ header.nav-homepage-style.sticky.at-home3 .sidemenu-btn .img-1 {
 // inquery form
 .inquery_form {
     .select__control {
-        min-height: 55px;
-        border-color: #ddd;
-        border-radius: 8px;
+        min-height: 57px;
+        border-color: #c4c4c4;
+        border-radius: 3px;
     }
     .select__multi-value {
         border-radius: 4px;
@@ -266,6 +266,10 @@ header.nav-homepage-style.sticky.at-home3 .sidemenu-btn .img-1 {
         display: none;
     }
 }
+
+// .swiper-wrapper {
+//     justify-content: center;
+// }
 
 // light header
 .nav-homepage-style.light-header {

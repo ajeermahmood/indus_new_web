@@ -33,7 +33,7 @@ const Cta = () => {
                 height={415}
                 priority
                 className="w-100 h-100 cover"
-                src="/images/agents/become-agent.webp"
+                src="https://indusspeciality.com/api/assets/images/agents/become-agent.webp"
                 alt="cta memeber"
               />
             </div>

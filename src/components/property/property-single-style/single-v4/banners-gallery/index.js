@@ -1,9 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import GalleryBox from "./GalleryBox";
 import { getAllIndusBanners } from "@/api/listings";
 import { Dialog } from "@mui/material";
 import Image from "next/image";
+import CommonDialog from "@/components/common/common-form";
 
 function useWindowSize() {
   // Initialize state with undefined width/height so server and client renders match
@@ -71,9 +72,18 @@ const PropertyGallery = () => {
     setOpenAlertDialog(true);
   };
 
+  const commonDialog = useRef();
+
+  const openCommonDialog = () => {
+    handleClose();
+    commonDialog.current?.handleOpen();
+  };
+
   return (
     <>
       {/* End container */}
+
+      <CommonDialog ref={commonDialog} />
 
       <div className="ps-v4-hero-tab">
         <div className="tab-content overflow-visible" id="pills-tabContent2">
@@ -87,7 +97,12 @@ const PropertyGallery = () => {
               <div className="row" data-aos="fade">
                 <div className="col-lg-12">
                   <div className="ps-v4-hero-slider">
-                    <GalleryBox banners={data} loading={loading} size={size} />
+                    <GalleryBox
+                      banners={data}
+                      loading={loading}
+                      size={size}
+                      openCommonDialog={openCommonDialog}
+                    />
                   </div>
                 </div>
               </div>
@@ -114,13 +129,9 @@ const PropertyGallery = () => {
           src={alertDialogImg.image}
           alt={`img`}
         />
-        <a
-          target="_blank"
-          className="custom-btn-alert-banner"
-          href="https://wa.me/971080046387"
-        >
+        <button className="custom-btn-alert-banner" onClick={openCommonDialog}>
           Contact Now
-        </a>
+        </button>
       </Dialog>
     </>
   );

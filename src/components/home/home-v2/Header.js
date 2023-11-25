@@ -2,7 +2,6 @@
 
 import MainMenu from "@/components/common/MainMenu";
 import SidebarPanel from "@/components/common/sidebar-panel";
-import LoginSignupModal from "@/components/common/login-signup-modal";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -42,7 +41,7 @@ const Header = () => {
                       <Image
                         width={100}
                         height={37}
-                        src="/images/logo/indus-logo-2.png"
+                        src="https://indusspeciality.com/api/assets/images/logo/indus-logo-2.png"
                         alt="Header Logo"
                       />
                     </Link>
@@ -50,7 +49,7 @@ const Header = () => {
                       <Image
                         width={100}
                         height={37}
-                        src="/images/logo/indus-logo-2.png"
+                        src="https://indusspeciality.com/api/assets/images/logo/indus-logo-2.png"
                         alt="Header Logo"
                       />
                     </Link>
@@ -77,7 +76,7 @@ const Header = () => {
                     href="https://wa.me/971080046387"
                   >
                     <Image
-                      src="/images/svg/whatsapp.svg"
+                      src="https://indusspeciality.com/api/assets/images/svg/whatsapp.svg"
                       alt="whatsapp"
                       width={20}
                       height={20}
@@ -122,19 +121,7 @@ const Header = () => {
       {/* End Header */}
 
       {/* Signup Modal */}
-      <div className="signup-modal">
-        <div
-          className="modal fade"
-          id="loginSignupModal"
-          tabIndex={-1}
-          aria-labelledby="loginSignupModalLabel"
-          aria-hidden="true"
-        >
-          <div className="modal-dialog  modal-dialog-scrollable modal-dialog-centered">
-            <LoginSignupModal />
-          </div>
-        </div>
-      </div>
+
       {/* End Signup Modal */}
 
       {/* DesktopSidebarMenu */}

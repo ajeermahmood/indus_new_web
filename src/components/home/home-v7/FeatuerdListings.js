@@ -1,6 +1,7 @@
 import { Skeleton } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const FeaturedListings = ({ data, type, loading }) => {
   const skeletonLoader = [1, 2, 3, 4, 5, 6];
@@ -9,13 +10,15 @@ const FeaturedListings = ({ data, type, loading }) => {
     currency: "AED",
     minimumFractionDigits: 0,
   });
+
+  const router = useRouter();
   return (
     <>
       {!loading && data.length == 0 ? (
         <div className="col w-100 mt60">
           <div className="row justify-content-center">
             <Image
-              src="/images/svg/no-data.svg"
+              src="https://indusspeciality.com/api/assets/images/svg/no-data.svg"
               width={200}
               height={200}
               className="mb3"
@@ -103,7 +106,10 @@ const FeaturedListings = ({ data, type, loading }) => {
           ))
         : data.map((listing) => (
             <div className="col-sm-6 col-lg-4" key={listing.id}>
-              <div className="listing-style8">
+              <div
+                className="listing-style8"
+                onClick={() => router.push(`/property/${listing.property_id}`)}
+              >
                 <div
                   className="list-thumb"
                   // style={{
@@ -144,7 +150,17 @@ const FeaturedListings = ({ data, type, loading }) => {
                     >
                       <span className="flaticon-new-tab"></span>
                     </a>
-                    <a className="rounded-0" href="#" onClick={()=> window.open(`/property/${listing.property_id}`, '_blank', 'location=yes,height=900,width=1440,scrollbars=yes,status=yes')}>
+                    <a
+                      className="rounded-0"
+                      href="#"
+                      onClick={() =>
+                        window.open(
+                          `/property/${listing.property_id}`,
+                          "_blank",
+                          "location=yes,height=900,width=1440,scrollbars=yes,status=yes"
+                        )
+                      }
+                    >
                       <span className="flaticon-fullscreen"></span>
                     </a>
                   </div>

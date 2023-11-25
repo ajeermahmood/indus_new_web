@@ -8,7 +8,7 @@ const VirtualTour360 = () => {
         <Image
           width={736}
           height={373}
-          src="/images/listings/listing-single-7.jpg"
+          src="https://indusspeciality.com/api/assets/images/listings/listing-single-7.jpg"
           alt="virtual image"
           className="w-100 bdrs12 h-100 cover"
         />

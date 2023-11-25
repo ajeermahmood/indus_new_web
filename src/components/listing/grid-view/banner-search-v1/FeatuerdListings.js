@@ -3,8 +3,10 @@
 import { Skeleton } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const FeaturedListings = ({ data, colstyle, loading }) => {
+  const router = useRouter();
   const skeletonLoader = [1, 2, 3, 4, 5, 6, 7, 8];
   const currencyFormatter = new Intl.NumberFormat("en-AE", {
     style: "currency",
@@ -17,7 +19,7 @@ const FeaturedListings = ({ data, colstyle, loading }) => {
         <div className="col w-100 mt60">
           <div className="row justify-content-center">
             <Image
-              src="/images/svg/no-data.svg"
+              src="https://indusspeciality.com/api/assets/images/svg/no-data.svg"
               width={200}
               height={200}
               className="mb3"
@@ -113,6 +115,7 @@ const FeaturedListings = ({ data, colstyle, loading }) => {
                     ? "listing-style7 listCustom listing-type"
                     : "listing-style7"
                 }
+                onClick={() => router.push(`/property/${listing.property_id}`)}
               >
                 <div className="list-thumb">
                   <Image
@@ -137,7 +140,6 @@ const FeaturedListings = ({ data, colstyle, loading }) => {
                     <a href="#" className="mr5">
                       <span className="flaticon-new-tab" />
                     </a>
-                    
                   </div>
                 </div>
                 <div className="list-content">

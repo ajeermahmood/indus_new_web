@@ -1,86 +1,104 @@
-import Image from "next/image";
-import React from "react";
+"use client";
+import { useEffect, useState } from "react";
+import { Navigation, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.min.css";
 
 const testimonials = [
   {
-    id: "1st",
-    imageSrc: "/images/testimonials/mihar-ved.png",
+    id: 0,
+    imageSrc: "https://indusspeciality.com/api/assets/images/testimonials/mihar-ved.png",
     text: "Great experience, good follow up service, friendly agents, great property management. Would recommend them to anyone!",
     name: "Mihar Ved",
     designation: "Customer",
   },
   {
-    id: "2nd",
-    imageSrc: "/images/testimonials/karan-variava.png",
+    id: 1,
+    imageSrc: "https://indusspeciality.com/api/assets/images/testimonials/karan-variava.png",
     text: "Agent are friendly and they have good knowledge of Dubai and International market",
     name: "Karan Variava",
     designation: "Customer",
   },
   {
-    id: "3rd",
-    imageSrc: "/images/testimonials/muhannad-khawam.png",
+    id: 2,
+    imageSrc: "https://indusspeciality.com/api/assets/images/testimonials/muhannad-khawam.png",
     text: "The pinnacle of arrangement, refinement and cooperation It's like a beehive",
     name: "Muhannad Khawam",
+    designation: "Customer",
+  },
+  {
+    id: 3,
+    imageSrc: "https://indusspeciality.com/api/assets/images/testimonials/muhannad-khawam.png",
+    text: "Amazing company with good management and better customer service.",
+    name: "Solomon Destiny",
+    designation: "Customer",
+  },
+  {
+    id: 4,
+    imageSrc: "https://indusspeciality.com/api/assets/images/testimonials/muhannad-khawam.png",
+    text: "Great Experience! They have a good follow up service, friendly agents and great property management!",
+    name: "Ankita Asher",
+    designation: "Customer",
+  },
+  {
+    id: 5,
+    imageSrc: "https://indusspeciality.com/api/assets/images/testimonials/muhannad-khawam.png",
+    text: "Friendly agents, great property management! Would recommend!",
+    name: "Saba Masood",
     designation: "Customer",
   },
 ];
 
 const Testimonial = () => {
+  const [realIndex, setIndex] = useState(0);
   return (
     <>
-      <div className="tab-content" id="pills-tabContent">
-        {testimonials.map((testimonial) => (
-          <div
-            key={testimonial.id}
-            className={`tab-pane fade ${
-              testimonial.id === "1st" ? "show active" : ""
-            }`}
-            id={`pills-${testimonial.id}`}
-            role="tabpanel"
-            aria-labelledby={`pills-${testimonial.id}-tab`}
-          >
-            <div className="testi-content text-center">
-              <span className="icon fas fa-quote-left" />
-              <h4 className="testi-text">{testimonial.text}</h4>
-              <h6 className="name">{testimonial.name}</h6>
-              <p className="design">{testimonial.designation}</p>
+      <Swiper
+        onSlideChange={(e) => setIndex(e.realIndex)}
+        className="overflow-visible"
+        spaceBetween={1}
+        modules={[Navigation, Pagination]}
+        navigation={{
+          nextEl: ".single-pro-slide-testimonials-next__active",
+          prevEl: ".single-pro-slide-testimonials-prev__active",
+        }}
+        slidesPerView={1}
+        initialSlide={1}
+        loop={true}
+        autoplay={{ delay: 3000 }}
+        // width={500}
+      >
+        {testimonials.map((testimonial, index) => (
+          <SwiperSlide key={index}>
+            <div
+              className={`tab-pane fade ${
+                realIndex === index ? "show active" : ""
+              }`}
+              id={`pills-${testimonial.id}`}
+              role="tabpanel"
+              aria-labelledby={`pills-${testimonial.id}-tab`}
+            >
+              <div className="testi-content text-center">
+                <span className="icon fas fa-quote-left" />
+                <h4 className="testi-text">{testimonial.text}</h4>
+                <h6 className="name">{testimonial.name}</h6>
+                <p className="design">{testimonial.designation}</p>
+              </div>
             </div>
-          </div>
+          </SwiperSlide>
         ))}
-      </div>
-      {/* End tab-content */}
-      <div className="tab-list position-relative">
-        <ul
-          className="nav nav-pills justify-content-center"
-          id="pills-tab"
-          role="tablist"
-        >
-          {testimonials.map((testimonial) => (
-            <li className="nav-item" role="presentation" key={testimonial.id}>
-              <button
-                className={`nav-link ${
-                  testimonial.id === "1st" ? "ps-0" : ""
-                } ${testimonial.id === "1st" ? "active" : ""} ${
-                  testimonial.id === "5th" ? "pe-0" : ""
-                }`}
-                id={`pills-${testimonial.id}-tab`}
-                data-bs-toggle="pill"
-                data-bs-target={`#pills-${testimonial.id}`}
-                type="button"
-                role="tab"
-                aria-controls={`pills-${testimonial.id}`}
-                aria-selected={testimonial.id === "2nd" ? "true" : "false"}
-              >
-                <Image
-                  width={70}
-                  height={71}
-                  src={testimonial.imageSrc}
-                  alt=""
-                />
-              </button>
-            </li>
-          ))}
-        </ul>
+      </Swiper>
+
+      <div className="rounded-arrow arrowY-center-position top-minus-15">
+        <button className="single-pro-slide-testimonials-prev__active swiper_button _prev">
+          <i className="far fa-chevron-left" />
+        </button>
+        {/* End prev */}
+
+        <button className="single-pro-slide-testimonials-next__active swiper_button _next">
+          <i className="far fa-chevron-right" />
+        </button>
+        {/* End Next */}
       </div>
     </>
   );

@@ -9,22 +9,22 @@ const StepperTwo = ({ activeStep, functions, size }) => {
 
   const card = [
     {
-      img: "/images/locations/arabian-ranches.webp",
+      img: "https://indusspeciality.com/api/assets/images/enquiry/apartment.webp",
       text: "Apartment",
     },
     {
-      img: "/images/locations/arabian-ranches.webp",
+      img: "https://indusspeciality.com/api/assets/images/enquiry/townhouse.jpeg",
       text: "Townhouse",
     },
     {
-      img: "/images/locations/arabian-ranches.webp",
+      img: "https://indusspeciality.com/api/assets/images/enquiry/villa.jpg",
       text: "Villa",
     },
   ];
 
   if (size.width < 500) {
     card.push({
-      img: "/images/locations/arabian-ranches.webp",
+      img: "https://indusspeciality.com/api/assets/images/enquiry/mansion.jpg",
       text: "Mansion",
     });
   }
@@ -75,7 +75,7 @@ const StepperTwo = ({ activeStep, functions, size }) => {
                 key={index}
                 onClick={() => selectCard(index)}
               >
-                <Image
+                <img
                   src={c.img}
                   alt="img"
                   className="w-100 cover p5"
@@ -94,7 +94,7 @@ const StepperTwo = ({ activeStep, functions, size }) => {
                 key={index}
                 onClick={() => selectCard(index)}
               >
-                <Image
+                <img
                   src={c.img}
                   alt="img"
                   className="w-100 cover"
@@ -119,8 +119,8 @@ const StepperTwo = ({ activeStep, functions, size }) => {
                 className="col-4 stepper-card-active"
                 onClick={() => selectCard(3)}
               >
-                <Image
-                  src="/images/locations/arabian-ranches.webp"
+                <img
+                  src="https://indusspeciality.com/api/assets/images/enquiry/mansion.jpg"
                   alt="img"
                   className="w-100 cover p5"
                   width={240}
@@ -132,8 +132,8 @@ const StepperTwo = ({ activeStep, functions, size }) => {
               </div>
             ) : (
               <div className="col-4 stepper-card" onClick={() => selectCard(3)}>
-                <Image
-                  src="/images/locations/arabian-ranches.webp"
+                <img
+                  src="https://indusspeciality.com/api/assets/images/enquiry/mansion.jpg"
                   alt="img"
                   className="w-100 cover"
                   width={240}

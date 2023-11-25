@@ -1,8 +1,10 @@
 "use client";
 import ReCaptcha from "@/app/contact/recaptcha";
+import { useRef } from "react";
 import Select from "react-select";
 
 const CareerForm = () => {
+  const captcha = useRef();
   const handleSubmit = (event) => {
     event.preventDefault();
     // Handle form submission
@@ -222,7 +224,7 @@ const CareerForm = () => {
             <div className="bootselect-multiselect">No File Have Choosen</div>
           </div>
         </div>
-        <ReCaptcha />
+        <ReCaptcha ref={captcha}/>
 
         <div className="d-grid mt20">
           <button className="ud-btn btn-thm" type="submit">

@@ -81,7 +81,7 @@ const SellGuidePage = () => {
                   width={296}
                   height={318}
                   className="img-1 cover"
-                  src="/images/svg/selling.svg"
+                  src="https://indusspeciality.com/api/assets/images/svg/selling.svg"
                   alt="about"
                 />
               </div>

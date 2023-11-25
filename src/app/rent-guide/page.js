@@ -82,7 +82,7 @@ const RentGuidePage = () => {
                   width={296}
                   height={318}
                   className="img-1 cover"
-                  src="/images/svg/renting.svg"
+                  src="https://indusspeciality.com/api/assets/images/svg/renting.svg"
                   alt="about"
                 />
               </div>

@@ -28,7 +28,7 @@ export async function getAgent(id) {
   const res = await fetch(
     `https://indusspeciality.com/api/listings/get_agents_details.php`,
     {
-      cache: "force-cache",
+      // cache: "force-cache",
       method: "POST",
       body: JSON.stringify({
         agent_id: id,
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }) {
   const staticData = await fetch(
     `https://indusspeciality.com/api/listings/get_agents_details.php`,
     {
-      cache: "force-cache",
+      // cache: "force-cache",
       method: "POST",
       body: JSON.stringify({
         agent_id: params.id,
@@ -83,21 +83,21 @@ async function AboutAgentPage({ params }) {
                     width={120}
                     height={120}
                     className="img-1 spin-right"
-                    src="/images/about/element-12.png"
+                    src="https://indusspeciality.com/api/assets/images/about/element-12.png"
                     alt="agents"
                   />
                   <Image
                     width={41}
                     height={11}
                     className="img-2 bounce-x"
-                    src="/images/about/element-13.png"
+                    src="https://indusspeciality.com/api/assets/images/about/element-13.png"
                     alt="agents"
                   />
                   <Image
                     width={57}
                     height={49}
                     className="img-3 bounce-y"
-                    src="/images/about/element-11.png"
+                    src="https://indusspeciality.com/api/assets/images/about/element-11.png"
                     alt="agents"
                   />
                 </div>

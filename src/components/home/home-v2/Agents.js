@@ -104,7 +104,7 @@ const Agents = () => {
                           }}
                           src={
                             erroImgs.includes(agent.client_user_id)
-                              ? "/images/agents/demo.png"
+                              ? "https://indusspeciality.com/api/assets/images/agents/demo.png"
                               : `https://www.indusre.com/agentimg/${agent.client_user_image}`
                           }
                           alt="agent team"

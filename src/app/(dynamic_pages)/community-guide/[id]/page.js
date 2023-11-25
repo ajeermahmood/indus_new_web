@@ -25,7 +25,7 @@ export async function getCommunityGuide(id) {
   const res = await fetch(
     `https://indusspeciality.com/api/listings/get_community_guide_details.php`,
     {
-      cache: "force-cache",
+      // cache: "force-cache",
       method: "POST",
       body: JSON.stringify({
         guide_id: id,
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }) {
   const staticData = await fetch(
     `https://indusspeciality.com/api/listings/get_community_guide_details.php`,
     {
-      cache: "force-cache",
+      // cache: "force-cache",
       method: "POST",
       body: JSON.stringify({
         guide_id: params.id,

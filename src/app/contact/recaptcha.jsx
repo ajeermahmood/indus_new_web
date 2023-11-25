@@ -1,18 +1,23 @@
+"use client";
+import { verfiyCaptcha } from "@/api/captcha";
+import { forwardRef, useImperativeHandle, useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import { useRef, useState } from "react";
-import { verifyCaptcha } from "@/api/serverActions";
-import { Button } from "@mui/material";
 
-const ReCaptcha = () => {
+const ReCaptcha = forwardRef((props, ref) => {
   const recaptchaRef = useRef();
   const [isVerified, setIsverified] = useState(false);
 
   async function handleCaptchaSubmission(token) {
-    // Server function to verify captcha
-    await verifyCaptcha(token)
+    await verfiyCaptcha(token)
       .then(() => setIsverified(true))
       .catch(() => setIsverified(false));
+    // Server function to verify captcha
   }
+
+  useImperativeHandle(ref, () => ({
+    verified: isVerified,
+  }));
+
   return (
     <>
       <ReCAPTCHA
@@ -25,5 +30,8 @@ const ReCaptcha = () => {
       </Button> */}
     </>
   );
-};
+});
+
+ReCaptcha.displayName = "ReCaptcha";
+
 export default ReCaptcha;

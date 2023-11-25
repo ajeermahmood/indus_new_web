@@ -1,5 +1,4 @@
 "use client";
-import agents from "@/data/agents";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -27,7 +26,7 @@ const AvailableAgent = ({ similarAgents }) => {
                   className="bdrs12 w-100 h-100 cover"
                   src={
                     erroImgs.includes(agent.client_user_id)
-                      ? "/images/agents/demo.png"
+                      ? "https://indusspeciality.com/api/assets/images/agents/demo.png"
                       : `https://www.indusre.com/agentimg/${agent.client_user_image}`
                   }
                   alt="agents"

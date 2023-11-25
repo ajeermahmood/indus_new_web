@@ -5,20 +5,16 @@ const getCurrentYear = () => {
   return new Date().getFullYear();
 };
 
-const Footer = ({ path }) => {
+const Footer = () => {
   return (
     <div className="container gray-bdrt1 py-4">
       <div className="row">
         <div className="col-sm-6">
           <div className="text-center text-lg-start">
-            <p
-              className={`copyright-text ff-heading mb-0 ${
-                path != "/" ? "text-blue-gray" : ""
-              }`}
-            >
+            <p className={`copyright-text ff-heading mb-0 text-blue-gray`}>
               © {getCurrentYear()}{" "}
               <a
-                className={` ${path != "/" ? "text-blue-gray" : ""}`}
+                className={` text-blue-gray`}
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -33,7 +29,7 @@ const Footer = ({ path }) => {
 
         <div className="col-sm-6">
           <div className="text-center text-lg-end">
-            {path == "/" ? <Social /> : <></>}
+            <Social />
           </div>
         </div>
         {/* End .col-sm-6 */}

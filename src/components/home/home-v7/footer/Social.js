@@ -22,12 +22,12 @@ const Social = () => {
 
   return (
     <div className="social-style1 light-style">
-      <a className="me-2 fw600 fz15" href="#">
+      <a className="me-2 fw600 fz15 text-blue-gray" href="#">
         Follow us
       </a>
       {socialIcons.map((iconClass, index) => (
         <a key={index} href={iconClass.link} target="_blank">
-          <i className={iconClass.icon + " list-inline-item"} />
+          <i className={iconClass.icon + " list-inline-item text-blue-gray"} />
         </a>
       ))}
     </div>

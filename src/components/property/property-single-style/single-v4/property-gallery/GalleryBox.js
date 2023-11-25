@@ -23,7 +23,7 @@ const GalleryBox = ({ propImages }) => {
           <SwiperSlide key={index}>
             <div className="item">
               <Image
-                width={1170}
+                width={1158}
                 height={600}
                 className="bdrs12 w-100 cover"
                 src={imageUrl.properties_image_name}
