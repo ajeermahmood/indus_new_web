@@ -3,7 +3,7 @@ import MobileMenu from "@/components/common/mobile-menu";
 import ApartmentType from "@/components/home/home-v2/ApartmentType";
 import Header from "@/components/home/home-v2/Header";
 import Testimonial from "@/components/home/home-v2/Testimonial";
-import Hero from "@/components/home/home-v2/hero";
+
 import ExploreCities from "@/components/home/home-v7/ExploreCities";
 import Footer from "@/components/home/home-v7/footer";
 
@@ -16,6 +16,7 @@ import Link from "next/link";
 import EnquiryForm from "./enquiry-stepper";
 import ScrollDownCustom from "./scroll-down-custom";
 import { Rating } from "@mui/material";
+import MainImageSlider from "./home-main-swiper";
 
 export const metadata = {
   title: "Indus Real Estate LLC | Dubai Luxury Properties",
@@ -36,12 +37,7 @@ const HomePage = () => {
       <section className="home-banner-style2 p0">
         <div className="home-style2">
           <div className="container maxw1600">
-            <div className="home2-hero-banner bdrs12 h480-mbl"></div>
-            <div className="row m-0">
-              <div className="col-xl-10 mx-auto">
-                <Hero />
-              </div>
-            </div>
+            <MainImageSlider/>
           </div>
           {/* End .container */}
         </div>

@@ -141,6 +141,29 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
   border-radius: 3px !important;
 }
 
+.bdrs10 {
+  border-radius: 10px !important;
+}
+
+
+.main-img-slider-overlay {
+  &:before {
+    border-radius: 15px;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(
+      to bottom,
+      #215788,
+      rgba(255, 255, 255, 0)
+    );
+    opacity: 0.8;
+    border-radius: 10px;
+  }
+}
 ////////////////////----------------------------- mobile css --------------------------------------------///////////////////////
 ////////////////////----------------------------- mobile css --------------------------------------------///////////////////////
 ////////////////////----------------------------- mobile css --------------------------------------------///////////////////////
@@ -3933,7 +3956,6 @@ li {
 
 /*Home 2 Banner Content*/
 .home2-hero-banner {
-  background-image: url(https://indusspeciality.com/api/assets/images/home/home-banner.avif);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -3942,22 +3964,7 @@ li {
   position: absolute;
   top: 200px;
   width: 100%;
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: linear-gradient(
-      to bottom,
-      #215788,
-      rgba(255, 255, 255, 0)
-    );
-    opacity: 0.8;
-    border-radius: 10px;
-  }
+  z-index: 0;
 }
 @media (max-width: 991.98px) {
   .home2-hero-banner {
