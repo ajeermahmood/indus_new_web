@@ -37,14 +37,15 @@ const PrivacyPolicyPage = () => {
       {/* End Breadcumb Sections */}
 
       {/* Agent Section Area */}
+      
       <section className="pt0 pb20">
         <div className="container">
           <div class="mt-3 mt-md-4">
             <p>Effective date: January 24, 2019</p>
 
             <p>
-              Indus Real estate LLC ("us", "we", or "our") operates the
-              http://www.indusre.com/ website (the "Service").
+              Indus Real estate LLC (&quot;us&quot;, &quot;we&quot;, or &quot;our&quot;) operates the
+              http://www.indusre.com/ website (the &quot;Service&quot;).
             </p>
 
             <p>
@@ -82,7 +83,7 @@ const PrivacyPolicyPage = () => {
             <p>
               While using our Service, we may ask you to provide us with certain
               personally identifiable information that can be used to contact or
-              identify you ("Personal Data"). Personally identifiable
+              identify you (&quot;Personal Data&quot;). Personally identifiable
               information may include, but is not limited to:
             </p>
 
@@ -97,8 +98,8 @@ const PrivacyPolicyPage = () => {
 
             <p>
               We may also collect information how the Service is accessed and
-              used ("Usage Data"). This Usage Data may include information such
-              as your computer's Internet Protocol address (e.g. IP address),
+              used (&quot;Usage Data&quot;). This Usage Data may include information such
+              as your computer&apos;s Internet Protocol address (e.g. IP address),
               browser type, browser version, the pages of our Service that you
               visit, the time and date of your visit, the time spent on those
               pages, unique device identifiers and other diagnostic data.
@@ -221,7 +222,7 @@ const PrivacyPolicyPage = () => {
             <h2>Service Providers</h2>
             <p>
               We may employ third party companies and individuals to facilitate
-              our Service ("Service Providers"), to provide the Service on our
+              our Service (&quot;Service Providers&quot;), to provide the Service on our
               behalf, to perform Service-related services or to assist us in
               analyzing how our Service is used.
             </p>
@@ -272,7 +273,7 @@ const PrivacyPolicyPage = () => {
             <p>
               Our Service may contain links to other sites that are not operated
               by us. If you click on a third party link, you will be directed to
-              that third party's site. We strongly advise you to review the
+              that third party&apos;s site. We strongly advise you to review the
               Privacy Policy of every site you visit.
             </p>
             <p>
@@ -282,10 +283,10 @@ const PrivacyPolicyPage = () => {
             </p>
 
             <hr />
-            <h2>Children's Privacy</h2>
+            <h2>Children&apos;s Privacy</h2>
             <p>
               Our Service does not address anyone under the age of 18
-              ("Children").
+              (&quot;Children&quot;).
             </p>
             <p>
               We do not knowingly collect personally identifiable information
@@ -306,7 +307,7 @@ const PrivacyPolicyPage = () => {
             <p>
               We will let you know via email and/or a prominent notice on our
               Service, prior to the change becoming effective and update the
-              "effective date" at the top of this Privacy Policy.
+              &quot;effective date&quot; at the top of this Privacy Policy.
             </p>
             <p>
               You are advised to review this Privacy Policy periodically for any
