@@ -22,7 +22,21 @@ export const metadata = {
   title: "Indus Real Estate LLC | Dubai Luxury Properties",
 };
 
-const HomePage = () => {
+export async function getMainSliderImgs() {
+  const res = await fetch(
+    `https://indusspeciality.com/api/listings/get_main_slider_imgs.php`,
+    {
+      cache: "force-cache",
+      method: "GET",
+    }
+  );
+  const data = await res.json();
+
+  return data;
+}
+
+const HomePage = async () => {
+  const data = await getMainSliderImgs();
   return (
     <>
       {/* Main Header Nav */}
@@ -37,7 +51,7 @@ const HomePage = () => {
       <section className="home-banner-style2 p0">
         <div className="home-style2">
           <div className="container maxw1600">
-            <MainImageSlider/>
+            <MainImageSlider data={data} />
           </div>
           {/* End .container */}
         </div>

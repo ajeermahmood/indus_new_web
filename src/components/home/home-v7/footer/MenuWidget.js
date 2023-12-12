@@ -52,7 +52,7 @@ const MenuWidget = () => {
         { label: "Blogs", href: "/all-news" },
         { label: "Partners", href: "/developers" },
         { label: "Community Guides", href: "/all-community-guides" },
-        // { label: "Careers", href: "#" },
+        { label: "Privacy Policy", href: "/privacy-policy" },
         // { label: "FAQs", href: "#" },
       ],
     },

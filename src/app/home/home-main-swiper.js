@@ -1,36 +1,38 @@
 "use client";
 import Image from "next/image";
-import SwiperCore, { Autoplay } from "swiper";
+import SwiperCore, { Autoplay, EffectFade } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Hero from "@/components/home/home-v2/hero";
 import "swiper/swiper-bundle.css";
+import { useState } from "react";
 SwiperCore.use([Autoplay]);
 
-const MainImageSlider = () => {
-  const imgs = ["/images/locations/vacation.jpg"];
+const MainImageSlider = ({ data }) => {
+  const [realIndex, setIndex] = useState(0);
   return (
     <>
       <div className="home2-hero-banner">
         <Swiper
-          direction="vertical" // Set the direction to vertical
+          onSlideChange={(e) => setIndex(e.realIndex)}
+          effect={"fade"} // Set the direction to vertical
           spaceBetween={0}
           slidesPerView={1}
-          // speed={1400} // Set the slide transition speed in milliseconds
+          speed={2400} // Set the slide transition speed in milliseconds
           autoplay={{ delay: 4000, disableOnInteraction: false }}
           className="bdrs10"
-          // style={{ height: "90vh" }}
+          style={{ height: "90vh" }}
+          modules={[Autoplay, EffectFade]}
         >
-          {imgs.map((item, index) => (
+          {data.map((item, index) => (
             <SwiperSlide key={index}>
               <div
-                className="item main-img-slider-overlay"
-                style={{
-                  height: "100%",
-                }}
+                className={`item main-img-slider-overlay fade ${
+                  realIndex === index ? "show active" : ""
+                }`}
               >
                 <Image
-                  className="cover w-100 h-100"
-                  src={item}
+                  className="cover w-100 bdrs10"
+                  src={`https://www.indusre.com/main_slider/${item.img}`}
                   height={600}
                   width={1600}
                   alt="img"
