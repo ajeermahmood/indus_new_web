@@ -34,7 +34,7 @@ export async function getProperty(id) {
   const res = await fetch(
     `https://indusspeciality.com/api/listings/get_property_details.php`,
     {
-      // cache: "force-cache",
+      cache: "no-store",
       method: "POST",
       body: JSON.stringify({
         prop_id: id,
@@ -50,7 +50,7 @@ export async function generateMetadata({ params }) {
   const staticData = await fetch(
     `https://indusspeciality.com/api/listings/get_property_details.php`,
     {
-      // cache: "force-cache",
+      cache: "no-store",
       method: "POST",
       body: JSON.stringify({
         prop_id: params.id,
@@ -250,8 +250,8 @@ async function PropertyPage({ params }) {
             <div className="col-lg-4">
               <div className="column">
                 <div className="default-box-shadow1 bdrs12 bdr1 p30 mb30-md bgc-white position-relative">
-                  <h4 className="form-title mb5">Schedule a tour</h4>
-                  <p className="text">Choose your preferred day</p>
+                  <h4 className="form-title mb15">Contact Us</h4>
+                  {/* <p className="text">Choose your preferred day</p> */}
                   <ScheduleTour />
                 </div>
                 {/* End .Schedule a tour */}

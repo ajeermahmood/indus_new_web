@@ -17,6 +17,7 @@ import EnquiryForm from "./enquiry-stepper";
 import ScrollDownCustom from "./scroll-down-custom";
 import { Rating } from "@mui/material";
 import MainImageSlider from "./home-main-swiper";
+import CookieConsent from "./cookies-consent";
 
 export const metadata = {
   title: "Indus Real Estate LLC | Dubai Luxury Properties",
@@ -340,11 +341,11 @@ const HomePage = async () => {
                 <div className="inquiry-img">
                   <Image
                     width={591}
-                    height={800}
+                    height={600}
                     style={{
                       borderRadius: "5px",
                     }}
-                    className="w-100 h-100 cover"
+                    className="w-100 cover"
                     src="https://indusspeciality.com/api/assets/images/enquiry/burj-khalifa.webp"
                     alt="about"
                   />
@@ -368,6 +369,7 @@ const HomePage = async () => {
 
       <ScrollDownCustom />
       <EnquiryForm />
+      <CookieConsent/>
     </>
   );
 };

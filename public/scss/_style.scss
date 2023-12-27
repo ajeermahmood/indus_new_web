@@ -122,6 +122,10 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
   letter-spacing: 2px !important;
 }
 
+.w-170 {
+  width: 170px !important;
+} 
+
 .search-icon-pages {
   position: absolute;
   top: 9px;
@@ -137,12 +141,35 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
   top: -1rem;
 }
 
+.btn-disabled {
+  background-color: gray !important;
+  border: none !important;
+  cursor: default !important;
+
+  &:hover {
+    background-color: grey !important;
+
+    &::before {
+      background-color: grey !important;
+      border: none !important;
+    }
+  }
+}
+
 .bdrs-3 {
   border-radius: 3px !important;
 }
 
 .bdrs10 {
   border-radius: 10px !important;
+}
+
+.cookies-dialog {
+  position: fixed;
+  bottom: 0;
+  background: #caf6ff;
+  width: 100%;
+  z-index: 9999;
 }
 
 
@@ -170,6 +197,16 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
 ////////////////////----------------------------- mobile css --------------------------------------------///////////////////////
 
 @media (max-width: 500px) {
+  .cookies-dialog-mbl-text{
+    font-size: 12px !important;
+    padding-right: 10px;
+  }
+
+  .cookies-dialog-mbl-btn {
+    font-size: 13px !important;
+    padding: 10px 20px !important;
+  }
+
   .pt0-mbl {
     padding-top: 0 !important;
   }

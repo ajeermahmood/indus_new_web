@@ -1,21 +1,21 @@
 "use client";
+import { Fab } from "@mui/material";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import MobileStepper from "@mui/material/MobileStepper";
 import { useTheme } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import OfferForm from "./offer-form";
 import StepperFive from "./stepper-five";
 import StepperFour from "./stepper-four";
 import StepperOne from "./stepper-one";
+import StepperSeven from "./stepper-seven";
 import StepperSix from "./stepper-six";
 import StepperThree from "./stepper-three";
 import StepperTwo from "./stepper-two";
-import { Checkbox, Fab, TextField } from "@mui/material";
-import OfferForm from "./offer-form";
-import StepperSeven from "./stepper-seven";
-import { useRouter } from "next/navigation";
 
 function useWindowSize() {
   // Initialize state with undefined width/height so server and client renders match

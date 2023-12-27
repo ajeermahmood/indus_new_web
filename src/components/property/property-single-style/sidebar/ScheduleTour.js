@@ -14,7 +14,7 @@ const ScheduleTour = () => {
 
   return (
     <div className="ps-navtab">
-      <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      {/* <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
         {tabs.map((tab) => (
           <li className="nav-item" key={tab.id} role="presentation">
             <button
@@ -33,10 +33,82 @@ const ScheduleTour = () => {
             </button>
           </li>
         ))}
-      </ul>
+      </ul> */}
       {/* End nav-pills */}
 
       <div className="tab-content" id="pills-tabContent">
+      <form
+        className="form-style1"
+        method="POST"
+        action="https://www.indus-inhouse.com/lead-api-v2"
+      >
+        <input value="5f41397a7ff24" name="campaign" type="hidden" />
+        <input value="sale" name="lead_type" type="hidden" />
+        <input value="apartment" name="property_type" type="hidden" />
+        <input value="lp" name="source" type="hidden" />
+
+        <div className="row">
+          <div className="col-lg-12">
+            <div class="form-group">
+              <div className="mb20">
+                <label className="heading-color ff-heading fw600 mb10">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="recipient-name"
+                  placeholder="Name"
+                  name="name"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="col-lg-12">
+            <div class="form-group">
+              <div className="mb20">
+                <label className="heading-color ff-heading fw600 mb10">
+                  Phone
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="phone"
+                  name="phone"
+                  placeholder="Phone"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="col-lg-12">
+            <div class="form-group">
+              <div className="mb20">
+                <label className="heading-color ff-heading fw600 mb10">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  id="recipient-email"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          {/* <ReCaptcha ref={captcha} /> */}
+          <div className="d-grid mt20">
+            <button type="submit" className={`ud-btn btn-dark`} name="submit">
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
         {tabs.map((tab) => (
           <div
             className={`tab-pane fade${
@@ -47,7 +119,7 @@ const ScheduleTour = () => {
             aria-labelledby={`pills-${tab.id}-tab`}
             key={tab.id}
           >
-            <form className="form-style1">
+            {/* <form className="form-style1">
               <div className="row">
                 <div className="col-md-12">
                   <div className="mb20">
@@ -59,7 +131,6 @@ const ScheduleTour = () => {
                     />
                   </div>
                 </div>
-                {/* End .col-12 */}
 
                 <div className="col-lg-12">
                   <div className="mb20">
@@ -71,7 +142,6 @@ const ScheduleTour = () => {
                     />
                   </div>
                 </div>
-                {/* End .col-12 */}
 
                 <div className="col-lg-12">
                   <div className="mb20">
@@ -83,7 +153,6 @@ const ScheduleTour = () => {
                     />
                   </div>
                 </div>
-                {/* End .col-12 */}
 
                 <div className="col-md-12">
                   <div className="mb20">
@@ -95,7 +164,6 @@ const ScheduleTour = () => {
                     />
                   </div>
                 </div>
-                {/* End .col-12 */}
 
                 <div className="col-md-12">
                   <div className="mb10">
@@ -107,7 +175,6 @@ const ScheduleTour = () => {
                     />
                   </div>
                 </div>
-                {/* End .col-12 */}
 
                 <div className="col-md-12">
                   <div className="d-grid">
@@ -117,9 +184,8 @@ const ScheduleTour = () => {
                     </button>
                   </div>
                 </div>
-                {/* End .col-12 */}
               </div>
-            </form>
+            </form> */}
           </div>
         ))}
       </div>

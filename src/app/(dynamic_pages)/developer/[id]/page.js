@@ -23,7 +23,7 @@ export async function getDeveloper(id) {
   const res = await fetch(
     `https://indusspeciality.com/api/listings/get_developer_details.php`,
     {
-      // cache: "force-cache",
+      cache: "no-store",
       method: "POST",
       body: JSON.stringify({
         dev_id: id,
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }) {
   const staticData = await fetch(
     `https://indusspeciality.com/api/listings/get_developer_details.php`,
     {
-      // cache: "force-cache",
+      cache: "no-store",
       method: "POST",
       body: JSON.stringify({
         dev_id: params.id,

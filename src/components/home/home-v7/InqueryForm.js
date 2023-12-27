@@ -94,7 +94,7 @@ const InqueryForm = () => {
   return (
     <div className="form-style1 inquery_form">
       <CommonThanksDialog ref={ref} />
-      <div className="row">
+      {/* <div className="row">
         <div className="col-md-12">
           <div className="mb20">
             <label className="form-label fw600 dark-color">Inquiry Type</label>
@@ -114,7 +114,6 @@ const InqueryForm = () => {
             </div>
           </div>
         </div>
-        {/* End .col */}
 
         <div className="col-md-5">
           <div className="mb20">
@@ -135,7 +134,6 @@ const InqueryForm = () => {
             </div>
           </div>
         </div>
-        {/* End .col */}
 
         <div className="col-md-7">
           <div className="mb20">
@@ -151,12 +149,9 @@ const InqueryForm = () => {
               helperText={formErrorName}
               onChange={(e) => onTextChange(e, "name")}
               className="mt0"
-              // autoFocus
-              // variant="standard"
             />
           </div>
         </div>
-        {/* End .col */}
 
         <div className="col-md-12">
           <div className="mb20">
@@ -172,11 +167,9 @@ const InqueryForm = () => {
               helperText={formErrorEmail}
               onChange={(e) => onTextChange(e, "email")}
               className="mt0"
-              // variant="standard"
             />
           </div>
         </div>
-        {/* End .col */}
 
         <div className="col-md-12">
           <div className="mb20">
@@ -199,7 +192,6 @@ const InqueryForm = () => {
             </div>
           </div>
         </div>
-        {/* End .col */}
 
         <div className="col-md-6">
           <div className="mb20">
@@ -207,7 +199,6 @@ const InqueryForm = () => {
             <input type="number" className="form-control" placeholder="2000" />
           </div>
         </div>
-        {/* End .col */}
 
         <div className="col-md-6">
           <div className="mb30">
@@ -219,15 +210,85 @@ const InqueryForm = () => {
         </div>
 
         <ReCaptcha ref={captcha} />
-        {/* End .col */}
 
         <div className="d-grid mt20">
           <button className="ud-btn btn-thm" onClick={submit}>
             Submit <i className="fal fa-arrow-right-long" />
           </button>
         </div>
-        {/* End .col */}
-      </div>
+      </div> */}
+      <form
+        className="form-style1"
+        method="POST"
+        action="https://www.indus-inhouse.com/lead-api-v2"
+      >
+        <input value="5f41397a7ff24" name="campaign" type="hidden" />
+        <input value="sale" name="lead_type" type="hidden" />
+        <input value="apartment" name="property_type" type="hidden" />
+        <input value="lp" name="source" type="hidden" />
+
+        <div className="row">
+          <div className="col-lg-12">
+            <div class="form-group">
+              <div className="mb20">
+                <label className="heading-color ff-heading fw600 mb10">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="recipient-name"
+                  placeholder="Name"
+                  name="name"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="col-lg-12">
+            <div class="form-group">
+              <div className="mb20">
+                <label className="heading-color ff-heading fw600 mb10">
+                  Phone
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="phone"
+                  name="phone"
+                  placeholder="Phone"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="col-lg-12">
+            <div class="form-group">
+              <div className="mb20">
+                <label className="heading-color ff-heading fw600 mb10">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  id="recipient-email"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          {/* <ReCaptcha ref={captcha} /> */}
+          <div className="d-grid mt20">
+            <button type="submit" className={`ud-btn btn-dark`} name="submit">
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
   );
 };

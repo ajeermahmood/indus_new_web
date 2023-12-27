@@ -1,10 +1,10 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
-import GalleryBox from "./GalleryBox";
 import { getAllIndusBanners } from "@/api/listings";
+import CommonDialog from "@/components/common/common-form";
 import { Dialog } from "@mui/material";
 import Image from "next/image";
-import CommonDialog from "@/components/common/common-form";
+import { useEffect, useRef, useState } from "react";
+import GalleryBox from "./GalleryBox";
 
 function useWindowSize() {
   // Initialize state with undefined width/height so server and client renders match
@@ -46,31 +46,11 @@ const PropertyGallery = () => {
     getAllIndusBanners()
       .then((res) => {
         setData(res);
-        // console.log(res);
-        setAlertDialogImg(res[0]);
       })
       .finally(() => {
         setLoading(false);
-
-        setTimeout(() => {
-          if (sessionStorage.getItem("ad") != "true") {
-            handleOpen();
-            sessionStorage.setItem("ad", "true");
-          }
-        }, 3000);
       });
   }, []);
-
-  const [openAlertDialog, setOpenAlertDialog] = useState(false);
-  const [alertDialogImg, setAlertDialogImg] = useState("");
-
-  const handleClose = () => {
-    setOpenAlertDialog(false);
-  };
-
-  const handleOpen = () => {
-    setOpenAlertDialog(true);
-  };
 
   const commonDialog = useRef();
 
@@ -114,25 +94,6 @@ const PropertyGallery = () => {
       {/* ---------------------------------------------------Alert Dialog--------------------------------- */}
       {/* ---------------------------------------------------Alert Dialog--------------------------------- */}
       {/* ---------------------------------------------------Alert Dialog--------------------------------- */}
-      <Dialog onClose={handleClose} open={openAlertDialog} maxWidth="md">
-        <button
-          type="button"
-          className="btn-close close-btn-alert-banner"
-          onClick={handleClose}
-        />
-        <Image
-          // width={900}
-          // height={641}
-          width={size.width > 500 ? 900 : 420}
-          height={size.width > 500 ? 641 : 299}
-          className={`w-100`}
-          src={alertDialogImg.image}
-          alt={`img`}
-        />
-        <button className="custom-btn-alert-banner" onClick={openCommonDialog}>
-          Contact Now
-        </button>
-      </Dialog>
     </>
   );
 };
