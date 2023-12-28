@@ -192,6 +192,13 @@ export async function getAllIndusBanners() {
   return response.data;
 }
 
+export async function getPopupBanner() {
+  const response = await axios.get(
+    "https://indusspeciality.com/api/listings/get_popup_banner.php"
+  );
+  return response.data;
+}
+
 export async function getAllVideos(limit, pageNumber, search, filter) {
   const response = await axios.post(
     "https://indusspeciality.com/api/listings/get_all_videos.php",

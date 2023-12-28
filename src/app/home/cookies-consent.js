@@ -1,10 +1,10 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import { hasCookie, setCookie } from "cookies-next";
-import { Dialog } from "@mui/material";
-import Image from "next/image";
+import { getPopupBanner } from "@/api/listings";
 import CommonDialog from "@/components/common/common-form";
-import { getAllIndusBanners } from "@/api/listings";
+import { Dialog } from "@mui/material";
+import { hasCookie, setCookie } from "cookies-next";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 function useWindowSize() {
   // Initialize state with undefined width/height so server and client renders match
@@ -62,9 +62,9 @@ const CookieConsent = (props) => {
   const acceptCookie = () => {
     setShowConsent(true);
     setCookie("localConsent", "true", {});
-    getAllIndusBanners()
+    getPopupBanner()
       .then((res) => {
-        setAlertDialogImg(res[0]);
+        setAlertDialogImg(res);
       })
       .finally(() => {
         setTimeout(() => {
