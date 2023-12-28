@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 
 const GalleryBox = ({ banners, loading, size, openCommonDialog }) => {
-  const skeletonLoader = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+  const skeletonLoader = size.width < 500 ? [1] : [1, 2, 3];
 
   const [firstImageLoaded, setFirstImageLoaded] = useState(false);
   const [secondImageLoaded, setSecondImageLoaded] = useState(false);
@@ -116,71 +116,74 @@ const GalleryBox = ({ banners, loading, size, openCommonDialog }) => {
 
   return (
     <>
-      <Swiper
-        className="overflow-visible"
-        spaceBetween={size.width > 500 ? 30 : 10}
-        modules={[Navigation, Pagination]}
-        navigation={{
-          nextEl: ".single-pro-slide-next__active",
-          prevEl: ".single-pro-slide-prev__active",
-        }}
-        slidesPerView={1}
-        initialSlide={1}
-        loop={true}
-        autoplay={{ delay: 3000 }}
-        width={size.width > 500 ? 480 : 360}
-      >
-        {loading
-          ? skeletonLoader.map((bnr, index) => (
-              <SwiperSlide key={index}>
-                <div className="item">
+      {loading ? (
+        <div className="row m0 justify-content-center">
+          {skeletonLoader.map((bnr, index) => (
+            <div className="item maxw30rem" key={index}>
+              <Skeleton
+                variant="rectangular"
+                className="bdrs12 w-100"
+                height={
+                  size.width != undefined ? (size.width > 500 ? 342 : 256) : 342
+                }
+              />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <Swiper
+          className="overflow-visible"
+          spaceBetween={size.width > 500 ? 30 : 10}
+          modules={[Navigation, Pagination]}
+          navigation={{
+            nextEl: ".single-pro-slide-next__active",
+            prevEl: ".single-pro-slide-prev__active",
+          }}
+          slidesPerView={1}
+          initialSlide={1}
+          loop={true}
+          autoplay={{ delay: 3000 }}
+          width={size.width > 500 ? 480 : 360}
+        >
+          {banners.map((bnr, index) => (
+            <SwiperSlide key={index}>
+              <div className="item cusror-pointer" onClick={openCommonDialog}>
+                <p className="mb0 fz20 text-indus">{bnr.title}</p>
+
+                <p className="mb10">
+                  <i>{bnr.subtitle}</i>
+                </p>
+
+                {/* <a href={bnr.link} target="_blank"> */}
+                {!getImgLoadVar(index) ? (
                   <Skeleton
+                    // className="w-100 h-100"
                     variant="rectangular"
                     className="bdrs12 w-100"
                     width={size.width > 500 ? 480 : 360}
                     height={size.width > 500 ? 342 : 256}
                   />
-                </div>
-              </SwiperSlide>
-            ))
-          : banners.map((bnr, index) => (
-              <SwiperSlide key={index}>
-                <div className="item cusror-pointer" onClick={openCommonDialog}>
-                  <p className="mb0 fz20 text-indus">{bnr.title}</p>
-
-                  <p className="mb10">
-                    <i>{bnr.subtitle}</i>
-                  </p>
-
-                  {/* <a href={bnr.link} target="_blank"> */}
-                  {!getImgLoadVar(index) ? (
-                    <Skeleton
-                      // className="w-100 h-100"
-                      variant="rectangular"
-                      className="bdrs12 w-100"
-                      width={size.width > 500 ? 480 : 360}
-                      height={size.width > 500 ? 342 : 256}
-                    />
-                  ) : (
-                    <></>
-                  )}
-                  <Image
-                    width={size.width > 500 ? 480 : 360}
-                    height={size.width > 500 ? 342 : 256}
-                    className={`${
-                      !getImgLoadVar(index)
-                        ? "opacity-0 position-absolute bdrs12 w-100"
-                        : "opacity-100 bdrs12 w-100 position-relative"
-                    }}`}
-                    src={bnr.image}
-                    alt={`Image ${index + 1}`}
-                    onLoadingComplete={() => getImgLoadFunc(index)}
-                  />
-                  {/* </a> */}
-                </div>
-              </SwiperSlide>
-            ))}
-      </Swiper>
+                ) : (
+                  <></>
+                )}
+                <Image
+                  width={size.width > 500 ? 480 : 360}
+                  height={size.width > 500 ? 342 : 256}
+                  className={`${
+                    !getImgLoadVar(index)
+                      ? "opacity-0 position-absolute bdrs12 w-100"
+                      : "opacity-100 bdrs12 w-100 position-relative"
+                  }}`}
+                  src={bnr.image}
+                  alt={`Image ${index + 1}`}
+                  onLoadingComplete={() => getImgLoadFunc(index)}
+                />
+                {/* </a> */}
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      )}
 
       <div className="rounded-arrow arrowY-center-position">
         <button className="single-pro-slide-prev__active swiper_button _prev">

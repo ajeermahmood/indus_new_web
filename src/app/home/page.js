@@ -1,23 +1,54 @@
-import Partner from "@/components/common/Partner";
-import MobileMenu from "@/components/common/mobile-menu";
-import ApartmentType from "@/components/home/home-v2/ApartmentType";
-import Header from "@/components/home/home-v2/Header";
-import Testimonial from "@/components/home/home-v2/Testimonial";
-
-import ExploreCities from "@/components/home/home-v7/ExploreCities";
-import Footer from "@/components/home/home-v7/footer";
-
-import Blog from "@/components/common/Blog";
-import InqueryForm from "@/components/home/home-v7/InqueryForm";
-import PropertyListing from "@/components/home/home-v7/PropertyListing";
-import PropertyGallery from "@/components/property/property-single-style/single-v4/banners-gallery";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import EnquiryForm from "./enquiry-stepper";
-import ScrollDownCustom from "./scroll-down-custom";
 import { Rating } from "@mui/material";
-import MainImageSlider from "./home-main-swiper";
-import CookieConsent from "./cookies-consent";
+
+const Partner = dynamic(() => import("@/components/common/Partner"));
+const MobileMenu = dynamic(() => import("@/components/common/mobile-menu"));
+const MainImageSlider = dynamic(() => import("./home-main-swiper"));
+const ApartmentType = dynamic(() =>
+  import("@/components/home/home-v2/ApartmentType")
+);
+const Header = dynamic(() => import("@/components/home/home-v2/Header"));
+const Testimonial = dynamic(() =>
+  import("@/components/home/home-v2/Testimonial")
+);
+const ExploreCities = dynamic(() =>
+  import("@/components/home/home-v7/ExploreCities")
+);
+const Footer = dynamic(() => import("@/components/home/home-v7/footer"));
+const Blog = dynamic(() => import("@/components/common/Blog"));
+const InqueryForm = dynamic(() =>
+  import("@/components/home/home-v7/InqueryForm")
+);
+const PropertyListing = dynamic(() =>
+  import("@/components/home/home-v7/PropertyListing")
+);
+const PropertyGallery = dynamic(() =>
+  import(
+    "@/components/property/property-single-style/single-v4/banners-gallery"
+  )
+);
+const EnquiryForm = dynamic(() => import("./enquiry-stepper"));
+const ScrollDownCustom = dynamic(() => import("./scroll-down-custom"));
+const CookieConsent = dynamic(() => import("./cookies-consent"));
+
+// import ApartmentType from "@/components/home/home-v2/ApartmentType";
+// import Header from "@/components/home/home-v2/Header";
+// import Testimonial from "@/components/home/home-v2/Testimonial";
+
+// import ExploreCities from "@/components/home/home-v7/ExploreCities";
+// import Footer from "@/components/home/home-v7/footer";
+
+// import Blog from "@/components/common/Blog";
+// import InqueryForm from "@/components/home/home-v7/InqueryForm";
+// import PropertyListing from "@/components/home/home-v7/PropertyListing";
+// import PropertyGallery from "@/components/property/property-single-style/single-v4/banners-gallery";
+
+// import EnquiryForm from "./enquiry-stepper";
+// import ScrollDownCustom from "./scroll-down-custom";
+
+// import CookieConsent from "./cookies-consent";
 
 export const metadata = {
   title: "Indus Real Estate LLC | Dubai Luxury Properties",
@@ -27,7 +58,7 @@ export async function getMainSliderImgs() {
   const res = await fetch(
     `https://indusspeciality.com/api/listings/get_main_slider_imgs.php`,
     {
-      cache: "force-cache",
+      cache: "no-store",
       method: "GET",
     }
   );
@@ -54,7 +85,6 @@ const HomePage = async () => {
           <div className="container maxw1600">
             <MainImageSlider data={data} />
           </div>
-          {/* End .container */}
         </div>
       </section>
       {/* End Home Banner Style V2 */}
@@ -62,11 +92,7 @@ const HomePage = async () => {
       {/* Explore Apartment */}
       <section className="pb0 pb30-md pt0">
         <div className="container">
-          <div
-            className="row justify-content-center"
-            data-aos="fade"
-            data-aos-delay="0"
-          >
+          <div className="row justify-content-center">
             <div className="col-lg-12">
               <ApartmentType />
             </div>
@@ -76,7 +102,7 @@ const HomePage = async () => {
       {/* End Explore Apartment */}
 
       <section className="pb50 pt40 pt0-mbl">
-        <div className="container">
+        <div className="">
           <div className="row">
             <div className="col-lg-6 mx-auto">
               <div className="main-title2 text-center">
@@ -369,7 +395,7 @@ const HomePage = async () => {
 
       <ScrollDownCustom />
       <EnquiryForm />
-      <CookieConsent/>
+      <CookieConsent />
     </>
   );
 };

@@ -3,9 +3,11 @@ import ScrollToTop from "@/components/common/ScrollTop";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { Montserrat } from "next/font/google";
+import Script from "next/script";
 import { useEffect } from "react";
 import "../../public/scss/main.scss";
-import Script from "next/script";
+import Head from "next/head";
+import Link from "next/link";
 
 if (typeof window !== "undefined") {
   import("bootstrap");

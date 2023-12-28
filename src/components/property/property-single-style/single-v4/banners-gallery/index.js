@@ -73,17 +73,15 @@ const PropertyGallery = () => {
             role="tabpanel"
             aria-labelledby="pills-home-tab"
           >
-            <div className="container">
-              <div className="row" data-aos="fade">
-                <div className="col-lg-12">
-                  <div className="ps-v4-hero-slider">
-                    <GalleryBox
-                      banners={data}
-                      loading={loading}
-                      size={size}
-                      openCommonDialog={openCommonDialog}
-                    />
-                  </div>
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="ps-v4-hero-slider">
+                  <GalleryBox
+                    banners={data}
+                    loading={loading}
+                    size={size}
+                    openCommonDialog={openCommonDialog}
+                  />
                 </div>
               </div>
             </div>

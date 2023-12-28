@@ -126,6 +126,10 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
   width: 170px !important;
 } 
 
+.maxw30rem {
+  max-width: 30rem !important;
+}
+
 .search-icon-pages {
   position: absolute;
   top: 9px;
@@ -5865,7 +5869,7 @@ section {
 }
 
 .iconbox-style4 {
-  background-color: var(--indus-gold);
+  background-color: var(--midnight-blue);
   border-radius: 12px;
   -webkit-box-shadow: 0px 10px 40px rgba(24, 26, 32, 0.05);
   -o-box-shadow: 0px 10px 40px rgba(24, 26, 32, 0.05);
@@ -5876,9 +5880,15 @@ section {
   -webkit-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
+
+  .iconbox-content {
+    .title {
+      color: var(--indus-gold);
+    }
+  }
 }
 .iconbox-style4 .icon {
-  background-color: var(--midnight-blue);
+  background-color: var(--blue-gray);
   border-radius: 50%;
   color: white;
   display: block;
@@ -5904,7 +5914,7 @@ section {
   color: #ffffff;
 }
 .iconbox-style4:hover .icon {
-  background-color: var(--blue-gray);
+  background-color: var(--royal-blue);
 }
 
 .iconbox-style5 {

@@ -8,6 +8,8 @@ import { useState } from "react";
 SwiperCore.use([Autoplay]);
 
 const MainImageSlider = ({ data }) => {
+  // console.log(data);
+
   const [realIndex, setIndex] = useState(0);
   return (
     <>
@@ -18,7 +20,7 @@ const MainImageSlider = ({ data }) => {
           spaceBetween={0}
           slidesPerView={1}
           speed={2400} // Set the slide transition speed in milliseconds
-          autoplay={{ delay: 4000, disableOnInteraction: false }}
+          autoplay={{ delay: 15000, disableOnInteraction: false }}
           className="bdrs10"
           style={{ height: "90vh" }}
           modules={[Autoplay, EffectFade]}
@@ -33,9 +35,12 @@ const MainImageSlider = ({ data }) => {
                 <Image
                   className="cover w-100 bdrs10"
                   src={`https://www.indusre.com/main_slider/${item.img}`}
-                  height={600}
-                  width={1600}
+                  priority={true}
+                  height={550}
+                  width={800}
                   alt="img"
+                  blurDataURL="URL"
+                  placeholder="blur"
                 />
               </div>
             </SwiperSlide>

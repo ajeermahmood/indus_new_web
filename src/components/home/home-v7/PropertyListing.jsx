@@ -33,7 +33,7 @@ export default function PropertyListing() {
   return (
     
       <div className="container">
-        <div className="row" data-aos="fade-up" data-aos-delay="0">
+        <div className="row" >
           <div className="col-lg-9">
             <div className="main-title2">
               <h2 className="title">Discover Popular Properties</h2>
@@ -92,7 +92,7 @@ export default function PropertyListing() {
         </div>
         {/* End .row */}
 
-        <div className="row" data-aos="fade-up" data-aos-delay="0">
+        <div className="row" >
           <FeaturedListings
             data={pageData}
             type={currentType}
