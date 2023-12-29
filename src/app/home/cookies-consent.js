@@ -95,8 +95,9 @@ const CookieConsent = (props) => {
             width={size.width > 500 ? 900 : 420}
             height={size.width > 500 ? 641 : 299}
             className={`w-100`}
-            src={alertDialogImg.image}
+            src={`https://www.indusre.com/popup_ad/${alertDialogImg.img}`}
             alt={`img`}
+            priority={true}
           />
           <button
             className="custom-btn-alert-banner"
