@@ -39,17 +39,17 @@ const Header = () => {
                   <div className="logos mr40">
                     <Link className="header-logo logo1" href="/">
                       <Image
-                        width={100}
-                        height={37}
-                        src="https://indusspeciality.com/api/assets/images/logo/indus-logo-2.png"
+                        width={128}
+                        height={40}
+                        src="https://indusspeciality.com/api/assets/images/logo/indus_updated_logo.webp"
                         alt="Header Logo"
                       />
                     </Link>
                     <Link className="header-logo logo2" href="/">
                       <Image
-                        width={100}
-                        height={37}
-                        src="https://indusspeciality.com/api/assets/images/logo/indus-logo-2.png"
+                        width={128}
+                        height={40}
+                        src="https://indusspeciality.com/api/assets/images/logo/indus_updated_logo.webp"
                         alt="Header Logo"
                       />
                     </Link>

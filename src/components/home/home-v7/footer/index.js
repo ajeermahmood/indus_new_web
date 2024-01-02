@@ -16,10 +16,10 @@ const Footer = () => {
             <div className="footer-widget light-style mb-4 mb-lg-5">
               <Link className="footer-logo" href="/">
                 <Image
-                  width={100}
-                  height={40}
+                  width={170}
+                  height={53}
                   className="mb40"
-                  src="https://indusspeciality.com/api/assets/images/logo/indus-logo-2.png"
+                  src="https://indusspeciality.com/api/assets/images/logo/indus_updated_logo.webp"
                   alt=""
                 />
               </Link>

@@ -1,8 +1,6 @@
 "use client";
 import { getAllIndusBanners } from "@/api/listings";
 import CommonDialog from "@/components/common/common-form";
-import { Dialog } from "@mui/material";
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import GalleryBox from "./GalleryBox";
 
@@ -55,7 +53,6 @@ const PropertyGallery = () => {
   const commonDialog = useRef();
 
   const openCommonDialog = () => {
-    handleClose();
     commonDialog.current?.handleOpen();
   };
 
