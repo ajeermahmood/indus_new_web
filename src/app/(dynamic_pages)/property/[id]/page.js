@@ -197,12 +197,12 @@ async function PropertyPage({ params }) {
               </div> */}
               {/* End .ps-widget */}
 
-              <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
+              {/* <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                 <h4 className="title fz17 mb30">Mortgage Calculator</h4>
                 <div className="row">
                   <MortgageCalculator />
                 </div>
-              </div>
+              </div> */}
               {/* End .ps-widget */}
 
               {/* <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
@@ -219,14 +219,14 @@ async function PropertyPage({ params }) {
                 </div>
               </div> */}
               {/* End .ps-widget */}
-              {data.agent != null ? (
+              {/* {data.agent != null ? (
                 <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                   <h4 className="title fz17 mb30">Get More Information</h4>
                   <InfoWithForm agent={data.agent} />
                 </div>
               ) : (
                 <></>
-              )}
+              )} */}
 
               {/* End .ps-widget */}
 
