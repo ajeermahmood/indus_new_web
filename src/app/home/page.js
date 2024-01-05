@@ -394,7 +394,7 @@ const HomePage = async () => {
       {/* End Our Footer */}
 
       <ScrollDownCustom />
-      <EnquiryForm />
+      {/* <EnquiryForm /> */}
       <CookieConsent />
     </>
   );

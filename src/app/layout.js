@@ -4,10 +4,8 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { Montserrat } from "next/font/google";
 import Script from "next/script";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "../../public/scss/main.scss";
-import Head from "next/head";
-import Link from "next/link";
 
 if (typeof window !== "undefined") {
   import("bootstrap");
@@ -28,12 +26,37 @@ const montserrat = Montserrat({
 });
 
 export default function RootLayout({ children }) {
+  const [chatOpen, setChatOpen] = useState(false);
   useEffect(() => {
     Aos.init({
       duration: 1200,
       once: true,
     });
+
+    setTimeout(() => {
+      document.getElementById("closeBTN").addEventListener("click", () => {
+        // console.log("close");
+        setChatOpen(false);
+        document.getElementById("ChatDiv").classList.remove("d-block");
+      });
+
+      document.getElementById("minimizeButton").addEventListener("click", () => {
+        // console.log("close");
+        setChatOpen(false);
+        document.getElementById("ChatDiv").classList.remove("d-block");
+      });
+    }, 5000);
   }, []);
+
+  const handleChatOpen = () => {
+    if (chatOpen) {
+      setChatOpen(false);
+      document.getElementById("ChatDiv").classList.remove("d-block");
+    } else {
+      setChatOpen(true);
+      document.getElementById("ChatDiv").classList.add("d-block");
+    }
+  };
 
   return (
     <html lang="en">
@@ -56,9 +79,23 @@ export default function RootLayout({ children }) {
             });
           `}
         </Script>
+
         <div className="wrapper ovh">{children}</div>
 
         <ScrollToTop />
+
+        <div
+          id="live_chat_status"
+          className={!chatOpen ? "d-block" : "d-none"}
+          onClick={handleChatOpen}
+        ></div>
+
+        <Script
+          id="live-chat-script"
+          strategy="lazyOnload"
+          type="text/javascript"
+          src="//cdn1.thelivechatsoftware.com/assets/liveadmins/indusre.com/chatloader.min.js"
+        ></Script>
       </body>
     </html>
   );
