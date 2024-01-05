@@ -26,37 +26,37 @@ const montserrat = Montserrat({
 });
 
 export default function RootLayout({ children }) {
-  const [chatOpen, setChatOpen] = useState(false);
+  // const [chatOpen, setChatOpen] = useState(false);
   useEffect(() => {
     Aos.init({
       duration: 1200,
       once: true,
     });
 
-    setTimeout(() => {
-      document.getElementById("closeBTN").addEventListener("click", () => {
-        // console.log("close");
-        setChatOpen(false);
-        document.getElementById("ChatDiv").classList.remove("d-block");
-      });
+    // setTimeout(() => {
+    //   document.getElementById("closeBTN").addEventListener("click", () => {
+    //     // console.log("close");
+    //     setChatOpen(false);
+    //     document.getElementById("ChatDiv").classList.remove("d-block");
+    //   });
 
-      document.getElementById("minimizeButton").addEventListener("click", () => {
-        // console.log("close");
-        setChatOpen(false);
-        document.getElementById("ChatDiv").classList.remove("d-block");
-      });
-    }, 5000);
+    //   document.getElementById("minimizeButton").addEventListener("click", () => {
+    //     // console.log("close");
+    //     setChatOpen(false);
+    //     document.getElementById("ChatDiv").classList.remove("d-block");
+    //   });
+    // }, 5000);
   }, []);
 
-  const handleChatOpen = () => {
-    if (chatOpen) {
-      setChatOpen(false);
-      document.getElementById("ChatDiv").classList.remove("d-block");
-    } else {
-      setChatOpen(true);
-      document.getElementById("ChatDiv").classList.add("d-block");
-    }
-  };
+  // const handleChatOpen = () => {
+  //   if (chatOpen) {
+  //     setChatOpen(false);
+  //     document.getElementById("ChatDiv").classList.remove("d-block");
+  //   } else {
+  //     setChatOpen(true);
+  //     document.getElementById("ChatDiv").classList.add("d-block");
+  //   }
+  // };
 
   return (
     <html lang="en">
@@ -86,8 +86,6 @@ export default function RootLayout({ children }) {
 
         <div
           id="live_chat_status"
-          className={!chatOpen ? "d-block" : "d-none"}
-          onClick={handleChatOpen}
         ></div>
 
         <Script
