@@ -178,6 +178,18 @@ export async function getAllDevelopers(limit, pageNumber, search) {
   return response.data;
 }
 
+export async function getAllAchievements(limit, pageNumber, search) {
+  const response = await axios.post(
+    "https://indusspeciality.com/api/listings/get_all_achievements.php",
+    {
+      limit: limit,
+      pageNumber: pageNumber,
+      search: search,
+    }
+  );
+  return response.data;
+}
+
 export async function getAllCommunityGuides() {
   const response = await axios.get(
     "https://indusspeciality.com/api/listings/get_all_community_guides.php"

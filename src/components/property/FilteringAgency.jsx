@@ -14,6 +14,22 @@ export default function FilteringAgency() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const [loading, setLoading] = useState(true);
+
+  // const getIPAddress = async () => {
+  //   return await fetch("https://api.ipify.org/?format=json")
+  //     .then((response) => response.json())
+  //     .then((data) => data);
+  // };
+
+  // const findCountry = async (ipAddress) => {
+  //   const url = `https://ipapi.co/${ipAddress}/json/`;
+  //   return fetch(url)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       return data;
+  //     });
+  // };
+
   useEffect(() => {
     setLoading(true);
     getAllDevelopers(15, currentPage, searchQuery)
