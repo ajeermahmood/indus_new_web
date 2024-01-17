@@ -197,6 +197,13 @@ export async function getAllCommunityGuides() {
   return response.data;
 }
 
+export async function getAllGoogleReviews() {
+  const response = await axios.get(
+    "https://indusspeciality.com/api/listings/get_all_google_reviews.php"
+  );
+  return response.data;
+}
+
 export async function getAllIndusBanners() {
   const response = await axios.get(
     "https://indusspeciality.com/api/listings/get_all_indus_banners.php"
