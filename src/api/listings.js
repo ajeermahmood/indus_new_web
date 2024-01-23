@@ -13,6 +13,12 @@ export async function getFeaturedBlogs() {
   );
   return response.data;
 }
+export async function getFeaturedVideos() {
+  const response = await axios.get(
+    "https://indusspeciality.com/api/listings/get_featured_videos.php"
+  );
+  return response.data;
+}
 
 export async function getExclusiveAgents() {
   const response = await axios.get(

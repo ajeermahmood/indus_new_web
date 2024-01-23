@@ -33,6 +33,8 @@ const EnquiryForm = dynamic(() => import("./enquiry-stepper"));
 const ScrollDownCustom = dynamic(() => import("./scroll-down-custom"));
 const CookieConsent = dynamic(() => import("./cookies-consent"));
 
+const FeaturedVideos = dynamic(() => import("@/components/common/Videos-featured"));
+
 // import ApartmentType from "@/components/home/home-v2/ApartmentType";
 // import Header from "@/components/home/home-v2/Header";
 // import Testimonial from "@/components/home/home-v2/Testimonial";
@@ -126,6 +128,31 @@ const HomePage = async () => {
         id="featured-properties"
       >
         <PropertyListing />
+      </section>
+      <section className="pb90 pb20-md pt50" id="featured-blogs">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6 m-auto" data-aos="fade-up">
+              <div className="main-title text-start text-md-center">
+                <h2 className="title">Latest Videos</h2>
+                {/* <p className="paragraph">
+                  Read latest news about Real Estate in Dubai
+                </p> */}
+              </div>
+            </div>
+          </div>
+          {/* End .row */}
+
+          <div className="row" data-aos="fade-up" data-aos-delay="0">
+            <FeaturedVideos />
+            <div className="d-grid d-md-block text-center mt30 mt0-md">
+              <Link href="/videos" className="ud-btn btn-dark bdrs0">
+                View More<i className="fal fa-arrow-right-long"></i>
+              </Link>
+            </div>
+          </div>
+          {/* End .row */}
+        </div>
       </section>
       {/* <section>
         <div className="container">

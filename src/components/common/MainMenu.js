@@ -158,7 +158,7 @@ const MainMenu = () => {
         </ul>
       </li>
       {/* End Residential Pages */}
-      <li className="visible_list dropitem">
+      {/* <li className="visible_list dropitem">
         <a className="list-item" href="#">
           <span
             className={
@@ -172,7 +172,6 @@ const MainMenu = () => {
           </span>
           <span className="arrow"></span>
         </a>
-        {/* Level Two*/}
         <ul className="sub-menu">
           {commercialPages.map((item, index) => (
             <li key={index}>
@@ -196,7 +195,7 @@ const MainMenu = () => {
             </li>
           ))}
         </ul>
-      </li>
+      </li> */}
       {/* End Commercial Pages */}
       <li className="visible_list dropitem">
         <a className="list-item" href="#">
