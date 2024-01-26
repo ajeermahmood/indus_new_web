@@ -105,7 +105,7 @@ const BlogFilter2 = ({ blogs, loading, setActiveCategory, activeCategory }) => {
                       Indus Real Estate LLC
                     </a>
                     <h6 className="title mt-1">
-                      <Link href={`/blog/${blog.blogs_id}`}>
+                      <Link href={`/blog/${blog.blogs_id}?title=${new String(blog.blogs_title).replace(/ /g, "-")}`}>
                         {blog.blogs_title}
                       </Link>
                     </h6>
