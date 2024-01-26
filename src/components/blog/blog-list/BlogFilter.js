@@ -98,7 +98,7 @@ const BlogFilter2 = ({ blogs, loading, setActiveCategory, activeCategory }) => {
                         {new Date(blog.blogs_date).toDateString().split(" ")[1]}
                       </span>
                       <span className="day">
-                        {new Date(blog.blogs_date).getDay()}
+                        {new Date(blog.blogs_date).toDateString().split(" ")[2]}
                       </span>
                     </div>
                     <a className="tag" href="#">

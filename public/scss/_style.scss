@@ -124,7 +124,7 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
 
 .w-170 {
   width: 170px !important;
-} 
+}
 
 .maxw30rem {
   max-width: 30rem !important;
@@ -176,7 +176,6 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
   z-index: 9999;
 }
 
-
 .main-img-slider-overlay {
   &:before {
     border-radius: 15px;
@@ -196,12 +195,22 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
     height: 50vh;
   }
 }
+
+.links-from-blogs-news {
+  a {
+    color: #0000ee !important;
+  }
+
+  a:hover {
+    text-decoration: underline !important;
+  }
+}
 ////////////////////----------------------------- mobile css --------------------------------------------///////////////////////
 ////////////////////----------------------------- mobile css --------------------------------------------///////////////////////
 ////////////////////----------------------------- mobile css --------------------------------------------///////////////////////
 
 @media (max-width: 500px) {
-  .cookies-dialog-mbl-text{
+  .cookies-dialog-mbl-text {
     font-size: 12px !important;
     padding-right: 10px;
   }

@@ -79,7 +79,7 @@ async function BlogPage({ params }) {
           <div className="roww" data-aos="fade-up" data-aos-delay="500">
             <div className="col-xl-8 offset-xl-2">
               <div
-                className="mt50 mb50 fz20"
+                className="mt50 mb50 fz20 links-from-blogs-news"
                 dangerouslySetInnerHTML={{ __html: data.blogs_description }}
               ></div>
 
