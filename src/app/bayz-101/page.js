@@ -147,7 +147,7 @@ async function Bayz101Page() {
               <h4 className="title mt40">LOCATION</h4>
               <Image
                 className="w-100 h-20 cover"
-                src={"/images/bayz-101/bayz_maap.webp"}
+                src={"https://www.indusre.com/images/bayz-101/bayz_maap.webp"}
                 width={1500}
                 height={800}
                 alt="location-image"
