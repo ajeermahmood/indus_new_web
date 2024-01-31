@@ -1,11 +1,9 @@
 import MobileMenu from "@/components/common/mobile-menu";
 import Header from "@/components/home/home-v2/Header";
 import Footer from "@/components/home/home-v7/footer";
-import ImgGallery from "./gallary";
-import MainBanner from "./main-banner";
 import Image from "next/image";
-import ImgGallary from "./gallary";
 import ScheduleEvent from "./event-schedule";
+import MainBanner from "./main-banner";
 
 async function Bayz101Page() {
   const amenties = [

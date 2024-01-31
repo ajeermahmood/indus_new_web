@@ -89,6 +89,9 @@ const MainMenu = () => {
     if ("contact" == pathname.split("/")[1]) {
       setTopMenu("contact");
     }
+    if ("bayz-101" == pathname.split("/")[1]) {
+      setTopMenu("bayz-101");
+    }
   }, [pathname]);
 
   const handleActive = (link) => {
@@ -259,6 +262,13 @@ const MainMenu = () => {
         <Link className="list-item" href="/contact">
           <span className={topMenu == "contact" ? "title menuActive" : "title"}>
             Contact Us
+          </span>
+        </Link>
+      </li>
+      <li className="visible_list dropitem">
+        <Link className="list-item" href="/bayz-101">
+          <span className={topMenu == "bayz-101" ? "title menuActive" : "title clr-red fw700"}>
+            Invest &amp; Win
           </span>
         </Link>
       </li>

@@ -205,14 +205,65 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
     text-decoration: underline !important;
   }
 }
+
+/////// Bayz ctc styles //////////
+/////// Bayz ctc styles //////////
+/////// Bayz ctc styles //////////
+@keyframes BannerBorder {
+  from {
+    stroke-dashoffset: 2000;
+  }
+  to {
+    stroke-dashoffset: 1;
+  }
+}
+
+.Banner2 {
+  display: none;
+}
+
+.Mega,
+.ShopNowEx2,
+.SalesEx2 {
+  /* ex 2 texts  */
+  display: none;
+}
+
+.BannerBorderLineEx2,
+.BannerBorderEx2 {
+  display: none;
+}
+
+.BannerHolderEx2 {
+  display: none;
+}
+
+.BorderAnimationEx2 {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  animation: BannerBorder 50s linear alternate infinite;
+  animation-delay: 0s;
+}
+
+/////// Bayz ctc styles //////////
+/////// Bayz ctc styles //////////
+/////// Bayz ctc styles //////////
+
 ////////////////////----------------------------- mobile css --------------------------------------------///////////////////////
 ////////////////////----------------------------- mobile css --------------------------------------------///////////////////////
 ////////////////////----------------------------- mobile css --------------------------------------------///////////////////////
+
 .text-align-bayz {
   text-align: end !important;
 }
 
+
+
 @media (max-width: 500px) {
+  .margin-lft-minus-25-mbl {
+    margin-left: -25px !important;
+  }
+  
   .text-align-bayz {
     margin-left: 5px;
     text-align: center !important;
