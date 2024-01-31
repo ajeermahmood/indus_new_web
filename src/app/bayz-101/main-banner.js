@@ -45,8 +45,8 @@ const MainBanner = () => {
                     height: "100%",
                   }}
                 >
-                  <div className="container maxw1600 position-relative ">
-                    <div className="row text-end w-100">
+                  <div className="container maxw1600 position-relative">
+                    <div className="row text-align-bayz w-100">
                       <div className="col-xl-12">
                         <h3 className="banner-title fz40">
                           Exclusive Invitation

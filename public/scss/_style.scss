@@ -208,8 +208,16 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
 ////////////////////----------------------------- mobile css --------------------------------------------///////////////////////
 ////////////////////----------------------------- mobile css --------------------------------------------///////////////////////
 ////////////////////----------------------------- mobile css --------------------------------------------///////////////////////
+.text-align-bayz {
+  text-align: end !important;
+}
 
 @media (max-width: 500px) {
+  .text-align-bayz {
+    margin-left: 5px;
+    text-align: center !important;
+  }
+
   .mobile-hide {
     display: none !important;
   }
