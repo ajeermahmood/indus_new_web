@@ -100,7 +100,7 @@ const ScheduleEvent = () => {
               </FormControl>
             </div>
             <div className="col-lg-12 mt10">
-              <span>Your Earliest time of Arrivals on 18th Feb'24?</span>
+              <span>Your Earliest time of Arrivals on 18th Feb&apos;24?</span>
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DemoContainer components={["TimePicker"]}>
                   <TimePicker label="Pick a time" className="w-100 mt5" />
