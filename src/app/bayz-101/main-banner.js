@@ -31,7 +31,7 @@ const MainBanner = () => {
           style={{ height: "60vh" }}
         >
           {[
-            "banner_w.webp",
+            "banner_w_2.webp",
             "danube-bayz-101-in-business-bay-dubai.jpg",
           ].map((item, index) => (
             <SwiperSlide key={index}>
