@@ -33,7 +33,6 @@ const MainBanner = () => {
           {[
             "banner_w.webp",
             "danube-bayz-101-in-business-bay-dubai.jpg",
-            // "13429.webp",
           ].map((item, index) => (
             <SwiperSlide key={index}>
               {/* <Image
