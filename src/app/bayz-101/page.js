@@ -155,7 +155,7 @@ async function Bayz101Page() {
             </div>
             <div className="col-lg-4">
               <div className="default-box-shadow1 bdrs12 bdr1 p30 mb30-md bgc-white position-relative mt50">
-                <h4 className="form-title mb15">Contact Us</h4>
+                <h4 className="form-title mb15">Register Now</h4>
                 {/* <p className="text">Choose your preferred day</p> */}
                 <ScheduleEvent />
               </div>
