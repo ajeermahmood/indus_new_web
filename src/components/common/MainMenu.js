@@ -266,11 +266,18 @@ const MainMenu = () => {
         </Link>
       </li>
       <li className="visible_list dropitem">
-        <Link className="list-item" href="/bayz-101">
-          <span className={topMenu == "bayz-101" ? "title menuActive" : "title clr-red fw700"}>
+        <div className="d-flex align-items-end">
+          <Link
+            className="list-item animated-button1 text-light"
+            href="/bayz-101"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
             Invest &amp; Win
-          </span>
-        </Link>
+          </Link>
+        </div>
       </li>
       {/* End contact */}
 
