@@ -42,7 +42,7 @@ async function Bayz101Page() {
         {/* <Details data={data} /> */}
 
         <div
-          className="banner-wrapper main-banner-wrapper  position-relative banner-style-one"
+          className="banner-wrapper main-banner-wrapper position-relative banner-style-one"
           style={{
             maxHeight: "55rem",
           }}
@@ -55,8 +55,8 @@ async function Bayz101Page() {
             <div className="col-lg-8">
               <h2 className="title mt40">
                 Seize the chance to <br />
-                <b className="text-indus">Invest</b> in the most <br />
-                <b className="text-indus">Dynamic Real Estate Market</b>
+                <b className="clr-red">Invest</b> in the most <br />
+                <b className="clr-red">Dynamic Real Estate Market</b>
               </h2>
               <div className="row m0 mt20">
                 <div className="col-2 maxw-70px">
@@ -104,7 +104,7 @@ async function Bayz101Page() {
                   <div className="list-style1">
                     <ul className="mb5">
                       <li className="mb5">
-                        <i className="far fa-check text-thm3 bgc-thm3-light fz20 text-indus bg-indus-light" />
+                        <i className="far fa-check text-thm3 bgc-thm3-light fz20 clr-red bg-indus-light" />
                         <p className="fz20 mb0 ml10">{point}</p>
                       </li>
                     </ul>
