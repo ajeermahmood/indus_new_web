@@ -34,8 +34,18 @@ const MobileMenu = () => {
                   alt="logo"
                 />
               </Link>
-              <Link href="#">
-                {/* <span className="icon fz18 far fa-user-circle" /> */}
+              <Link
+                className="list-item animated-button1 text-light animated-btn-mobile"
+                href="/bayz-101"
+                style={{
+                  padding: "10px 8px !important",
+                }}
+              >
+                Invest &amp; Win
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
               </Link>
             </div>
           </div>

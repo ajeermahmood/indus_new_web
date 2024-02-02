@@ -161,6 +161,32 @@ const MainBanner = () => {
                               TRIP TO DUBAI
                             </tspan>
                           </text>
+                          <text
+                            className="SalesEx2"
+                            font-family="Viga"
+                            font-size="65"
+                          >
+                            <tspan
+                              fill="#000"
+                              opacity="0.8"
+                              x="300"
+                              y="185"
+                              font-family="Viga"
+                              font-size="15"
+                            >
+                              *T&C Applied
+                            </tspan>
+                            <tspan
+                              x="300"
+                              y="183"
+                              font-family="Viga"
+                              font-size="15"
+                              opacity="1"
+                              fill="#fff"
+                            >
+                              *T&C Applied
+                            </tspan>
+                          </text>
                           <polyline
                             className="BorderAnimationEx2 BannerBorderLineEx2"
                             points="30 3, 20 200"
