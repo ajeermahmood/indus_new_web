@@ -265,7 +265,7 @@ const MainMenu = () => {
           </span>
         </Link>
       </li>
-      <li className="visible_list dropitem">
+      {/* <li className="visible_list dropitem">
         <div className="d-flex align-items-end">
           <Link
             className="list-item animated-button1 text-light"
@@ -278,7 +278,7 @@ const MainMenu = () => {
             Invest &amp; Win
           </Link>
         </div>
-      </li>
+      </li> */}
       {/* End contact */}
 
       {/* <li className="megamenu_style dropitem">
