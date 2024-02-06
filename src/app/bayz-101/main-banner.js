@@ -1,14 +1,46 @@
 "use client";
-import Image from "next/image";
-import { useEffect } from "react";
-import SwiperCore, { Autoplay, EffectFade } from "swiper";
+import { useEffect, useState } from "react";
+import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-SwiperCore.use([Autoplay]);
+// SwiperCore.use([Autoplay]);
 
 import $ from "jquery";
+import Link from "next/link";
+
+function useWindowSize() {
+  // Initialize state with undefined width/height so server and client renders match
+  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+
+  useEffect(() => {
+    // only execute all the code below in client side
+    // Handler to call on window resize
+    function handleResize() {
+      // Set window width/height to state
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []); // Empty array ensures that effect is only run on mount
+  return windowSize;
+}
 
 const MainBanner = () => {
+  const [realIndex, setIndex] = useState(0);
   useEffect(() => {
     $(".Banner2").delay(0).fadeIn(500);
     $(".BannerHolderEx2").delay(10).fadeIn(500);
@@ -16,11 +48,177 @@ const MainBanner = () => {
     $(".SalesEx2").delay(1000).fadeIn(500);
     $(".Mega").delay(1600).fadeIn(500);
     $(".ShopNowEx2").delay(2000).fadeIn(500);
+
+    // bayz video overlay delay
+
+    // $(".bayz-video-inner-text").delay(2000).fadeIn(500);
+    // $(".bt-2").delay(1000).fadeIn(500);
   });
+
+  const size = useWindowSize();
+
+  const sliderTexts = [
+    {
+      title: "EXCLUSIVE PROPERTY EVENT",
+      subtitle: "February 18, 2024",
+      f_size: 25,
+      subtitle_2: "10AM-7PM Crown Plaza Hotel",
+      subtitle_3: "Ahmedabad, India",
+      subtitle_4: "REGISTER NOW",
+    },
+    {
+      title: "Get a 1% Payment Plan and Exciting Offers",
+      subtitle: "From ₹ 3.9 Lakh per month",
+      f_size: 25,
+      subtitle_2: "",
+      subtitle_4: "REGISTER NOW",
+    },
+    {
+      title: "Avail",
+      subtitle: "GOLD COIN",
+      f_size: 35,
+      subtitle_2: "OR",
+      subtitle_3: "FREE TRIP + HOTEL STAY",
+      subtitle_4: "IN DUBAI, UAE",
+      subtitle_5: "*T&C Apply",
+    },
+  ];
+
+  const fontSizeGet = (size) => {
+    switch (size) {
+      case 20:
+        return "fz20";
+      case 25:
+        return "fz25";
+      case 30:
+        return "fz30";
+      case 35:
+        return "fz35 lh-73";
+      case 40:
+        return "fz40";
+      default:
+        return "";
+    }
+  };
   return (
     <>
-      <div className="hero-large-home9">
-        <Swiper
+      <div id="bayz-wrapper" className="hero-large-home9">
+        <video
+          className="bayz-video-custom"
+          width={size.width < 500 ? 500 : 1920}
+          height={size.width < 500 ? 600 : 1080}
+          autoPlay
+          muted
+          loop
+          preload
+        >
+          {size.width < 500 ? (
+            <source src="videos/mobile-video.mp4" type="video/mp4" />
+          ) : (
+            <source src="videos/bayzvideo.mp4" type="video/mp4" />
+          )}
+          Your browser does not support the video tag.
+        </video>
+
+        <div className="bayz-video-inner-text">
+          <Swiper
+            onSlideChange={(e) => setIndex(e.realIndex)}
+            spaceBetween={1}
+            // modules={[Autoplay]}
+            slidesPerView={1}
+            initialSlide={0}
+            loop={true}
+            // autoplay={{ delay: 4000, disableOnInteraction: false }}
+            style={{ height: size.width > 500 ? "23vh" : "29vh" }}
+          >
+            {sliderTexts.map((item, index) => (
+              <SwiperSlide key={index}>
+                <Link
+                  href={
+                    "https://www.jotform.com/assign/240292264800450/240363582641051"
+                  }
+                >
+                  <div>
+                    <h3
+                      className={`banner-title color-black lh-40 ${
+                        realIndex === index ? "op-1" : "op-1"
+                      }`}
+                    >
+                      <span className="fz40">{item.title}</span>
+                      <br />
+                      <span
+                        className={`${fontSizeGet(item.f_size)} ${
+                          item.subtitle == "February 18, 2024"
+                            ? "slide-1-feb"
+                            : ""
+                        }`}
+                      >
+                        {item.subtitle}
+                      </span>
+                      <br />
+                      <span
+                        className={`fz20 lh-0 ${
+                          item.subtitle_2 == "OR"
+                            ? "positioning-or-text"
+                            : item.subtitle_2 == "10AM-7PM Crown Plaza Hotel"
+                            ? "slide-1-time"
+                            : ""
+                        }`}
+                      >
+                        {item.subtitle_2}
+                      </span>
+                      <br />
+                      {item.subtitle_3 == "FREE TRIP + HOTEL STAY" ? (
+                        <span className={`fz30 lh-0 position-free-trip`}>
+                          <b>{item.subtitle_3}</b>
+                        </span>
+                      ) : (
+                        <span
+                          className={`fz25 lh-0 ${
+                            item.subtitle_3 == "Ahmedabad, India"
+                              ? "slide-1-loc"
+                              : ""
+                          }`}
+                        >
+                          {item.subtitle_3}
+                        </span>
+                      )}
+                      <br />
+                      <span
+                        className={`fz20 lh-0 ${
+                          item.subtitle_4 == "REGISTER NOW" &&
+                          item.title == "EXCLUSIVE PROPERTY EVENT"
+                            ? "slide-1-reg"
+                            : item.subtitle_4 == "REGISTER NOW" &&
+                              item.title ==
+                                "Get a 1% Payment Plan and Exciting Offers"
+                            ? "slide-2-reg"
+                            : item.subtitle_4 == "IN DUBAI, UAE"
+                            ? "position-in-dubai"
+                            : ""
+                        }`}
+                      >
+                        {item.subtitle_4}
+                      </span>
+                      <br />
+                      <span
+                        className={`fz15 lh-0 ${
+                          item.subtitle_5 == "*T&C Apply"
+                            ? "position-tc-apply"
+                            : ""
+                        }`}
+                      >
+                        {item.subtitle_5}
+                      </span>
+                    </h3>
+                  </div>
+                </Link>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        {/* <Swiper
           direction="vertical" // Set the direction to vertical
           effect={"fade"}
           spaceBetween={0}
@@ -35,13 +233,6 @@ const MainBanner = () => {
             "danube-bayz-101-in-business-bay-dubai.jpg",
           ].map((item, index) => (
             <SwiperSlide key={index}>
-              {/* <Image
-                className="cover w-100 h-100"
-                src={`/images/bayz-101/${item}`}
-                width={4000}
-                height={1000}
-                alt="main-image"
-              /> */}
               <div
                 className="item"
                 style={{
@@ -65,9 +256,6 @@ const MainBanner = () => {
                           1% Payment Plan
                         </span>
                         <p className="text-light mt50"></p>
-                        {/* ---------------------------------------external svg css---------------------------------- */}
-                        {/* ---------------------------------------external svg css---------------------------------- */}
-                        {/* ---------------------------------------external svg css---------------------------------- */}
                         <svg className="Banner2 margin-lft-minus-25-mbl" height="220" width="450">
                           <polygon
                             className="BorderAnimationEx2 BannerBorderEx2"
@@ -198,9 +386,6 @@ const MainBanner = () => {
                           />
                           Sorry, your browser does not support inline SVG.
                         </svg>
-                        {/* ---------------------------------------external svg css---------------------------------- */}
-                        {/* ---------------------------------------external svg css---------------------------------- */}
-                        {/* ---------------------------------------external svg css---------------------------------- */}
                       </div>
                     </div>
                   </div>
@@ -208,7 +393,7 @@ const MainBanner = () => {
               </div>
             </SwiperSlide>
           ))}
-        </Swiper>
+        </Swiper> */}
       </div>
     </>
   );

@@ -267,7 +267,7 @@ const MainMenu = () => {
       </li>
       <li className="visible_list dropitem">
         <div className="d-flex align-items-end">
-          <Link
+          {/* <Link
             className="list-item animated-button1 text-light"
             href="/bayz-101"
           >
@@ -276,7 +276,7 @@ const MainMenu = () => {
             <span></span>
             <span></span>
             Invest &amp; Win
-          </Link>
+          </Link> */}
         </div>
       </li>
       {/* End contact */}

@@ -410,6 +410,102 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
   animation-delay: 0s;
 }
 
+.bayz-video-custom {
+  object-fit: cover;
+  object-position: top;
+  width: 100%;
+  max-height: 85vh;
+  margin-top: -100px;
+}
+
+.bayz-video-inner-text {
+  // display: none;
+  position: absolute;
+  z-index: 9999999;
+  top: 25%;
+  right: 3%;
+  background: rgb(255 255 255 / 68%);
+  padding: 30px;
+  width: 30%;
+  border-radius: 25px;
+  border: 6px solid #ff0000b5;
+  text-align: center;
+
+  .bt-2 {
+    // display: none;
+    font-size: 30px !important;
+  }
+}
+
+.lh-40 {
+  line-height: 40px !important;
+}
+
+.lh-73 {
+  line-height: 73px !important;
+}
+
+.lh-0 {
+  line-height: 0px !important;
+}
+
+.color-black {
+  color: black !important;
+}
+
+.positioning-or-text {
+  position: relative;
+  top: -27px;
+}
+
+.position-free-trip {
+  position: relative;
+  top: -28px;
+}
+
+.position-in-dubai {
+  position: relative;
+  top: -37px;
+}
+
+.position-tc-apply {
+  position: relative;
+  top: -45px;
+}
+
+.op-1 {
+  opacity: 1 !important;
+}
+.op-0 {
+  opacity: 0 !important;
+}
+
+.slide-1-feb {
+  position: relative;
+  top: 14px;
+}
+
+.slide-1-time {
+  position: relative;
+  top: -7px;
+  font-weight: 500;
+}
+
+.slide-1-loc {
+  position: relative;
+  top: -19px;
+}
+
+.slide-1-reg {
+  position: relative;
+  top: -18px;
+}
+
+.slide-2-reg {
+  position: relative;
+  top: -63px;
+}
+
 /////// Bayz ctc styles //////////
 /////// Bayz ctc styles //////////
 /////// Bayz ctc styles //////////
@@ -423,6 +519,26 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
 }
 
 @media (max-width: 500px) {
+
+  .bayz-video-inner-text {
+    // display: none;
+    position: absolute;
+    z-index: 9999999;
+    top: 25%;
+    right: 0%;
+    background: rgb(255 255 255 / 68%);
+    padding: 30px;
+    width: 100%;
+    border-radius: 25px;
+    border: 6px solid #ff0000b5;
+    text-align: center;
+  
+    .bt-2 {
+      // display: none;
+      font-size: 30px !important;
+    }
+  }
+
   .margin-lft-minus-25-mbl {
     margin-left: -25px !important;
   }
@@ -11324,11 +11440,11 @@ input:focus-visible {
 }
 
 .fz30 {
-  font-size: 30px;
+  font-size: 30px !important;
 }
 
 .fz40 {
-  font-size: 40px;
+  font-size: 40px !important;
 }
 
 .fz45 {

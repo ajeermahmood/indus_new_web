@@ -35,7 +35,7 @@ const MobileMenu = () => {
                 />
               </Link>
               <Link href="/"></Link>
-              <Link
+              {/* <Link
                 className="list-item animated-button1 text-light animated-btn-mobile"
                 href="/bayz-101"
                 style={{
@@ -47,7 +47,7 @@ const MobileMenu = () => {
                 <span></span>
                 <span></span>
                 <span></span>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

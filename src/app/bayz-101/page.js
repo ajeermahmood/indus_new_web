@@ -25,7 +25,7 @@ async function Bayz101Page() {
     "1% Monthly Payment Plan",
     "No Tax",
     "Book with only AED 25,000",
-    "Only Tallest Residential Tower",
+    "Tallest Residential Tower in the Heart of the City",
     "Next to Metro Station",
     "Purchase in Pre launch & avail Fully Furnished Apartments",
   ];
@@ -97,6 +97,24 @@ async function Bayz101Page() {
                   <span className="fz25">Ahmedabad, India</span>
                 </div>
               </div>
+              <div className="row m0 mt15">
+                <div className="col-2 maxw-70px">
+                  <Image
+                    src={`/images/svg/phone-call-svgrepo-com.svg`}
+                    width={35}
+                    height={35}
+                    alt="call"
+                  />
+                </div>
+                <div className="col-10 d-flex align-items-center pl0">
+                  <span className="fz25">
+                    {" "}
+                    <a href="tel:+919819022607">IND +91 9819022607</a>{" "}
+                    <span className="clr-red">|</span>{" "}
+                    <a href="tel:+971566540490">DXB +971 566540490</a>
+                  </span>
+                </div>
+              </div>
 
               <h4 className="title mt40">AVAIL AND GET</h4>
               {featuresData.map((point, index) => (
@@ -111,6 +129,17 @@ async function Bayz101Page() {
                   </div>
                 </div>
               ))}
+              <Image
+                style={{
+                  filter:
+                    "invert(14%) sepia(85%) saturate(7461%) hue-rotate(359deg) brightness(100%) contrast(108%)",
+                }}
+                className="mt30 w-100 contain"
+                src={"/images/bayz-101/nearbyupdated.png"}
+                width={800}
+                height={250}
+                alt="bayz-features"
+              />
               <div className="ui-content mt30 mb60">
                 {/* <p className="mb25 ff-heading fz20">101 LEVELS OF LUXURY IN BUSINESS BAY, DUBAI.</p> */}
                 {/* <div className="ff-heading fz20">
@@ -127,7 +156,9 @@ async function Bayz101Page() {
                   every detail.
                 </div> */}
               </div>
-              <h4 className="title mt40 mobile-hide">FEATURES &amp; AMENITIES</h4>
+              <h4 className="title mt40 mobile-hide">
+                FEATURES &amp; AMENITIES
+              </h4>
               <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative mobile-hide">
                 <div className="row">
                   {amenties.map((am, rowIndex) => (

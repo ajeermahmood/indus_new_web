@@ -4,6 +4,7 @@ import MainMenu from "@/components/common/MainMenu";
 import SidebarPanel from "@/components/common/sidebar-panel";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const Header = () => {
@@ -23,6 +24,8 @@ const Header = () => {
       window.removeEventListener("scroll", changeBackground);
     };
   }, []);
+
+  const path = usePathname();
 
   return (
     <>
@@ -73,7 +76,11 @@ const Header = () => {
                   </a>
                   <a
                     className="login-info d-flex align-items-center me-3"
-                    href="https://wa.me/971080046387"
+                    href={`${
+                      path == "/bayz-101"
+                        ? "https://wa.me/971080046387?text=Hi,%20Im%20interested%20to%20join%20the%20property%20event%20in%20Ahmedabad%20India"
+                        : "https://wa.me/971080046387"
+                    }`}
                   >
                     <Image
                       src="https://indusspeciality.com/api/assets/images/svg/whatsapp.svg"
