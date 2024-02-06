@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-// SwiperCore.use([Autoplay]);
+SwiperCore.use([Autoplay]);
 
 import $ from "jquery";
 import Link from "next/link";
@@ -124,11 +124,11 @@ const MainBanner = () => {
           <Swiper
             onSlideChange={(e) => setIndex(e.realIndex)}
             spaceBetween={1}
-            // modules={[Autoplay]}
+            modules={[Autoplay]}
             slidesPerView={1}
             initialSlide={0}
             loop={true}
-            // autoplay={{ delay: 4000, disableOnInteraction: false }}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
             style={{ height: size.width > 500 ? "23vh" : "29vh" }}
           >
             {sliderTexts.map((item, index) => (
