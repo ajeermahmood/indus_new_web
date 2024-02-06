@@ -35,19 +35,19 @@ const MobileMenu = () => {
                 />
               </Link>
               <Link href="/"></Link>
-              {/* <Link
+              <Link
                 className="list-item animated-button1 text-light animated-btn-mobile"
                 href="/bayz-101"
                 style={{
                   padding: "10px 8px !important",
                 }}
               >
-                Invest &amp; Win
+                Invest In Dubai
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-              </Link> */}
+              </Link>
             </div>
           </div>
         </div>
