@@ -275,7 +275,7 @@ const MainMenu = () => {
             <span></span>
             <span></span>
             <span></span>
-            Invest In Dubai
+            Invest &amp; Win
           </Link>
         </div>
       </li>

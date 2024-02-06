@@ -42,7 +42,7 @@ const MobileMenu = () => {
                   padding: "10px 8px !important",
                 }}
               >
-                Invest In Dubai
+                Invest &amp; Win
                 <span></span>
                 <span></span>
                 <span></span>
