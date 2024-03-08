@@ -135,7 +135,7 @@ async function Bayz101Page() {
                     "invert(14%) sepia(85%) saturate(7461%) hue-rotate(359deg) brightness(100%) contrast(108%)",
                 }}
                 className="mt30 w-100 contain"
-                src={"https://indusre.com/images/bayz-101/nearbyupdated.png"}
+                src={"https://www.indusre.com/images/bayz-101/nearbyupdated.png"}
                 width={800}
                 height={250}
                 alt="bayz-features"
