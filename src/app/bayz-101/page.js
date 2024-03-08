@@ -81,7 +81,7 @@ async function Bayz101Page() {
                   />
                 </div>
                 <div className="col-10 d-flex align-items-center pl0">
-                  <span className="fz25">February 18, 2024</span>
+                  <span className="fz25">17th March 2024</span>
                 </div>
               </div>
               <div className="row m0 mt15">
@@ -94,7 +94,7 @@ async function Bayz101Page() {
                   />
                 </div>
                 <div className="col-10 d-flex align-items-center pl0">
-                  <span className="fz25">Ahmedabad, India</span>
+                  <span className="fz25">Jaipur, India</span>
                 </div>
               </div>
               <div className="row m0 mt15">

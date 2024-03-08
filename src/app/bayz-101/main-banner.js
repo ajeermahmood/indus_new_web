@@ -60,10 +60,10 @@ const MainBanner = () => {
   const sliderTexts = [
     {
       title: "EXCLUSIVE PROPERTY EVENT",
-      subtitle: "February 18, 2024",
+      subtitle: "17th March 2024",
       f_size: 25,
       subtitle_2: "10AM-7PM Crown Plaza Hotel",
-      subtitle_3: "Ahmedabad, India",
+      subtitle_3: "Jaipur, India",
       subtitle_4: "REGISTER NOW",
     },
     {
@@ -175,7 +175,7 @@ const MainBanner = () => {
                       ) : (
                         <span
                           className={`fz25 lh-0 ${
-                            item.subtitle_3 == "Ahmedabad, India"
+                            item.subtitle_3 == "Jaipur, India"
                               ? "slide-1-loc"
                               : ""
                           }`}
