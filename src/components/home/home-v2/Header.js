@@ -78,8 +78,8 @@ const Header = () => {
                     className="login-info d-flex align-items-center me-3"
                     href={`${
                       path == "/bayz-101"
-                        ? "https://wa.me/971080046387?text=Hi,%20Im%20interested%20to%20join%20the%20property%20event%20in%20Ahmedabad%20India"
-                        : "https://wa.me/971080046387"
+                        ? "https://wa.me/971568060786?text=Hi,%20Im%20interested%20to%20join%20the%20property%20event%20in%20Ahmedabad%20India"
+                        : "https://wa.me/971568060786"
                     }`}
                   >
                     <Image
