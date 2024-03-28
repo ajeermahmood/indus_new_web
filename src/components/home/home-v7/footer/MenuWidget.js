@@ -53,7 +53,7 @@ const MenuWidget = () => {
         { label: "Partners", href: "/developers" },
         { label: "Community Guides", href: "/all-community-guides" },
         { label: "Privacy Policy", href: "/privacy-policy" },
-        // { label: "FAQs", href: "#" },
+        { label: "Sitemap", href: "https://www.indusre.com/sitemap.xml" },
       ],
     },
   ];
@@ -64,9 +64,9 @@ const MenuWidget = () => {
         {menuSections.map((section, index) => (
           <div className="footer-widget mb-4 mb-lg-5 ps-0 ps-lg-3" key={index}>
             <div className="link-style1 light-style mb30 ">
-              <h6 className={`mb7 text-blue-gray`}>
+              <p className={`mb7 text-blue-gray`}>
                 {section.title}
-              </h6>
+              </p>
               <ul className="link-list ps-0">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
@@ -87,9 +87,9 @@ const MenuWidget = () => {
         {menuSections2.map((section, index) => (
           <div className="footer-widget mb-4 mb-lg-5 ps-0 ps-lg-3" key={index}>
             <div className="link-style1 light-style mb30 ">
-              <h6 className={`mb7 text-blue-gray`}>
+              <p className={`mb7 text-blue-gray`}>
                 {section.title}
-              </h6>
+              </p>
               <ul className="link-list ps-0">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>

@@ -33,7 +33,9 @@ const EnquiryForm = dynamic(() => import("./enquiry-stepper"));
 const ScrollDownCustom = dynamic(() => import("./scroll-down-custom"));
 const CookieConsent = dynamic(() => import("./cookies-consent"));
 
-const FeaturedVideos = dynamic(() => import("@/components/common/Videos-featured"));
+const FeaturedVideos = dynamic(() =>
+  import("@/components/common/Videos-featured")
+);
 
 // import ApartmentType from "@/components/home/home-v2/ApartmentType";
 // import Header from "@/components/home/home-v2/Header";
@@ -73,6 +75,7 @@ const HomePage = async () => {
   const data = await getMainSliderImgs();
   return (
     <>
+      <link rel="canonical" href="https://www.indusre.com" key="canonical" />
       {/* Main Header Nav */}
       <Header />
       {/* End Main Header Nav */}
@@ -129,7 +132,7 @@ const HomePage = async () => {
       >
         <PropertyListing />
       </section>
-      <section className="pb90 pb20-md pt50" id="featured-blogs">
+      <section className="pb90 pb20-md pt50" id="featured-videos">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 m-auto" data-aos="fade-up">

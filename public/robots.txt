@@ -1,3 +1,5 @@
 # Allow all crawlers
 User-agent: *
-Allow: /
+Disallow: /email
+Sitemap: https://www.indusre.com/sitemap.xml
+Host: https://www.indusre.com

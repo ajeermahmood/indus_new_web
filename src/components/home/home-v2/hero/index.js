@@ -9,12 +9,12 @@ const Hero = () => {
     <>
       <div className="inner-banner-style2 text-center position-relative">
         <HeroContent activeTab={activeTab} setActiveTab={setActiveTab} />
-        <h2 className="hero-title fz25-mbl">
+        <h1 className="hero-title fz25-mbl">
           <i>
             {" "}
             Service you Deserve, <br /> People you Trust!
           </i>
-        </h2>
+        </h1>
         <p className="hero-text fz15">
           Let&apos;s find a home that&apos;s perfect for you.
         </p>

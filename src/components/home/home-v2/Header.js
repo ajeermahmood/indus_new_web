@@ -108,7 +108,7 @@ const Header = () => {
                     Add Property
                     <i className="fal fa-arrow-right-long" />
                   </Link> */}
-                  <a
+                  {/* <a
                     className="sidemenu-btn filter-btn-right px10"
                     href="#"
                     data-bs-toggle="offcanvas"
@@ -116,7 +116,7 @@ const Header = () => {
                     aria-controls="SidebarPanelLabel"
                   >
                     <i className="fa fa-bars"></i>
-                  </a>
+                  </a> */}
                 </div>
               </div>
               {/* End .col-auto */}
@@ -132,14 +132,14 @@ const Header = () => {
       {/* End Signup Modal */}
 
       {/* DesktopSidebarMenu */}
-      <div
+      {/* <div
         className="offcanvas offcanvas-end"
         tabIndex="-1"
         id="SidebarPanel"
         aria-labelledby="SidebarPanelLabel"
       >
         <SidebarPanel />
-      </div>
+      </div> */}
       {/* Sidebar Panel End */}
     </>
   );

@@ -5,7 +5,7 @@ const Category = ({ filterFunctions }) => {
 
   return (
     <div className="sidebar-widget mb30">
-      <h6 className="widget-title">Categories</h6>
+      <p className="widget-title">Categories</p>
       <div className="category-list d-flex flex-column mt20">
         {categories.map((category, index) => (
           <a href="#" key={index}>

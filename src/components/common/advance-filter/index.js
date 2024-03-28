@@ -93,9 +93,9 @@ const AdvanceFilterModal = ({ listingStatus }) => {
     <div className="modal-dialog modal-dialog-centered modal-lg">
       <div className="modal-content">
         <div className="modal-header pl30 pr30">
-          <h5 className="modal-title" id="exampleModalLabel">
+          <p className="modal-title" id="exampleModalLabel">
             More Filter
-          </h5>
+          </p>
           <button
             type="button"
             className="btn-close"
@@ -109,7 +109,7 @@ const AdvanceFilterModal = ({ listingStatus }) => {
           <div className="row">
             <div className="col-lg-12">
               <div className="widget-wrapper">
-                <h6 className="list-title mb20">Price Range</h6>
+                <p className="list-title mb20">Price Range</p>
                 <div className="range-slider-style modal-version">
                   <PriceRange filterFunctions={filterFunctions} />
                 </div>
@@ -121,7 +121,7 @@ const AdvanceFilterModal = ({ listingStatus }) => {
           <div className="row">
             <div className="col-sm-6">
               <div className="widget-wrapper">
-                <h6 className="list-title">Type</h6>
+                <p className="list-title">Type</p>
                 <div className="form-style2 input-group">
                   <Select
                     defaultValue={[catOptions[0]]}
@@ -146,7 +146,7 @@ const AdvanceFilterModal = ({ listingStatus }) => {
 
             <div className="col-sm-6">
               <div className="widget-wrapper">
-                <h6 className="list-title">Reference ID</h6>
+                <p className="list-title">Reference ID</p>
                 <div className="form-style2">
                   <input
                     type="text"
@@ -163,7 +163,7 @@ const AdvanceFilterModal = ({ listingStatus }) => {
           <div className="row">
             <div className="col-sm-6">
               <div className="widget-wrapper">
-                <h6 className="list-title">Bedrooms</h6>
+                <p className="list-title">Bedrooms</p>
                 <div className="d-flex">
                   <Bedroom filterFunctions={filterFunctions} />
                 </div>
@@ -173,7 +173,7 @@ const AdvanceFilterModal = ({ listingStatus }) => {
 
             <div className="col-sm-6">
               <div className="widget-wrapper">
-                <h6 className="list-title">Bathrooms</h6>
+                <p className="list-title">Bathrooms</p>
                 <div className="d-flex">
                   <Bathroom filterFunctions={filterFunctions} />
                 </div>
@@ -186,7 +186,7 @@ const AdvanceFilterModal = ({ listingStatus }) => {
           <div className="row">
             <div className="col-sm-6">
               <div className="widget-wrapper">
-                <h6 className="list-title">Location</h6>
+                <p className="list-title">Location</p>
                 <div className="form-style2 input-group">
                   <Select
                     defaultValue={[Locations[0]]}
@@ -211,7 +211,7 @@ const AdvanceFilterModal = ({ listingStatus }) => {
 
             <div className="col-sm-6">
               <div className="widget-wrapper">
-                <h6 className="list-title">Square Feet</h6>
+                <p className="list-title">Square Feet</p>
                 <div className="space-area">
                   <div className="d-flex align-items-center justify-content-between">
                     <div className="form-style1">
@@ -253,7 +253,7 @@ const AdvanceFilterModal = ({ listingStatus }) => {
 
           <div className="col-lg-12">
             <div className="widget-wrapper mb0">
-              <h6 className="list-title mb10">Amenities</h6>
+              <p className="list-title mb10">Amenities</p>
             </div>
           </div>
           <div

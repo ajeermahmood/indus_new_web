@@ -14,7 +14,7 @@ const ApartmentType = () => {
             <div className="iconbox-style4 p20-mbl">
               <span className={`icon ${type.icon}`} />
               <div className="iconbox-content">
-                <h6 className="title">{type.title}</h6>
+                <p className="title">{type.title}</p>
                 {type.count != "0" ? (
                   <p className="text text-light mb-0">{`${type.count} Properties`}</p>
                 ) : (

@@ -2,9 +2,9 @@ export const homeItems = [
   { href: "/", label: "Home" },
   { href: "/#featured-properties", label: "Featured Properties" },
   { href: "/#explore-cities", label: "Explore Cities" },
-  { href: "/#featured-blogs", label: "Featured Blogs" },
-  { href: "/#guides", label: "Guides" },
-  { href: "/#exclusive-team", label: "Exclusive Team" },
+  { href: "/#featured-videos", label: "Featured Videos" },
+  // { href: "/#guides", label: "Guides" },
+  // { href: "/#exclusive-team", label: "Exclusive Team" },
 ];
 
 export const residentialPages = [

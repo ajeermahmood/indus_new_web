@@ -23,14 +23,14 @@ const ContactInfo = () => {
           <div className="contact-info">
             <p className="info-title dark-color">{info.title}</p>
             {info.phone && (
-              <h6 className="info-phone dark-color">
+              <p className="info-phone dark-color">
                 <a href={info.phoneHref}>{info.phone}</a>
-              </h6>
+              </p>
             )}
             {info.email && (
-              <h6 className="info-mail dark-color">
+              <p className="info-mail dark-color">
                 <a href={info.emailHref}>{info.email}</a>
-              </h6>
+              </p>
             )}
           </div>
         </div>

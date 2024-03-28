@@ -18,7 +18,7 @@ const AppWidget = () => {
 
   return (
     <div className="app-widget">
-      <h5 className="title  mb10">Apps</h5>
+      <p className="title  mb10">Apps</p>
       <div className="row">
         {appList.map((app, index) => (
           <div className="col-auto" key={index}>
@@ -35,7 +35,7 @@ const AppWidget = () => {
                   >
                     {app.text}
                   </p>
-                  <h6 className="app-title text-white fz14">{app.title}</h6>
+                  <p className="app-title text-white fz14">{app.title}</p>
                 </div>
               </div>
             </a>
