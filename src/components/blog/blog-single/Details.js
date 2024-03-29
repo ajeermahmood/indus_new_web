@@ -26,7 +26,7 @@ export default function Details({ blogData }) {
                   {/* {data.date.month} {data.date.day}, {data.date.year || 2022} */}
                   {new Date(blogData.news_date).toDateString().split(" ")[0]}{" "}
                   {new Date(blogData.news_date).toDateString().split(" ")[1]}{" "}
-                  {new Date(blogData.news_date).toDateString().split(" ")[2]},{" "}
+                  {new Date(blogData.news_date).getDate() + 1},{" "}
                   {new Date(blogData.news_date).toDateString().split(" ")[3]}
                 </a>
               </div>
