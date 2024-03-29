@@ -67,13 +67,13 @@ async function CommunityGuidePage({ params }) {
       {/* Mobile Nav  */}
       <MobileMenu />
 
-      <section className="our-blog pt80">
+      <section className="our-blog pt80 pt0-mbl">
         {/* <Details data={data} /> */}
 
         <div
           className="banner-wrapper main-banner-wrapper  position-relative banner-style-one"
           style={{
-            maxHeight: "55rem",
+            height: "70vh",
           }}
         >
           <BannerSlider

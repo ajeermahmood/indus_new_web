@@ -519,6 +519,13 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
 }
 
 @media (max-width: 500px) {
+  .top-20-mbl {
+    top: -20px !important;
+  }
+  
+  .mt40-mbl {
+    margin-top: 40px !important;
+  }
 
   .bayz-video-inner-text {
     // display: none;
@@ -532,7 +539,7 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
     border-radius: 25px;
     border: 6px solid #ff0000b5;
     text-align: center;
-  
+
     .bt-2 {
       // display: none;
       font-size: 30px !important;

@@ -4,7 +4,7 @@ import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 
-const BannerSlider = ({ hightlights, title , url}) => {
+const BannerSlider = ({ hightlights, title, url }) => {
   return (
     <>
       <div className="rounded-arrow arrow-with-border d-flex flex-column d-position end-pos">
@@ -26,14 +26,14 @@ const BannerSlider = ({ hightlights, title , url}) => {
           spaceBetween={0}
           slidesPerView={1}
           speed={1400} // Set the slide transition speed in milliseconds
-          autoplay={{ delay: 4000, disableOnInteraction: false }}
+          // autoplay={{ delay: 4000, disableOnInteraction: false }}
           modules={[Navigation]}
           navigation={{
             nextEl: ".hero9-next__active",
             prevEl: ".hero9-prev__active",
           }}
           className="hero_9"
-          style={{ height: "90vh" }}
+          style={{ height: "80vh" }}
         >
           {hightlights.map((item, index) => (
             <SwiperSlide key={index}>
@@ -56,26 +56,26 @@ const BannerSlider = ({ hightlights, title , url}) => {
                       className="banner-title fz40"
                       style={{
                         position: "absolute",
-                        top: "-180px",
+                        top: "-120px",
                       }}
                     >
                       {title}
                     </h3>
                     <p
-                      className="text-light fz20"
+                      className="text-light fz20 top-20-mbl"
                       style={{
                         position: "absolute",
-                        top: "-120px",
+                        top: "-60px",
                       }}
                     >
                       Hightlights
                     </p>
-                    <div className="row">
+                    <div className="row mt40-mbl">
                       <div className="col-xl-7">
-                        <h3 className="banner-title fz40">
+                        <h3 className="banner-title fz30">
                           {item.ps_highlight_title}
                         </h3>
-                        <p className="text-light fz25">
+                        <p className="text-light fz20">
                           {item.ps_highlight_text}
                         </p>
 
@@ -85,7 +85,7 @@ const BannerSlider = ({ hightlights, title , url}) => {
                         <a
                           target="_blank"
                           href={url}
-                          className="ud-btn banner-btn fw500 btn-thm mt10 mt0-xs"
+                          className="ud-btn banner-btn fw500 btn-thm mt5 mt0-xs"
                         >
                           View Details <i className="fal fa-arrow-right-long" />
                         </a>
