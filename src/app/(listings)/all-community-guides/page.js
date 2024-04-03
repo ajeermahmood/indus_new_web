@@ -28,7 +28,7 @@ const CommunityGuidePage = () => {
                 <h2 className="title">Dubai Living: Home Guides</h2>
                 <div className="breadcumb-list">
                   <h6>
-                    Your go-to resource for home living in Dubai's diverse
+                    Your go-to resource for home living in Dubai&apos;s diverse
                     communities.
                   </h6>
                 </div>
