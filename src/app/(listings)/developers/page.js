@@ -26,10 +26,12 @@ const Agency = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcumb-style1">
-                <h2 className="title">All Developers</h2>
+                <h2 className="title">UAE Real Estate Developers</h2>
                 <div className="breadcumb-list">
-                  <a href="#">Home</a>
-                  <a href="#">Developers</a>
+                  <h6>
+                    Dive into the world of premier real estate developers in the
+                    UAE, crafting iconic destinations.
+                  </h6>
                 </div>
               </div>
             </div>

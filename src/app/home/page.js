@@ -111,10 +111,14 @@ const HomePage = async () => {
           <div className="row">
             <div className="col-lg-6 mx-auto">
               <div className="main-title2 text-center">
-                <h2 className="title">Featured Projects</h2>
+                <h2 className="title">
+                  Luxury Living: Explore Featured Projects in UAE
+                </h2>
                 <p className="paragraph">
-                  Featuring luxury apartments and townhouses. Contact us for
-                  more information.
+                  Indulge in the epitome of luxury with our curated selection of
+                  featured projects, showcasing exquisite apartments and
+                  townhouses. Contact us now to elevate your lifestyle with
+                  these premier real estate offerings.
                 </p>
               </div>
             </div>
@@ -137,10 +141,15 @@ const HomePage = async () => {
           <div className="row">
             <div className="col-lg-6 m-auto" data-aos="fade-up">
               <div className="main-title text-start text-md-center">
-                <h2 className="title">Latest Videos</h2>
-                {/* <p className="paragraph">
-                  Read latest news about Real Estate in Dubai
-                </p> */}
+                <h2 className="title">
+                  Exclusive Video Insights: UAE Real Estate Scene
+                </h2>
+                <p className="paragraph">
+                  Dive into our collection of exclusive videos offering in-depth
+                  insights into the vibrant real estate market of UAE. From
+                  virtual tours to expert interviews, explore the latest trends
+                  shaping property investment opportunities in the region.
+                </p>
               </div>
             </div>
           </div>
@@ -176,9 +185,13 @@ const HomePage = async () => {
               <div className="main-title2 text-center">
                 <h2 className="title">Explore Cities</h2>
                 <p className="paragraph">
-                  Take a deep dive and Browse All original neighbourhood photos,
-                  drone footage, resident reviews and local insights to see if
-                  the home for sale is right for you.
+                  Embark on exploring Dubai&apos;s prime real estate destinations,
+                  each offering unique advantages for residents and investors
+                  alike. Each of these areas presents its own unique benefits,
+                  whether you&apos;re seeking a vibrant urban lifestyle, serene
+                  surroundings, or lucrative investment opportunities. Explore
+                  Dubai&apos;s diverse real estate landscape and find your perfect
+                  haven in one of these esteemed neighborhoods.
                 </p>
               </div>
             </div>
@@ -201,9 +214,9 @@ const HomePage = async () => {
                   News Updates: Real Estate Developments in UAE
                 </h2>
                 <p className="paragraph">
-                  Stay updated with the latest news and trends in UAE&apos;s dynamic
-                  real estate sector. From market insights to property launches,
-                  get the scoop on the ever-evolving landscape driving
+                  Stay updated with the latest news and trends in UAE&apos;s
+                  dynamic real estate sector. From market insights to property
+                  launches, get the scoop on the ever-evolving landscape driving
                   investment opportunities.
                 </p>
               </div>
@@ -265,8 +278,8 @@ const HomePage = async () => {
                 <p className="paragraph">
                   Discover the top developers in UAE shaping the skyline with
                   innovative real estate projects. From iconic towers to luxury
-                  residences, explore leading developers driving the nation&apos;s
-                  property market forward.
+                  residences, explore leading developers driving the
+                  nation&apos;s property market forward.
                 </p>
               </div>
             </div>

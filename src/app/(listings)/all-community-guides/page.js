@@ -25,10 +25,12 @@ const CommunityGuidePage = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcumb-style1">
-                <h2 className="title">Community Guides</h2>
+                <h2 className="title">Dubai Living: Home Guides</h2>
                 <div className="breadcumb-list">
-                  <a href="#">Home</a>
-                  <a href="#">Guides</a>
+                  <h6>
+                    Your go-to resource for home living in Dubai's diverse
+                    communities.
+                  </h6>
                 </div>
               </div>
             </div>
