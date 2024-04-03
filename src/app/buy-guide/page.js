@@ -56,7 +56,7 @@ const BuyGuidePage = () => {
                   Purchasing real estate in Dubai and the UAE can be an exciting
                   yet complex process. Whether you&apos;re a first-time buyer or a
                   seasoned investor, understanding the nuances of the market and
-                  the legal framework is crucial. Here&apos;s a comprehensive buyer's
+                  the legal framework is crucial. Here&apos;s a comprehensive buyer&apos;s
                   guide to help you navigate through the process:
                 </div>
               </div>

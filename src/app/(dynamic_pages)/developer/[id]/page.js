@@ -117,8 +117,8 @@ async function DevelopersPage({ params }) {
                   <h2 className="blog-title mb10">
                     OFF-PLAN PROPERTIES BY {data.name}
                   </h2>
-                  {prop_by.map((text) => (
-                    <h6>
+                  {prop_by.map((text, index) => (
+                    <h6 key={index}>
                       <a className="fz18 fw500" href={text.link}>
                         &gt; {text.name}
                       </a>
@@ -133,8 +133,8 @@ async function DevelopersPage({ params }) {
                   <h2 className="blog-title mb10">
                     COMMUNITIES BY {data.name}
                   </h2>
-                  {comm_by.map((text) => (
-                    <h6>
+                  {comm_by.map((text,index) => (
+                    <h6 key={index}> 
                       <a className="fz18 fw500" href={text.link}>
                         &gt; {text.name}
                       </a>
@@ -149,8 +149,8 @@ async function DevelopersPage({ params }) {
                   <h2 className="blog-title mb10">
                     READY TO MOVE BY {data.name}
                   </h2>
-                  {ready_by.map((text) => (
-                    <h6>
+                  {ready_by.map((text,index) => (
+                    <h6 key={index}>
                       {" "}
                       <a className="fz18 fw500" href={text.link}>
                         &gt; {text.name}

@@ -201,7 +201,7 @@ const HomePage = async () => {
                   News Updates: Real Estate Developments in UAE
                 </h2>
                 <p className="paragraph">
-                  Stay updated with the latest news and trends in UAE's dynamic
+                  Stay updated with the latest news and trends in UAE&apos;s dynamic
                   real estate sector. From market insights to property launches,
                   get the scoop on the ever-evolving landscape driving
                   investment opportunities.
@@ -265,7 +265,7 @@ const HomePage = async () => {
                 <p className="paragraph">
                   Discover the top developers in UAE shaping the skyline with
                   innovative real estate projects. From iconic towers to luxury
-                  residences, explore leading developers driving the nation's
+                  residences, explore leading developers driving the nation&apos;s
                   property market forward.
                 </p>
               </div>
