@@ -45,9 +45,9 @@ const Testimonial = () => {
               >
                 <div className="testi-content text-center">
                   <span className="icon fas fa-quote-left" />
-                  <h4 className="testi-text">{testimonial.review}</h4>
-                  <h6 className="name">{testimonial.name}</h6>
-                  <p className="design">Customer</p>
+                  <h4 className="testi-text">"{testimonial.review}"</h4>
+                  {/* <h6 className="name">{testimonial.name}</h6>
+                  <p className="design">Customer</p> */}
                 </div>
               </div>
             </SwiperSlide>

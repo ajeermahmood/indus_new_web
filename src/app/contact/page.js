@@ -36,7 +36,9 @@ const ContactUs = () => {
               <div className="home8-contact-form bdrs12 p40 p30-md bgc-white mb30">
                 <h2 className="form-title">Get In Touch</h2>
                 <p className="text mb25">
-                  Contact us for find a new property for you.
+                  Contact us today for real estate assistance. Our expert agents
+                  will guide you through buying, selling, or renting. Explore
+                  options now for your dream property!
                 </p>
                 <Contact />
               </div>
@@ -59,10 +61,9 @@ const ContactUs = () => {
               <div className="main-title text-center">
                 <h2 className="title">Visit Our Office</h2>
                 <p className="paragraph">
-                  Indus Real Estate is a multi-awarded Real Estate Regulatory
-                  Agency (RERA) registered company. We are established since
-                  2004 and in business for more than 17 years with a solid UAE
-                  and international client base
+                  Visit our office for top-notch service. Our real estate team
+                  is ready to assist with buying, selling, or renting needs.
+                  Start your journey with us today!
                 </p>
               </div>
             </div>

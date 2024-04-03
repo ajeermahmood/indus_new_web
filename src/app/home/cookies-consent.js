@@ -115,15 +115,15 @@ const CookieConsent = (props) => {
   return (
     <>
       <div className="cookies-dialog">
-        <div className="container">
-          <div className="d-flex justify-content-center my40">
-            <span className="text-dark fz20 lh-base cookies-dialog-mbl-text">
+        <div className="px20">
+          <div className=" d-flex justify-content-center my20 align-items-center">
+            <span className="text-dark fz15 lh-base cookies-dialog-mbl-text">
               This website uses cookies to improve user experience. By using our
               website you consent to all cookies in accordance with our Cookie
               Policy.
             </span>
             <button
-              className="ud-btn btn-dark bdrs0 w-170 cookies-dialog-mbl-btn"
+              className="ml20 ud-btn btn-dark bdrs0 w-150 cookies-dialog-mbl-btn py5 px20 fz14 min-w-100px"
               onClick={() => acceptCookie()}
             >
               Accept

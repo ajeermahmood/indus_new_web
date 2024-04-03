@@ -514,15 +514,50 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
 ////////////////////----------------------------- mobile css --------------------------------------------///////////////////////
 ////////////////////----------------------------- mobile css --------------------------------------------///////////////////////
 
+.absolute {
+  position: absolute !important;
+}
+
+.max-w-45rem {
+  max-width: 45rem !important;
+}
+
+.opacity-0 {
+  opacity: 0 !important;
+}
+
 .text-align-bayz {
   text-align: end !important;
 }
 
+.min-w-100px {
+  min-width: 100px !important;
+}
+
 @media (max-width: 500px) {
+  .pt10-mbl{
+    padding-top: 10px !important;
+  }
+
+  .h-20rem-mbl {
+    height: 20rem !important;
+  }
+  .mt0-mbl{
+    margin-top: 0 !important;
+  }
+
+  .mbl-hidden{
+    display: none !important;
+  }
+
+  .mbl-col {
+    display: block !important;
+  }
+
   .top-20-mbl {
     top: -20px !important;
   }
-  
+
   .mt40-mbl {
     margin-top: 40px !important;
   }

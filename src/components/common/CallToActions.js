@@ -31,7 +31,9 @@ const CallToActions = () => {
               <div className="cta-style1">
                 <h2 className="cta-title">Need help? Talk to our expert.</h2>
                 <p className="cta-text mb-0">
-                  Talk to our experts or Browse through more properties.
+                  Get expert advice for your real estate concerns. Unsure about
+                  buying, selling, or renting? Schedule a consultation with our
+                  team today. Satisfaction guaranteed!
                 </p>
               </div>
             </div>

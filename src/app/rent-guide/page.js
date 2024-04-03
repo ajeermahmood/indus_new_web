@@ -53,7 +53,14 @@ const RentGuidePage = () => {
             <div className="col-lg-12">
               <h2 className="blog-title">Renter Guide</h2>
               <div className="blog-single-meta">
-                <div className="post-author d-sm-flex align-items-center"></div>
+                <div className="post-author d-sm-flex align-items-center">
+                  Renting property in Dubai and the UAE offers flexibility and a
+                  wide range of options to suit different lifestyles and
+                  budgets. Whether you&apos;re a newcomer or a long-term resident,
+                  understanding the rental process is essential. Here&apos;s a
+                  comprehensive guide to help renters navigate through the
+                  process:
+                </div>
               </div>
             </div>
           </div>

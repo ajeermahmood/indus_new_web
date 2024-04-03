@@ -2,6 +2,7 @@ import Details from "@/components/blog/dev-single/Details";
 import MobileMenu from "@/components/common/mobile-menu";
 import Header from "@/components/home/home-v2/Header";
 import Footer from "@/components/home/home-v7/footer";
+import ScheduleTour from "@/components/property/property-single-style/sidebar/ScheduleTour";
 import Image from "next/image";
 
 // export async function generateStaticParams() {
@@ -56,6 +57,12 @@ export async function generateMetadata({ params }) {
 async function DevelopersPage({ params }) {
   const data = await getDeveloper(params.id);
 
+  const prop_by = data.properties_by ? JSON.parse(data.properties_by) : [];
+  const comm_by = data.communities_by ? JSON.parse(data.communities_by) : [];
+  const ready_by = data.ready_to_move_by
+    ? JSON.parse(data.ready_to_move_by)
+    : [];
+
   return (
     <>
       {/* Main Header Nav */}
@@ -67,18 +74,18 @@ async function DevelopersPage({ params }) {
       {/* End Mobile Nav  */}
 
       {/* Blog Section Area */}
-      <section className="our-blog pt130">
+      <section className="our-blog pt130 pt0-mbl">
         <Details devData={data} />
 
         <div className="container">
-          <div className="roww" data-aos="fade-up" data-aos-delay="500">
-            <div className="col-xl-8 offset-xl-2">
+          <div className="row wrap">
+            <div className="col-lg-8">
               <div
-                className="mt50 mb50 fz20"
+                className="mt50 mb50 fz20 max-w-45rem"
                 dangerouslySetInnerHTML={{ __html: data.short_description }}
               ></div>
               <div
-                className="mt50 mb50 fz20"
+                className="mt50 mb50 fz20 max-w-45rem"
                 dangerouslySetInnerHTML={{ __html: data.about_builder }}
               ></div>
 
@@ -92,6 +99,66 @@ async function DevelopersPage({ params }) {
                   className="bdrs12 post-img-2 w-100 h-100 cover"
                 />
               </div>
+            </div>
+            <div className="col-lg-4">
+              <div className="column mt50">
+                <div className="default-box-shadow1 bdrs12 bdr1 p30 mb30-md bgc-white position-relative">
+                  <h4 className="form-title mb15">Contact Us</h4>
+                  {/* <p className="text">Choose your preferred day</p> */}
+                  <ScheduleTour />
+                </div>
+                {/* End .Schedule a tour */}
+              </div>
+
+              {prop_by.length == 0 ? (
+                <></>
+              ) : (
+                <div className="mt50">
+                  <h2 className="blog-title mb10">
+                    OFF-PLAN PROPERTIES BY {data.name}
+                  </h2>
+                  {prop_by.map((text) => (
+                    <h6>
+                      <a className="fz18 fw500" href={text.link}>
+                        &gt; {text.name}
+                      </a>
+                    </h6>
+                  ))}
+                </div>
+              )}
+              {comm_by.length == 0 ? (
+                <></>
+              ) : (
+                <div className="mt50">
+                  <h2 className="blog-title mb10">
+                    COMMUNITIES BY {data.name}
+                  </h2>
+                  {comm_by.map((text) => (
+                    <h6>
+                      <a className="fz18 fw500" href={text.link}>
+                        &gt; {text.name}
+                      </a>
+                    </h6>
+                  ))}
+                </div>
+              )}
+              {ready_by.length == 0 ? (
+                <></>
+              ) : (
+                <div className="mt50">
+                  <h2 className="blog-title mb10">
+                    READY TO MOVE BY {data.name}
+                  </h2>
+                  {ready_by.map((text) => (
+                    <h6>
+                      {" "}
+                      <a className="fz18 fw500" href={text.link}>
+                        &gt; {text.name}
+                      </a>
+                    </h6>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>

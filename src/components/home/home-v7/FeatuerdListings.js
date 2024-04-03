@@ -213,7 +213,7 @@ const FeaturedListings = ({ data, type, loading }) => {
                     </div>
                     <div className="list-price">
                       {currencyFormatter.format(listing.property_price)}{" "}
-                      {type == "rent" ? <span>/ mo</span> : <></>}
+                      {type == "rent" ? <span>/ yr</span> : <></>}
                     </div>
                   </div>
                 </div>

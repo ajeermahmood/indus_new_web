@@ -46,13 +46,19 @@ const BuyGuidePage = () => {
       {/* End Mobile Nav  */}
 
       {/* Blog Section Area */}
-      <section className="our-blog pt130">
+      <section className="our-blog pt130 pt10-mbl">
         <div className="container">
           <div className="row" data-aos="fade-up" data-aos-delay="100">
             <div className="col-lg-12">
               <h2 className="blog-title">Buyer Guide</h2>
               <div className="blog-single-meta">
-                <div className="post-author d-sm-flex align-items-center"></div>
+                <div className="post-author d-sm-flex align-items-center">
+                  Purchasing real estate in Dubai and the UAE can be an exciting
+                  yet complex process. Whether you&apos;re a first-time buyer or a
+                  seasoned investor, understanding the nuances of the market and
+                  the legal framework is crucial. Here&apos;s a comprehensive buyer's
+                  guide to help you navigate through the process:
+                </div>
               </div>
             </div>
           </div>

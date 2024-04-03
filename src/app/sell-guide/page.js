@@ -52,7 +52,14 @@ const SellGuidePage = () => {
             <div className="col-lg-12">
               <h2 className="blog-title">Seller Guide</h2>
               <div className="blog-single-meta">
-                <div className="post-author d-sm-flex align-items-center"></div>
+                <div className="post-author d-sm-flex align-items-center">
+                  Selling a property in Dubai and the UAE requires careful
+                  planning, market knowledge, and strategic decision-making.
+                  Whether you&apos;re a homeowner or an investor looking to sell,
+                  understanding the selling process is essential. Here&apos;s a
+                  comprehensive guide to help sellers navigate through the
+                  process:
+                </div>
               </div>
             </div>
           </div>

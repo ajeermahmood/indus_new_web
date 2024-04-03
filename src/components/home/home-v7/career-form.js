@@ -8,6 +8,8 @@ const CareerForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Handle form submission
+
+    console.log(event);
   };
   const personalRole = [
     { value: "Mr", label: "Mr." },
@@ -104,6 +106,7 @@ const CareerForm = () => {
               type="text"
               className="form-control"
               placeholder="Your Name"
+              required
             />
           </div>
         </div>
@@ -116,6 +119,7 @@ const CareerForm = () => {
               type="email"
               className="form-control"
               placeholder="johndue@gmail.com"
+              required
             />
           </div>
         </div>
@@ -126,6 +130,7 @@ const CareerForm = () => {
               type="number"
               className="form-control"
               placeholder="+971 524576956"
+              required
             />
           </div>
         </div>
@@ -215,16 +220,11 @@ const CareerForm = () => {
         </label>
         <div className="col-md-4">
           <div className="mb20">
-            <button className="ud-btn btn-thm">Upload</button>
+            <input type="file" accept="*/*" className="" required />
           </div>
         </div>
-        <div className="col-md-8">
-          <div className="mt10">
-            {/* <label className="form-label fw600 dark-color">How did you hear about us?</label> */}
-            <div className="bootselect-multiselect">No File Have Choosen</div>
-          </div>
-        </div>
-        <ReCaptcha ref={captcha}/>
+
+        {/* <ReCaptcha ref={captcha}/> */}
 
         <div className="d-grid mt20">
           <button className="ud-btn btn-thm" type="submit">

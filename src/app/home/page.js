@@ -29,7 +29,7 @@ const PropertyGallery = dynamic(() =>
     "@/components/property/property-single-style/single-v4/banners-gallery"
   )
 );
-const EnquiryForm = dynamic(() => import("./enquiry-stepper"));
+// const EnquiryForm = dynamic(() => import("./enquiry-stepper"));
 const ScrollDownCustom = dynamic(() => import("./scroll-down-custom"));
 const CookieConsent = dynamic(() => import("./cookies-consent"));
 
@@ -197,9 +197,14 @@ const HomePage = async () => {
           <div className="row">
             <div className="col-lg-6 m-auto" data-aos="fade-up">
               <div className="main-title text-start text-md-center">
-                <h2 className="title">Latest News</h2>
+                <h2 className="title">
+                  News Updates: Real Estate Developments in UAE
+                </h2>
                 <p className="paragraph">
-                  Read latest news about Real Estate in Dubai
+                  Stay updated with the latest news and trends in UAE's dynamic
+                  real estate sector. From market insights to property launches,
+                  get the scoop on the ever-evolving landscape driving
+                  investment opportunities.
                 </p>
               </div>
             </div>
@@ -255,8 +260,14 @@ const HomePage = async () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-12 wow fadeInUp" data-wow-delay="0">
-              <div className="main-title text-center">
-                <h6>Trusted Partners</h6>
+              <div className="main-title text-start text-md-center">
+                <h2 className="title">Top Developers in UAE</h2>
+                <p className="paragraph">
+                  Discover the top developers in UAE shaping the skyline with
+                  innovative real estate projects. From iconic towers to luxury
+                  residences, explore leading developers driving the nation's
+                  property market forward.
+                </p>
               </div>
             </div>
             {/* End .col-12 */}
@@ -271,6 +282,11 @@ const HomePage = async () => {
             {/* End .col-12 */}
           </div>
           {/* End .row */}
+          <div className="d-grid d-md-block text-center mt50">
+            <Link href="/developers" className="ud-btn btn-dark bdrs0">
+              Explore More<i className="fal fa-arrow-right-long"></i>
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -26,8 +26,18 @@ const AllBlogsPage = () => {
               <div className="breadcumb-style1">
                 <h2 className="title">All Blogs</h2>
                 <div className="breadcumb-list">
-                  <a href="#">Home</a>
-                  <a href="#">Blogs</a>
+                  Explore our comprehensive blog section, where we delve into
+                  the latest trends, market analyses, and insider tips to
+                  empower your real estate decisions in Dubai. From neighborhood
+                  spotlights to legal considerations, our informative articles
+                  are curated to provide you with valuable knowledge and ensure
+                  a seamless property journey. Whether you&apos;re a seasoned
+                  investor or a first-time buyer, our website and blog serve as
+                  your trusted companions, offering invaluable resources and
+                  unparalleled expertise to navigate the thriving Dubai real
+                  estate landscape. Start your journey with us today and unlock
+                  the doors to your dream property in one of the world&apos;s most
+                  vibrant cities.
                 </div>
               </div>
             </div>
