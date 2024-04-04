@@ -194,7 +194,7 @@ const FeaturedListings = ({ data, colstyle, loading }) => {
                     <span className="for-what">
                       {currencyFormatter.format(listing.property_price)}{" "}
                       {listing.property_category_id == "1" ? (
-                        <span>/ mo</span>
+                        <span>/ yr</span>
                       ) : (
                         <></>
                       )}

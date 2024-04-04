@@ -1,33 +1,36 @@
 import CallToActions from "@/components/common/CallToActions";
-import Partner from "@/components/common/Partner";
 import MobileMenu from "@/components/common/mobile-menu";
 import Agents from "@/components/home/home-v2/Agents";
 import Header from "@/components/home/home-v2/Header";
 import Footer from "@/components/home/home-v7/footer";
-import FunFact from "@/components/pages/about/FunFact";
 import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "About Indus Real Estate LLC | Dubai Luxury Properties",
+  title: "Premier Real Estate Agency in Dubai | Indus Real Estate LLC",
+  description: `Indus Real Estate LLC, a multi-awarded RERA registered agency, 
+  celebrates 20 years of excellence in Dubai's real estate market. Catering to 
+  international clients worldwide, we provide top-notch services in property buying, 
+  selling, and leasing. Learn more about our mission, vision, and values.`,
 };
 
 const AboutCompanyPage = () => {
   const featuresData = [
     {
       points: [
-        "Integrity is our honor, Transparency is our responsibility",
-        "We build as a Team, Together we grow.",
-        "We motivate ourselves to inspire others.",
-        "Practice Excellent service everyday",
-        "We believe that Listening is the best way of understanding.",
+        "Top Agent Of The Year by DAMAC",
+        "Agent Of The Month Award by Bayut.com",
+        "Top Achievement Award by Dubai Properties",
+        "Partnership Certificate 2017-2018 by Dubai Quality Group",
+        "Top Broker Award 2017 by DAMAC",
       ],
     },
     {
       points: [
-        "Think Big and Think ahead.",
-        "Passionate in Being Goal and Result Oriented",
-        "Train Hard, Work Smarter",
+        "Agent Of The Year Platinum Award by NSHAMA",
+        "Sales Achievement Award by Dubai South",
+        "Certificate Of Recognition by EMAAR",
+        "Top Achievement Award 2016 by EMAAR",
       ],
     },
   ];
@@ -42,16 +45,16 @@ const AboutCompanyPage = () => {
       {/* End Mobile Nav  */}
 
       {/* Breadcrumb Sections */}
-      <section className="breadcumb-section2 p-0 mt80">
+      <section className="breadcumb-section2 p-0 mt80 mt0-mbl">
         <div className="container mt50">
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcumb-style1">
                 <h2 className="title">About Us</h2>
-                <div className="breadcumb-list">
+                {/* <div className="breadcumb-list">
                   <a href="#">Home</a>
                   <a href="#">About</a>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -62,35 +65,48 @@ const AboutCompanyPage = () => {
       {/* Our About Area */}
       <section className="our-about pb90">
         <div className="container">
+          <h1 className="title mb40">
+            Welcome to Indus Real Estate LLC - Your Trusted Partner in
+            Dubai&apos;s Real Estate Market.
+          </h1>
           <div className="row" data-aos="fade-up" data-aos-delay="300">
             <div className="col-lg-6">
               <Image
-                src={"https://indusspeciality.com/api/assets/images/logo/indus-icon.png"}
+                src={
+                  "https://indusspeciality.com/api/assets/images/logo/indus-icon.png"
+                }
                 width={400}
                 height={400}
                 alt="logo"
                 className="indus-logo-about-page"
               />
-              <h2>
+              {/* <h2>
                 <b>Indus Real Estate</b>
               </h2>
               <p className="fz30">
                 <i>Service you Deserve, People you Trust</i>
-              </p>
+              </p> */}
             </div>
             <div className="col-lg-6">
               <p className="text mb25 fz20">
-                <b>Indus Real Estate</b> is a multi-awarded Real Estate
-                Regulatory Agency (RERA) registered company. We are established
-                since 2004 and in business for more than 17 years with a solid
-                UAE and international client base
+                Established in 2004, <b>Indus Real Estate LLC</b> is a
+                distinguished Real Estate Regulatory Agency (RERA) registered
+                company, celebrating 20 years of unparalleled success in Dubai's
+                dynamic real estate landscape. With a solid foundation built on
+                integrity, transparency, and excellence, we have garnered a
+                reputable position as a premier real estate agency in the UAE
+                and beyond.
               </p>
+              <h3>Your Trusted Partner in Real Estate</h3>
               <p className="text mb55 fz20">
-                At Indus, the range of service focuses on all aspects of
-                property selling,buying and leasing - both residential and
-                commercial . Our efficiency is derived from a combination of
-                experience and knowledge of the local property market.
+                At Indus Real Estate LLC, we understand that buying, selling, or
+                leasing property can be a significant decision. That's why we
+                strive to be your trusted partner throughout the process. With
+                our extensive market knowledge, unwavering integrity, and
+                dedication to excellence, you can count on us to navigate the
+                complexities of the real estate landscape with ease.
               </p>
+
               <div className="row">{/* <Mission /> */}</div>
             </div>
           </div>
@@ -118,9 +134,173 @@ const AboutCompanyPage = () => {
         </div>
       </section>
       {/* End About Banner */}
+      <section className="our-about pt0 pb0">
+        <div className="container">
+          <h3>Customer-Centric Approach</h3>
+          <p className="text mb55 fz20">
+            Your satisfaction is our priority, and we are committed to
+            delivering exceptional service that exceeds your expectations. From
+            the initial consultation to the final closing, we prioritize clear
+            communication, attention to detail, and responsiveness to ensure a
+            smooth and stress-free experience for our clients.
+          </p>
+          <h3>Tailored Solutions</h3>
+          <p className="text mb55 fz20">
+            We recognize that every client has unique needs and objectives.
+            That's why we take a personalized approach to real estate, offering
+            tailored solutions that align with your goals and preferences.
+            Whether you're searching for your dream home, seeking investment
+            opportunities, or looking to lease commercial space, we have the
+            expertise and resources to help you achieve success.
+          </p>
+          <h3>Transparency and Integrity</h3>
+          <p className="text mb55 fz20">
+            Transparency and integrity are at the core of everything we do. We
+            believe in open and honest communication, and we always act with the
+            utmost integrity in all of our dealings. You can trust us to provide
+            transparent guidance, reliable advice, and ethical representation
+            every step of the way.
+          </p>
+          <h3>Our Mission</h3>
+          <p className="text mb55 fz20">
+            At Indus, our mission is to cultivate mutual trust and foster
+            long-term relationships by consistently delivering exceptional real
+            estate services. With a relentless pursuit of innovation and
+            excellence, we are dedicated to surpassing client expectations and
+            creating value beyond measure.
+          </p>
+          <h3>Our Vision</h3>
+          <p className="text mb55 fz20">
+            We aspire to revolutionize the real estate industry, setting new
+            standards of excellence and becoming the preferred choice for
+            clients in the UAE and across the globe. With a focus on creativity,
+            innovation, and unparalleled service, we aim to inspire optimism and
+            turn dreams into reality.
+          </p>
+          <h3>Our Values</h3>
+          <p className="text mb55 fz20">
+            Integrity and transparency are the cornerstones of our business,
+            guiding every interaction and decision we make. We believe in the
+            power of teamwork and collaboration, nurturing a culture where
+            everyone thrives and grows together. With a passion for excellence
+            and a commitment to continuous improvement, we strive to provide
+            outstanding service every day.
+          </p>
+
+          <h3>Awards and Recognitions</h3>
+          <p className="text mb25 fz20">
+            Over the years, Indus Real Estate LLC has been honored with numerous
+            prestigious awards and accolades, including:
+          </p>
+          <div className="row mb55">
+            {featuresData.map((featureSection, index) => (
+              <div className="col-auto" key={index}>
+                <div className="ui-content">
+                  <div className="list-style1">
+                    <ul>
+                      {featureSection.points.map((point, pointIndex) => (
+                        <li key={pointIndex}>
+                          <i className="far fa-check text-thm3 bgc-thm3-light fz20" />
+                          <p className="fz20 mb0 ml10">{point}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <h3>Why Choose Indus Real Estate LLC?</h3>
+          <p className="text mb10 fz20">
+            <b>Expertise:</b> With over 19 years of experience in the Dubai real
+            estate market, we possess the knowledge and insights to help you
+            make informed decisions.
+          </p>
+          <p className="text mb10 fz20">
+            <b>Global Reach:</b> Catering to clients from various countries and
+            continents including India, the UK, Europe, Russia, the Philippines,
+            Africa, the USA, and worldwide, we offer a truly international
+            perspective.
+          </p>
+          <p className="text mb10 fz20">
+            <b>Award-Winning Service:</b> Our commitment to excellence has been
+            recognized by top developers and agencies through prestigious awards
+            such as Top Agent Of The Year, Agent Of The Month Award, and many
+            more.
+          </p>
+          <p className="text mb55 fz20">
+            <b>Client-Centric Approach:</b> Your satisfaction is our priority.
+            We go above and beyond to understand your needs and tailor our
+            services to exceed your expectations.
+          </p>
+
+          <h3>Our Commitment to Excellence</h3>
+          <p className="text mb55 fz20">
+            At Indus Real Estate LLC, excellence is not just a goal; it's our
+            standard. We are dedicated to delivering top-notch service and
+            ensuring client satisfaction at every step of the way. Our team of
+            experienced professionals works tirelessly to provide you with
+            personalized solutions tailored to your unique requirements.
+          </p>
+          <h3>Innovation and Technology</h3>
+          <p className="text mb55 fz20">
+            In a rapidly evolving industry, we stay ahead of the curve by
+            embracing innovation and leveraging cutting-edge technology. From
+            advanced marketing strategies to streamlined transaction processes,
+            we utilize the latest tools and techniques to optimize efficiency
+            and enhance the client experience.
+          </p>
+          <h3>Community Engagement</h3>
+          <p className="text mb55 fz20">
+            Beyond our commitment to our clients, we are deeply invested in
+            giving back to the community. Through various charitable initiatives
+            and community outreach programs, we strive to make a positive impact
+            and contribute to the welfare of society.
+          </p>
+          <h3>Join the Indus Family</h3>
+          <p className="text mb55 fz20">
+            Whether you're a first-time buyer, seasoned investor, or property
+            owner looking to maximize returns, Indus Real Estate LLC is here to
+            support you every step of the way. Join the Indus family today and
+            let us help you achieve your real estate goals with confidence and
+            peace of mind.
+          </p>
+          <h3>Join the Indus Family</h3>
+          <p className="text mb25 fz20">
+            Whether you're a first-time buyer, seasoned investor, or property
+            owner looking to maximize returns, Indus Real Estate LLC is here to
+            support you every step of the way. Join the Indus family today and
+            let us help you achieve your real estate goals with confidence and
+            peace of mind.
+          </p>
+          <p className="text mb55 fz20">
+            <b>Comprehensive Services:</b> From property buying and selling to
+            leasing both residential and commercial properties, we offer a full
+            range of real estate services to meet your diverse needs.
+          </p>
+
+          <h3>Get in Touch</h3>
+          <p className="text mb55 fz20">
+            Embark on your real estate journey with Indus Real Estate LLC.
+            Contact us today to discover the possibilities and experience the
+            difference that sets us apart as the premier real estate agency in
+            Dubai and beyond.
+          </p>
+          <h3>Contact Us Today</h3>
+          <p className="text mb55 fz20">
+            Ready to embark on your real estate journey? Contact Indus Real
+            Estate LLC today to experience the difference for yourself. Let us
+            put our expertise to work for you and help you achieve your real
+            estate goals efficiently and effectively.
+          </p>
+        </div>
+
+        <CallToActions />
+      </section>
 
       {/* Funfact */}
-      <section className="pt-0">
+      {/* <section className="pt-0">
         <div className="container">
           <div
             className="row justify-content-center"
@@ -130,9 +310,9 @@ const AboutCompanyPage = () => {
             <FunFact />
           </div>
         </div>
-      </section>
+      </section> */}
       {/* End Funfact */}
-      <div className="col-xl-8 offset-xl-2 px30">
+      {/* <div className="col-xl-8 offset-xl-2 px30">
         <div className="ui-content mt40 mb30">
           <h4 className="mb10 text-indus fz30">MISSION</h4>
           <div className="custom_bsp_grid">
@@ -236,10 +416,10 @@ const AboutCompanyPage = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Exclusive Agents */}
-      <section className="pb90">
+      <section className="pb90 pt0">
         <div className="container">
           <div className="row  justify-content-center">
             <div className="col-auto">
@@ -305,7 +485,7 @@ const AboutCompanyPage = () => {
       {/* Abut intro */}
 
       {/* Our Partners */}
-      <section className="our-partners">
+      {/* <section className="our-partners">
         <div className="container">
           <div className="row">
             <div className="col-lg-12" data-aos="fade-up">
@@ -324,11 +504,11 @@ const AboutCompanyPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* End Our Partners */}
 
       {/* Our CTA */}
-      <CallToActions />
+
       {/* Our CTA */}
 
       {/* Start Our Footer */}
