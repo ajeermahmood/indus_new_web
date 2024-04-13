@@ -55,7 +55,9 @@ const FeaturedVideos = dynamic(() =>
 // import CookieConsent from "./cookies-consent";
 
 export const metadata = {
-  title: "Indus Real Estate LLC | Dubai Luxury Properties",
+  title: "Unveiling Excellence: Best in Dubai with Indus Real Estate",
+  description:
+    "Indulge in the luxury of Dubai living with Indus Real Estate LLC! Expert agents, exclusive listings. Your dream property awaits, start your journey now",
 };
 
 export async function getMainSliderImgs() {
@@ -139,7 +141,7 @@ const HomePage = async () => {
       <section className="pb90 pb20-md pt50" id="featured-videos">
         <div className="container">
           <div className="row">
-            <div className="col-lg-6 m-auto" data-aos="fade-up">
+            <div className="col-lg-6 m-auto">
               <div className="main-title text-start text-md-center">
                 <h2 className="title">
                   Exclusive Video Insights: UAE Real Estate Scene
@@ -155,7 +157,7 @@ const HomePage = async () => {
           </div>
           {/* End .row */}
 
-          <div className="row" data-aos="fade-up" data-aos-delay="0">
+          <div className="row">
             <FeaturedVideos />
             <div className="d-grid d-md-block text-center mt30 mt0-md">
               <Link href="/videos" className="ud-btn btn-dark bdrs0">
@@ -180,25 +182,26 @@ const HomePage = async () => {
 
       <section className="pb10 pb30-md pt60" id="explore-cities">
         <div className="container">
-          <div className="row" data-aos="fade-up" data-aos-delay="0">
+          <div className="row">
             <div className="col-lg-6 mx-auto">
               <div className="main-title2 text-center">
                 <h2 className="title">Explore Cities</h2>
                 <p className="paragraph">
-                  Embark on exploring Dubai&apos;s prime real estate destinations,
-                  each offering unique advantages for residents and investors
-                  alike. Each of these areas presents its own unique benefits,
-                  whether you&apos;re seeking a vibrant urban lifestyle, serene
-                  surroundings, or lucrative investment opportunities. Explore
-                  Dubai&apos;s diverse real estate landscape and find your perfect
-                  haven in one of these esteemed neighborhoods.
+                  Embark on exploring Dubai&apos;s prime real estate
+                  destinations, each offering unique advantages for residents
+                  and investors alike. Each of these areas presents its own
+                  unique benefits, whether you&apos;re seeking a vibrant urban
+                  lifestyle, serene surroundings, or lucrative investment
+                  opportunities. Explore Dubai&apos;s diverse real estate
+                  landscape and find your perfect haven in one of these esteemed
+                  neighborhoods.
                 </p>
               </div>
             </div>
           </div>
           {/* End .row */}
 
-          <div className="row" data-aos="fade-up" data-aos-delay="0">
+          <div className="row">
             <ExploreCities />
           </div>
           {/* End .row */}
@@ -208,7 +211,7 @@ const HomePage = async () => {
       <section className="pb90 pb20-md pt50 pt0-mbl" id="featured-blogs">
         <div className="container">
           <div className="row">
-            <div className="col-lg-6 m-auto" data-aos="fade-up">
+            <div className="col-lg-6 m-auto">
               <div className="main-title text-start text-md-center">
                 <h2 className="title">
                   News Updates: Real Estate Developments in UAE
@@ -224,7 +227,7 @@ const HomePage = async () => {
           </div>
           {/* End .row */}
 
-          <div className="row" data-aos="fade-up" data-aos-delay="0">
+          <div className="row">
             <Blog />
             <div className="d-grid d-md-block text-center mt30 mt0-md">
               <Link href="/all-news" className="ud-btn btn-dark bdrs0">
@@ -272,7 +275,7 @@ const HomePage = async () => {
       <section className="our-partners pt50">
         <div className="container">
           <div className="row">
-            <div className="col-lg-12 wow fadeInUp" data-wow-delay="0">
+            <div className="col-lg-12 wow fadeInUp">
               <div className="main-title text-start text-md-center">
                 <h2 className="title">Top Developers in UAE</h2>
                 <p className="paragraph">
@@ -285,11 +288,7 @@ const HomePage = async () => {
             </div>
             {/* End .col-12 */}
 
-            <div
-              className="col-lg-12 text-center"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
+            <div className="col-lg-12 text-center">
               <Partner />
             </div>
             {/* End .col-12 */}
@@ -307,11 +306,7 @@ const HomePage = async () => {
         <div className="cta-banner2 bgc-f7 maxw1600 mx-auto pt110 pt60-md pb110 pb60-md bdrs12 position-relative">
           <div className="container">
             <div className="row">
-              <div
-                className="col-lg-6 mx-auto"
-                data-aos="fade-up"
-                data-aos-delay="0"
-              >
+              <div className="col-lg-6 mx-auto">
                 <div className="main-title text-center">
                   {/* <h2>Testimonials</h2> */}
                   <img
@@ -326,11 +321,7 @@ const HomePage = async () => {
               </div>
             </div>
             <div className="row">
-              <div
-                className="col-lg-8 m-auto"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
+              <div className="col-lg-8 m-auto">
                 <div className="testimonial-style2">
                   <Testimonial />
                 </div>
@@ -403,11 +394,7 @@ const HomePage = async () => {
       <section>
         <div className="container">
           <div className="row">
-            <div
-              className="col-lg-6 col-xl-5"
-              data-aos="fade-left"
-              data-aos-delay="0"
-            >
+            <div className="col-lg-6 col-xl-5">
               <div className="main-title mb40">
                 <h2 className="title">Real Estate Inquiry Form</h2>
               </div>
@@ -417,11 +404,7 @@ const HomePage = async () => {
             </div>
             {/* End col-6 */}
 
-            <div
-              className="col-lg-6 col-xl-6 offset-xl-1"
-              data-aos="fade-right"
-              data-aos-delay="300"
-            >
+            <div className="col-lg-6 col-xl-6 offset-xl-1">
               <div className="inquiry-form">
                 <div className="inquiry-img">
                   <Image

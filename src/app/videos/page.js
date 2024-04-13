@@ -4,7 +4,10 @@ import Header from "@/components/home/home-v2/Header";
 import Footer from "@/components/home/home-v7/footer";
 
 export const metadata = {
-  title: "Indus Real Estate LLC | Dubai Luxury Properties",
+  title:
+    "Indus Real Estate LLC Dubai | Latest Real Estate Videos, Property Footages & Expert Agents",
+  description: `Explore the latest videos, property footages, exclusive interviews, 
+                and updates from Indus Real Estate LLC, Dubai. Connect with expert real estate agents for insights and property show updates.`,
 };
 
 const VideosPage = () => {
@@ -24,7 +27,10 @@ const VideosPage = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcumb-style1">
-                <h2 className="title">Videos</h2>
+                <h1 className="title">
+                  Discover the Latest in Dubai Real Estate with Indus: Videos,
+                  Footages & Experts
+                </h1>
                 <div className="breadcumb-list">
                   <a href="#">Home</a>
                   <a href="#">Videos</a>

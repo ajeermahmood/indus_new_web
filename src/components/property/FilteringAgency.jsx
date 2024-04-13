@@ -36,7 +36,7 @@ export default function FilteringAgency() {
       .then((res) => {
         setAllDevs(res.dev);
         setAllDevsCount(res.count);
-        console.log(res);
+        // console.log(res);
       })
       .finally(() => setLoading(false));
   }, [currentPage, searchQuery]);

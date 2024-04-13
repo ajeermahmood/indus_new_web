@@ -6,9 +6,10 @@ import FilteringAgency from "@/components/property/FilteringAgency";
 import React from "react";
 
 export const metadata = {
-  title: "Developers | Indus Real Estate LLC",
+  title: "Explore the Leading Real Estate Developers in Dubai, UAE | Find Your Dream Property",
+  description: `Explore a comprehensive list of major real estate developers in Dubai, UAE. Find trusted developers known for 
+                quality projects and innovative designs. Discover your dream property with our curated directory.`,
 };
-
 const Agency = () => {
   return (
     <>
@@ -26,7 +27,7 @@ const Agency = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcumb-style1">
-                <h2 className="title">UAE Real Estate Developers</h2>
+                <h1 className="title">Discover Top Real Estate Developers in Dubai, UAE</h1>
                 <div className="breadcumb-list">
                   <h6>
                     Dive into the world of premier real estate developers in the

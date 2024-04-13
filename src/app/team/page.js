@@ -6,7 +6,9 @@ import FilteringAgent from "@/components/property/FilteringAgent";
 import React from "react";
 
 export const metadata = {
-  title: "Indus Real Estate LLC | Dubai Luxury Properties",
+  title: "Meet Our Team of Expert Real Estate Agents | Indus Real Estate LLC, Dubai",
+  description: `Explore the profiles of our seasoned real estate agents at Indus Real Estate LLC, Dubai. 
+                Learn about their expertise, experience, and commitment to serving your property needs in the vibrant Dubai market.`,
 };
 
 const Agents = () => {
@@ -26,7 +28,7 @@ const Agents = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcumb-style1">
-                <h2 className="title">Our Team</h2>
+                <h1 className="title">Meet Our Experienced Real Estate Agents at Indus Real Estate LLC, Dubai</h1>
                 <div className="breadcumb-list">
                   <a href="#">Home</a>
                   <a href="#">Team</a>

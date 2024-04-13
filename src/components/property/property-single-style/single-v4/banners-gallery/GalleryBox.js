@@ -30,24 +30,37 @@ const GalleryBox = ({ banners, loading, size, openCommonDialog }) => {
       ) : (
         <Swiper
           className="overflow-visible"
-          spaceBetween={size.width > 500 ? 30 : 10}
+          spaceBetween={
+            size.width != undefined ? (size.width > 500 ? 80 : 30) : 80
+          }
           modules={[Navigation, Pagination]}
           navigation={{
             nextEl: ".single-pro-slide-next__active",
             prevEl: ".single-pro-slide-prev__active",
           }}
-          slidesPerView={1}
+          slidesPerView={2}
           initialSlide={1}
           loop={true}
           autoplay={{ delay: 3000 }}
-          width={size.width > 500 ? 480 : 360}
+          width={size.width != undefined ? (size.width > 500 ? 960 : 720) : 960}
         >
           {banners.map((bnr, index) => (
             <SwiperSlide key={index}>
-              <div className="item cusror-pointer" onClick={openCommonDialog}>
-                <p className="mb0 fz20 text-indus">{bnr.title}</p>
+              <div
+                className="item cusror-pointer"
+                onClick={openCommonDialog}
+                style={{
+                  width:
+                    size.width != undefined
+                      ? size.width > 500
+                        ? "480px"
+                        : "360px"
+                      : "360px",
+                }}
+              >
+                <p className="mb0 fz20 text-indus text-overflow-mbl">{bnr.title}</p>
 
-                <p className="mb10">
+                <p className="mb10 text-overflow-mbl">
                   <i>{bnr.subtitle}</i>
                 </p>
 
@@ -57,15 +70,39 @@ const GalleryBox = ({ banners, loading, size, openCommonDialog }) => {
                     // className="w-100 h-100"
                     variant="rectangular"
                     className="bdrs12 w-100"
-                    width={size.width > 500 ? 480 : 360}
-                    height={size.width > 500 ? 342 : 256}
+                    width={
+                      size.width != undefined
+                        ? size.width > 500
+                          ? 480
+                          : 360
+                        : 360
+                    }
+                    height={
+                      size.width != undefined
+                        ? size.width > 500
+                          ? 342
+                          : 256
+                        : 256
+                    }
                   />
                 ) : (
                   <></>
                 )}
                 <Image
-                  width={size.width > 500 ? 480 : 360}
-                  height={size.width > 500 ? 342 : 256}
+                  width={
+                    size.width != undefined
+                      ? size.width > 500
+                        ? 480
+                        : 360
+                      : 360
+                  }
+                  height={
+                    size.width != undefined
+                      ? size.width > 500
+                        ? 342
+                        : 256
+                      : 256
+                  }
                   className={`${
                     !imagesLoaded.includes(index)
                       ? "opacity-0 position-absolute bdrs12 w-100"

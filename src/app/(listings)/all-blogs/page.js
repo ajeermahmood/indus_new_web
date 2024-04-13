@@ -4,7 +4,9 @@ import Header from "@/components/home/home-v2/Header";
 import Footer from "@/components/home/home-v7/footer";
 
 export const metadata = {
-  title: "Indus Real Estate LLC | Dubai Luxury Properties",
+  title: "Indus Real Estate LLC | Dubai Real Estate Blog | Expert Insights",
+  description: `Explore the latest insights and expert opinions on the Dubai real estate market. 
+                Stay informed with our blog posts covering trends, tips, and news.`,
 };
 
 const AllBlogsPage = () => {
@@ -24,7 +26,7 @@ const AllBlogsPage = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcumb-style1">
-                <h2 className="title">All Blogs</h2>
+                <h1 className="title">Discover Expert Insights on Dubai Real Estate</h1>
                 <div className="breadcumb-list">
                   Explore our comprehensive blog section, where we delve into
                   the latest trends, market analyses, and insider tips to

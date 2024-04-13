@@ -514,6 +514,14 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
 ////////////////////----------------------------- mobile css --------------------------------------------///////////////////////
 ////////////////////----------------------------- mobile css --------------------------------------------///////////////////////
 
+.cursor-pointer{
+  cursor: pointer !important;
+}
+
+.minw-150{
+  min-width: 150px !important;
+}
+
 .absolute {
   position: absolute !important;
 }
@@ -535,6 +543,12 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
 }
 
 @media (max-width: 500px) {
+  .text-overflow-mbl {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
   .pt10-mbl{
     padding-top: 10px !important;
   }

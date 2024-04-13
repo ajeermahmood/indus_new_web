@@ -13,7 +13,7 @@ const ExploreCities = () => {
   useEffect(() => {
     getPropertiesCountBasedOnLocations().then((res) => {
       setData(res);
-      console.log(res);
+      // console.log(res);
     });
   }, []);
   const apartmentData = [

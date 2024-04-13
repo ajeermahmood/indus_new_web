@@ -8,7 +8,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Seller Guide | Indus Real Estate LLC",
+  title: "Comprehensive Guide for Sellers: Selling Your Property in Dubai, UAE",
+  description: `Explore our detailed guide for sellers looking to sell their properties in Dubai, UAE. Discover essential tips, 
+                strategies, and insights to navigate the real estate market effectively and maximize your property's value.`,
 };
 
 const SellGuidePage = () => {
@@ -17,22 +19,26 @@ const SellGuidePage = () => {
       icon: "flaticon-bird-house",
       number: "01",
       subtitle: "Property Presentation",
+      link: "property",
     },
     {
       icon: "flaticon-chat",
       number: "02",
       subtitle: "Finding An Agent",
+      link: "agent",
     },
     {
       // icon: "flaticon-bird-house",
       icon: "flaticon-search-1",
       number: "03",
       subtitle: "Market Appraisals",
+      link: "appraisals",
     },
     {
       icon: "flaticon-house-1",
       number: "04",
       subtitle: "Marketing your home",
+      link: "marketing",
     },
   ];
   return (
@@ -50,15 +56,17 @@ const SellGuidePage = () => {
         <div className="container">
           <div className="row" data-aos="fade-up" data-aos-delay="100">
             <div className="col-lg-12">
-              <h2 className="blog-title">Seller Guide</h2>
+              <h1 className="blog-title">
+                Guide for Sellers: Selling Your Property in Dubai, UAE
+              </h1>
               <div className="blog-single-meta">
                 <div className="post-author d-sm-flex align-items-center">
                   Selling a property in Dubai and the UAE requires careful
                   planning, market knowledge, and strategic decision-making.
-                  Whether you&apos;re a homeowner or an investor looking to sell,
-                  understanding the selling process is essential. Here&apos;s a
-                  comprehensive guide to help sellers navigate through the
-                  process:
+                  Whether you&apos;re a homeowner or an investor looking to
+                  sell, understanding the selling process is essential.
+                  Here&apos;s a comprehensive guide to help sellers navigate
+                  through the process:
                 </div>
               </div>
             </div>
@@ -97,17 +105,17 @@ const SellGuidePage = () => {
 
             <div className="col-xl-6" data-aos="fade-up" data-aos-delay="300">
               <div className="row">
-                <FindHomeBlock blocks={blocks} />
+                <FindHomeBlock blocks={blocks} type={"sell-guide"} />
               </div>
             </div>
           </div>
 
-          <div className="ui-content mt40 mb30">
+          <div className="ui-content mt40 mb30" id="property">
             <h4 className="mb10 text-indus">Lets Explain Further</h4>
             <div className="custom_bsp_grid">
               <ul className="list-style-type-bullet p-0 ml20">
                 <li>
-                  <p className="fz20">
+                  <p className="fz20" id="agent">
                     {" "}
                     <b>Property Presentation:</b> Appearance is key. Presenting
                     your property at its best whether it is cleaning your home,
@@ -119,7 +127,7 @@ const SellGuidePage = () => {
                   </p>
                 </li>
                 <li>
-                  <p className="fz20">
+                  <p className="fz20" id="appraisals">
                     {" "}
                     <b>Finding An Agent:</b> Work with a good RERA certified
                     broker who has the relevant market knowledge of properties
@@ -131,7 +139,7 @@ const SellGuidePage = () => {
                   </p>
                 </li>
                 <li>
-                  <p className="fz20">
+                  <p className="fz20" id="marketing">
                     {" "}
                     <b>Market Appraisals:</b> After choosing your agent, a
                     marketing appraisal will be done via visiting your property.

@@ -1,19 +1,17 @@
+"use client";
 import Header from "@/components/home/home-v2/Header";
 
-import Footer from "@/components/home/home-v7/footer";
 import MobileMenu from "@/components/common/mobile-menu";
+import Footer from "@/components/home/home-v7/footer";
 
 import ProperteyFiltering from "@/components/listing/grid-view/grid-full-4-col/PropertyFiltering";
 
-import React from "react";
+import { useSearchParams } from "next/navigation";
 
-export const metadata = {
-  title: "Explore Exclusive Residential Properties for Sale in Dubai, UAE",
-  description: `Discover a range of luxurious and stylish residential properties for sale in Dubai, UAE. Invest in prime real estate opportunities with breathtaking views and world-class amenities. 
-                 Explore our listings today and find your dream home in one of the most vibrant cities in the world.`,
-};
-
-const AllPropertiesPage = () => {
+const AllProperties = () => {
+  const searchParams = useSearchParams();
+  const id = searchParams.get("id");
+  const name = searchParams.get("name");
   return (
     <>
       {/* Main Header Nav */}
@@ -25,18 +23,21 @@ const AllPropertiesPage = () => {
       {/* End Mobile Nav  */}
 
       {/* Breadcumb Sections */}
-      <section className="breadcumb-section pt130 bgc-f7 pt20-mbl pb20-mbl">
+      <section className="breadcumb-section pt130 bgc-f7">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcumb-style1">
-                <h1 className="title">Invest in Prime Residential Properties in Dubai, UAE</h1>
+                <h2 className="title">
+                  Browse Through{" "}
+                  <span className="text-indus">{name}&apos;s</span> Collection
+                </h2>
                 <div className="breadcumb-list">
                   <a href="#">Home</a>
-                  <a href="#">All Properties</a>
+                  <a href="#">Agent&apos;s properties</a>
                 </div>
                 <a
-                  className="filter-btn-left mobile-filter-btn d-block d-lg-none text-dark mt5"
+                  className="filter-btn-left mobile-filter-btn d-block d-lg-none"
                   data-bs-toggle="offcanvas"
                   href="#listingSidebarFilter"
                   role="button"
@@ -52,7 +53,7 @@ const AllPropertiesPage = () => {
       {/* End Breadcumb Sections */}
 
       {/* Property Filtering */}
-      <ProperteyFiltering />
+      <ProperteyFiltering agentId={id} />
 
       {/* Property Filtering */}
 
@@ -65,4 +66,4 @@ const AllPropertiesPage = () => {
   );
 };
 
-export default AllPropertiesPage;
+export default AllProperties;

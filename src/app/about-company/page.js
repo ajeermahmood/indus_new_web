@@ -2,6 +2,7 @@ import CallToActions from "@/components/common/CallToActions";
 import MobileMenu from "@/components/common/mobile-menu";
 import Agents from "@/components/home/home-v2/Agents";
 import Header from "@/components/home/home-v2/Header";
+import InqueryForm from "@/components/home/home-v7/InqueryForm";
 import Footer from "@/components/home/home-v7/footer";
 import Image from "next/image";
 import Link from "next/link";
@@ -70,16 +71,15 @@ const AboutCompanyPage = () => {
             Dubai&apos;s Real Estate Market.
           </h1>
           <div className="row" data-aos="fade-up" data-aos-delay="300">
-            <div className="col-lg-6">
-              <Image
-                src={
-                  "https://indusspeciality.com/api/assets/images/logo/indus-icon.png"
-                }
-                width={400}
-                height={400}
-                alt="logo"
-                className="indus-logo-about-page"
-              />
+            <div className="col-lg-6 p10 pr50 mbl-hidden">
+              <div className="card p30">
+                <div className="main-title mb40">
+                  <h2 className="title">Contact Us</h2>
+                </div>
+                <div className="inquiry-form mb30-md">
+                  <InqueryForm />
+                </div>
+              </div>
               {/* <h2>
                 <b>Indus Real Estate</b>
               </h2>
@@ -91,18 +91,18 @@ const AboutCompanyPage = () => {
               <p className="text mb25 fz20">
                 Established in 2004, <b>Indus Real Estate LLC</b> is a
                 distinguished Real Estate Regulatory Agency (RERA) registered
-                company, celebrating 20 years of unparalleled success in Dubai&apos;s
-                dynamic real estate landscape. With a solid foundation built on
-                integrity, transparency, and excellence, we have garnered a
-                reputable position as a premier real estate agency in the UAE
-                and beyond.
+                company, celebrating 20 years of unparalleled success in
+                Dubai&apos;s dynamic real estate landscape. With a solid
+                foundation built on integrity, transparency, and excellence, we
+                have garnered a reputable position as a premier real estate
+                agency in the UAE and beyond.
               </p>
               <h3>Your Trusted Partner in Real Estate</h3>
               <p className="text mb55 fz20">
                 At Indus Real Estate LLC, we understand that buying, selling, or
-                leasing property can be a significant decision. That&apos;s why we
-                strive to be your trusted partner throughout the process. With
-                our extensive market knowledge, unwavering integrity, and
+                leasing property can be a significant decision. That&apos;s why
+                we strive to be your trusted partner throughout the process.
+                With our extensive market knowledge, unwavering integrity, and
                 dedication to excellence, you can count on us to navigate the
                 complexities of the real estate landscape with ease.
               </p>
@@ -147,11 +147,12 @@ const AboutCompanyPage = () => {
           <h3>Tailored Solutions</h3>
           <p className="text mb55 fz20">
             We recognize that every client has unique needs and objectives.
-            That&apos;s why we take a personalized approach to real estate, offering
-            tailored solutions that align with your goals and preferences.
-            Whether you&apos;re searching for your dream home, seeking investment
-            opportunities, or looking to lease commercial space, we have the
-            expertise and resources to help you achieve success.
+            That&apos;s why we take a personalized approach to real estate,
+            offering tailored solutions that align with your goals and
+            preferences. Whether you&apos;re searching for your dream home,
+            seeking investment opportunities, or looking to lease commercial
+            space, we have the expertise and resources to help you achieve
+            success.
           </p>
           <h3>Transparency and Integrity</h3>
           <p className="text mb55 fz20">
@@ -237,8 +238,8 @@ const AboutCompanyPage = () => {
 
           <h3>Our Commitment to Excellence</h3>
           <p className="text mb55 fz20">
-            At Indus Real Estate LLC, excellence is not just a goal; it&apos;s our
-            standard. We are dedicated to delivering top-notch service and
+            At Indus Real Estate LLC, excellence is not just a goal; it&apos;s
+            our standard. We are dedicated to delivering top-notch service and
             ensuring client satisfaction at every step of the way. Our team of
             experienced professionals works tirelessly to provide you with
             personalized solutions tailored to your unique requirements.
@@ -260,20 +261,13 @@ const AboutCompanyPage = () => {
           </p>
           <h3>Join the Indus Family</h3>
           <p className="text mb55 fz20">
-            Whether you&apos;re a first-time buyer, seasoned investor, or property
-            owner looking to maximize returns, Indus Real Estate LLC is here to
-            support you every step of the way. Join the Indus family today and
-            let us help you achieve your real estate goals with confidence and
-            peace of mind.
+            Whether you&apos;re a first-time buyer, seasoned investor, or
+            property owner looking to maximize returns, Indus Real Estate LLC is
+            here to support you every step of the way. Join the Indus family
+            today and let us help you achieve your real estate goals with
+            confidence and peace of mind.
           </p>
-          <h3>Join the Indus Family</h3>
-          <p className="text mb25 fz20">
-            Whether you&apos;re a first-time buyer, seasoned investor, or property
-            owner looking to maximize returns, Indus Real Estate LLC is here to
-            support you every step of the way. Join the Indus family today and
-            let us help you achieve your real estate goals with confidence and
-            peace of mind.
-          </p>
+
           <p className="text mb55 fz20">
             <b>Comprehensive Services:</b> From property buying and selling to
             leasing both residential and commercial properties, we offer a full
@@ -287,13 +281,13 @@ const AboutCompanyPage = () => {
             difference that sets us apart as the premier real estate agency in
             Dubai and beyond.
           </p>
-          <h3>Contact Us Today</h3>
+          {/* <h3>Contact Us Today</h3>
           <p className="text mb55 fz20">
             Ready to embark on your real estate journey? Contact Indus Real
             Estate LLC today to experience the difference for yourself. Let us
             put our expertise to work for you and help you achieve your real
             estate goals efficiently and effectively.
-          </p>
+          </p> */}
         </div>
 
         <CallToActions />

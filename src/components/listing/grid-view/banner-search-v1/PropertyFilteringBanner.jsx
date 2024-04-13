@@ -128,7 +128,7 @@ export default function PropertyFilteringBanner() {
       .then((res) => {
         setListings(res.listings);
         setListingsCount(res.count);
-        console.log(res);
+        // console.log(res);
       })
       .finally(() => setLoading(false));
   }, [
@@ -188,7 +188,7 @@ export default function PropertyFilteringBanner() {
     setBathroms(elm);
   };
   const handlelocation = (elm) => {
-    console.log(elm);
+    // console.log(elm);
     setLocation(elm);
   };
   const handlesquirefeet = (elm) => {

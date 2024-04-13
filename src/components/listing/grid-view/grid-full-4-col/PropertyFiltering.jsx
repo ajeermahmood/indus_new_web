@@ -143,7 +143,7 @@ export default function PropertyFiltering({ agentId }) {
     setBathroms(elm);
   };
   const handlelocation = (elm) => {
-    console.log(elm);
+    // console.log(elm);
     setLocation(elm);
   };
   const handlesquirefeet = (elm) => {

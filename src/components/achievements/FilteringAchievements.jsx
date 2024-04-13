@@ -21,7 +21,7 @@ export default function FilteringAchievements() {
       .then((res) => {
         setAllAchs(res.dev);
         setAllAchsCount(res.count);
-        console.log(res);
+        // console.log(res);
       })
       .finally(() => setLoading(false));
   }, [currentPage, searchQuery]);

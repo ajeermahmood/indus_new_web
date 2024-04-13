@@ -8,7 +8,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Buyer Guide | Indus Real Estate LLC",
+  title: "Ultimate Guide for Property Buyers and Investors in Dubai, UAE",
+  description: `Discover everything you need to know about buying and investing in properties in Dubai, UAE. Our comprehensive guide covers essential tips, 
+                legalities, market insights, and expert advice to help you make informed decisions in the dynamic real estate landscape of Dubai.`,
 };
 
 const BuyGuidePage = () => {
@@ -17,22 +19,26 @@ const BuyGuidePage = () => {
       icon: "flaticon-bird-house",
       number: "01",
       subtitle: "Better Affordability",
+      link: "better",
     },
     {
       icon: "flaticon-chat",
       number: "02",
       subtitle: "Market Condition",
+      link: "market",
     },
     {
       // icon: "flaticon-bird-house",
       icon: "flaticon-search-1",
       number: "03",
       subtitle: "Sufficient Rental Yeild",
+      link: "sufficient",
     },
     {
       icon: "flaticon-house-1",
       number: "04",
       subtitle: "Residence Visa",
+      link: "residence",
     },
   ];
   return (
@@ -50,14 +56,17 @@ const BuyGuidePage = () => {
         <div className="container">
           <div className="row" data-aos="fade-up" data-aos-delay="100">
             <div className="col-lg-12">
-              <h2 className="blog-title">Buyer Guide</h2>
+              <h1 className="blog-title">
+                Guide for Buyers: Investing in Properties in Dubai, UAE
+              </h1>
               <div className="blog-single-meta">
                 <div className="post-author d-sm-flex align-items-center">
                   Purchasing real estate in Dubai and the UAE can be an exciting
-                  yet complex process. Whether you&apos;re a first-time buyer or a
-                  seasoned investor, understanding the nuances of the market and
-                  the legal framework is crucial. Here&apos;s a comprehensive buyer&apos;s
-                  guide to help you navigate through the process:
+                  yet complex process. Whether you&apos;re a first-time buyer or
+                  a seasoned investor, understanding the nuances of the market
+                  and the legal framework is crucial. Here&apos;s a
+                  comprehensive buyer&apos;s guide to help you navigate through
+                  the process:
                 </div>
               </div>
             </div>
@@ -96,17 +105,17 @@ const BuyGuidePage = () => {
 
             <div className="col-xl-6" data-aos="fade-up" data-aos-delay="300">
               <div className="row">
-                <FindHomeBlock blocks={blocks} />
+                <FindHomeBlock blocks={blocks} type={"buy-guide"} />
               </div>
             </div>
           </div>
 
-          <div className="ui-content mt40 mb30">
+          <div className="ui-content mt40 mb30" id="better">
             <h4 className="mb10 text-indus">Lets Explain Further</h4>
             <div className="custom_bsp_grid">
               <ul className="list-style-type-bullet p-0 ml20">
                 <li>
-                  <p className="fz20">
+                  <p className="fz20" >
                     {" "}
                     <b>Affordability:</b> It is advised that your monthly
                     housing expenses should not exceed 30% of your salary. When
@@ -120,7 +129,7 @@ const BuyGuidePage = () => {
                   </p>
                 </li>
                 <li>
-                  <p className="fz20">
+                  <p className="fz20" id="sufficient">
                     {" "}
                     <b>Savings:</b> Perhaps the most important factor to
                     consider when contemplating buying a home is your
@@ -135,7 +144,7 @@ const BuyGuidePage = () => {
                   </p>
                 </li>
                 <li>
-                  <p className="fz20">
+                  <p className="fz20" id="residence">
                     {" "}
                     <b>Rental Yeild:</b> If you would want to convert your home
                     into an investment property in the long term then it&apos;s
@@ -192,7 +201,7 @@ const BuyGuidePage = () => {
                   </p>
                 </li>
                 <li>
-                  <p className="fz20">
+                  <p className="fz20" id="market">
                     {" "}
                     <b>Quality:</b> Have you considered the age of the property?
                     If investing in the secondary market, does the property

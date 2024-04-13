@@ -5,7 +5,8 @@ import Footer from "@/components/home/home-v7/footer";
 import Listing6 from "@/components/listing/list-view/all-list-style/Listing6";
 
 export const metadata = {
-  title: "Community Guides | Indus Real Estate LLC",
+  title: "Dubai Community Guides: Explore Top Developments",
+  description: `Discover the diverse communities of Dubai developed by top real estate developers. Our guides offer insights into amenities, lifestyle, and investment opportunities.`,
 };
 
 const CommunityGuidePage = () => {
@@ -25,7 +26,7 @@ const CommunityGuidePage = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcumb-style1">
-                <h2 className="title">Dubai Living: Home Guides</h2>
+                <h1 className="title">Dubai&apos;s Premier Community Guides</h1>
                 <div className="breadcumb-list">
                   <h6>
                     Your go-to resource for home living in Dubai&apos;s diverse
