@@ -4,10 +4,9 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { Montserrat } from "next/font/google";
 import Script from "next/script";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "../../public/scss/main.scss";
 
-import Head from "next/head";
 
 import JSONLD from "./JSONLD";
 
@@ -32,7 +31,7 @@ const montserrat = Montserrat({
 export default function RootLayout({ children }) {
   useEffect(() => {
     Aos.init({
-      duration: 1200,
+      duration: 600,
       once: true,
     });
   }, []);
@@ -119,20 +118,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <Head>
-        <meta
-          property="og:title"
-          content="Unveiling Excellence: Best in Dubai with Indus Real Estate LLC"
-        />
-        <meta
-          property="og:description"
-          content="Indulge in the luxury of Dubai living with Indus Real Estate LLC! Expert agents, exclusive listings. Your dream property awaits, start your journey now"
-        />
-        <meta
-          property="og:image"
-          content="https://indusspeciality.com/api/assets/images/about/group2.jpg"
-        />
-      </Head>
+      
       <body
         className={`body ${montserrat.className}`}
         cz-shortcut-listen="false"

@@ -17,6 +17,21 @@ const Testimonial = () => {
   }, []);
   return (
     <>
+      {reviews.length == 0 && (
+        <div
+          className={`tab-pane fade show active`}
+          role="tabpanel"
+          aria-labelledby={`pills-tab`}
+        >
+          <div className="testi-content text-center">
+            <span className="icon fas fa-quote-left" />
+            <h4 className="testi-text">
+              &quot;Agent are friendly and they have good knowledge of Dubai and
+              International market&quot;
+            </h4>
+          </div>
+        </div>
+      )}
       {reviews.length != 0 && (
         <Swiper
           onSlideChange={(e) => setIndex(e.realIndex)}
@@ -45,7 +60,9 @@ const Testimonial = () => {
               >
                 <div className="testi-content text-center">
                   <span className="icon fas fa-quote-left" />
-                  <h4 className="testi-text">&quot;{testimonial.review}&quot;</h4>
+                  <h4 className="testi-text">
+                    &quot;{testimonial.review}&quot;
+                  </h4>
                   {/* <h6 className="name">{testimonial.name}</h6>
                   <p className="design">Customer</p> */}
                 </div>

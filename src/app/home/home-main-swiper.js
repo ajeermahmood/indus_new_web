@@ -33,11 +33,15 @@ const MainImageSlider = ({ data }) => {
                 }`}
               >
                 <Image
+                  style={{
+                    filter: "blur(3px) brightness(0.7)",
+                    height: "55vh",
+                  }}
                   className="cover w-100 bdrs10"
                   src={`https://www.indusre.com/main_slider/${item.img}`}
-                  priority={true}
-                  height={550}
-                  width={800}
+                  // priority={true}
+                  height={240}
+                  width={640}
                   alt="img"
                   blurDataURL="URL"
                   placeholder="blur"

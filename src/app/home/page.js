@@ -54,7 +54,7 @@ const HomePage = async () => {
       {/* End Mobile Nav  */}
 
       {/* Home Banner Style V2 */}
-      <section className="home-banner-style2 p0">
+      <section className="home-banner-style2 p0" id="home">
         <div className="home-style2">
           <div className="container maxw1600">
             <MainImageSlider data={data} />
@@ -67,7 +67,7 @@ const HomePage = async () => {
       <section className="pb0 pb30-md pt0">
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-lg-12">
+            <div className="col-lg-12" data-aos="fade-in" data-aos-delay="0">
               <ApartmentType />
             </div>
           </div>
@@ -92,7 +92,7 @@ const HomePage = async () => {
               </div>
             </div>
           </div>
-          <div className="row mt5">
+          <div className="row mt5" data-aos="fade-up" data-aos-delay="100">
             <PropertyGallery />
           </div>
         </div>
@@ -124,7 +124,7 @@ const HomePage = async () => {
           </div>
           {/* End .row */}
 
-          <div className="row">
+          <div className="row" data-aos="fade-up" data-aos-delay="200">
             <FeaturedVideos />
             <div className="d-grid d-md-block text-center mt30 mt0-md">
               <Link href="/videos" className="ud-btn btn-dark bdrs0">
@@ -168,7 +168,7 @@ const HomePage = async () => {
           </div>
           {/* End .row */}
 
-          <div className="row">
+          <div className="row" data-aos="fade-up" data-aos-delay="200">
             <ExploreCities />
           </div>
           {/* End .row */}
@@ -194,7 +194,7 @@ const HomePage = async () => {
           </div>
           {/* End .row */}
 
-          <div className="row">
+          <div className="row" data-aos="fade-up" data-aos-delay="200">
             <Blog />
             <div className="d-grid d-md-block text-center mt30 mt0-md">
               <Link href="/all-news" className="ud-btn btn-dark bdrs0">
@@ -255,7 +255,11 @@ const HomePage = async () => {
             </div>
             {/* End .col-12 */}
 
-            <div className="col-lg-12 text-center">
+            <div
+              className="col-lg-12 text-center"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <Partner />
             </div>
             {/* End .col-12 */}
@@ -361,7 +365,11 @@ const HomePage = async () => {
       <section>
         <div className="container">
           <div className="row">
-            <div className="col-lg-6 col-xl-5">
+            <div
+              className="col-lg-6 col-xl-5"
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
               <div className="main-title mb40">
                 <h2 className="title">Real Estate Inquiry Form</h2>
               </div>
@@ -371,7 +379,11 @@ const HomePage = async () => {
             </div>
             {/* End col-6 */}
 
-            <div className="col-lg-6 col-xl-6 offset-xl-1">
+            <div
+              className="col-lg-6 col-xl-6 offset-xl-1"
+              data-aos="fade-left"
+              data-aos-delay="200"
+            >
               <div className="inquiry-form">
                 <div className="inquiry-img">
                   <Image

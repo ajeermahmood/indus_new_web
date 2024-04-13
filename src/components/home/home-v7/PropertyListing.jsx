@@ -96,7 +96,7 @@ export default function PropertyListing() {
       </div>
       {/* End .row */}
 
-      <div className="row">
+      <div className="row" data-aos="fade-up" data-aos-delay="200">
         <FeaturedListings
           data={pageData}
           type={currentType}
