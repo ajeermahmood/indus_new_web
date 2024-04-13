@@ -157,14 +157,14 @@ export default function RootLayout({ children }) {
 
         <ScrollToTop />
 
-        <div id="live_chat_status"></div>
+        {/* <div id="live_chat_status"></div> */}
 
-        <Script
+        {/* <Script
           id="live-chat-script"
           strategy="lazyOnload"
           type="text/javascript"
           src="//cdn1.thelivechatsoftware.com/assets/liveadmins/indusre.com/chatloader.min.js"
-        ></Script>
+        ></Script> */}
 
         <JSONLD data={structuredData} />
       </body>

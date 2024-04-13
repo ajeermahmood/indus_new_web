@@ -3,56 +3,23 @@ import Image from "next/image";
 import Link from "next/link";
 import { Rating } from "@mui/material";
 
-const Partner = dynamic(() => import("@/components/common/Partner"));
-const MobileMenu = dynamic(() => import("@/components/common/mobile-menu"));
-const MainImageSlider = dynamic(() => import("./home-main-swiper"));
-const ApartmentType = dynamic(() =>
-  import("@/components/home/home-v2/ApartmentType")
-);
-const Header = dynamic(() => import("@/components/home/home-v2/Header"));
-const Testimonial = dynamic(() =>
-  import("@/components/home/home-v2/Testimonial")
-);
-const ExploreCities = dynamic(() =>
-  import("@/components/home/home-v7/ExploreCities")
-);
-const Footer = dynamic(() => import("@/components/home/home-v7/footer"));
-const Blog = dynamic(() => import("@/components/common/Blog"));
-const InqueryForm = dynamic(() =>
-  import("@/components/home/home-v7/InqueryForm")
-);
-const PropertyListing = dynamic(() =>
-  import("@/components/home/home-v7/PropertyListing")
-);
-const PropertyGallery = dynamic(() =>
-  import(
-    "@/components/property/property-single-style/single-v4/banners-gallery"
-  )
-);
-// const EnquiryForm = dynamic(() => import("./enquiry-stepper"));
-const ScrollDownCustom = dynamic(() => import("./scroll-down-custom"));
-const CookieConsent = dynamic(() => import("./cookies-consent"));
+// const MobileMenu = dynamic(() => import("@/components/common/mobile-menu"));
 
-const FeaturedVideos = dynamic(() =>
-  import("@/components/common/Videos-featured")
-);
-
-// import ApartmentType from "@/components/home/home-v2/ApartmentType";
-// import Header from "@/components/home/home-v2/Header";
-// import Testimonial from "@/components/home/home-v2/Testimonial";
-
-// import ExploreCities from "@/components/home/home-v7/ExploreCities";
-// import Footer from "@/components/home/home-v7/footer";
-
-// import Blog from "@/components/common/Blog";
-// import InqueryForm from "@/components/home/home-v7/InqueryForm";
-// import PropertyListing from "@/components/home/home-v7/PropertyListing";
-// import PropertyGallery from "@/components/property/property-single-style/single-v4/banners-gallery";
-
-// import EnquiryForm from "./enquiry-stepper";
-// import ScrollDownCustom from "./scroll-down-custom";
-
-// import CookieConsent from "./cookies-consent";
+import Partner from "@/components/common/Partner";
+import MobileMenu from "@/components/common/mobile-menu";
+import MainImageSlider from "./home-main-swiper";
+import ApartmentType from "@/components/home/home-v2/ApartmentType";
+import Header from "@/components/home/home-v2/Header";
+import Testimonial from "@/components/home/home-v2/Testimonial";
+import ExploreCities from "@/components/home/home-v7/ExploreCities";
+import Footer from "@/components/home/home-v7/footer";
+import Blog from "@/components/common/Blog";
+import InqueryForm from "@/components/home/home-v7/InqueryForm";
+import PropertyListing from "@/components/home/home-v7/PropertyListing";
+import PropertyGallery from "@/components/property/property-single-style/single-v4/banners-gallery";
+import ScrollDownCustom from "./scroll-down-custom";
+import CookieConsent from "./cookies-consent";
+import FeaturedVideos from "@/components/common/Videos-featured";
 
 export const metadata = {
   title: "Unveiling Excellence: Best in Dubai with Indus Real Estate",
