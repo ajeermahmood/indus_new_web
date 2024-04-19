@@ -33,7 +33,7 @@ const AllNewsPage = () => {
                 <div className="breadcumb-list">
                   <h6 className="fw400">
                     Stay informed with the newest updates and insights on
-                    Dubai's real estate scene. Discover expert analysis, trends,
+                    Dubai&apos;s real estate scene. Discover expert analysis, trends,
                     and market developments at Indus Real Estate LLC.
                   </h6>
                 </div>

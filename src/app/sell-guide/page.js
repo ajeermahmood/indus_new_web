@@ -69,7 +69,7 @@ const SellGuidePage = () => {
                   Explore our detailed guide for sellers looking to sell their
                   properties in Dubai, UAE. Discover essential tips, strategies,
                   and insights to navigate the real estate market effectively
-                  and maximize your property's value.
+                  and maximize your property&apos;s value.
                 </h6>
               </div>
             </div>
