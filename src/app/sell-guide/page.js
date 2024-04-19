@@ -65,14 +65,12 @@ const SellGuidePage = () => {
                 Guide for Sellers: Selling Your Property in Dubai, UAE
               </h1>
               <div className="blog-single-meta">
-                <div className="post-author d-sm-flex align-items-center">
-                  Selling a property in Dubai and the UAE requires careful
-                  planning, market knowledge, and strategic decision-making.
-                  Whether you&apos;re a homeowner or an investor looking to
-                  sell, understanding the selling process is essential.
-                  Here&apos;s a comprehensive guide to help sellers navigate
-                  through the process:
-                </div>
+                <h6 className="fw400">
+                  Explore our detailed guide for sellers looking to sell their
+                  properties in Dubai, UAE. Discover essential tips, strategies,
+                  and insights to navigate the real estate market effectively
+                  and maximize your property's value.
+                </h6>
               </div>
             </div>
           </div>

@@ -65,14 +65,13 @@ const BuyGuidePage = () => {
                 Guide for Buyers: Investing in Properties in Dubai, UAE
               </h1>
               <div className="blog-single-meta">
-                <div className="post-author d-sm-flex align-items-center">
-                  Purchasing real estate in Dubai and the UAE can be an exciting
-                  yet complex process. Whether you&apos;re a first-time buyer or
-                  a seasoned investor, understanding the nuances of the market
-                  and the legal framework is crucial. Here&apos;s a
-                  comprehensive buyer&apos;s guide to help you navigate through
-                  the process:
-                </div>
+                <h6 className="fw400">
+                  Discover everything you need to know about buying and
+                  investing in properties in Dubai, UAE. Our comprehensive guide
+                  covers essential tips, legalities, market insights, and expert
+                  advice to help you make informed decisions in the dynamic real
+                  estate landscape of Dubai.
+                </h6>
               </div>
             </div>
           </div>

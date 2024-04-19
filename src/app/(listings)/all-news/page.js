@@ -31,8 +31,11 @@ const AllNewsPage = () => {
               <div className="breadcumb-style1">
                 <h2 className="title">All News</h2>
                 <div className="breadcumb-list">
-                  <a href="#">Home</a>
-                  <a href="#">News</a>
+                  <h6 className="fw400">
+                    Stay informed with the newest updates and insights on
+                    Dubai's real estate scene. Discover expert analysis, trends,
+                    and market developments at Indus Real Estate LLC.
+                  </h6>
                 </div>
               </div>
             </div>

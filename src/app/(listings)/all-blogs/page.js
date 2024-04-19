@@ -35,18 +35,11 @@ const AllBlogsPage = () => {
                   Discover Expert Insights on Dubai Real Estate
                 </h1>
                 <div className="breadcumb-list">
-                  Explore our comprehensive blog section, where we delve into
-                  the latest trends, market analyses, and insider tips to
-                  empower your real estate decisions in Dubai. From neighborhood
-                  spotlights to legal considerations, our informative articles
-                  are curated to provide you with valuable knowledge and ensure
-                  a seamless property journey. Whether you&apos;re a seasoned
-                  investor or a first-time buyer, our website and blog serve as
-                  your trusted companions, offering invaluable resources and
-                  unparalleled expertise to navigate the thriving Dubai real
-                  estate landscape. Start your journey with us today and unlock
-                  the doors to your dream property in one of the world&apos;s
-                  most vibrant cities.
+                  <h6 className="fw400">
+                    Explore the latest insights and expert opinions on the Dubai
+                    real estate market. Stay informed with our blog posts
+                    covering trends, tips, and news.
+                  </h6>
                 </div>
               </div>
             </div>

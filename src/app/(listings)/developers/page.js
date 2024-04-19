@@ -6,14 +6,15 @@ import FilteringAgency from "@/components/property/FilteringAgency";
 import React from "react";
 
 export const metadata = {
-  title: "Explore the Leading Real Estate Developers in Dubai, UAE | Find Your Dream Property",
+  title:
+    "Explore the Leading Real Estate Developers in Dubai, UAE | Find Your Dream Property",
   description: `Explore a comprehensive list of major real estate developers in Dubai, UAE. Find trusted developers known for 
                 quality projects and innovative designs. Discover your dream property with our curated directory.`,
 };
 const Agency = () => {
   return (
     <>
-     <link
+      <link
         rel="canonical"
         href="https://www.indusre.com/developers"
         key="canonical"
@@ -32,11 +33,15 @@ const Agency = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcumb-style1">
-                <h1 className="title">Discover Top Real Estate Developers in Dubai, UAE</h1>
+                <h1 className="title">
+                  Discover Top Real Estate Developers in Dubai, UAE
+                </h1>
                 <div className="breadcumb-list">
-                  <h6>
-                    Dive into the world of premier real estate developers in the
-                    UAE, crafting iconic destinations.
+                  <h6 className="fw400">
+                    Explore a comprehensive list of major real estate developers
+                    in Dubai, UAE. Find trusted developers known for quality
+                    projects and innovative designs. Discover your dream
+                    property with our curated directory.
                   </h6>
                 </div>
               </div>

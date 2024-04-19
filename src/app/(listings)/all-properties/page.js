@@ -8,15 +8,20 @@ import ProperteyFiltering from "@/components/listing/grid-view/grid-full-4-col/P
 import React from "react";
 
 export const metadata = {
-  title: "Explore Exclusive Residential Properties for Sale in Dubai, UAE",
-  description: `Discover a range of luxurious and stylish residential properties for sale in Dubai, UAE. Invest in prime real estate opportunities with breathtaking views and world-class amenities. 
-                 Explore our listings today and find your dream home in one of the most vibrant cities in the world.`,
+  title: "Explore Prime Residential Properties for Sale and Rent in Dubai, UAE",
+  description: `Discover luxurious residential properties for sale and rent in Dubai, UAE, showcasing diverse communities developed by top real estate developers. 
+                Invest in prime real estate opportunities with breathtaking views, world-class amenities, and insights into lifestyle and investment opportunities. 
+                Find your dream home or ideal rental in one of the most vibrant cities in the world today.`,
 };
 
 const AllPropertiesPage = () => {
   return (
     <>
-      <link rel="canonical" href="https://www.indusre.com/all-properties" key="canonical" />
+      <link
+        rel="canonical"
+        href="https://www.indusre.com/all-properties"
+        key="canonical"
+      />
       {/* Main Header Nav */}
       <Header />
       {/* End Main Header Nav */}
@@ -32,11 +37,17 @@ const AllPropertiesPage = () => {
             <div className="col-lg-12">
               <div className="breadcumb-style1">
                 <h1 className="title">
-                  Invest in Prime Residential Properties in Dubai, UAE
+                  Explore Prime Residential Properties for Sale and Rent in
+                  Dubai, UAE
                 </h1>
                 <div className="breadcumb-list">
-                  <a href="#">Home</a>
-                  <a href="#">All Properties</a>
+                  Discover luxurious residential properties for sale and rent in
+                  Dubai, UAE, showcasing diverse communities developed by top
+                  real estate developers. Invest in prime real estate
+                  opportunities with breathtaking views, world-class amenities,
+                  and insights into lifestyle and investment opportunities. Find
+                  your dream home or ideal rental in one of the most vibrant
+                  cities in the world today.
                 </div>
                 <a
                   className="filter-btn-left mobile-filter-btn d-block d-lg-none text-dark mt5"

@@ -6,8 +6,7 @@ import Contact from "@/components/home/home-v8/Contact";
 import Office from "@/components/pages/contact/Office";
 
 export const metadata = {
-  title:
-    "Contact Indus Real Estate LLC, Dubai | Latest Contact Information",
+  title: "Contact Indus Real Estate LLC, Dubai | Latest Contact Information",
   description: `Contact information for Indus Real Estate LLC in Dubai. Reach out to us for any inquiries or assistance regarding real estate services`,
 };
 
@@ -36,12 +35,14 @@ const ContactUs = () => {
           <div className="row">
             <div className="col-md-6 offset-md-6 position-relative">
               <div className="home8-contact-form bdrs12 p40 p30-md bgc-white mb30">
-                <h1 className="form-title">Contact Indus Real Estate LLC, Dubai</h1>
-                <p className="text mb25">
-                  Contact us today for real estate assistance. Our expert agents
-                  will guide you through buying, selling, or renting. Explore
-                  options now for your dream property!
-                </p>
+                <h1 className="form-title">
+                  Contact Indus Real Estate LLC, Dubai
+                </h1>
+                <h6 className="fw400">
+                  Contact information for Indus Real Estate LLC in Dubai. Reach
+                  out to us for any inquiries or assistance regarding real
+                  estate services
+                </h6>
                 <Contact />
               </div>
             </div>

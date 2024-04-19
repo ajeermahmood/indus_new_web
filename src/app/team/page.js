@@ -39,8 +39,12 @@ const Agents = () => {
                   LLC, Dubai
                 </h1>
                 <div className="breadcumb-list">
-                  <a href="#">Home</a>
-                  <a href="#">Team</a>
+                  <h6 className="fw400">
+                    Explore the profiles of our seasoned real estate agents at
+                    Indus Real Estate LLC, Dubai. Learn about their expertise,
+                    experience, and commitment to serving your property needs in
+                    the vibrant Dubai market.
+                  </h6>
                 </div>
               </div>
             </div>

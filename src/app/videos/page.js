@@ -38,8 +38,12 @@ const VideosPage = () => {
                     Footages & Experts
                   </h1>
                   <div className="breadcumb-list">
-                    <a href="#">Home</a>
-                    <a href="#">Videos</a>
+                    <h6 className="fw400">
+                      Explore the latest videos, property footages, exclusive
+                      interviews, and updates from Indus Real Estate LLC, Dubai.
+                      Connect with expert real estate agents for insights and
+                      property show updates.
+                    </h6>
                   </div>
                 </div>
               </div>

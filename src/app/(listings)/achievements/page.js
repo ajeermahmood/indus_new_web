@@ -37,8 +37,12 @@ const AchievementsPage = () => {
                   Awards and Beyond
                 </h1>
                 <div className="breadcumb-list">
-                  <a href="#">Home</a>
-                  <a href="#">Achievements</a>
+                  <h6 className="fw400">
+                    Discover the remarkable achievements and accolades earned by
+                    Indus Real Estate LLC over the past two decades. With more
+                    than 160 prestigious awards, we stand as a testament to
+                    excellence in the real estate industry
+                  </h6>
                 </div>
               </div>
             </div>

@@ -65,14 +65,12 @@ const RentGuidePage = () => {
                 Your Comprehensive Guide for Renting Properties in Dubai, UAE
               </h1>
               <div className="blog-single-meta">
-                <div className="post-author d-sm-flex align-items-center">
-                  Renting property in Dubai and the UAE offers flexibility and a
-                  wide range of options to suit different lifestyles and
-                  budgets. Whether you&apos;re a newcomer or a long-term
-                  resident, understanding the rental process is essential.
-                  Here&apos;s a comprehensive guide to help renters navigate
-                  through the process:
-                </div>
+                <h6 className="fw400">
+                  Explore our comprehensive guide tailored for renters in Dubai,
+                  UAE, offering invaluable tips, insights, and essential
+                  information to help you navigate the rental market and secure
+                  your dream property with confidence.
+                </h6>
               </div>
             </div>
           </div>

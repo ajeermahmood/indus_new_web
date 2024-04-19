@@ -33,9 +33,10 @@ const CommunityGuidePage = () => {
               <div className="breadcumb-style1">
                 <h1 className="title">Dubai&apos;s Premier Community Guides</h1>
                 <div className="breadcumb-list">
-                  <h6>
-                    Your go-to resource for home living in Dubai&apos;s diverse
-                    communities.
+                  <h6 className="fw400">
+                    Discover the diverse communities of Dubai developed by top
+                    real estate developers. Our guides offer insights into
+                    amenities, lifestyle, and investment opportunities.
                   </h6>
                 </div>
               </div>
