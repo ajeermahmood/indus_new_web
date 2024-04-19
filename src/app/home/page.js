@@ -83,7 +83,7 @@ const HomePage = async () => {
                 <h2 className="title">
                   Luxury Living: Explore Featured Projects in UAE
                 </h2>
-                <p className="paragraph">
+                <p className="paragraph px5">
                   Indulge in the epitome of luxury with our curated selection of
                   featured projects, showcasing exquisite apartments and
                   townhouses. Contact us now to elevate your lifestyle with
