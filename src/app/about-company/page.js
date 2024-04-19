@@ -37,6 +37,11 @@ const AboutCompanyPage = () => {
   ];
   return (
     <>
+      <link
+        rel="canonical"
+        href="https://www.indusre.com/about-company"
+        key="canonical"
+      />
       {/* Main Header Nav */}
       <Header />
       {/* End Main Header Nav */}

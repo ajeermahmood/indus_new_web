@@ -38,11 +38,11 @@ const GalleryBox = ({ banners, loading, size, openCommonDialog }) => {
             nextEl: ".single-pro-slide-next__active",
             prevEl: ".single-pro-slide-prev__active",
           }}
-          slidesPerView={2}
+          slidesPerView={size.width != undefined ? (size.width > 500 ? 3 : 2) : 2}
           initialSlide={1}
           loop={true}
           autoplay={{ delay: 3000 }}
-          width={size.width != undefined ? (size.width > 500 ? 960 : 720) : 960}
+          width={size.width != undefined ? (size.width > 500 ? 1500 : 720) : 1500}
         >
           {banners.map((bnr, index) => (
             <SwiperSlide key={index}>

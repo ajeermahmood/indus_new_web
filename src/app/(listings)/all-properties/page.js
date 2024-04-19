@@ -16,6 +16,7 @@ export const metadata = {
 const AllPropertiesPage = () => {
   return (
     <>
+      <link rel="canonical" href="https://www.indusre.com/all-properties" key="canonical" />
       {/* Main Header Nav */}
       <Header />
       {/* End Main Header Nav */}
@@ -30,7 +31,9 @@ const AllPropertiesPage = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcumb-style1">
-                <h1 className="title">Invest in Prime Residential Properties in Dubai, UAE</h1>
+                <h1 className="title">
+                  Invest in Prime Residential Properties in Dubai, UAE
+                </h1>
                 <div className="breadcumb-list">
                   <a href="#">Home</a>
                   <a href="#">All Properties</a>

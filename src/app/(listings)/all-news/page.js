@@ -10,6 +10,11 @@ export const metadata = {
 const AllNewsPage = () => {
   return (
     <>
+      <link
+        rel="canonical"
+        href="https://www.indusre.com/all-news"
+        key="canonical"
+      />
       {/* Main Header Nav */}
       <Header />
       {/* End Main Header Nav */}

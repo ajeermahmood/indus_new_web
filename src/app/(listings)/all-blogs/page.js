@@ -12,6 +12,11 @@ export const metadata = {
 const AllBlogsPage = () => {
   return (
     <>
+      <link
+        rel="canonical"
+        href="https://www.indusre.com/all-blogs"
+        key="canonical"
+      />
       {/* Main Header Nav */}
       <Header />
       {/* End Main Header Nav */}
@@ -26,7 +31,9 @@ const AllBlogsPage = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcumb-style1">
-                <h1 className="title">Discover Expert Insights on Dubai Real Estate</h1>
+                <h1 className="title">
+                  Discover Expert Insights on Dubai Real Estate
+                </h1>
                 <div className="breadcumb-list">
                   Explore our comprehensive blog section, where we delve into
                   the latest trends, market analyses, and insider tips to
@@ -38,8 +45,8 @@ const AllBlogsPage = () => {
                   your trusted companions, offering invaluable resources and
                   unparalleled expertise to navigate the thriving Dubai real
                   estate landscape. Start your journey with us today and unlock
-                  the doors to your dream property in one of the world&apos;s most
-                  vibrant cities.
+                  the doors to your dream property in one of the world&apos;s
+                  most vibrant cities.
                 </div>
               </div>
             </div>

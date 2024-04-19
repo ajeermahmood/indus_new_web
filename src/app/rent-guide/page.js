@@ -43,6 +43,11 @@ const RentGuidePage = () => {
   ];
   return (
     <>
+      <link
+        rel="canonical"
+        href="https://www.indusre.com/rent-guide"
+        key="canonical"
+      />
       {/* Main Header Nav */}
       <Header />
       {/* End Main Header Nav */}
@@ -152,9 +157,9 @@ const RentGuidePage = () => {
                   <h5 className="fz20">Browsing for Properties</h5>
                   <p className="fz18 mb5">
                     Once you&apos;ve identified your budget and preferred
-                    communities, it&apos;s time to start searching for properties.
-                    INDUS REAL ESTATE offers an extensive portfolio of
-                    properties to browse through, considering:
+                    communities, it&apos;s time to start searching for
+                    properties. INDUS REAL ESTATE offers an extensive portfolio
+                    of properties to browse through, considering:
                   </p>
                   <p className="fz18 mb5">
                     - Property type (apartment, villa, etc.)
@@ -184,10 +189,10 @@ const RentGuidePage = () => {
                     Securing the Property & Signing the Contract
                   </h5>
                   <p className="fz18 mb5">
-                    Once you&apos;ve found the perfect property, it&apos;s time to secure
-                    it. INDUS REAL ESTATE can guide you through the application
-                    process, ensuring all necessary documents are in order.
-                    Required documents include:
+                    Once you&apos;ve found the perfect property, it&apos;s time
+                    to secure it. INDUS REAL ESTATE can guide you through the
+                    application process, ensuring all necessary documents are in
+                    order. Required documents include:
                   </p>
                   <p className="fz18 mb5">- Passport and visa copies</p>
                   <p className="fz18 mb5">- Emirates ID</p>

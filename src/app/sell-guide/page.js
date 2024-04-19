@@ -43,6 +43,11 @@ const SellGuidePage = () => {
   ];
   return (
     <>
+      <link
+        rel="canonical"
+        href="https://www.indusre.com/sell-guide"
+        key="canonical"
+      />
       {/* Main Header Nav */}
       <Header />
       {/* End Main Header Nav */}

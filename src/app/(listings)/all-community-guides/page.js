@@ -12,6 +12,11 @@ export const metadata = {
 const CommunityGuidePage = () => {
   return (
     <>
+      <link
+        rel="canonical"
+        href="https://www.indusre.com/all-community-guides"
+        key="canonical"
+      />
       {/* Main Header Nav */}
       <Header />
       {/* End Main Header Nav */}

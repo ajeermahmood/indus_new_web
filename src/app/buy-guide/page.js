@@ -43,6 +43,11 @@ const BuyGuidePage = () => {
   ];
   return (
     <>
+      <link
+        rel="canonical"
+        href="https://www.indusre.com/buy-guide"
+        key="canonical"
+      />
       {/* Main Header Nav */}
       <Header />
       {/* End Main Header Nav */}
@@ -115,7 +120,7 @@ const BuyGuidePage = () => {
             <div className="custom_bsp_grid">
               <ul className="list-style-type-bullet p-0 ml20">
                 <li>
-                  <p className="fz20" >
+                  <p className="fz20">
                     {" "}
                     <b>Affordability:</b> It is advised that your monthly
                     housing expenses should not exceed 30% of your salary. When

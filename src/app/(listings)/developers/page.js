@@ -13,6 +13,11 @@ export const metadata = {
 const Agency = () => {
   return (
     <>
+     <link
+        rel="canonical"
+        href="https://www.indusre.com/developers"
+        key="canonical"
+      />
       {/* Main Header Nav */}
       <Header />
       {/* End Main Header Nav */}
