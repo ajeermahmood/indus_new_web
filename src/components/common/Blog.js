@@ -59,7 +59,7 @@ const Blog = () => {
                     // className="w-100 h-100"
                     variant="rectangular"
                     width={386}
-                    height={200}
+                    height={208}
                   />
                 </div>
                 <div className="blog-content">
@@ -100,7 +100,7 @@ const Blog = () => {
                       variant="rectangular"
                       className="w-100 cover"
                       width={386}
-                      height={271}
+                      height={208}
                     />
                   ) : (
                     <></>

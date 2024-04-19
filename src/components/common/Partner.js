@@ -51,8 +51,8 @@ const Partner = () => {
             <SwiperSlide key={index}>
               <div className="item">
                 <div className="partner_item">
-                  <img
-                    width={500}
+                  <Image
+                    width={190}
                     height={130}
                     style={{ objectFit: "contain" }}
                     className="wa m-auto"

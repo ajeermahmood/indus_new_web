@@ -1,25 +1,24 @@
-import dynamic from "next/dynamic";
+import { Rating } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import { Rating } from "@mui/material";
 
 // const MobileMenu = dynamic(() => import("@/components/common/mobile-menu"));
 
+import Blog from "@/components/common/Blog";
 import Partner from "@/components/common/Partner";
+import FeaturedVideos from "@/components/common/Videos-featured";
 import MobileMenu from "@/components/common/mobile-menu";
-import MainImageSlider from "./home-main-swiper";
 import ApartmentType from "@/components/home/home-v2/ApartmentType";
 import Header from "@/components/home/home-v2/Header";
 import Testimonial from "@/components/home/home-v2/Testimonial";
 import ExploreCities from "@/components/home/home-v7/ExploreCities";
-import Footer from "@/components/home/home-v7/footer";
-import Blog from "@/components/common/Blog";
 import InqueryForm from "@/components/home/home-v7/InqueryForm";
 import PropertyListing from "@/components/home/home-v7/PropertyListing";
+import Footer from "@/components/home/home-v7/footer";
 import PropertyGallery from "@/components/property/property-single-style/single-v4/banners-gallery";
-import ScrollDownCustom from "./scroll-down-custom";
 import CookieConsent from "./cookies-consent";
-import FeaturedVideos from "@/components/common/Videos-featured";
+import MainImageSlider from "./home-main-swiper";
+import ScrollDownCustom from "./scroll-down-custom";
 
 export const metadata = {
   title: "Unveiling Excellence: Best in Dubai with Indus Real Estate",
@@ -105,7 +104,7 @@ const HomePage = async () => {
       >
         <PropertyListing />
       </section>
-      <section className="pb90 pb20-md pt50" id="featured-videos">
+      <section className="pb20 pb20-md pt50" id="featured-videos">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 m-auto">
@@ -387,7 +386,7 @@ const HomePage = async () => {
               <div className="inquiry-form">
                 <div className="inquiry-img">
                   <Image
-                    width={591}
+                    width={600}
                     height={600}
                     style={{
                       borderRadius: "5px",

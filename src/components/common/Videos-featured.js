@@ -57,11 +57,10 @@ const FeaturedVideos = () => {
                     // className="w-100 h-100"
                     variant="rectangular"
                     width={386}
-                    height={200}
+                    height={180}
                   />
                 </div>
                 <div className="blog-content">
-                  <div className="date"></div>
                   <a className="tag" href="#">
                     <Skeleton variant="rectangular" width={200} height={17} />
                   </a>
@@ -80,8 +79,8 @@ const FeaturedVideos = () => {
               >
                 <div className="blog-img">
                   <Image
-                    width={386}
-                    height={271}
+                    width={300}
+                    height={194}
                     src={`https://www.indusre.com/images/videos/${v.video_image}`}
                     alt="image"
                     role="button"
@@ -95,17 +94,16 @@ const FeaturedVideos = () => {
 
                   {!getImgLoadVar(index) ? (
                     <Skeleton
+                      // className="w-100 h-100"
                       variant="rectangular"
-                      className="w-100 cover"
                       width={386}
-                      height={271}
+                      height={180}
                     />
                   ) : (
                     <></>
                   )}
                 </div>
                 <div className="blog-content">
-                  
                   <a className="tag" href="#">
                     Indus Real Estate LLC
                   </a>

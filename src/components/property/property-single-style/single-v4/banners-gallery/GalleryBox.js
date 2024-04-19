@@ -19,6 +19,12 @@ const GalleryBox = ({ banners, loading, size, openCommonDialog }) => {
             <div className="item maxw30rem" key={index}>
               <Skeleton
                 variant="rectangular"
+                className="bdrs12 mb10"
+                height={60}
+                width={size.width != undefined ? (size.width > 500 ? 350 : 250) : 250}
+              />
+              <Skeleton
+                variant="rectangular"
                 className="bdrs12 w-100"
                 height={
                   size.width != undefined ? (size.width > 500 ? 342 : 256) : 342
@@ -38,11 +44,15 @@ const GalleryBox = ({ banners, loading, size, openCommonDialog }) => {
             nextEl: ".single-pro-slide-next__active",
             prevEl: ".single-pro-slide-prev__active",
           }}
-          slidesPerView={size.width != undefined ? (size.width > 500 ? 3 : 2) : 2}
+          slidesPerView={
+            size.width != undefined ? (size.width > 500 ? 3 : 2) : 2
+          }
           initialSlide={1}
           loop={true}
           autoplay={{ delay: 3000 }}
-          width={size.width != undefined ? (size.width > 500 ? 1500 : 720) : 1500}
+          width={
+            size.width != undefined ? (size.width > 500 ? 1500 : 720) : 1500
+          }
         >
           {banners.map((bnr, index) => (
             <SwiperSlide key={index}>
@@ -58,7 +68,9 @@ const GalleryBox = ({ banners, loading, size, openCommonDialog }) => {
                       : "360px",
                 }}
               >
-                <p className="mb0 fz20 text-indus text-overflow-mbl">{bnr.title}</p>
+                <p className="mb0 fz20 text-indus text-overflow-mbl">
+                  {bnr.title}
+                </p>
 
                 <p className="mb10 text-overflow-mbl">
                   <i>{bnr.subtitle}</i>
@@ -89,13 +101,7 @@ const GalleryBox = ({ banners, loading, size, openCommonDialog }) => {
                   <></>
                 )}
                 <Image
-                  width={
-                    size.width != undefined
-                      ? size.width > 500
-                        ? 480
-                        : 360
-                      : 360
-                  }
+                  width={380}
                   height={
                     size.width != undefined
                       ? size.width > 500
