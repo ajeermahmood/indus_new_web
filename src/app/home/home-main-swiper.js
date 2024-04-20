@@ -10,6 +10,7 @@ SwiperCore.use([Autoplay]);
 const MainImageSlider = () => {
   const [realIndex, setIndex] = useState(0);
 
+  const [showFcp, setShowFcp] = useState(true);
   const [imagesLoaded, setImagesLoaded] = useState([]);
   const [allImages, setAllImages] = useState([]);
 
@@ -29,11 +30,27 @@ const MainImageSlider = () => {
 
   return (
     <>
-      {allImages.length > 0 ? (
+      <Image
+        style={{
+          filter: "blur(1px) brightness(0.6)",
+          height: "55vh",
+        }}
+        className={
+          showFcp
+            ? "opacity-1 position-relative cover w-100 bdrs10"
+            : "opacity-0 position-absolute cover w-100 bdrs10"
+        }
+        src={`https://www.indusre.com/main_slider/al_habtoor_tower.webp`}
+        priority
+        height={144}
+        width={384}
+        alt="img"
+      />
+      {allImages.length > 0 && (
         <>
           <div
             className={
-              imagesLoaded.length === allImages.length
+              imagesLoaded.length == allImages.length
                 ? "opacity-1 position-relative"
                 : "opacity-0 position-absolute"
             }
@@ -74,6 +91,7 @@ const MainImageSlider = () => {
                       placeholder="blur"
                       onLoadingComplete={() => {
                         setImagesLoaded((prev) => [...prev, index]);
+                        setShowFcp(false);
                       }}
                     />
                   </div>
@@ -81,38 +99,7 @@ const MainImageSlider = () => {
               ))}
             </Swiper>
           </div>
-          {imagesLoaded.length === allImages.length ? (
-            <></>
-          ) : (
-            <Image
-              style={{
-                filter: "blur(1px) brightness(0.6)",
-                height: "55vh",
-              }}
-              className="cover w-100 bdrs10"
-              src={`https://www.indusre.com/main_slider/al_habtoor_tower.webp`}
-              priority={true}
-              loading="eager"
-              height={144}
-              width={384}
-              alt="img"
-            />
-          )}
         </>
-      ) : (
-        <Image
-          style={{
-            filter: "blur(1px) brightness(0.6)",
-            height: "55vh",
-          }}
-          className="cover w-100 bdrs10"
-          src={`https://www.indusre.com/main_slider/al_habtoor_tower.webp`}
-          priority={true}
-          loading="eager"
-          height={144}
-          width={384}
-          alt="img"
-        />
       )}
 
       {/* <Image
