@@ -34,6 +34,7 @@ const MainImageSlider = () => {
         style={{
           filter: "blur(1px) brightness(0.6)",
           height: "55vh",
+          transition: "all 0.5s ease-in-out",
         }}
         className={
           showFcp
@@ -49,6 +50,9 @@ const MainImageSlider = () => {
       {allImages.length > 0 && (
         <>
           <div
+            style={{
+              transition: "all 0.5s ease-in-out",
+            }}
             className={
               imagesLoaded.length == allImages.length
                 ? "opacity-1 position-relative"
@@ -83,7 +87,7 @@ const MainImageSlider = () => {
                       className="cover w-100 bdrs10"
                       src={`https://www.indusre.com/main_slider/${item.img}`}
                       // priority={realIndex == 0 ? true : false}
-                      loading="lazy"
+                      priority
                       height={405}
                       width={1080}
                       alt="img"
