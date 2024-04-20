@@ -143,7 +143,6 @@ const FeaturedListings = ({ data, type, loading }) => {
                         ? "relative"
                         : "absolute",
                     }}
-                    priority={false}
                     loading="lazy"
                     src={listing.dp_1}
                     alt="listings"

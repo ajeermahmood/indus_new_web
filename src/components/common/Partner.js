@@ -54,6 +54,7 @@ const Partner = () => {
                   <Image
                     width={190}
                     height={130}
+                    loading="lazy"
                     style={{ objectFit: "contain", objectPosition: "center" }}
                     className="m-auto"
                     src={`https://www.indusre.com/images/builders/logo/${imageName}`}

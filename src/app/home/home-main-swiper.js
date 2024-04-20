@@ -66,7 +66,7 @@ const MainImageSlider = () => {
                       className="cover w-100 bdrs10"
                       src={`https://www.indusre.com/main_slider/${item.img}`}
                       // priority={realIndex == 0 ? true : false}
-                      priority
+                      loading="lazy"
                       height={405}
                       width={1080}
                       alt="img"

@@ -84,6 +84,7 @@ const Blog = () => {
                   <Image
                     width={384}
                     height={216}
+                    loading="lazy"
                     src={`https://www.indusre.com/newsimg/${blog.news_thumbnail}`}
                     alt="image"
                     role="button"

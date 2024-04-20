@@ -121,7 +121,6 @@ const GalleryBox = ({ banners, loading, size, openCommonDialog }) => {
                     objectFit: "cover",
                     objectPosition: "center",
                   }}
-                  priority={false}
                   loading="lazy"
                   className={`${
                     !imagesLoaded.includes(index)

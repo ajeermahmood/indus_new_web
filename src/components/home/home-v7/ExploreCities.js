@@ -73,6 +73,7 @@ const ExploreCities = () => {
               <Image
                 width={591}
                 height={270}
+                loading="lazy"
                 className="w-100 h-100 cover"
                 src={apartment.imageSrc}
                 alt="city listing"

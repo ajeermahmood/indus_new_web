@@ -81,6 +81,7 @@ const FeaturedVideos = () => {
                   <Image
                     width={384}
                     height={193}
+                    loading="lazy"
                     src={`https://www.indusre.com/images/videos/${v.video_image}`}
                     alt="image"
                     role="button"
