@@ -28,12 +28,18 @@ const MainImageSlider = () => {
       });
   }, []);
 
+  useEffect(() => {
+    if (imagesLoaded.length > 0) {
+      setShowFcp(false);
+    }
+  }, [imagesLoaded]);
+
   return (
     <>
       <Image
         style={{
           filter: "blur(1px) brightness(0.6)",
-          height: "55vh",
+          height: "60vh",
           transition: "all 0.5s ease-in-out",
         }}
         className={
@@ -54,7 +60,7 @@ const MainImageSlider = () => {
               transition: "all 0.5s ease-in-out",
             }}
             className={
-              imagesLoaded.length == allImages.length
+              !showFcp
                 ? "opacity-1 position-relative"
                 : "opacity-0 position-absolute"
             }
@@ -82,20 +88,16 @@ const MainImageSlider = () => {
                     <Image
                       style={{
                         filter: "brightness(0.6)",
-                        height: "55vh",
+                        height: "60vh",
                       }}
                       className="cover w-100 bdrs10"
                       src={`https://www.indusre.com/main_slider/${item.img}`}
-                      // priority={realIndex == 0 ? true : false}
-                      priority
+                      loading="lazy"
                       height={405}
                       width={1080}
                       alt="img"
-                      blurDataURL="URL"
-                      placeholder="blur"
                       onLoadingComplete={() => {
                         setImagesLoaded((prev) => [...prev, index]);
-                        setShowFcp(false);
                       }}
                     />
                   </div>
