@@ -40,7 +40,7 @@ const PrivacyPolicyPage = () => {
       
       <section className="pt0 pb20">
         <div className="container">
-          <div class="mt-3 mt-md-4">
+          <div className="mt-3 mt-md-4">
             <p>Effective date: January 24, 2019</p>
 
             <p>

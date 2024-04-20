@@ -229,14 +229,14 @@ const InqueryForm = () => {
 
         <div className="row">
           <div className="col-lg-12">
-            <div class="form-group">
+            <div className="form-group">
               <div className="mb20">
                 <label className="heading-color ff-heading fw600 mb10">
                   Name
                 </label>
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="recipient-name"
                   placeholder="Name"
                   name="name"
@@ -247,14 +247,14 @@ const InqueryForm = () => {
           </div>
 
           <div className="col-lg-12">
-            <div class="form-group">
+            <div className="form-group">
               <div className="mb20">
                 <label className="heading-color ff-heading fw600 mb10">
                   Phone
                 </label>
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="phone"
                   name="phone"
                   placeholder="Phone"
@@ -265,7 +265,7 @@ const InqueryForm = () => {
           </div>
 
           <div className="col-lg-12">
-            <div class="form-group">
+            <div className="form-group">
               <div className="mb20">
                 <label className="heading-color ff-heading fw600 mb10">
                   Email
@@ -273,7 +273,7 @@ const InqueryForm = () => {
                 <input
                   type="email"
                   name="email"
-                  class="form-control"
+                  className="form-control"
                   id="recipient-email"
                   placeholder="Email"
                   required

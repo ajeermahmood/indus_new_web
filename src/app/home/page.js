@@ -2,8 +2,6 @@ import { Rating } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 
-// const MobileMenu = dynamic(() => import("@/components/common/mobile-menu"));
-
 import Blog from "@/components/common/Blog";
 import Partner from "@/components/common/Partner";
 import FeaturedVideos from "@/components/common/Videos-featured";
@@ -19,6 +17,7 @@ import PropertyGallery from "@/components/property/property-single-style/single-
 import CookieConsent from "./cookies-consent";
 import MainImageSlider from "./home-main-swiper";
 import ScrollDownCustom from "./scroll-down-custom";
+import Hero from "@/components/home/home-v2/hero";
 
 export const metadata = {
   title: "Unveiling Excellence: Best in Dubai with Indus Real Estate",
@@ -26,21 +25,7 @@ export const metadata = {
     "Indulge in the luxury of Dubai living with Indus Real Estate LLC! Expert agents, exclusive listings. Your dream property awaits, start your journey now",
 };
 
-export async function getMainSliderImgs() {
-  const res = await fetch(
-    `https://indusspeciality.com/api/listings/get_main_slider_imgs.php`,
-    {
-      cache: "no-store",
-      method: "GET",
-    }
-  );
-  const data = await res.json();
-
-  return data;
-}
-
-const HomePage = async () => {
-  const data = await getMainSliderImgs();
+const HomePage = () => {
   return (
     <>
       <link rel="canonical" href="https://www.indusre.com" key="canonical" />
@@ -56,7 +41,14 @@ const HomePage = async () => {
       <section className="home-banner-style2 p0" id="home">
         <div className="home-style2">
           <div className="container maxw1600">
-            <MainImageSlider data={data} />
+            <div className="home2-hero-banner">
+              <MainImageSlider />
+            </div>
+            <div className="row m-0">
+              <div className="col-xl-10 mx-auto">
+                <Hero />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -66,7 +58,7 @@ const HomePage = async () => {
       <section className="pb0 pb30-md pt0">
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-lg-12" data-aos="fade-in" data-aos-delay="0">
+            <div className="col-lg-12">
               <ApartmentType />
             </div>
           </div>
@@ -91,7 +83,7 @@ const HomePage = async () => {
               </div>
             </div>
           </div>
-          <div className="row mt5" data-aos="fade-up" data-aos-delay="100">
+          <div className="row mt5">
             <PropertyGallery />
           </div>
         </div>
@@ -123,7 +115,7 @@ const HomePage = async () => {
           </div>
           {/* End .row */}
 
-          <div className="row" data-aos="fade-up" data-aos-delay="200">
+          <div className="row">
             <FeaturedVideos />
             <div className="d-grid d-md-block text-center mt30 mt0-md">
               <Link href="/videos" className="ud-btn btn-dark bdrs0">
@@ -167,7 +159,7 @@ const HomePage = async () => {
           </div>
           {/* End .row */}
 
-          <div className="row" data-aos="fade-up" data-aos-delay="200">
+          <div className="row">
             <ExploreCities />
           </div>
           {/* End .row */}
@@ -193,7 +185,7 @@ const HomePage = async () => {
           </div>
           {/* End .row */}
 
-          <div className="row" data-aos="fade-up" data-aos-delay="200">
+          <div className="row">
             <Blog />
             <div className="d-grid d-md-block text-center mt30 mt0-md">
               <Link href="/all-news" className="ud-btn btn-dark bdrs0">
@@ -254,11 +246,7 @@ const HomePage = async () => {
             </div>
             {/* End .col-12 */}
 
-            <div
-              className="col-lg-12 text-center"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
+            <div className="col-lg-12 text-center">
               <Partner />
             </div>
             {/* End .col-12 */}
@@ -364,11 +352,7 @@ const HomePage = async () => {
       <section>
         <div className="container">
           <div className="row">
-            <div
-              className="col-lg-6 col-xl-5"
-              data-aos="fade-right"
-              data-aos-delay="200"
-            >
+            <div className="col-lg-6 col-xl-5">
               <div className="main-title mb40">
                 <h2 className="title">Real Estate Inquiry Form</h2>
               </div>
@@ -378,11 +362,7 @@ const HomePage = async () => {
             </div>
             {/* End col-6 */}
 
-            <div
-              className="col-lg-6 col-xl-6 offset-xl-1"
-              data-aos="fade-left"
-              data-aos-delay="200"
-            >
+            <div className="col-lg-6 col-xl-6 offset-xl-1">
               <div className="inquiry-form">
                 <div className="inquiry-img">
                   <Image
@@ -391,7 +371,7 @@ const HomePage = async () => {
                     style={{
                       borderRadius: "5px",
                     }}
-                    className="w-100 cover"
+                    className="cover"
                     src="https://indusspeciality.com/api/assets/images/enquiry/burj-khalifa.webp"
                     alt="about"
                   />

@@ -11,15 +11,13 @@ const Hero = () => {
         <HeroContent activeTab={activeTab} setActiveTab={setActiveTab} />
         <h1
           className="hero-title fz25-mbl"
-          data-aos="fade-up"
-          data-aos-delay="100"
         >
           <i>
             {" "}
             Service you Deserve, <br /> People you Trust!
           </i>
         </h1>
-        <p className="hero-text fz15" data-aos="fade-up" data-aos-delay="200">
+        <p className="hero-text fz15">
           Let&apos;s find a home that&apos;s perfect for you.
         </p>
       </div>

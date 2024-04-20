@@ -1,9 +1,6 @@
 "use client";
 import apartmentType from "@/data/apartmentType";
 import Link from "next/link";
-import SwiperCore, { Autoplay } from "swiper";
-import "swiper/swiper-bundle.min.css";
-SwiperCore.use([Autoplay]);
 
 const ApartmentType = () => {
   return (

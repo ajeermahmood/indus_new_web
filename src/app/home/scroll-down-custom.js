@@ -26,7 +26,7 @@ export default function ScrollDownCustom() {
       {isVisible && (
         <div className="scroll-down-custom">
           <span className="fz10 fw600">Scroll</span>
-          <div class="arrow-custom"></div>
+          <div className="arrow-custom"></div>
         </div>
       )}
     </>

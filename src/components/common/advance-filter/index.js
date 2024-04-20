@@ -6,10 +6,11 @@ import Bathroom from "./Bathroom";
 import Amenities from "./Amenities";
 import { useRouter } from "next/navigation";
 import Locations from "../../../data/locations";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const AdvanceFilterModal = ({ listingStatus }) => {
   const router = useRouter();
+
   const catOptions = [
     { label: "All", defaultChecked: true, value: "All" },
     { label: "Apartment", value: 1 },
@@ -19,8 +20,13 @@ const AdvanceFilterModal = ({ listingStatus }) => {
     { label: "Penthouse", value: 4 },
   ];
 
+  const id = Date.now().toString();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => setIsMounted(true), []);
+
   const [propertyType, setPropertyType] = useState("All");
-  const [priceRange, setPriceRange] = useState([0, 40000000]);
+  const [priceRange, setPriceRange] = useState([2000, 40000000]);
   const [bedrooms, setBedrooms] = useState(-1);
   const [bathrooms, setBathroms] = useState(0);
   const [location, setLocation] = useState("0");
@@ -59,7 +65,7 @@ const AdvanceFilterModal = ({ listingStatus }) => {
 
   const resetFilter = () => {
     setPropertyType("All");
-    setPriceRange([0, 40000000]);
+    setPriceRange([2000, 40000000]);
     setBedrooms(-1);
     setBathroms(0);
     setLocation("0");
@@ -123,22 +129,27 @@ const AdvanceFilterModal = ({ listingStatus }) => {
               <div className="widget-wrapper">
                 <p className="list-title">Type</p>
                 <div className="form-style2 input-group">
-                  <Select
-                    defaultValue={[catOptions[0]]}
-                    onChange={(e) => {
-                      if (e.value == "All") {
-                        setPropertyType("All");
-                      } else {
-                        setPropertyType(e.value);
-                      }
-                    }}
-                    name="colors"
-                    options={catOptions}
-                    styles={customStyles}
-                    className="select-custom"
-                    classNamePrefix="select"
-                    required
-                  />
+                  {isMounted ? (
+                    <Select
+                      id={id}
+                      defaultValue={[catOptions[0]]}
+                      name="colors"
+                      options={catOptions}
+                      styles={customStyles}
+                      className="select-custom"
+                      classNamePrefix="select"
+                      required
+                      onChange={(e) => {
+                        if (e.value == "All") {
+                          setPropertyType("All");
+                        } else {
+                          setPropertyType(e.value);
+                        }
+                      }}
+                    />
+                  ) : (
+                    <></>
+                  )}
                 </div>
               </div>
             </div>
@@ -188,22 +199,27 @@ const AdvanceFilterModal = ({ listingStatus }) => {
               <div className="widget-wrapper">
                 <p className="list-title">Location</p>
                 <div className="form-style2 input-group">
-                  <Select
-                    defaultValue={[Locations[0]]}
-                    name="colors"
-                    styles={customStyles}
-                    options={Locations}
-                    className="select-custom"
-                    classNamePrefix="select"
-                    required
-                    value={{
-                      value: location,
-                      label: Locations.find((l) => l.value == location).label,
-                    }}
-                    onChange={(e) => {
-                      setLocation(e.value);
-                    }}
-                  />
+                  {isMounted ? (
+                    <Select
+                      id={id}
+                      defaultValue={[Locations[0]]}
+                      name="colors"
+                      styles={customStyles}
+                      options={Locations}
+                      className="select-custom"
+                      classNamePrefix="select"
+                      required
+                      value={{
+                        value: location,
+                        label: Locations.find((l) => l.value == location).label,
+                      }}
+                      onChange={(e) => {
+                        setLocation(e.value);
+                      }}
+                    />
+                  ) : (
+                    <></>
+                  )}
                 </div>
               </div>
             </div>

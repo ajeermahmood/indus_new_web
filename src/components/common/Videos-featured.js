@@ -56,8 +56,8 @@ const FeaturedVideos = () => {
                   <Skeleton
                     // className="w-100 h-100"
                     variant="rectangular"
-                    width={386}
-                    height={180}
+                    width={384}
+                    height={193}
                   />
                 </div>
                 <div className="blog-content">
@@ -79,8 +79,8 @@ const FeaturedVideos = () => {
               >
                 <div className="blog-img">
                   <Image
-                    width={300}
-                    height={194}
+                    width={384}
+                    height={193}
                     src={`https://www.indusre.com/images/videos/${v.video_image}`}
                     alt="image"
                     role="button"
@@ -96,8 +96,8 @@ const FeaturedVideos = () => {
                     <Skeleton
                       // className="w-100 h-100"
                       variant="rectangular"
-                      width={386}
-                      height={180}
+                      width={384}
+                      height={193}
                     />
                   ) : (
                     <></>

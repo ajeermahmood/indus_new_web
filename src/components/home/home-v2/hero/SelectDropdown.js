@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useState } from "react";
 import Select from "react-select";
 
 const SelectDropdown = ({ setPropertyType }) => {
@@ -10,6 +11,11 @@ const SelectDropdown = ({ setPropertyType }) => {
     { label: "Office Space", value: 26 },
     { label: "Penthouse", value: 4 },
   ];
+
+  const id = Date.now().toString();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => setIsMounted(true), []);
 
   const customStyles = {
     option: (styles, { isFocused, isSelected, isHovered }) => {
@@ -26,26 +32,27 @@ const SelectDropdown = ({ setPropertyType }) => {
     },
   };
 
-  return (
-    <>
-      <Select
-        defaultValue={[catOptions[0]]}
-        name="colors"
-        options={catOptions}
-        styles={customStyles}
-        className="text-start select-borderless"
-        classNamePrefix="select"
-        required
-        isSearchable={false}
-        onChange={(e) => {
-          if (e.value == "All") {
-            setPropertyType("All");
-          } else {
-            setPropertyType(e.value);
-          }
-        }}
-      />
-    </>
+  return isMounted ? (
+    <Select
+      id={id}
+      defaultValue={[catOptions[0]]}
+      name="colors"
+      options={catOptions}
+      styles={customStyles}
+      className="text-start select-borderless"
+      classNamePrefix="select"
+      required
+      isSearchable={false}
+      onChange={(e) => {
+        if (e.value == "All") {
+          setPropertyType("All");
+        } else {
+          setPropertyType(e.value);
+        }
+      }}
+    />
+  ) : (
+    <></>
   );
 };
 

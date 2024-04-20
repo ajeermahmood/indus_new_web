@@ -82,15 +82,15 @@ const Blog = () => {
               >
                 <div className="blog-img">
                   <Image
-                    width={386}
-                    height={271}
+                    width={384}
+                    height={216}
                     src={`https://www.indusre.com/newsimg/${blog.news_thumbnail}`}
                     alt="image"
                     role="button"
                     className={`${
                       !getImgLoadVar(index)
-                        ? "opacity-0 position-absolute w-100 h-100 cover"
-                        : "opacity-100 w-100 h-100 cover position-relative"
+                        ? "opacity-0 position-absolute cover"
+                        : "opacity-100 cover position-relative"
                     }}`}
                     onLoadingComplete={() => getImgLoadFunc(index)}
                   />

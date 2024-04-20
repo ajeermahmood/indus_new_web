@@ -1,7 +1,9 @@
+"use client";
 import { Skeleton } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 const FeaturedListings = ({ data, type, loading }) => {
   const skeletonLoader = [1, 2, 3, 4, 5, 6];
@@ -12,6 +14,9 @@ const FeaturedListings = ({ data, type, loading }) => {
   });
 
   const router = useRouter();
+
+  const [imageLoaded, setImageLoaded] = useState([]);
+
   return (
     <>
       {!loading && data.length == 0 ? (
@@ -34,8 +39,8 @@ const FeaturedListings = ({ data, type, loading }) => {
         <></>
       )}
       {loading
-        ? skeletonLoader.map((sk) => (
-            <div className="col-sm-6 col-lg-4" key={sk.id}>
+        ? skeletonLoader.map((sk, index) => (
+            <div className="col-sm-6 col-lg-4" key={index}>
               <div className="listing-style8">
                 <div className="list-thumb">
                   <Skeleton
@@ -104,32 +109,49 @@ const FeaturedListings = ({ data, type, loading }) => {
               </div>
             </div>
           ))
-        : data.map((listing) => (
-            <div className="col-sm-6 col-lg-4" key={listing.id}>
+        : data.map((listing, index) => (
+            <div className="col-sm-6 col-lg-4" key={index}>
               <div
                 className="listing-style8"
                 onClick={() => router.push(`/property/${listing.property_id}`)}
               >
                 <div
-                  className="list-thumb"
+                  className="list-thumb w-100 m0"
                   // style={{
                   //   height: "15rem !Important",
                   // }}
                 >
+                  {imageLoaded.includes(index) ? (
+                    <></>
+                  ) : (
+                    <Skeleton
+                      // className="w-100 h-100"
+                      variant="rectangular"
+                      width={384}
+                      height={250}
+                    />
+                  )}
                   <Image
-                    width={382}
-                    height={248}
-                    className="w-100 cover"
+                    width={384}
+                    height={288}
+                    className="mbl-w-100"
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: "center",
+                      opacity: imageLoaded.includes(index) ? 1 : 0,
+                      position: imageLoaded.includes(index)
+                        ? "relative"
+                        : "absolute",
+                    }}
+                    priority={false}
+                    loading="lazy"
                     src={listing.dp_1}
                     alt="listings"
+                    onLoadingComplete={() => {
+                      setImageLoaded((prev) => [...prev, index]);
+                    }}
                   />
                   <div className="sale-sticker-wrap">
-                    {/* {listing.featured && (
-                  <div className="list-tag rounded-0 fz12">
-                    <span className="flaticon-electricity" />
-                    FEATURED
-                  </div>
-                )} */}
                     <div className="list-tag2 rounded-0 fz12">
                       {type == "rent" ? "FOR RENT" : "FOR SALE"}
                     </div>

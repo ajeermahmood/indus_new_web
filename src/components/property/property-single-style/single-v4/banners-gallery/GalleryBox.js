@@ -21,7 +21,9 @@ const GalleryBox = ({ banners, loading, size, openCommonDialog }) => {
                 variant="rectangular"
                 className="bdrs12 mb10"
                 height={60}
-                width={size.width != undefined ? (size.width > 500 ? 350 : 250) : 250}
+                width={
+                  size.width != undefined ? (size.width > 500 ? 350 : 250) : 250
+                }
               />
               <Skeleton
                 variant="rectangular"
@@ -101,7 +103,13 @@ const GalleryBox = ({ banners, loading, size, openCommonDialog }) => {
                   <></>
                 )}
                 <Image
-                  width={380}
+                  width={
+                    size.width != undefined
+                      ? size.width > 500
+                        ? 480
+                        : 360
+                      : 360
+                  }
                   height={
                     size.width != undefined
                       ? size.width > 500
@@ -109,10 +117,16 @@ const GalleryBox = ({ banners, loading, size, openCommonDialog }) => {
                         : 256
                       : 256
                   }
+                  style={{
+                    objectFit: "cover",
+                    objectPosition: "center",
+                  }}
+                  priority={false}
+                  loading="lazy"
                   className={`${
                     !imagesLoaded.includes(index)
-                      ? "opacity-0 position-absolute bdrs12 w-100"
-                      : "opacity-100 bdrs12 w-100 position-relative"
+                      ? "opacity-0 position-absolute bdrs12"
+                      : "opacity-100 bdrs12 position-relative"
                   }}`}
                   src={bnr.image}
                   alt={`Image ${index + 1}`}
