@@ -8,73 +8,79 @@ import { useEffect, useState } from "react";
 SwiperCore.use([Autoplay]);
 
 const MainImageSlider = ({ data }) => {
-  // console.log(data);
 
   const [realIndex, setIndex] = useState(0);
 
-  const [loaded, setLoaded] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState([]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoaded(true);
-    }, 3000);
-  }, []);
   return (
     <>
       <div className="home2-hero-banner">
-        {loaded ? (
-          <div data-aos="fade-in" data-aos-delay="200">
-            <Swiper
-              onSlideChange={(e) => setIndex(e.realIndex)}
-              effect={"fade"} // Set the direction to vertical
-              spaceBetween={0}
-              slidesPerView={1}
-              speed={2400} // Set the slide transition speed in milliseconds
-              autoplay={{ delay: 8000, disableOnInteraction: false }}
-              className="bdrs10"
-              style={{
-                height: "90vh",
-              }}
-              modules={[Autoplay, EffectFade]}
-            >
-              {data.map((item, index) => (
-                <SwiperSlide key={index}>
-                  <div
-                    className={`item main-img-slider-overlay fade ${
-                      realIndex === index ? "show active" : ""
-                    }`}
-                  >
-                    <Image
-                      style={{
-                        filter: "brightness(0.6)",
-                        height: "55vh",
-                      }}
-                      className="cover w-100 bdrs10"
-                      src={`https://www.indusre.com/main_slider/${item.img}`}
-                      // priority={realIndex == 0 ? true : false}
-                      loading={realIndex == 0 ? "eager" : "lazy"}
-                      height={500}
-                      width={1500}
-                      alt="img"
-                      blurDataURL="URL"
-                      placeholder="blur"
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
+        <div
+          className={
+            imagesLoaded.length === data.length
+              ? "opacity-1 position-relative"
+              : "opacity-0 position-absolute"
+          }
+        >
+          <Swiper
+            onSlideChange={(e) => setIndex(e.realIndex)}
+            effect={"fade"} // Set the direction to vertical
+            spaceBetween={0}
+            slidesPerView={1}
+            speed={2400} // Set the slide transition speed in milliseconds
+            autoplay={{ delay: 8000, disableOnInteraction: false }}
+            className="bdrs10"
+            style={{
+              height: "90vh",
+            }}
+            modules={[Autoplay, EffectFade]}
+          >
+            {data.map((item, index) => (
+              <SwiperSlide key={index}>
+                <div
+                  className={`item main-img-slider-overlay fade ${
+                    realIndex === index ? "show active" : ""
+                  }`}
+                >
+                  <Image
+                    style={{
+                      filter: "brightness(0.6)",
+                      height: "55vh",
+                    }}
+                    className="cover w-100 bdrs10"
+                    src={`https://www.indusre.com/main_slider/${item.img}`}
+                    // priority={realIndex == 0 ? true : false}
+                    loading={"lazy"}
+                    height={405}
+                    width={1080}
+                    alt="img"
+                    blurDataURL="URL"
+                    placeholder="blur"
+                    onLoadingComplete={() => {
+                      setImagesLoaded((prev) => [...prev, index]);
+                    }}
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        {imagesLoaded.length === data.length ? (
+          <></>
         ) : (
           <Image
             style={{
-              filter: "blur(2px) brightness(0.7)",
+              filter: "blur(1px) brightness(0.6)",
               height: "55vh",
             }}
             className="cover w-100 bdrs10"
             src={`https://www.indusre.com/main_slider/al_habtoor_tower.webp`}
             priority={true}
-            height={240}
-            width={640}
+            loading="eager"
+            height={144}
+            width={384}
             alt="img"
           />
         )}
