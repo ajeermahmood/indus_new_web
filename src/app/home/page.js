@@ -1,4 +1,4 @@
-import { Rating } from "@mui/material";
+// import { Rating } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -274,7 +274,7 @@ const HomePage = () => {
                     alt="google"
                   />
                   <p className="paragraph ltsp-2 fw500">REVIEWS</p>
-                  <Rating name="read-only" value={5} readOnly />
+                  {/* <Rating name="read-only" value={5} readOnly /> */}
                 </div>
               </div>
             </div>

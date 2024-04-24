@@ -1,10 +1,10 @@
 "use client";
 import ScrollToTop from "@/components/common/ScrollTop";
-import Aos from "aos";
+// import Aos from "aos";
 import "aos/dist/aos.css";
 import { Montserrat } from "next/font/google";
 import Script from "next/script";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import "../../public/scss/main.scss";
 
 
@@ -29,92 +29,92 @@ const montserrat = Montserrat({
 });
 
 export default function RootLayout({ children }) {
-  useEffect(() => {
-    Aos.init({
-      duration: 600,
-      once: true,
-    });
-  }, []);
+  // useEffect(() => {
+  //   Aos.init({
+  //     duration: 600,
+  //     once: true,
+  //   });
+  // }, []);
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Indus Real Estate LLC",
-    url: "https://www.indusre.com/",
-    logo: "https://www.indusre.com/images/logo/indus-icon.png",
-    description:
-      "Discover our story and commitment to excellence at Indus Real Estate LLC. Learn why we're the trusted choice for all your property needs in Dubai.",
-    sameAs: [
-      "https://www.facebook.com/indusrealestate/",
-      "https://twitter.com/indusrealestate",
-    ],
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+971-800-INDUS",
-      contactType: "customer service",
-    },
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Office 203, Al Sharafi Building",
-      addressLocality: "Dubai",
-      postalCode: "118163",
-      addressCountry: "AE",
-    },
-    department: [
-      {
-        "@type": "RealEstateAgent",
-        name: "Our Team",
-        description:
-          "Meet our dedicated team of real estate experts at Indus Real Estate LLC. With years of experience, we're here to guide you every step of the way toward your dream property.",
-      },
-    ],
-    potentialAction: {
-      "@type": "SearchAction",
-      target: "https://www.indusre.com/all-properties?st=Sale&ps=residential",
-      "query-input": "Residential Properties For Sale",
-    },
-    article: [
-      {
-        "@type": "BlogPosting",
-        headline:
-          "Stay informed and inspired with our insightful blogs at Indus Real Estate LLC.",
-        description:
-          "Explore valuable tips, market trends, and expert advice to make the most of your real estate journey.",
-        datePublished: "2024-03-28",
-        dateModified: "2024-03-28",
-        author: {
-          "@type": "Person",
-          name: "Indus Real Estate LLC",
-        },
-      },
-    ],
-    hasPart: [
-      {
-        "@type": "WebPage",
-        name: "About Us",
-        description:
-          "Discover our story and commitment to excellence at Indus Real Estate LLC. Learn why we're the trusted choice for all your property needs in Dubai.",
-      },
-      {
-        "@type": "WebPage",
-        name: "Awards and Achievements",
-        description:
-          "Explore our accolades and milestones at Indus Real Estate LLC. Discover why we're recognized as leaders in the Dubai real estate industry.",
-      },
-      {
-        "@type": "WebPage",
-        name: "Our Partner Developers",
-        description:
-          "Explore our esteemed partnerships with leading developers including Emaar, Sobha Realty, Damac, Omniyat, Danube, Al Wasl, Dubai Properties, Arada, Nakheel, Meraas, Deyaar, and more at Indus Real Estate LLC.",
-      },
-      {
-        "@type": "WebPage",
-        name: "Guides",
-        description:
-          "Discover valuable insights and tips with our comprehensive guides at Indus Real Estate LLC. From community guides to renter's, buyer's, and seller's guides, we've got you covered for every step of your real estate journey.",
-      },
-    ],
-  };
+  // const structuredData = {
+  //   "@context": "https://schema.org",
+  //   "@type": "Organization",
+  //   name: "Indus Real Estate LLC",
+  //   url: "https://www.indusre.com/",
+  //   logo: "https://www.indusre.com/images/logo/indus-icon.png",
+  //   description:
+  //     "Discover our story and commitment to excellence at Indus Real Estate LLC. Learn why we're the trusted choice for all your property needs in Dubai.",
+  //   sameAs: [
+  //     "https://www.facebook.com/indusrealestate/",
+  //     "https://twitter.com/indusrealestate",
+  //   ],
+  //   contactPoint: {
+  //     "@type": "ContactPoint",
+  //     telephone: "+971-800-INDUS",
+  //     contactType: "customer service",
+  //   },
+  //   address: {
+  //     "@type": "PostalAddress",
+  //     streetAddress: "Office 203, Al Sharafi Building",
+  //     addressLocality: "Dubai",
+  //     postalCode: "118163",
+  //     addressCountry: "AE",
+  //   },
+  //   department: [
+  //     {
+  //       "@type": "RealEstateAgent",
+  //       name: "Our Team",
+  //       description:
+  //         "Meet our dedicated team of real estate experts at Indus Real Estate LLC. With years of experience, we're here to guide you every step of the way toward your dream property.",
+  //     },
+  //   ],
+  //   potentialAction: {
+  //     "@type": "SearchAction",
+  //     target: "https://www.indusre.com/all-properties?st=Sale&ps=residential",
+  //     "query-input": "Residential Properties For Sale",
+  //   },
+  //   article: [
+  //     {
+  //       "@type": "BlogPosting",
+  //       headline:
+  //         "Stay informed and inspired with our insightful blogs at Indus Real Estate LLC.",
+  //       description:
+  //         "Explore valuable tips, market trends, and expert advice to make the most of your real estate journey.",
+  //       datePublished: "2024-03-28",
+  //       dateModified: "2024-03-28",
+  //       author: {
+  //         "@type": "Person",
+  //         name: "Indus Real Estate LLC",
+  //       },
+  //     },
+  //   ],
+  //   hasPart: [
+  //     {
+  //       "@type": "WebPage",
+  //       name: "About Us",
+  //       description:
+  //         "Discover our story and commitment to excellence at Indus Real Estate LLC. Learn why we're the trusted choice for all your property needs in Dubai.",
+  //     },
+  //     {
+  //       "@type": "WebPage",
+  //       name: "Awards and Achievements",
+  //       description:
+  //         "Explore our accolades and milestones at Indus Real Estate LLC. Discover why we're recognized as leaders in the Dubai real estate industry.",
+  //     },
+  //     {
+  //       "@type": "WebPage",
+  //       name: "Our Partner Developers",
+  //       description:
+  //         "Explore our esteemed partnerships with leading developers including Emaar, Sobha Realty, Damac, Omniyat, Danube, Al Wasl, Dubai Properties, Arada, Nakheel, Meraas, Deyaar, and more at Indus Real Estate LLC.",
+  //     },
+  //     {
+  //       "@type": "WebPage",
+  //       name: "Guides",
+  //       description:
+  //         "Discover valuable insights and tips with our comprehensive guides at Indus Real Estate LLC. From community guides to renter's, buyer's, and seller's guides, we've got you covered for every step of your real estate journey.",
+  //     },
+  //   ],
+  // };
 
   return (
     <html lang="en">
@@ -152,7 +152,7 @@ export default function RootLayout({ children }) {
           src="//cdn1.thelivechatsoftware.com/assets/liveadmins/indusre.com/chatloader.min.js"
         ></Script> */}
 
-        <JSONLD data={structuredData} />
+        {/* <JSONLD data={structuredData} /> */}
       </body>
     </html>
   );

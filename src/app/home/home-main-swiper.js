@@ -29,7 +29,7 @@ const MainImageSlider = () => {
   }, []);
 
   useEffect(() => {
-    if (imagesLoaded.length > 0) {
+    if (imagesLoaded.length > 2) {
       setShowFcp(false);
     }
   }, [imagesLoaded]);
