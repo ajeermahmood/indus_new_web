@@ -1,10 +1,10 @@
 "use client";
 import ScrollToTop from "@/components/common/ScrollTop";
-// import Aos from "aos";
+import Aos from "aos";
 import "aos/dist/aos.css";
 import { Montserrat } from "next/font/google";
 import Script from "next/script";
-// import { useEffect } from "react";
+import { useEffect } from "react";
 import "../../public/scss/main.scss";
 
 
@@ -29,12 +29,12 @@ const montserrat = Montserrat({
 });
 
 export default function RootLayout({ children }) {
-  // useEffect(() => {
-  //   Aos.init({
-  //     duration: 600,
-  //     once: true,
-  //   });
-  // }, []);
+  useEffect(() => {
+    Aos.init({
+      duration: 600,
+      once: true,
+    });
+  }, []);
 
   // const structuredData = {
   //   "@context": "https://schema.org",
