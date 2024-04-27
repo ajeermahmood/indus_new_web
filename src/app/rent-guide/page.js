@@ -3,6 +3,7 @@ import MobileMenu from "@/components/common/mobile-menu";
 import YouRubeVideoComponent from "@/components/common/youtube_video";
 import Header from "@/components/home/home-v2/Header";
 import FindHomeBlock from "@/components/home/home-v6/FindHomeBlock";
+import InqueryForm from "@/components/home/home-v7/InqueryForm";
 import Footer from "@/components/home/home-v7/footer";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,7 +29,6 @@ const RentGuidePage = () => {
       link: "exploring",
     },
     {
-      // icon: "flaticon-bird-house",
       icon: "flaticon-search-1",
       number: "03",
       subtitle: "Browsing for Properties",
@@ -68,11 +68,11 @@ const RentGuidePage = () => {
                 <h6 className="fw400">
                   Renting property in Dubai and the UAE offers a plethora of
                   options to cater to diverse lifestyles and budgets. Whether
-                  you&apos;re new to the area or a long-time resident, understanding
-                  the rental process is paramount for a smooth transition. In
-                  this detailed guide, we&apos;ll walk you through each step,
-                  offering insights and tips to make your renting journey
-                  seamless.
+                  you&apos;re new to the area or a long-time resident,
+                  understanding the rental process is paramount for a smooth
+                  transition. In this detailed guide, we&apos;ll walk you
+                  through each step, offering insights and tips to make your
+                  renting journey seamless.
                 </h6>
               </div>
             </div>
@@ -109,7 +109,7 @@ const RentGuidePage = () => {
             </div>
             {/* End .col-6 */}
 
-            <div className="col-xl-6" data-aos="fade-up" data-aos-delay="300">
+            <div className="col-xl-6" data-aos="fade-up" data-aos-delay="100">
               <div className="row">
                 <FindHomeBlock blocks={blocks} type={"rent-guide"} />
               </div>
@@ -119,123 +119,120 @@ const RentGuidePage = () => {
           <div className="ui-content mt40 mb30" id="understanding">
             <h4 className="mb10 text-indus">Lets Explain Further</h4>
             <div className="custom_bsp_grid">
-              <ul className="list-style-type-bullet p-0 ml20">
-                <li>
-                  <h5 className="fz20">Understanding your budget</h5>
-                  <p className="fz18 mb5">
-                    Determining your budget is the cornerstone of the rental
-                    process. INDUS REAL ESTATE can assist you in finding the
-                    right property that aligns with your financial capabilities.
-                    Consider the following factors:
-                  </p>
-                  <p className="fz18 mb5">- Monthly income</p>
-                  <p className="fz18 mb5" id="exploring">
-                    - Expenses
-                  </p>
-                  <p className="fz18">
-                    - Additional costs (maintenance fees, utilities, etc.)
-                  </p>
-                </li>
-                <li>
-                  <h5 className="fz20">Exploring the Communities</h5>
-                  <p className="fz18 mb5">
-                    Choosing the right community is crucial for your overall
-                    living experience. INDUS REAL ESTATE can help you explore
-                    various neighborhoods tailored to your preferences,
-                    including:
-                  </p>
-                  <p className="fz18 mb5">- Proximity to work or school</p>
-                  <p className="fz18 mb5">
-                    - Public transportation accessibility
-                  </p>
-                  <p className="fz18" id="browsing">
-                    - Recreational facilities
-                  </p>
-                  <p className="fz18">- Community services</p>
-                </li>
+              <div className="row" data-aos="fade-up" data-aos-delay="200">
+                <div className="col-lg-8 p10 pr50">
+                  <ul className="list-style-type-bullet p-0 ml20">
+                    <li>
+                      <h5 className="fz20">Understanding your budget</h5>
+                      <p className="fz18 mb5">
+                        Determining your budget is the cornerstone of the rental
+                        process. INDUS REAL ESTATE can assist you in finding the
+                        right property that aligns with your financial
+                        capabilities. Consider the following factors:
+                      </p>
+                      <p className="fz18 mb5">- Monthly income</p>
+                      <p className="fz18 mb5" id="exploring">
+                        - Expenses
+                      </p>
+                      <p className="fz18">
+                        - Additional costs (maintenance fees, utilities, etc.)
+                      </p>
+                    </li>
+                    <li>
+                      <h5 className="fz20">Exploring the Communities</h5>
+                      <p className="fz18 mb5">
+                        Choosing the right community is crucial for your overall
+                        living experience. INDUS REAL ESTATE can help you
+                        explore various neighborhoods tailored to your
+                        preferences, including:
+                      </p>
+                      <p className="fz18 mb5">- Proximity to work or school</p>
+                      <p className="fz18 mb5">
+                        - Public transportation accessibility
+                      </p>
+                      <p className="fz18" id="browsing">
+                        - Recreational facilities
+                      </p>
+                      <p className="fz18">- Community services</p>
+                    </li>
 
-                <li>
-                  <h5 className="fz20">Browsing for Properties</h5>
-                  <p className="fz18 mb5">
-                    Once you&apos;ve identified your budget and preferred
-                    communities, it&apos;s time to start searching for
-                    properties. INDUS REAL ESTATE offers an extensive portfolio
-                    of properties to browse through, considering:
-                  </p>
-                  <p className="fz18 mb5">
-                    - Property type (apartment, villa, etc.)
-                  </p>
-                  <p className="fz18 mb5">- Size and layout</p>
-                  <p className="fz18" id="scheduling">
-                    - Amenities
-                  </p>
-                  <p className="fz18">- Rental terms</p>
-                </li>
+                    <li>
+                      <h5 className="fz20">Browsing for Properties</h5>
+                      <p className="fz18 mb5">
+                        Once you&apos;ve identified your budget and preferred
+                        communities, it&apos;s time to start searching for
+                        properties. INDUS REAL ESTATE offers an extensive
+                        portfolio of properties to browse through, considering:
+                      </p>
+                      <p className="fz18 mb5">
+                        - Property type (apartment, villa, etc.)
+                      </p>
+                      <p className="fz18 mb5">- Size and layout</p>
+                      <p className="fz18" id="scheduling">
+                        - Amenities
+                      </p>
+                      <p className="fz18">- Rental terms</p>
+                    </li>
 
-                <li>
-                  <h5 className="fz20">Scheduling a Property Viewing</h5>
-                  <p className="fz18 mb5">
-                    Property viewings are essential for assessing the
-                    suitability of a property. INDUS REAL ESTATE can schedule
-                    viewings for you, ensuring a comprehensive assessment.
-                    During the viewing, pay attention to:
-                  </p>
-                  <p className="fz18 mb5">- Property condition</p>
-                  <p className="fz18 mb5">- Layout and functionality</p>
-                  <p className="fz18">- Any maintenance issues</p>
-                </li>
+                    <li>
+                      <h5 className="fz20">Scheduling a Property Viewing</h5>
+                      <p className="fz18 mb5">
+                        Property viewings are essential for assessing the
+                        suitability of a property. INDUS REAL ESTATE can
+                        schedule viewings for you, ensuring a comprehensive
+                        assessment. During the viewing, pay attention to:
+                      </p>
+                      <p className="fz18 mb5">- Property condition</p>
+                      <p className="fz18 mb5">- Layout and functionality</p>
+                      <p className="fz18">- Any maintenance issues</p>
+                    </li>
 
-                <li>
-                  <h5 className="fz20">
-                    Securing the Property & Signing the Contract
-                  </h5>
-                  <p className="fz18 mb5">
-                    Once you&apos;ve found the perfect property, it&apos;s time
-                    to secure it. INDUS REAL ESTATE can guide you through the
-                    application process, ensuring all necessary documents are in
-                    order. Required documents include:
-                  </p>
-                  <p className="fz18 mb5">- Passport and visa copies</p>
-                  <p className="fz18 mb5">- Emirates ID</p>
-                  <p className="fz18">
-                    - Security deposit and agency fee cheques
-                  </p>
-                  <p className="fz18">
-                    - Tenancy contract and title deed copies
-                  </p>
-                </li>
+                    <li>
+                      <h5 className="fz20">
+                        Securing the Property & Signing the Contract
+                      </h5>
+                      <p className="fz18 mb5">
+                        Once you&apos;ve found the perfect property, it&apos;s
+                        time to secure it. INDUS REAL ESTATE can guide you
+                        through the application process, ensuring all necessary
+                        documents are in order. Required documents include:
+                      </p>
+                      <p className="fz18 mb5">- Passport and visa copies</p>
+                      <p className="fz18 mb5">- Emirates ID</p>
+                      <p className="fz18">
+                        - Security deposit and agency fee cheques
+                      </p>
+                      <p className="fz18">
+                        - Tenancy contract and title deed copies
+                      </p>
+                    </li>
 
-                <li>
-                  <h5 className="fz20">Moving In</h5>
-                  <p className="fz18 mb5">
-                    Preparing for your move-in date is crucial for a seamless
-                    transition. INDUS REAL ESTATE can assist you in organizing
-                    essential services, such as:
-                  </p>
-                  <p className="fz18 mb5">- Ejari registration</p>
-                  <p className="fz18 mb5">- DEWA connection</p>
-                  <p className="fz18">- Internet setup</p>
-                  <p className="fz18">- Security and moving permits</p>
-                </li>
-
-                {/* <li>
-                  <p className="fz20">
-                    {" "}
-                    <b>Securing the property & signing the contract:</b> You
-                    will need a variety of documents ready in order to submit
-                    your offer and complete your application. Keep your
-                    documents organized for swift processing of your tenancy
-                    contract to registering with Ejari, connecting your DEWA and
-                    other services.
-                  </p>
-                  <p className="fz20 mt20 text-blue-gray">
-                    <b>Documents to prepare</b>
-                  </p>
-                  <div className="row">
-                    <Features />
+                    <li>
+                      <h5 className="fz20">Moving In</h5>
+                      <p className="fz18 mb5">
+                        Preparing for your move-in date is crucial for a
+                        seamless transition. INDUS REAL ESTATE can assist you in
+                        organizing essential services, such as:
+                      </p>
+                      <p className="fz18 mb5">- Ejari registration</p>
+                      <p className="fz18 mb5">- DEWA connection</p>
+                      <p className="fz18">- Internet setup</p>
+                      <p className="fz18">- Security and moving permits</p>
+                    </li>
+                  </ul>
+                </div>
+                <div className="col-lg-4 mbl-hidden">
+                  <div className="card p30">
+                    <div className="main-title mb40">
+                      <h2 className="title">Contact Us</h2>
+                    </div>
+                    <div className="inquiry-form mb30-md">
+                      <InqueryForm />
+                    </div>
                   </div>
-                </li> */}
-              </ul>
+                </div>
+              </div>
+
               <div className="mt50">
                 <h2 className="fz25 text-indus">
                   Frequently Asked Questions (FAQs)

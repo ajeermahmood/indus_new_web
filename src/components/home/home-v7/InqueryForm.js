@@ -1,9 +1,6 @@
 "use client";
-import ReCaptcha from "@/app/contact/recaptcha";
 import CommonThanksDialog from "@/components/common/common-thanks-dialog";
-import { TextField } from "@mui/material";
 import { useRef, useState } from "react";
-import Select from "react-select";
 
 const InqueryForm = () => {
   const captcha = useRef();
