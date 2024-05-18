@@ -91,6 +91,16 @@ export async function getBlogDetails(id) {
   return response.data;
 }
 
+export async function getLaunchDetails(id) {
+  const response = await axios.post(
+    "https://indusspeciality.com/api/listings/get_launch_details.php",
+    {
+      launch_id: id,
+    }
+  );
+  return response.data;
+}
+
 export async function getDeveloperDetails(id) {
   const response = await axios.post(
     "https://indusspeciality.com/api/listings/get_developer_details.php",
@@ -252,6 +262,18 @@ export async function getAllNews(limit, pageNumber, filter) {
 export async function getAllBlogs(limit, pageNumber, filter) {
   const response = await axios.post(
     "https://indusspeciality.com/api/listings/get_all_blogs.php",
+    {
+      limit: limit,
+      pageNumber: pageNumber,
+      filter: filter,
+    }
+  );
+  return response.data;
+}
+
+export async function getAllLaunches(limit, pageNumber, filter) {
+  const response = await axios.post(
+    "https://indusspeciality.com/api/listings/get_all_new_launches.php",
     {
       limit: limit,
       pageNumber: pageNumber,

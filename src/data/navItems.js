@@ -51,6 +51,7 @@ export const morePages = [
   // { href: "/mid-year-awarding-2021", label: "Mid Year Awarding 2021" },
   { href: "/videos", label: "Videos" },
   { href: "/developers", label: "Real Estate Partners" },
+  { href: "/new-launches", label: "New Launches" },
   // { href: "/career", label: "Career" },
 ];
 

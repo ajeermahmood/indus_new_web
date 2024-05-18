@@ -11,6 +11,9 @@ export default function YouRubeVideoComponent({ videoId }) {
     },
   };
 
+  /**
+   * @param {import("react-youtube").YouTubeEvent} event
+   */
   const onReady = (event) => {
     event.target.pauseVideo();
   };
