@@ -5,16 +5,16 @@ import Link from "next/link";
 
 const LaunchesFilter = ({ launches, loading, setActiveCategory, activeCategory }) => {
   const skeletonLoader = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  const categories = [
-    { label: "All", value: "All" },
-    { label: "Invest", value: "invest" },
-    { label: "Selling a Home", value: "sell" },
-    { label: "Renting a Home", value: "rent" },
-    { label: "Buying a Home", value: "buy" },
-  ];
+  // const categories = [
+  //   { label: "All", value: "All" },
+  //   { label: "Invest", value: "invest" },
+  //   { label: "Selling a Home", value: "sell" },
+  //   { label: "Renting a Home", value: "rent" },
+  //   { label: "Buying a Home", value: "buy" },
+  // ];
   return (
     <>
-      <ul className="nav nav-pills mb20">
+      {/* <ul className="nav nav-pills mb20">
         {categories.map((category, index) => (
           <li className="nav-item" role="presentation" key={index}>
             <button
@@ -27,7 +27,7 @@ const LaunchesFilter = ({ launches, loading, setActiveCategory, activeCategory }
             </button>
           </li>
         ))}
-      </ul>
+      </ul> */}
       {/* End nav */}
 
       {!loading && launches.length == 0 ? (

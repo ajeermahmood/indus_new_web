@@ -27,7 +27,7 @@ const NewLaunchesPage = () => {
       {/* End Mobile Nav  */}
 
       {/* Breadcrumb Start */}
-      <section className="breadcumb-section pt130">
+      <section className="breadcumb-section pt130 pb10 pt10-mbl">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
