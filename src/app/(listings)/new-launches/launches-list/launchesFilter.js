@@ -2,15 +2,16 @@
 import { Skeleton } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-const LaunchesFilter = ({ launches, loading, setActiveCategory, activeCategory }) => {
+const LaunchesFilter = ({
+  launches,
+  loading,
+  setActiveCategory,
+  activeCategory,
+}) => {
   const skeletonLoader = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  // const categories = [
-  //   { label: "All", value: "All" },
-  //   { label: "Invest", value: "invest" },
-  //   { label: "Selling a Home", value: "sell" },
-  //   { label: "Renting a Home", value: "rent" },
-  //   { label: "Buying a Home", value: "buy" },
+  const router = useRouter();
   // ];
   return (
     <>
@@ -77,7 +78,16 @@ const LaunchesFilter = ({ launches, loading, setActiveCategory, activeCategory }
             ))
           : launches.map((launch) => (
               <div className="col-sm-6 col-lg-4" key={launch.launch_id}>
-                <div className="blog-style1">
+                <div
+                  className="blog-style1"
+                  onClick={() =>
+                    router.push(
+                      `/launch/${launch.launch_id}?title=${new String(
+                        launch.launch_title
+                      ).replace(/ /g, "-")}`
+                    )
+                  }
+                >
                   <div
                     className="blog-img"
                     style={{
@@ -95,17 +105,29 @@ const LaunchesFilter = ({ launches, loading, setActiveCategory, activeCategory }
                   <div className="blog-content">
                     <div className="date">
                       <span className="month">
-                        {new Date(launch.launch_date).toDateString().split(" ")[1]}
+                        {
+                          new Date(launch.launch_date)
+                            .toDateString()
+                            .split(" ")[1]
+                        }
                       </span>
                       <span className="day">
-                        {new Date(launch.launch_date).toDateString().split(" ")[2]}
+                        {
+                          new Date(launch.launch_date)
+                            .toDateString()
+                            .split(" ")[2]
+                        }
                       </span>
                     </div>
                     <a className="tag" href="#">
                       Indus Real Estate LLC
                     </a>
                     <h6 className="title mt-1">
-                      <Link href={`/launch/${launch.launch_id}?title=${new String(launch.launch_title).replace(/ /g, "-")}`}>
+                      <Link
+                        href={`/launch/${launch.launch_id}?title=${new String(
+                          launch.launch_title
+                        ).replace(/ /g, "-")}`}
+                      >
                         {launch.launch_title}
                       </Link>
                     </h6>

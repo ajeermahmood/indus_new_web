@@ -5,6 +5,7 @@ import Tags from "@/components/blog/blog-single/Tags";
 import MobileMenu from "@/components/common/mobile-menu";
 import Header from "@/components/home/home-v2/Header";
 import Footer from "@/components/home/home-v7/footer";
+import MoreBtnsLaunch from "./more-btns";
 
 export async function getLaunch(id) {
   const res = await fetch(
@@ -63,6 +64,7 @@ async function LaunchPage({ params }) {
         <div className="container">
           <div className="roww" data-aos="fade-up" data-aos-delay="500">
             <div className="col-xl-8 offset-xl-2">
+              <MoreBtnsLaunch />
               <div
                 className="mt50 mb50 fz20 links-from-blogs-news"
                 dangerouslySetInnerHTML={{ __html: data.launch_description }}

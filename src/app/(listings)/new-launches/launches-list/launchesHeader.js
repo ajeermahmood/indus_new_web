@@ -43,13 +43,6 @@ export default function LaunchesHeader({ launchData }) {
                 </a>
               </div>
             </div>
-            <a
-              className="mtl5"
-              href={launchData.launch_know_more}
-              target="_blank"
-            >
-              Know More
-            </a>
           </div>
         </div>
       </div>
