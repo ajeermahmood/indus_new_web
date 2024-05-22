@@ -13,13 +13,17 @@ import { forwardRef, useImperativeHandle, useState } from "react";
 
 const CommonDialog = forwardRef((props, ref) => {
   const [open, setOpen] = useState(false);
+  const [redirect, setRedirect] = useState(undefined);
+  const [purpose, setPurpose] = useState(undefined);
 
   const handleClose = () => {
     setOpen(false);
   };
 
   useImperativeHandle(ref, () => ({
-    handleOpen: () => {
+    handleOpen: (redirect, purpose) => {
+      setRedirect(redirect);
+      setPurpose(purpose);
       setOpen(true);
     },
   }));
@@ -28,16 +32,16 @@ const CommonDialog = forwardRef((props, ref) => {
     <>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle className="mt10" align="center">
-          Talk To Us
+          {purpose == "brochure" ? "Download Brochure" : " Talk To Us"}
         </DialogTitle>
         <DialogContent>
-          <DialogContentText
+          {/* <DialogContentText
             className="font-style-2"
             fontSize={20}
             align="center"
           >
             Tell us specifications about your future property.
-          </DialogContentText>
+          </DialogContentText> */}
           <form
             className="form-style1"
             method="POST"
@@ -48,6 +52,11 @@ const CommonDialog = forwardRef((props, ref) => {
             <input type="hidden" value="sale" name="lead_type" />
             <input type="hidden" value="apartment" name="property_type" />
             <input type="hidden" value="lp" name="source" />
+            {redirect != undefined ? (
+              <input type="hidden" value={redirect} name="return_link" />
+            ) : (
+              <></>
+            )}
 
             <TextField
               margin="dense"

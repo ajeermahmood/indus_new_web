@@ -2,11 +2,11 @@
 import CommonDialog from "@/components/common/common-form";
 import { useRef } from "react";
 
-const MoreBtnsLaunch = () => {
+const MoreBtnsLaunch = ({ redirect }) => {
   const commonDialog = useRef();
 
-  const openCommonDialog = () => {
-    commonDialog.current?.handleOpen();
+  const openCommonDialog = (redirect, purpose) => {
+    commonDialog.current?.handleOpen(redirect, purpose);
   };
 
   return (
@@ -15,16 +15,16 @@ const MoreBtnsLaunch = () => {
 
       <CommonDialog ref={commonDialog} />
       <div
-        onClick={openCommonDialog}
+        onClick={() => openCommonDialog(undefined, undefined)}
         className="mt25 mr25 ud-btn btn-dark bdrs0 cursor-pointer"
       >
         Know More<i className="fal fa-arrow-right-long"></i>
       </div>
       <div
-        onClick={openCommonDialog}
+        onClick={() => openCommonDialog(redirect, "brochure")}
         className="mt25 ud-btn btn-dark bdrs0 cursor-pointer"
       >
-        Download
+        Download Brochure
       </div>
       {/* ---------------------------------------------------Alert Dialog--------------------------------- */}
       {/* ---------------------------------------------------Alert Dialog--------------------------------- */}

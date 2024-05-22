@@ -64,7 +64,7 @@ async function LaunchPage({ params }) {
         <div className="container">
           <div className="roww" data-aos="fade-up" data-aos-delay="500">
             <div className="col-xl-8 offset-xl-2">
-              <MoreBtnsLaunch />
+              <MoreBtnsLaunch redirect={data.launch_know_more} />
               <div
                 className="mt50 mb50 fz20 links-from-blogs-news"
                 dangerouslySetInnerHTML={{ __html: data.launch_description }}
